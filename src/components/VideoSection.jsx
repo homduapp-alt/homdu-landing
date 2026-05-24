@@ -52,7 +52,7 @@ export function VideoSection() {
             }}
           >
             <iframe
-              src="https://www.youtube.com/embed/tFSBNBmIm64?autoplay=1&mute=1&loop=1&playlist=tFSBNBmIm64&controls=1&rel=0&modestbranding=1&playsinline=1"
+              src="https://www.youtube.com/embed/tFSBNBmIm64?autoplay=1&mute=1&loop=1&playlist=tFSBNBmIm64&controls=1&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
               title="homdu — wideo wprowadzające"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
