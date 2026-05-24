@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Polityka Prywatności — homdu</title>
+<meta name="description" content="Polityka Prywatności aplikacji homdu — w jaki sposób przetwarzamy Twoje dane, jakie masz prawa i z jakich usług korzystamy." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Google Sans (Google's own webfonts host) -->
+<link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700&display=swap" rel="stylesheet" />
+<!-- Fallback / body via Google Fonts public CDN -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+
+<style>
+  /* ── page-local tokens ────────────────────────────────── */
+  :root {
+    --doc-accent:        #C97A1B;        /* amber/terakota, oszczędnie */
+    --doc-accent-soft:   #F5E7D2;
+    --doc-accent-tint:   rgba(201, 122, 27, 0.08);
+    --doc-ink:           #15171C;
+    --doc-ink-2:         #4A4E58;
+    --doc-paper:         #FBFAF7;
+    --doc-paper-2:       #F4F1EA;
+    --doc-rule:          rgba(20, 22, 28, 0.08);
+    --doc-rule-2:        rgba(20, 22, 28, 0.14);
+    --doc-card:          #FFFFFF;
+    --font-doc:          "Google Sans", "DM Sans", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --read-col:          70ch;
+  }
+  [data-theme="dark"] {
+    --doc-accent-soft:   rgba(201, 122, 27, 0.18);
+    --doc-accent-tint:   rgba(201, 122, 27, 0.12);
+    --doc-rule:          rgba(255, 255, 255, 0.08);
+    --doc-rule-2:        rgba(255, 255, 255, 0.14);
+    --doc-card:          #15171C;
+  }
+
+  body {
+    font-family: var(--font-doc);
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  /* ── document header (sticky) ─────────────────────────── */
+  .doc-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(251, 250, 247, 0.82);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+  }
+  [data-theme="dark"] .doc-header { background: rgba(11, 12, 16, 0.82); }
+  .doc-header.is-scrolled {
+    border-bottom-color: var(--doc-rule);
+    box-shadow: 0 1px 0 var(--doc-rule), 0 8px 24px -16px rgba(20,22,28,0.18);
+  }
+  .doc-header__inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .doc-brand {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 600; font-size: 19px; letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .doc-brand .logo-mark { width: 28px; height: 28px; }
+  .doc-header__right { display: flex; align-items: center; gap: 8px; }
+  .doc-back {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 16px;
+    font-size: 14px; font-weight: 500;
+    color: var(--ink);
+    border: 1px solid var(--doc-rule-2);
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s, transform 0.18s;
+  }
+  .doc-back:hover { background: var(--glass-bg-2); transform: translateY(-1px); }
+  .doc-back svg { width: 14px; height: 14px; }
+
+  @media (max-width: 640px) {
+    .doc-header__inner { padding: 12px 20px; }
+    .doc-back span { display: none; }
+    .doc-back { padding: 9px 11px; }
+  }
+
+  /* ── legal nav (Polityka ↔ Warunki) ────────────────────── */
+  .legal-nav {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px;
+    background: var(--doc-paper-2);
+    border: 1px solid var(--doc-rule);
+    border-radius: 999px;
+    gap: 2px;
+  }
+  [data-theme="dark"] .legal-nav { background: var(--bg-soft); }
+  .legal-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 14px;
+    font-size: 13px; font-weight: 500;
+    color: var(--ink-2);
+    border-radius: 999px;
+    transition: color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .legal-nav a:hover { color: var(--ink); }
+  .legal-nav a[aria-current="page"] {
+    color: var(--ink);
+    background: var(--doc-card);
+    box-shadow: var(--shadow-sm);
+  }
+  .legal-nav a svg { width: 13px; height: 13px; opacity: 0.7; }
+  @media (max-width: 860px) {
+    .legal-nav a .lbl-long { display: none; }
+  }
+  @media (max-width: 560px) {
+    .legal-nav { display: none; }
+  }
+
+  /* ── hero ─────────────────────────────────────────────── */
+  .doc-hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--doc-rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(60% 60% at 90% 0%, rgba(201, 122, 27, 0.08) 0%, transparent 60%),
+      radial-gradient(50% 50% at 0% 100%, rgba(46, 111, 212, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .doc-hero__inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+  }
+  .doc-hero .crumbs {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--ink-2);
+    letter-spacing: 0.01em;
+    margin-bottom: 22px;
+  }
+  .doc-hero .crumbs a { color: var(--ink-2); transition: color 0.15s; }
+  .doc-hero .crumbs a:hover { color: var(--doc-accent); }
+  .doc-hero .crumbs .sep { color: var(--ink-3); }
+  .doc-hero .crumbs .here { color: var(--ink); font-weight: 500; }
+
+  .doc-hero h1 {
+    font-family: var(--font-doc);
+    font-size: clamp(36px, 5.4vw, 60px);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    margin: 0 0 22px;
+    max-width: 18ch;
+    text-wrap: balance;
+  }
+  .doc-hero .badges {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin: 0 0 28px;
+  }
+  .doc-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 14px;
+    font-size: 13px; font-weight: 500;
+    color: var(--ink);
+    background: var(--doc-card);
+    border: 1px solid var(--doc-rule);
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+  }
+  .doc-badge .dot {
+    width: 7px; height: 7px; border-radius: 999px;
+    background: var(--doc-accent);
+    box-shadow: 0 0 0 3px var(--doc-accent-tint);
+  }
+  .doc-badge .lbl { color: var(--ink-2); }
+  .doc-badge .val { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  .doc-hero .lead {
+    font-size: clamp(17px, 1.4vw, 20px);
+    line-height: 1.6;
+    color: var(--ink-2);
+    max-width: 64ch;
+    margin: 0;
+  }
+
+  /* ── layout ───────────────────────────────────────────── */
+  .doc-wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 56px 32px 96px;
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 64px;
+    align-items: start;
+  }
+  @media (max-width: 980px) {
+    .doc-wrap { grid-template-columns: 1fr; gap: 24px; padding: 32px 20px 80px; }
+  }
+
+  /* ── TOC ──────────────────────────────────────────────── */
+  .toc {
+    position: sticky;
+    top: 88px;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+  .toc__title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0 0 14px;
+    padding-left: 14px;
+  }
+  .toc__list { list-style: none; padding: 0; margin: 0; border-left: 1px solid var(--doc-rule); }
+  .toc__list li { margin: 0; }
+  .toc__list a {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 14px;
+    margin-left: -1px;
+    border-left: 2px solid transparent;
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: var(--ink-2);
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .toc__list a:hover { color: var(--ink); }
+  .toc__list a .num {
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-3);
+    font-weight: 500;
+    min-width: 18px;
+  }
+  .toc__list a[aria-current="true"] {
+    color: var(--doc-accent);
+    border-left-color: var(--doc-accent);
+    background: var(--doc-accent-tint);
+    font-weight: 500;
+  }
+  .toc__list a[aria-current="true"] .num { color: var(--doc-accent); }
+
+  /* mobile accordion TOC */
+  .toc-mobile {
+    display: none;
+    border: 1px solid var(--doc-rule);
+    border-radius: var(--r-md);
+    background: var(--doc-card);
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .toc-mobile summary {
+    cursor: pointer;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    list-style: none;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .toc-mobile summary::-webkit-details-marker { display: none; }
+  .toc-mobile summary::after {
+    content: ""; width: 10px; height: 10px;
+    border-right: 2px solid var(--ink-2);
+    border-bottom: 2px solid var(--ink-2);
+    transform: rotate(45deg);
+    transition: transform 0.2s;
+  }
+  .toc-mobile[open] summary::after { transform: rotate(-135deg); }
+  .toc-mobile .toc__list { border-left: none; padding: 0 8px 14px; }
+  .toc-mobile .toc__list a { padding: 8px 12px; border-left: none; border-radius: 8px; margin: 0; }
+  .toc-mobile .toc__list a[aria-current="true"] { background: var(--doc-accent-tint); }
+
+  @media (max-width: 980px) {
+    .toc { display: none; }
+    .toc-mobile { display: block; }
+  }
+
+  /* ── content typography ──────────────────────────────── */
+  .doc-content { min-width: 0; }
+  .doc-section { scroll-margin-top: 96px; padding-top: 8px; }
+  .doc-section + .doc-section { margin-top: 56px; padding-top: 56px; border-top: 1px solid var(--doc-rule); }
+
+  .doc-section h2 {
+    font-family: var(--font-doc);
+    font-size: clamp(24px, 2.6vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 0 0 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    text-wrap: balance;
+  }
+  .doc-section h2 .secnum {
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--doc-accent);
+    background: var(--doc-accent-tint);
+    border: 1px solid var(--doc-accent-soft);
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+    transform: translateY(-3px);
+  }
+  .doc-section h3 {
+    font-family: var(--font-doc);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin: 32px 0 14px;
+    color: var(--ink);
+  }
+
+  .doc-content p,
+  .doc-content li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--doc-ink-2);
+    text-wrap: pretty;
+  }
+  [data-theme="dark"] .doc-content p,
+  [data-theme="dark"] .doc-content li {
+    color: var(--ink-2);
+  }
+  .doc-content p { max-width: var(--read-col); margin: 0 0 14px; }
+  .doc-content strong { color: var(--ink); font-weight: 600; }
+  .doc-content a {
+    color: var(--doc-accent);
+    border-bottom: 1px solid var(--doc-accent-soft);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .doc-content a:hover { color: var(--ink); border-color: var(--doc-accent); }
+
+  .doc-content ul, .doc-content ol {
+    max-width: var(--read-col);
+    padding-left: 20px;
+    margin: 0 0 18px;
+  }
+  .doc-content li { margin: 6px 0; }
+  .doc-content ul li::marker { color: var(--doc-accent); }
+  .doc-content ol li::marker { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+  /* ── admin card (section 1) ──────────────────────────── */
+  .admin-card {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    padding: 24px;
+    border: 1px solid var(--doc-rule);
+    border-radius: var(--r-md);
+    background: var(--doc-card);
+    box-shadow: var(--shadow-sm);
+    max-width: var(--read-col);
+    margin: 8px 0 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .admin-card::before {
+    content: "";
+    position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--doc-accent);
+  }
+  .admin-card__icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: var(--doc-accent-tint);
+    color: var(--doc-accent);
+    display: grid; place-items: center;
+  }
+  .admin-card__icon svg { width: 26px; height: 26px; }
+  .admin-card__body { min-width: 0; }
+  .admin-card__role {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--doc-accent);
+    margin: 0 0 6px;
+  }
+  .admin-card__name {
+    font-size: 18px; font-weight: 700; color: var(--ink);
+    margin: 0 0 10px;
+    line-height: 1.3;
+  }
+  .admin-card__lines {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 14px;
+    row-gap: 4px;
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+  .admin-card__lines dt { color: var(--ink-3); font-weight: 500; }
+  .admin-card__lines dd { margin: 0; color: var(--ink); }
+  .admin-card__lines dd a { color: var(--doc-accent); border: none; }
+  .admin-card__lines dd a:hover { text-decoration: underline; }
+
+  /* ── chip legend (section 4) ─────────────────────────── */
+  .chip-legend {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: var(--read-col);
+    margin: 4px 0 24px;
+    padding: 18px;
+    border: 1px solid var(--doc-rule);
+    border-radius: var(--r-md);
+    background: var(--doc-paper-2);
+  }
+  [data-theme="dark"] .chip-legend { background: var(--bg-soft); }
+  @media (max-width: 560px) { .chip-legend { grid-template-columns: 1fr; } }
+  .chip-legend__row {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 14px; line-height: 1.5; color: var(--doc-ink-2);
+  }
+  [data-theme="dark"] .chip-legend__row { color: var(--ink-2); }
+
+  .chip {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 28px; height: 22px;
+    padding: 0 8px;
+    border-radius: 6px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    transform: translateY(1px);
+  }
+  .chip--w { background: rgba(46, 111, 212, 0.12); color: #1A5FA0; border: 1px solid rgba(46, 111, 212, 0.25); }
+  .chip--o { background: rgba(20, 22, 28, 0.06); color: var(--ink-2); border: 1px solid var(--doc-rule-2); }
+  .chip--z { background: rgba(201, 122, 27, 0.14); color: #9A5A0F; border: 1px solid rgba(201, 122, 27, 0.3); }
+  .chip--s { background: rgba(43, 164, 118, 0.14); color: #146E47; border: 1px solid rgba(43, 164, 118, 0.3); }
+
+  [data-theme="dark"] .chip--w { color: #7DA8E8; }
+  [data-theme="dark"] .chip--o { color: var(--ink-2); }
+  [data-theme="dark"] .chip--z { color: #E8B26F; }
+  [data-theme="dark"] .chip--s { color: #6FCFA3; }
+
+  /* inline list with chips */
+  .data-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+    max-width: var(--read-col);
+  }
+  .data-list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: start;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--doc-rule);
+  }
+  .data-list li:last-child { border-bottom: none; }
+  .data-list li .chips-inline {
+    display: inline-flex; flex-wrap: wrap; gap: 4px;
+    align-items: center;
+  }
+
+  /* ── RODO table (section 6) ──────────────────────────── */
+  .rodo-table-wrap { overflow-x: auto; margin: 8px 0 18px; }
+  .rodo-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--doc-rule);
+    border-radius: var(--r-md);
+    overflow: hidden;
+    font-size: 14.5px;
+    line-height: 1.5;
+    background: var(--doc-card);
+  }
+  .rodo-table thead th {
+    background: var(--doc-paper-2);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--doc-rule);
+  }
+  [data-theme="dark"] .rodo-table thead th { background: var(--bg-soft); }
+  .rodo-table tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--doc-rule);
+    vertical-align: top;
+    color: var(--doc-ink-2);
+  }
+  [data-theme="dark"] .rodo-table tbody td { color: var(--ink-2); }
+  .rodo-table tbody tr:last-child td { border-bottom: none; }
+  .rodo-table tbody tr:hover td { background: var(--doc-accent-tint); }
+  .rodo-table td.lp {
+    font-variant-numeric: tabular-nums;
+    color: var(--doc-accent);
+    font-weight: 600;
+    width: 1%;
+    white-space: nowrap;
+  }
+  .rodo-table td.cel { font-weight: 500; color: var(--ink); }
+  .rodo-table td.podstawa { font-size: 13.5px; }
+
+  /* mobile: turn into cards */
+  @media (max-width: 720px) {
+    .rodo-table, .rodo-table thead, .rodo-table tbody, .rodo-table tr, .rodo-table td, .rodo-table th { display: block; }
+    .rodo-table thead { display: none; }
+    .rodo-table { border: none; padding: 0; background: transparent; }
+    .rodo-table tbody tr {
+      background: var(--doc-card);
+      border: 1px solid var(--doc-rule);
+      border-radius: var(--r-md);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .rodo-table tbody td { padding: 0; border: none; }
+    .rodo-table tbody td.lp {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .rodo-table tbody td.lp::before { content: "Lp. "; color: var(--ink-3); }
+    .rodo-table tbody td.cel { margin-bottom: 10px; font-size: 15px; }
+    .rodo-table tbody td.podstawa::before {
+      content: "Podstawa RODO";
+      display: block;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px;
+    }
+    .rodo-table tbody tr:hover td { background: transparent; }
+  }
+
+  /* ── storage tier cards (section 7) ──────────────────── */
+  .storage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 6px 0 18px;
+  }
+  @media (max-width: 860px) { .storage-grid { grid-template-columns: 1fr; } }
+  .storage-card {
+    padding: 22px;
+    border: 1px solid var(--doc-rule);
+    border-radius: var(--r-md);
+    background: var(--doc-card);
+    box-shadow: var(--shadow-sm);
+    display: flex; flex-direction: column; gap: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .storage-card__icon {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: grid; place-items: center;
+    color: white;
+  }
+  .storage-card__icon svg { width: 20px; height: 20px; }
+  .storage-card__icon.t-local { background: var(--stg-slate); }
+  .storage-card__icon.t-icloud { background: var(--stg-blue); }
+  .storage-card__icon.t-backend { background: var(--stg-amber); }
+  .storage-card h4 {
+    font-family: var(--font-doc);
+    font-size: 16px; font-weight: 700; letter-spacing: -0.01em;
+    margin: 0; color: var(--ink);
+  }
+  .storage-card p {
+    font-size: 14px; line-height: 1.55;
+    color: var(--doc-ink-2); margin: 0;
+  }
+  [data-theme="dark"] .storage-card p { color: var(--ink-2); }
+  .storage-card__tag {
+    align-self: flex-start;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  /* ── rights list (section 17) ────────────────────────── */
+  .rights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: var(--read-col);
+    margin: 6px 0 16px;
+    padding-left: 0 !important;
+    list-style: none !important;
+  }
+  @media (max-width: 720px) { .rights-grid { grid-template-columns: 1fr; } }
+  .rights-grid li {
+    padding: 16px;
+    border: 1px solid var(--doc-rule);
+    border-radius: var(--r-md);
+    background: var(--doc-card);
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .rights-grid li .rico {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: var(--doc-accent-tint);
+    color: var(--doc-accent);
+    display: grid; place-items: center;
+  }
+  .rights-grid li .rico svg { width: 18px; height: 18px; }
+  .rights-grid li .rbody { min-width: 0; }
+  .rights-grid li .rbody .rttl {
+    font-size: 14.5px; font-weight: 600;
+    color: var(--ink); margin: 0 0 2px;
+    line-height: 1.3;
+  }
+  .rights-grid li .rbody .rart {
+    font-size: 12px; color: var(--ink-3);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── contact card (section 20) ───────────────────────── */
+  .contact-card {
+    margin: 14px 0 0;
+    padding: 32px;
+    border-radius: var(--r-lg);
+    background: linear-gradient(135deg, #fff 0%, var(--doc-paper-2) 100%);
+    border: 1px solid var(--doc-rule);
+    box-shadow: var(--shadow-md);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: center;
+    max-width: var(--read-col);
+    position: relative;
+    overflow: hidden;
+  }
+  [data-theme="dark"] .contact-card {
+    background: linear-gradient(135deg, var(--bg-elev) 0%, var(--bg-soft) 100%);
+  }
+  .contact-card::before {
+    content: "";
+    position: absolute;
+    right: -40px; top: -40px;
+    width: 200px; height: 200px;
+    border-radius: 999px;
+    background: radial-gradient(closest-side, var(--doc-accent-tint), transparent 70%);
+    pointer-events: none;
+  }
+  @media (max-width: 640px) { .contact-card { grid-template-columns: 1fr; padding: 24px; } }
+  .contact-card__body { position: relative; z-index: 1; }
+  .contact-card__role {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--doc-accent); margin: 0 0 8px;
+  }
+  .contact-card h3 {
+    font-family: var(--font-doc);
+    font-size: 22px; font-weight: 700;
+    margin: 0 0 6px !important;
+    color: var(--ink); letter-spacing: -0.01em;
+  }
+  .contact-card p { font-size: 14.5px; line-height: 1.6; color: var(--doc-ink-2); margin: 0; }
+  [data-theme="dark"] .contact-card p { color: var(--ink-2); }
+  .contact-card__addr { margin-top: 10px !important; font-size: 14px !important; }
+  .contact-card__cta {
+    position: relative; z-index: 1;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 999px;
+    font-size: 15px; font-weight: 500;
+    border: none;
+    transition: transform 0.18s, box-shadow 0.2s;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.18) inset, 0 8px 24px -8px rgba(20,22,28,0.4);
+    white-space: nowrap;
+  }
+  .contact-card__cta:hover { transform: translateY(-1px); }
+  .contact-card__cta svg { width: 16px; height: 16px; }
+
+  /* ── back-to-top floating ─────────────────────────────── */
+  .to-top {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    width: 44px; height: 44px;
+    border-radius: 999px;
+    background: var(--ink); color: var(--bg);
+    border: none;
+    display: grid; place-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 24px -8px rgba(20,22,28,0.4);
+    opacity: 0; transform: translateY(12px); pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s, box-shadow 0.2s;
+    z-index: 60;
+  }
+  .to-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .to-top:hover { transform: translateY(-2px); }
+  .to-top svg { width: 16px; height: 16px; }
+
+  /* ── doc footer ───────────────────────────────────────── */
+  .doc-foot {
+    border-top: 1px solid var(--doc-rule);
+    background: var(--doc-paper-2);
+    padding: 56px 0 40px;
+  }
+  [data-theme="dark"] .doc-foot { background: var(--bg-soft); }
+  .doc-foot__inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+  }
+  @media (max-width: 720px) { .doc-foot__inner { grid-template-columns: 1fr; gap: 28px; padding: 0 20px; } }
+  .doc-foot h4 {
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-3); margin: 0 0 12px;
+  }
+  .doc-foot p { font-size: 14px; line-height: 1.6; color: var(--ink-2); margin: 0; }
+  .doc-foot p strong { color: var(--ink); font-weight: 600; }
+  .doc-foot ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .doc-foot ul a {
+    font-size: 14px; color: var(--ink-2);
+    transition: color 0.15s;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .doc-foot ul a:hover { color: var(--doc-accent); }
+  .doc-foot__btm {
+    max-width: 1240px;
+    margin: 40px auto 0;
+    padding: 24px 32px 0;
+    border-top: 1px solid var(--doc-rule);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    font-size: 13px; color: var(--ink-3);
+  }
+  @media (max-width: 720px) { .doc-foot__btm { padding: 24px 20px 0; } }
+
+</style>
+</head>
+<body>
+
+<!-- ─────────── HEADER ─────────── -->
+<header class="doc-header" id="doc-header">
+  <div class="doc-header__inner">
+    <a class="doc-brand" href="index.html" aria-label="homdu — strona główna">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+      </span>
+      homdu
+    </a>
+
+    <nav class="legal-nav" aria-label="Dokumenty prawne">
+      <a href="polityka-prywatnosci.html" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg>
+        <span>Polityka<span class="lbl-long"> Prywatności</span></span>
+      </a>
+      <a href="warunki-korzystania.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+        <span>Warunki<span class="lbl-long"> korzystania</span></span>
+      </a>
+    </nav>
+
+    <div class="doc-header__right">
+      <a class="doc-back" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        <span>Powrót do strony</span>
+      </a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Przełącz tryb">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ─────────── HERO ─────────── -->
+<section class="doc-hero">
+  <div class="doc-hero__inner">
+    <nav class="crumbs" aria-label="Ścieżka">
+      <a href="index.html">homdu.pl</a>
+      <span class="sep">/</span>
+      <span class="here">Polityka Prywatności</span>
+    </nav>
+    <h1>Polityka Prywatności aplikacji homdu.</h1>
+    <div class="badges">
+      <span class="doc-badge"><span class="dot"></span><span class="lbl">Data wejścia w życie:</span> <span class="val">24 maja 2026</span></span>
+      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Ostatnia aktualizacja:</span> <span class="val">24 maja 2026</span></span>
+    </div>
+    <p class="lead">
+      Niniejsza Polityka Prywatności opisuje, w jaki sposób przetwarzane są dane osobowe użytkowników aplikacji mobilnej <strong>homdu</strong> („Aplikacja"), wspierającej planowanie, budowę i remont. Dokument wyjaśnia, jakie dane są zbierane, w jakich celach, na jakiej podstawie prawnej, komu mogą być udostępniane oraz jakie prawa przysługują użytkownikom.
+    </p>
+    <p class="lead" style="margin-top:14px;">
+      Prosimy o uważne zapoznanie się z treścią Polityki przed rozpoczęciem korzystania z Aplikacji. Korzystanie z Aplikacji w zakresie funkcji wiążących się z przetwarzaniem danych osobowych oznacza, że użytkownik zapoznał się z zasadami opisanymi w tym dokumencie.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────── BODY ─────────── -->
+<div class="doc-wrap">
+
+  <!-- desktop TOC -->
+  <aside class="toc" aria-label="Spis treści">
+    <p class="toc__title">Spis treści</p>
+    <ul class="toc__list" id="toc-list">
+      <li><a href="#sec-1"><span class="num">1.</span><span>Administrator danych osobowych</span></a></li>
+      <li><a href="#sec-2"><span class="num">2.</span><span>Definicje</span></a></li>
+      <li><a href="#sec-3"><span class="num">3.</span><span>Ogólne zasady przetwarzania danych</span></a></li>
+      <li><a href="#sec-4"><span class="num">4.</span><span>Kategorie przetwarzanych danych</span></a></li>
+      <li><a href="#sec-5"><span class="num">5.</span><span>Źródła pozyskiwania danych</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>Cele i podstawy prawne</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Dane lokalne, iCloud i usługi zewnętrzne</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Konto użytkownika i uwierzytelnianie</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>Analityka, telemetria, diagnostyka i zgody</span></a></li>
+      <li><a href="#sec-10"><span class="num">10.</span><span>Odbiorcy danych</span></a></li>
+      <li><a href="#sec-11"><span class="num">11.</span><span>Przekazywanie danych poza EOG</span></a></li>
+      <li><a href="#sec-12"><span class="num">12.</span><span>Okres przechowywania danych</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Profilowanie i decyzje automatyczne</span></a></li>
+      <li><a href="#sec-14"><span class="num">14.</span><span>Pliki cookies i technologie podobne</span></a></li>
+      <li><a href="#sec-15"><span class="num">15.</span><span>Integracje z funkcjami iOS</span></a></li>
+      <li><a href="#sec-16"><span class="num">16.</span><span>Bezpieczeństwo danych</span></a></li>
+      <li><a href="#sec-17"><span class="num">17.</span><span>Prawa Użytkownika</span></a></li>
+      <li><a href="#sec-18"><span class="num">18.</span><span>Dane dzieci</span></a></li>
+      <li><a href="#sec-19"><span class="num">19.</span><span>Zmiany Polityki</span></a></li>
+      <li><a href="#sec-20"><span class="num">20.</span><span>Kontakt</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- mobile TOC -->
+  <details class="toc-mobile">
+    <summary>Spis treści — 20 sekcji</summary>
+    <ul class="toc__list">
+      <li><a href="#sec-1"><span class="num">1.</span><span>Administrator danych osobowych</span></a></li>
+      <li><a href="#sec-2"><span class="num">2.</span><span>Definicje</span></a></li>
+      <li><a href="#sec-3"><span class="num">3.</span><span>Ogólne zasady przetwarzania</span></a></li>
+      <li><a href="#sec-4"><span class="num">4.</span><span>Kategorie danych</span></a></li>
+      <li><a href="#sec-5"><span class="num">5.</span><span>Źródła pozyskiwania</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>Cele i podstawy prawne</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Dane lokalne / iCloud / usługi</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Konto i uwierzytelnianie</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>Analityka i zgody</span></a></li>
+      <li><a href="#sec-10"><span class="num">10.</span><span>Odbiorcy danych</span></a></li>
+      <li><a href="#sec-11"><span class="num">11.</span><span>Przekazywanie poza EOG</span></a></li>
+      <li><a href="#sec-12"><span class="num">12.</span><span>Okres przechowywania</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Profilowanie</span></a></li>
+      <li><a href="#sec-14"><span class="num">14.</span><span>Cookies</span></a></li>
+      <li><a href="#sec-15"><span class="num">15.</span><span>Integracje iOS</span></a></li>
+      <li><a href="#sec-16"><span class="num">16.</span><span>Bezpieczeństwo</span></a></li>
+      <li><a href="#sec-17"><span class="num">17.</span><span>Prawa Użytkownika</span></a></li>
+      <li><a href="#sec-18"><span class="num">18.</span><span>Dane dzieci</span></a></li>
+      <li><a href="#sec-19"><span class="num">19.</span><span>Zmiany</span></a></li>
+      <li><a href="#sec-20"><span class="num">20.</span><span>Kontakt</span></a></li>
+    </ul>
+  </details>
+
+  <main class="doc-content">
+
+    <!-- ── 1 ── -->
+    <section class="doc-section" id="sec-1">
+      <h2><span class="secnum">01</span>Administrator danych osobowych</h2>
+      <p>Administratorem danych osobowych w rozumieniu Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (dalej <strong>„RODO"</strong>) jest:</p>
+
+      <div class="admin-card">
+        <div class="admin-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/><path d="M10 10h.01M14 10h.01M10 13h.01M14 13h.01"/></svg>
+        </div>
+        <div class="admin-card__body">
+          <p class="admin-card__role">Administrator</p>
+          <p class="admin-card__name">AppSoft Studio Jakub Matwiejczyk</p>
+          <dl class="admin-card__lines">
+            <dt>Adres</dt><dd>ul. Aroniowa 19, 05-555 Kotorydz</dd>
+            <dt>NIP</dt><dd>7133074219</dd>
+            <dt>E-mail</dt><dd><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></dd>
+          </dl>
+        </div>
+      </div>
+
+      <p>(dalej <strong>„Administrator"</strong>, <strong>„my"</strong>).</p>
+      <p>We wszystkich sprawach związanych z przetwarzaniem danych osobowych oraz realizacją praw przysługujących na podstawie RODO można kontaktować się z Administratorem pod wskazanym wyżej adresem e-mail.</p>
+      <p>Administrator nie powołał inspektora ochrony danych. Funkcje kontaktowe w zakresie ochrony danych pełni bezpośrednio Administrator.</p>
+    </section>
+
+    <!-- ── 2 ── -->
+    <section class="doc-section" id="sec-2">
+      <h2><span class="secnum">02</span>Definicje</h2>
+      <p>Na potrzeby niniejszej Polityki przyjmuje się następujące znaczenie pojęć:</p>
+      <ul>
+        <li><strong>Aplikacja</strong> – aplikacja mobilna homdu przeznaczona na urządzenia z systemem iOS (oraz, w przyszłości, na inne platformy mobilne).</li>
+        <li><strong>Użytkownik</strong> – osoba fizyczna korzystająca z Aplikacji.</li>
+        <li><strong>Dane osobowe</strong> – wszelkie informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej.</li>
+        <li><strong>Przetwarzanie</strong> – każda operacja wykonywana na danych osobowych, np. zbieranie, przechowywanie, modyfikowanie, udostępnianie, usuwanie.</li>
+        <li><strong>Inwestycja</strong> – projekt budowlany lub remontowy prowadzony przez Użytkownika w Aplikacji, wraz z przypisanymi do niego etapami, zadaniami, kosztami, dokumentami, zdjęciami, kontaktami i notatkami.</li>
+        <li><strong>Urządzenie</strong> – urządzenie mobilne, na którym zainstalowana jest Aplikacja.</li>
+        <li><strong>Podmiot przetwarzający (procesor)</strong> – podmiot przetwarzający dane osobowe w imieniu i na polecenie Administratora.</li>
+        <li><strong>EOG</strong> – Europejski Obszar Gospodarczy.</li>
+      </ul>
+    </section>
+
+    <!-- ── 3 ── -->
+    <section class="doc-section" id="sec-3">
+      <h2><span class="secnum">03</span>Ogólne zasady przetwarzania danych</h2>
+      <p>3.1. Przetwarzamy dane osobowe zgodnie z RODO, ustawą z dnia 10 maja 2018 r. o ochronie danych osobowych oraz innymi obowiązującymi przepisami prawa.</p>
+      <p>3.2. Stosujemy zasadę <strong>minimalizacji danych</strong> – zbieramy wyłącznie dane niezbędne do realizacji konkretnych, jasno określonych celów.</p>
+      <p>3.3. Istotną cechą Aplikacji jest to, że znaczna część danych Użytkownika (np. treść inwestycji, zdjęcia, notatki, dokumenty) jest przechowywana <strong>lokalnie na urządzeniu</strong> oraz – jeżeli Użytkownik korzysta z synchronizacji – w <strong>prywatnej przestrzeni iCloud Użytkownika</strong>. W wielu przypadkach Administrator nie ma technicznego dostępu do tych treści. Szczegóły opisano w sekcji 7.</p>
+      <p>3.4. Część funkcji Aplikacji (np. analityka, telemetria, niektóre personalizacje) działa <strong>wyłącznie po wyrażeniu zgody</strong> przez Użytkownika i może zostać w każdej chwili wyłączona.</p>
+    </section>
+
+    <!-- ── 4 ── -->
+    <section class="doc-section" id="sec-4">
+      <h2><span class="secnum">04</span>Kategorie przetwarzanych danych</h2>
+      <p>Poniżej przedstawiamy kategorie danych, które mogą być przetwarzane w związku z korzystaniem z Aplikacji. Przy każdej kategorii oznaczamy jej charakter:</p>
+
+      <div class="chip-legend" aria-label="Legenda oznaczeń">
+        <div class="chip-legend__row"><span class="chip chip--w">W</span><span><strong>Wymagane</strong> – niezbędne do świadczenia danej funkcji lub usługi.</span></div>
+        <div class="chip-legend__row"><span class="chip chip--o">O</span><span><strong>Opcjonalne</strong> – podawane dobrowolnie przez Użytkownika.</span></div>
+        <div class="chip-legend__row"><span class="chip chip--z">Z</span><span><strong>Za zgodą</strong> – przetwarzane wyłącznie na podstawie zgody Użytkownika.</span></div>
+        <div class="chip-legend__row"><span class="chip chip--s">S</span><span><strong>Systemowe iOS</strong> – zależne od uprawnień systemowych iOS udzielonych przez Użytkownika.</span></div>
+      </div>
+
+      <h3>4.1. Dane konta i uwierzytelniania</h3>
+      <ul class="data-list">
+        <li><span class="chips-inline"><span class="chip chip--w">W</span></span><span>identyfikator Użytkownika powiązany z usługą <strong>Sign in with Apple</strong> (np. stały, anonimowy identyfikator nadawany przez Apple) <em style="color:var(--ink-3)">— jeżeli Użytkownik korzysta z logowania</em>.</span></li>
+        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>adres e-mail – wyłącznie jeżeli Użytkownik zdecyduje się go udostępnić podczas logowania przez Apple (Apple umożliwia ukrycie adresu e-mail poprzez funkcję „Ukryj mój e-mail").</span></li>
+        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>imię lub nazwa wyświetlana, jeżeli zostanie podana.</span></li>
+      </ul>
+
+      <h3>4.2. Dane inwestycji (treści tworzone przez Użytkownika)</h3>
+      <ul class="data-list">
+        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>nazwy i opisy inwestycji, etapów oraz zadań.</span></li>
+        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>dane kosztów, budżetów, terminów i statusów.</span></li>
+        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>linki, notatki tekstowe oraz inne treści dodawane przez Użytkownika.</span></li>
+      </ul>
+
+      <h3>4.3. Dane kontaktów i wykonawców</h3>
+      <ul class="data-list">
+        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>dane kontaktowe wykonawców, dostawców lub innych osób, które Użytkownik samodzielnie dodaje do Aplikacji (np. imię i nazwisko, numer telefonu, adres e-mail, nazwa firmy, notatki).</span></li>
+        <li><span class="chips-inline"><span class="chip chip--o">O</span><span class="chip chip--s">S</span></span><span>dane kontaktów importowane z systemowej książki kontaktów iOS, jeżeli Użytkownik wyrazi na to zgodę systemową.</span></li>
+      </ul>
+
+      <h3>4.4. Zdjęcia, dokumenty i pliki</h3>
+      <ul class="data-list">
+        <li><span class="chips-inline"><span class="chip chip--o">O</span><span class="chip chip--s">S</span></span><span>zdjęcia i albumy dodawane do inwestycji.</span></li>
+        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>notatki i opisy przypisane do zdjęć.</span></li>
+        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>dokumenty i pliki załączane przez Użytkownika.</span></li>
+        <li><span class="chips-inline"><span class="chip chip--o">O</span><span class="chip chip--s">S</span></span><span>metadane plików (np. data, w niektórych przypadkach dane lokalizacyjne zapisane w zdjęciach przez urządzenie), o ile Użytkownik samodzielnie doda takie pliki.</span></li>
+      </ul>
+
+      <h3>4.5. Dane techniczne i diagnostyczne</h3>
+      <ul class="data-list">
+        <li><span class="chips-inline"><span class="chip chip--w">W</span></span><span>model urządzenia, wersja systemu operacyjnego, wersja Aplikacji, ustawienia językowe i regionalne.</span></li>
+        <li><span class="chips-inline"><span class="chip chip--z">Z</span></span><span>dane o awariach, błędach i stabilności Aplikacji (raporty diagnostyczne) – w zakresie raportowania awarii w usłudze Crashlytics.</span></li>
+      </ul>
+
+      <h3>4.6. Dane analityczne i telemetryczne</h3>
+      <ul class="data-list">
+        <li><span class="chips-inline"><span class="chip chip--z">Z</span></span><span>zdarzenia dotyczące korzystania z Aplikacji (np. otwarcie ekranu, użycie funkcji), identyfikatory analityczne nadawane przez narzędzia analityczne, przybliżone informacje o sposobie korzystania z Aplikacji.</span></li>
+      </ul>
+
+      <h3>4.7. Dane o aktywności w Aplikacji</h3>
+      <ul class="data-list">
+        <li><span class="chips-inline"><span class="chip chip--w">W</span><span class="chip chip--z">Z</span></span><span>informacje o stanie i postępie inwestycji, ostatnio używanych funkcjach oraz preferencjach interfejsu – w zakresie niezbędnym do działania Aplikacji oraz, w części objętej zgodą, do analityki.</span></li>
+      </ul>
+
+      <h3>4.8. Dane związane z powiadomieniami</h3>
+      <ul class="data-list">
+        <li><span class="chips-inline"><span class="chip chip--z">Z</span><span class="chip chip--s">S</span></span><span>token powiadomień push przypisany do urządzenia (identyfikator umożliwiający dostarczenie powiadomienia) – zależnie od zgody systemowej na powiadomienia.</span></li>
+        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>informacje o subskrypcji wybranych kategorii powiadomień.</span></li>
+      </ul>
+
+      <h3>4.9. Dane programu poleceń</h3>
+      <ul class="data-list">
+        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>identyfikator polecającego oraz informacja o poleconym Użytkowniku w zakresie niezbędnym do działania programu poleceń (np. fakt skorzystania z kodu polecającego).</span></li>
+      </ul>
+
+      <h3>4.10. Dane przekazywane w ramach formularzy kontaktowych</h3>
+      <ul class="data-list">
+        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>treść wiadomości oraz dane kontaktowe podane przez Użytkownika podczas kontaktu z Administratorem (np. drogą e-mail).</span></li>
+      </ul>
+    </section>
+
+    <!-- ── 5 ── -->
+    <section class="doc-section" id="sec-5">
+      <h2><span class="secnum">05</span>Źródła pozyskiwania danych</h2>
+      <p>Dane osobowe pozyskujemy:</p>
+      <p>5.1. <strong>bezpośrednio od Użytkownika</strong> – gdy Użytkownik tworzy inwestycje, dodaje treści, kontakty, zdjęcia, dokumenty, korzysta z programu poleceń lub kontaktuje się z nami;</p>
+      <p>5.2. <strong>z urządzenia Użytkownika i systemu operacyjnego</strong> – w zakresie danych technicznych, diagnostycznych i uprawnień systemowych (np. dostęp do zdjęć, kontaktów, kalendarza, powiadomień), które Użytkownik samodzielnie przyznaje w ustawieniach iOS;</p>
+      <p>5.3. <strong>od dostawców usług, z których korzystamy</strong> – np. identyfikator Użytkownika przekazywany przez usługę Sign in with Apple, dane analityczne i diagnostyczne generowane przez narzędzia Apple oraz Google/Firebase, w zakresie opisanym w niniejszej Polityce.</p>
+    </section>
+
+    <!-- ── 6 ── -->
+    <section class="doc-section" id="sec-6">
+      <h2><span class="secnum">06</span>Cele i podstawy prawne przetwarzania</h2>
+      <p>Dane osobowe przetwarzamy w następujących celach i na następujących podstawach prawnych:</p>
+
+      <div class="rodo-table-wrap">
+        <table class="rodo-table" aria-label="Cele i podstawy prawne przetwarzania">
+          <thead>
+            <tr><th style="width:60px;">Lp.</th><th>Cel przetwarzania</th><th>Podstawa prawna (RODO)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="lp">1</td><td class="cel">Udostępnienie i prawidłowe działanie Aplikacji oraz jej podstawowych funkcji (zarządzanie inwestycjami, etapami, zadaniami, kosztami, dokumentami, zdjęciami, kontaktami)</td><td class="podstawa">art. 6 ust. 1 lit. b – niezbędność do świadczenia usługi (wykonania umowy o korzystanie z Aplikacji)</td></tr>
+            <tr><td class="lp">2</td><td class="cel">Uwierzytelnianie i utrzymanie konta Użytkownika (Sign in with Apple)</td><td class="podstawa">art. 6 ust. 1 lit. b</td></tr>
+            <tr><td class="lp">3</td><td class="cel">Synchronizacja danych między urządzeniami Użytkownika (iCloud/CloudKit)</td><td class="podstawa">art. 6 ust. 1 lit. b oraz, w zakresie konfiguracji iCloud, ustawienia wybrane przez Użytkownika</td></tr>
+            <tr><td class="lp">4</td><td class="cel">Dostarczanie powiadomień push</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda systemowa na powiadomienia) oraz art. 6 ust. 1 lit. b w zakresie powiadomień niezbędnych do działania usługi</td></tr>
+            <tr><td class="lp">5</td><td class="cel">Analityka korzystania z Aplikacji oraz pomiar wydajności</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda)</td></tr>
+            <tr><td class="lp">6</td><td class="cel">Diagnostyka awarii i poprawa stabilności Aplikacji</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda na raportowanie awarii) oraz art. 6 ust. 1 lit. f (uzasadniony interes w zapewnieniu bezpieczeństwa i niezawodności Aplikacji)</td></tr>
+            <tr><td class="lp">7</td><td class="cel">Prezentowanie treści redakcyjnych, poradnikowych oraz sekcji partnerów i rekomendacji</td><td class="podstawa">art. 6 ust. 1 lit. b oraz art. 6 ust. 1 lit. f (uzasadniony interes w dostarczaniu wartościowych treści)</td></tr>
+            <tr><td class="lp">8</td><td class="cel">Obsługa programu poleceń</td><td class="podstawa">art. 6 ust. 1 lit. b oraz art. 6 ust. 1 lit. f (uzasadniony interes w rozwoju Aplikacji)</td></tr>
+            <tr><td class="lp">9</td><td class="cel">Obsługa zapytań i kontaktu z Użytkownikiem</td><td class="podstawa">art. 6 ust. 1 lit. f (uzasadniony interes w udzielaniu odpowiedzi)</td></tr>
+            <tr><td class="lp">10</td><td class="cel">Zapewnienie bezpieczeństwa, zapobieganie nadużyciom, prowadzenie logów zdarzeń</td><td class="podstawa">art. 6 ust. 1 lit. f (uzasadniony interes w ochronie usługi i jej Użytkowników)</td></tr>
+            <tr><td class="lp">11</td><td class="cel">Realizacja obowiązków prawnych (np. rozpatrywanie żądań z zakresu praw osób, których dane dotyczą)</td><td class="podstawa">art. 6 ust. 1 lit. c</td></tr>
+            <tr><td class="lp">12</td><td class="cel">Ustalenie, dochodzenie lub obrona roszczeń</td><td class="podstawa">art. 6 ust. 1 lit. f</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>W zakresie, w jakim przetwarzanie odbywa się na podstawie zgody (art. 6 ust. 1 lit. a RODO), zgoda jest dobrowolna i może zostać w każdej chwili wycofana. Wycofanie zgody nie wpływa na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem.</p>
+    </section>
+
+    <!-- ── 7 ── -->
+    <section class="doc-section" id="sec-7">
+      <h2><span class="secnum">07</span>Dane lokalne, synchronizacja iCloud oraz dane przesyłane do usług zewnętrznych</h2>
+      <p>Aby zapewnić przejrzystość, wyjaśniamy, gdzie faktycznie znajdują się dane Użytkownika.</p>
+
+      <div class="storage-grid" role="list">
+        <div class="storage-card" role="listitem">
+          <div class="storage-card__icon t-local" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
+          </div>
+          <span class="storage-card__tag">Warstwa 1</span>
+          <h4>Na urządzeniu</h4>
+          <p>Inwestycje, zdjęcia, notatki i dokumenty przechowywane lokalnie w pamięci aplikacji oraz w Keychain. Dane te <strong>nie są przekazywane Administratorowi</strong>.</p>
+        </div>
+        <div class="storage-card" role="listitem">
+          <div class="storage-card__icon t-icloud" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10a5 5 0 0 0-9.6-1.6A4 4 0 1 0 7 16h11a4 4 0 0 0 0-8h0"/></svg>
+          </div>
+          <span class="storage-card__tag">Warstwa 2</span>
+          <h4>iCloud / CloudKit</h4>
+          <p>Prywatna przestrzeń iCloud Użytkownika, dostępna wyłącznie na jego kontach Apple ID. <strong>Administrator nie ma technicznego dostępu</strong> do tych treści.</p>
+        </div>
+        <div class="storage-card" role="listitem">
+          <div class="storage-card__icon t-backend" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg>
+          </div>
+          <span class="storage-card__tag">Warstwa 3</span>
+          <h4>Backend i usługi</h4>
+          <p>Tokeny push, analityka po zgodzie, treści z CMS, korespondencja. Zakres ograniczony do tego, co jest niezbędne do działania danej funkcji.</p>
+        </div>
+      </div>
+
+      <h3>7.1. Dane przechowywane lokalnie na urządzeniu</h3>
+      <p>Większość treści tworzonych przez Użytkownika (inwestycje, etapy, zadania, koszty, notatki, zdjęcia, dokumenty, kontakty) jest w pierwszej kolejności przechowywana <strong>lokalnie na urządzeniu</strong> Użytkownika, w obszarze danych aplikacji. Do przechowywania danych lokalnych oraz ustawień Aplikacja wykorzystuje standardowe mechanizmy systemu iOS, w tym:</p>
+      <ul>
+        <li>pamięć i pliki aplikacji (lokalna baza danych, pliki, lokalny cache i kopie robocze danych),</li>
+        <li>mechanizmy <code style="font-family:var(--font-mono); font-size:14px; padding:1px 6px; background:var(--doc-paper-2); border-radius:4px;">AppStorage</code> / <code style="font-family:var(--font-mono); font-size:14px; padding:1px 6px; background:var(--doc-paper-2); border-radius:4px;">UserDefaults</code> (ustawienia i preferencje Aplikacji),</li>
+        <li><strong>Keychain</strong> (bezpieczne przechowywanie wrażliwych danych technicznych, np. tokenów i identyfikatorów uwierzytelniających).</li>
+      </ul>
+      <p>Dane przechowywane wyłącznie lokalnie nie są przekazywane Administratorowi.</p>
+
+      <h3>7.2. Synchronizacja przez iCloud / CloudKit</h3>
+      <p>Jeżeli Użytkownik korzysta z synchronizacji opartej o <strong>iCloud / CloudKit</strong>, jego dane mogą być synchronizowane między jego urządzeniami zalogowanymi do tego samego konta Apple. W tym modelu:</p>
+      <ul>
+        <li>dane są przechowywane w <strong>prywatnej przestrzeni iCloud Użytkownika</strong>, zarządzanej przez Apple,</li>
+        <li>dostęp do tych danych ma co do zasady wyłącznie Użytkownik w ramach swojego konta Apple,</li>
+        <li><strong>Administrator nie ma technicznego dostępu do treści przechowywanych w prywatnej bazie CloudKit Użytkownika</strong> i nie odczytuje ich,</li>
+        <li>zasady przetwarzania danych w ramach iCloud określa Apple jako dostawca tej usługi.</li>
+      </ul>
+      <p>W przyszłości Aplikacja może umożliwić <strong>współdzielenie inwestycji</strong> pomiędzy różnymi Użytkownikami (np. między kontami Apple ID). W takim przypadku dane wybranej inwestycji będą udostępniane wskazanym przez Użytkownika osobom w zakresie niezbędnym do współpracy, z wykorzystaniem mechanizmów udostępniania oferowanych przez Apple. Funkcja taka będzie uruchamiana świadomie przez Użytkownika.</p>
+
+      <h3>7.3. Dane przesyłane do backendu i usług zewnętrznych</h3>
+      <p>Niektóre dane są przesyłane poza urządzenie do usług zewnętrznych lub do naszego zaplecza (backendu), w zakresie niezbędnym do działania danej funkcji, w szczególności:</p>
+      <ul>
+        <li>token powiadomień push oraz dane techniczne niezbędne do dostarczania powiadomień,</li>
+        <li>dane analityczne i diagnostyczne (wyłącznie po wyrażeniu zgody – patrz sekcja 9),</li>
+        <li>treści redakcyjne, poradnikowe i sekcje partnerów pobierane z systemu zarządzania treścią (CMS),</li>
+        <li>dane przekazywane w ramach kontaktu z Administratorem.</li>
+      </ul>
+      <p>Backend oraz usługi pomocnicze Aplikacji mogą być hostowane u dostawców infrastruktury chmurowej (patrz sekcja 10). Zakres danych przesyłanych do backendu ograniczamy do tego, co jest konieczne do realizacji danej funkcji.</p>
+    </section>
+
+    <!-- ── 8 ── -->
+    <section class="doc-section" id="sec-8">
+      <h2><span class="secnum">08</span>Konto użytkownika i uwierzytelnianie</h2>
+      <p>8.1. Logowanie i uwierzytelnianie w Aplikacji może odbywać się z wykorzystaniem usługi <strong>Sign in with Apple</strong>. W ramach tej usługi Apple przekazuje nam stały identyfikator Użytkownika, a opcjonalnie – jeżeli Użytkownik wyrazi na to zgodę – adres e-mail (Użytkownik może skorzystać z funkcji „Ukryj mój e-mail", co powoduje przekazanie adresu przekierowującego zamiast rzeczywistego adresu).</p>
+      <p>8.2. W zakresie funkcji Sign in with Apple <strong>Apple Inc. działa jako niezależny administrator</strong> danych przetwarzanych w ramach własnych usług oraz jako dostawca mechanizmu uwierzytelniania. Zasady przetwarzania danych przez Apple określa polityka prywatności Apple.</p>
+      <p>8.3. Dane uwierzytelniające (np. tokeny sesji) przechowywane są w bezpieczny sposób, m.in. z wykorzystaniem mechanizmu Keychain systemu iOS.</p>
+      <p>8.4. Korzystanie z części funkcji Aplikacji może być możliwe bez zakładania konta, w trybie lokalnym. Zakres dostępnych funkcji bez logowania może być ograniczony (np. brak synchronizacji lub współdzielenia).</p>
+    </section>
+
+    <!-- ── 9 ── -->
+    <section class="doc-section" id="sec-9">
+      <h2><span class="secnum">09</span>Analityka, telemetria, diagnostyka i zgody</h2>
+      <p>9.1. Aplikacja może korzystać z narzędzi analitycznych i diagnostycznych dostarczanych przez <strong>Google (Firebase)</strong>, w szczególności:</p>
+      <ul>
+        <li><strong>Firebase Analytics</strong> (oraz, w odpowiednim zakresie, pomiar zdarzeń zgodny z GA4) – analityka korzystania z Aplikacji,</li>
+        <li><strong>Firebase Crashlytics</strong> – raportowanie i diagnostyka awarii,</li>
+        <li><strong>Firebase Cloud Messaging (FCM)</strong> – dostarczanie powiadomień push.</li>
+      </ul>
+      <p>9.2. <strong>Analityka i telemetria działają wyłącznie po wyrażeniu zgody</strong> przez Użytkownika. W Aplikacji dostępny jest ekran zgód, na którym Użytkownik może wyrazić lub odmówić zgody na poszczególne kategorie przetwarzania (np. analityka, raportowanie awarii, personalizacja). Ustawienia zgód można w każdej chwili zmienić w ustawieniach Aplikacji.</p>
+      <p>9.3. Do czasu wyrażenia zgody nie zbieramy danych analitycznych ani – w zakresie objętym zgodą – danych diagnostycznych w sposób umożliwiający ich powiązanie z konkretnym Użytkownikiem ponad to, co jest niezbędne do działania Aplikacji.</p>
+      <p>9.4. Dane analityczne mają charakter zagregowany i statystyczny oraz służą poprawie jakości i użyteczności Aplikacji. Nie wykorzystujemy ich do automatycznego podejmowania decyzji wywołujących skutki prawne wobec Użytkownika (patrz sekcja 13).</p>
+      <p>9.5. W zakresie usług Firebase <strong>Google Ireland Limited / Google LLC działa co do zasady jako podmiot przetwarzający</strong> na nasze polecenie, na podstawie zawartej umowy powierzenia oraz warunków przetwarzania danych Firebase/Google. Szczegółowe zasady przetwarzania danych przez Google opisuje polityka prywatności Google.</p>
+    </section>
+
+    <!-- ── 10 ── -->
+    <section class="doc-section" id="sec-10">
+      <h2><span class="secnum">10</span>Odbiorcy danych i kategorie odbiorców</h2>
+      <p>W zależności od wykorzystywanych funkcji dane mogą być udostępniane następującym kategoriom odbiorców:</p>
+
+      <h3>10.1. Dostawcy usług Apple</h3>
+      <p><strong>Apple Inc. / Apple Distribution International Ltd.</strong> – w zakresie usług Sign in with Apple, iCloud/CloudKit, dystrybucji Aplikacji przez App Store oraz powiadomień systemowych. W odniesieniu do własnych usług Apple działa jako niezależny administrator oraz, w odpowiednim zakresie, jako dostawca usług przetwarzający dane na potrzeby ich świadczenia.</p>
+
+      <h3>10.2. Dostawcy usług Google / Firebase</h3>
+      <p><strong>Google Ireland Limited / Google LLC</strong> – w zakresie Firebase Analytics, Crashlytics oraz Firebase Cloud Messaging, działający co do zasady jako podmiot przetwarzający na nasze polecenie.</p>
+
+      <h3>10.3. Dostawcy infrastruktury i hostingu</h3>
+      <p>Dostawcy infrastruktury chmurowej oraz hostingu backendu i usług pomocniczych Aplikacji. W zakresie niezbędnym do świadczenia usług możemy korzystać z dostawców takich jak platformy hostingowe i chmurowe (np. usługi typu Vercel, dostawcy chmury obliczeniowej oraz infrastruktura Firebase/Google Cloud). Dostawcy ci działają jako podmioty przetwarzające na podstawie zawartych umów powierzenia.</p>
+
+      <h3>10.4. Dostawca systemu zarządzania treścią (CMS)</h3>
+      <p><strong>Sanity</strong> – dostawca systemu zarządzania treścią wykorzystywanego do publikowania treści redakcyjnych, poradnikowych oraz sekcji partnerów i rekomendacji. Treści dostarczane Użytkownikom mają co do zasady charakter redakcyjny; w zakresie, w jakim w ramach CMS przetwarzane są dane osobowe, dostawca działa jako podmiot przetwarzający.</p>
+
+      <h3>10.5. Partnerzy i sekcje sponsorowane</h3>
+      <p>Partnerzy prezentowani w sekcjach sponsorowanych oraz w ramach rekomendacji (w tym rekomendacji finansowych i rekomendacji wykonawców). Treści te są co do zasady prezentowane w sposób nieprofilowany indywidualnie. Jeżeli Użytkownik samodzielnie zdecyduje się przejść do oferty partnera lub skontaktować się z nim, dalsze przetwarzanie jego danych przez partnera odbywa się na zasadach określonych przez tego partnera jako odrębnego administratora.</p>
+
+      <h3>10.6. Pozostali odbiorcy</h3>
+      <ul>
+        <li>podmioty świadczące na naszą rzecz usługi wspierające (np. obsługa poczty e-mail, narzędzia komunikacji z Użytkownikami),</li>
+        <li>organy publiczne i uprawnione podmioty – wyłącznie w zakresie wymaganym przepisami prawa.</li>
+      </ul>
+      <p>Z każdym podmiotem przetwarzającym dane w naszym imieniu zawieramy umowę powierzenia przetwarzania danych osobowych spełniającą wymogi art. 28 RODO.</p>
+    </section>
+
+    <!-- ── 11 ── -->
+    <section class="doc-section" id="sec-11">
+      <h2><span class="secnum">11</span>Przekazywanie danych poza Europejski Obszar Gospodarczy (EOG)</h2>
+      <p>11.1. Niektórzy z naszych dostawców (w szczególności Apple oraz Google) mają siedzibę lub przetwarzają dane poza EOG, w tym w Stanach Zjednoczonych. Oznacza to, że dane mogą być przekazywane poza EOG.</p>
+      <p>11.2. Przekazywanie danych poza EOG odbywa się wyłącznie przy zastosowaniu odpowiednich zabezpieczeń wymaganych przez RODO, w szczególności:</p>
+      <ul>
+        <li>na podstawie <strong>decyzji Komisji Europejskiej stwierdzającej odpowiedni stopień ochrony</strong> (np. w odniesieniu do podmiotów uczestniczących w programie <strong>EU-U.S. Data Privacy Framework</strong>), lub</li>
+        <li>na podstawie <strong>standardowych klauzul umownych</strong> (Standard Contractual Clauses) zatwierdzonych przez Komisję Europejską, uzupełnionych w razie potrzeby o dodatkowe środki ochrony.</li>
+      </ul>
+      <p>11.3. Użytkownik ma prawo uzyskać informację o stosowanych zabezpieczeniach oraz, w odpowiednim zakresie, kopię tych zabezpieczeń, kontaktując się z Administratorem.</p>
+    </section>
+
+    <!-- ── 12 ── -->
+    <section class="doc-section" id="sec-12">
+      <h2><span class="secnum">12</span>Okres przechowywania danych</h2>
+      <p>12.1. <strong>Dane lokalne i synchronizowane przez iCloud</strong> – przechowywane są tak długo, jak długo Użytkownik korzysta z Aplikacji i nie usunie danych samodzielnie. Usunięcie Aplikacji lub usunięcie danych w jej ustawieniach powoduje usunięcie danych lokalnych; dane w iCloud pozostają pod kontrolą Użytkownika i mogą zostać przez niego usunięte za pośrednictwem ustawień konta Apple.</p>
+      <p>12.2. <strong>Dane konta i uwierzytelniania</strong> – przechowywane przez okres korzystania z konta; po usunięciu konta są usuwane lub anonimizowane, z wyjątkiem danych, które musimy zachować na podstawie przepisów prawa lub w celu ustalenia, dochodzenia bądź obrony roszczeń.</p>
+      <p>12.3. <strong>Dane analityczne i diagnostyczne</strong> – przechowywane przez okres określony w ustawieniach wykorzystywanych narzędzi (np. Firebase) oraz nie dłużej niż jest to niezbędne do celów analitycznych; do czasu wycofania zgody, jeżeli stanowi ona podstawę przetwarzania.</p>
+      <p>12.4. <strong>Dane programu poleceń</strong> – przechowywane przez okres niezbędny do rozliczenia i obsługi programu poleceń.</p>
+      <p>12.5. <strong>Korespondencja i zgłoszenia</strong> – przechowywane przez okres niezbędny do obsługi zapytania oraz, w razie potrzeby, do celów dowodowych przez okres przedawnienia ewentualnych roszczeń.</p>
+      <p>12.6. Po upływie okresów przechowywania dane są usuwane lub poddawane anonimizacji.</p>
+    </section>
+
+    <!-- ── 13 ── -->
+    <section class="doc-section" id="sec-13">
+      <h2><span class="secnum">13</span>Profilowanie i automatyczne podejmowanie decyzji</h2>
+      <p>13.1. Nie podejmujemy wobec Użytkowników decyzji opierających się <strong>wyłącznie</strong> na zautomatyzowanym przetwarzaniu, w tym profilowaniu, które wywoływałyby skutki prawne lub w podobny sposób istotnie wpływały na Użytkownika.</p>
+      <p>13.2. Dane analityczne wykorzystywane są do celów statystycznych oraz poprawy działania Aplikacji. Treści partnerów i rekomendacje prezentowane są co do zasady w sposób kontekstowy, bez indywidualnego profilowania, chyba że Użytkownik wyrazi na to odrębną zgodę.</p>
+    </section>
+
+    <!-- ── 14 ── -->
+    <section class="doc-section" id="sec-14">
+      <h2><span class="secnum">14</span>Pliki cookies i technologie podobne</h2>
+      <p>14.1. Sama Aplikacja mobilna nie wykorzystuje plików cookies w rozumieniu przeglądarkowym; korzysta natomiast z lokalnych mechanizmów przechowywania danych opisanych w sekcji 7 oraz – w zakresie objętym zgodą – z analitycznych identyfikatorów technicznych.</p>
+      <p>14.2. Strony internetowe powiązane z Aplikacją (np. strona informacyjna, landing page, formularze kontaktowe, panele administracyjne lub CMS) mogą wykorzystywać pliki cookies oraz technologie podobne, w tym cookies niezbędne do działania serwisu oraz – po wyrażeniu zgody – cookies analityczne. Szczegółowe informacje na temat cookies wykorzystywanych w serwisach internetowych są udostępniane w ramach tych serwisów.</p>
+      <p>14.3. Otwierając linki zewnętrzne w Aplikacji (np. w komponencie <code style="font-family:var(--font-mono); font-size:14px; padding:1px 6px; background:var(--doc-paper-2); border-radius:4px;">SFSafariViewController</code>), Użytkownik przechodzi do stron osób trzecich, które mogą stosować własne pliki cookies i własne polityki prywatności. Nie odpowiadamy za przetwarzanie danych przez te podmioty.</p>
+    </section>
+
+    <!-- ── 15 ── -->
+    <section class="doc-section" id="sec-15">
+      <h2><span class="secnum">15</span>Integracje z funkcjami systemowymi iOS</h2>
+      <p>Aplikacja może korzystać z funkcji systemowych iOS wyłącznie po udzieleniu przez Użytkownika stosownych uprawnień systemowych. Uprawnienia te można w każdej chwili zmienić w ustawieniach systemu iOS. Dotyczy to w szczególności:</p>
+      <ul>
+        <li><strong>Zdjęcia (PhotosPicker / dostęp do biblioteki zdjęć)</strong> – w celu dodawania zdjęć do inwestycji i albumów; możliwy jest wybór pojedynczych zdjęć bez udostępniania całej biblioteki;</li>
+        <li><strong>Kontakty</strong> – w celu dodawania danych wykonawców lub kontaktów, jeżeli Użytkownik zdecyduje się je zaimportować;</li>
+        <li><strong>Share Sheet / Share Extension</strong> – w celu udostępniania treści do Aplikacji oraz z Aplikacji;</li>
+        <li><strong>Powiadomienia</strong> – w celu dostarczania powiadomień push, po wyrażeniu zgody systemowej;</li>
+        <li><strong>Kalendarz iOS</strong> – jeżeli dana funkcja jest dostępna, Aplikacja może zapisywać lokalnie identyfikatory wydarzeń utworzonych przez Użytkownika, aby powiązać je z zadaniami lub etapami inwestycji; odbywa się to po udzieleniu odpowiedniego uprawnienia systemowego;</li>
+        <li><strong>Przeglądanie linków zewnętrznych (SFSafariViewController)</strong> – w celu otwierania stron internetowych wskazanych w Aplikacji.</li>
+      </ul>
+      <p>Dane uzyskiwane za pośrednictwem funkcji systemowych są wykorzystywane wyłącznie w celu realizacji funkcji, dla której Użytkownik udzielił uprawnienia.</p>
+    </section>
+
+    <!-- ── 16 ── -->
+    <section class="doc-section" id="sec-16">
+      <h2><span class="secnum">16</span>Bezpieczeństwo danych</h2>
+      <p>Stosujemy adekwatne środki techniczne i organizacyjne mające na celu ochronę danych osobowych przed nieuprawnionym dostępem, utratą, zniszczeniem lub nieuprawnioną modyfikacją, w tym w szczególności:</p>
+      <p>16.1. <strong>Szyfrowanie transmisji</strong> – komunikacja Aplikacji z usługami zewnętrznymi i backendem odbywa się z wykorzystaniem szyfrowanych połączeń (HTTPS/TLS).</p>
+      <p>16.2. <strong>Bezpieczne przechowywanie danych wrażliwych</strong> – wrażliwe dane techniczne (np. tokeny uwierzytelniające) przechowywane są w mechanizmie Keychain systemu iOS.</p>
+      <p>16.3. <strong>Ograniczenie dostępu</strong> – dostęp do danych przetwarzanych po stronie backendu oraz do narzędzi administracyjnych jest ograniczony do osób upoważnionych, zgodnie z zasadą wiedzy koniecznej.</p>
+      <p>16.4. <strong>Korzystanie ze sprawdzonych dostawców</strong> – współpracujemy z renomowanymi dostawcami infrastruktury chmurowej i usług (Apple, Google/Firebase oraz dostawcy hostingu), którzy stosują własne, uznane na rynku środki bezpieczeństwa.</p>
+      <p>16.5. <strong>Logowanie zdarzeń i monitorowanie</strong> – w zakresie niezbędnym do zapewnienia bezpieczeństwa prowadzimy logi zdarzeń oraz monitorujemy działanie usług w celu wykrywania nieprawidłowości i nadużyć.</p>
+      <p>16.6. <strong>Kopie zapasowe</strong> – w odpowiednim zakresie stosujemy mechanizmy tworzenia kopii zapasowych zmierzające do zapewnienia ciągłości i integralności danych przetwarzanych po stronie infrastruktury usługowej.</p>
+      <p>Jednocześnie informujemy, że żadna metoda transmisji ani przechowywania danych nie jest w pełni odporna na ryzyka. Dokładamy starań, aby stosowane zabezpieczenia odpowiadały aktualnemu stanowi wiedzy technicznej oraz charakterowi przetwarzanych danych.</p>
+    </section>
+
+    <!-- ── 17 ── -->
+    <section class="doc-section" id="sec-17">
+      <h2><span class="secnum">17</span>Prawa Użytkownika</h2>
+      <p>W związku z przetwarzaniem danych osobowych Użytkownikowi przysługują następujące prawa:</p>
+
+      <ul class="rights-grid">
+        <li>
+          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <div class="rbody"><p class="rttl">Prawo dostępu do danych</p><span class="rart">art. 15 RODO</span></div>
+        </li>
+        <li>
+          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg></span>
+          <div class="rbody"><p class="rttl">Prawo do sprostowania</p><span class="rart">art. 16 RODO</span></div>
+        </li>
+        <li>
+          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14H7L5 6"/><path d="M10 11v6M14 11v6"/></svg></span>
+          <div class="rbody"><p class="rttl">Prawo do usunięcia danych</p><span class="rart">art. 17 RODO — „prawo do bycia zapomnianym"</span></div>
+        </li>
+        <li>
+          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="4" height="18"/><rect x="14" y="3" width="4" height="18"/></svg></span>
+          <div class="rbody"><p class="rttl">Prawo do ograniczenia przetwarzania</p><span class="rart">art. 18 RODO</span></div>
+        </li>
+        <li>
+          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></span>
+          <div class="rbody"><p class="rttl">Prawo do przenoszenia danych</p><span class="rart">art. 20 RODO</span></div>
+        </li>
+        <li>
+          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></span>
+          <div class="rbody"><p class="rttl">Prawo do sprzeciwu</p><span class="rart">art. 21 RODO</span></div>
+        </li>
+        <li>
+          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><polyline points="3 4 3 12 11 12"/></svg></span>
+          <div class="rbody"><p class="rttl">Prawo do wycofania zgody</p><span class="rart">w dowolnym momencie</span></div>
+        </li>
+        <li>
+          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></span>
+          <div class="rbody"><p class="rttl">Prawo do skargi do PUODO</p><span class="rart">ul. Stawki 2, 00-193 Warszawa</span></div>
+        </li>
+      </ul>
+
+      <p>17.1. <strong>Prawo dostępu</strong> do danych oraz uzyskania ich kopii (art. 15 RODO).</p>
+      <p>17.2. <strong>Prawo do sprostowania</strong> danych nieprawidłowych lub niekompletnych (art. 16 RODO).</p>
+      <p>17.3. <strong>Prawo do usunięcia</strong> danych („prawo do bycia zapomnianym"), w przypadkach przewidzianych przepisami (art. 17 RODO).</p>
+      <p>17.4. <strong>Prawo do ograniczenia przetwarzania</strong> (art. 18 RODO).</p>
+      <p>17.5. <strong>Prawo do przenoszenia danych</strong> – w zakresie danych przetwarzanych na podstawie zgody lub umowy w sposób zautomatyzowany (art. 20 RODO).</p>
+      <p>17.6. <strong>Prawo do sprzeciwu</strong> wobec przetwarzania opartego na uzasadnionym interesie Administratora (art. 21 RODO).</p>
+      <p>17.7. <strong>Prawo do wycofania zgody</strong> w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem (dotyczy danych przetwarzanych na podstawie zgody, np. analityki).</p>
+      <p>17.8. <strong>Prawo do wniesienia skargi</strong> do organu nadzorczego – w Polsce jest nim <strong>Prezes Urzędu Ochrony Danych Osobowych (PUODO)</strong>, ul. Stawki 2, 00-193 Warszawa.</p>
+
+      <p>W celu realizacji powyższych praw należy skontaktować się z Administratorem pod adresem <a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a>. Możemy poprosić o informacje pozwalające zidentyfikować osobę składającą żądanie. Na żądanie odpowiadamy bez zbędnej zwłoki, nie później niż w terminie miesiąca od jego otrzymania, z możliwością przedłużenia w przypadkach przewidzianych przepisami.</p>
+      <p>Część praw Użytkownik może zrealizować samodzielnie – np. usuwając dane lokalne w Aplikacji, zarządzając danymi w iCloud poprzez ustawienia konta Apple, zmieniając ustawienia zgód analitycznych lub cofając uprawnienia systemowe w ustawieniach iOS.</p>
+    </section>
+
+    <!-- ── 18 ── -->
+    <section class="doc-section" id="sec-18">
+      <h2><span class="secnum">18</span>Dane dzieci</h2>
+      <p>18.1. Aplikacja <strong>nie jest kierowana do dzieci</strong> i nie jest przeznaczona dla osób, które nie ukończyły 16 lat.</p>
+      <p>18.2. Świadomie nie zbieramy danych osobowych dzieci. Jeżeli poweźmiemy informację, że dane osoby poniżej wymaganego wieku zostały nam przekazane bez odpowiedniej podstawy, podejmiemy działania zmierzające do ich usunięcia.</p>
+      <p>18.3. Jeżeli rodzic lub opiekun prawny stwierdzi, że dziecko przekazało nam dane osobowe, prosimy o kontakt pod adresem <a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a>.</p>
+    </section>
+
+    <!-- ── 19 ── -->
+    <section class="doc-section" id="sec-19">
+      <h2><span class="secnum">19</span>Zmiany Polityki Prywatności</h2>
+      <p>19.1. Niniejsza Polityka może być okresowo aktualizowana, w szczególności w związku z rozwojem Aplikacji, zmianami w wykorzystywanych technologiach lub zmianami przepisów prawa.</p>
+      <p>19.2. O istotnych zmianach będziemy informować w sposób adekwatny do ich charakteru, np. poprzez komunikat w Aplikacji lub aktualizację dokumentu wraz ze zmianą daty.</p>
+      <p>19.3. Aktualna wersja Polityki jest każdorazowo dostępna w Aplikacji oraz na stronie internetowej powiązanej z Aplikacją. Data ostatniej aktualizacji wskazana jest na początku dokumentu.</p>
+    </section>
+
+    <!-- ── 20 ── -->
+    <section class="doc-section" id="sec-20">
+      <h2><span class="secnum">20</span>Kontakt w sprawach prywatności</h2>
+      <p>We wszystkich sprawach dotyczących ochrony danych osobowych i niniejszej Polityki prosimy o kontakt:</p>
+
+      <div class="contact-card">
+        <div class="contact-card__body">
+          <p class="contact-card__role">Kontakt w sprawach prywatności</p>
+          <h3>AppSoft Studio Jakub Matwiejczyk</h3>
+          <p>ul. Aroniowa 19, 05-555 Kotorydz · NIP: 7133074219</p>
+          <p class="contact-card__addr">E-mail: <a href="mailto:homdu.app@gmail.com" style="color:var(--doc-accent); border:none;"><strong>homdu.app@gmail.com</strong></a></p>
+        </div>
+        <a class="contact-card__cta" href="mailto:homdu.app@gmail.com?subject=homdu%20%E2%80%94%20zapytanie%20w%20sprawie%20prywatno%C5%9Bci">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Napisz do nas
+        </a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ─────────── FOOTER ─────────── -->
+<footer class="doc-foot">
+  <div class="doc-foot__inner">
+    <div>
+      <h4>Administrator</h4>
+      <p><strong>AppSoft Studio Jakub Matwiejczyk</strong></p>
+      <p>ul. Aroniowa 19, 05-555 Kotorydz</p>
+      <p>NIP: 7133074219</p>
+      <p style="margin-top:8px;"><a href="mailto:homdu.app@gmail.com" style="color:var(--doc-accent);">homdu.app@gmail.com</a></p>
+    </div>
+    <div>
+      <h4>Dokumenty</h4>
+      <ul>
+        <li><a href="polityka-prywatnosci.html">Polityka Prywatności</a></li>
+        <li><a href="warunki-korzystania.html">Warunki korzystania</a></li>
+        <li><a href="mailto:homdu.app@gmail.com">Kontakt</a></li>
+        <li><a href="polityka-prywatnosci.html#sec-14">Polityka cookies</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>homdu</h4>
+      <ul>
+        <li><a href="index.html">Strona główna</a></li>
+        <li><a href="index.html#funkcje">Funkcje</a></li>
+        <li><a href="index.html#dla-partnerow">Dla partnerów</a></li>
+        <li><a href="index.html#pobierz">Pobierz aplikację</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="doc-foot__btm">
+    <div>© <span id="year">2026</span> homdu · AppSoft Studio Jakub Matwiejczyk. Wszystkie prawa zastrzeżone.</div>
+    <div>homdu.pl / polityka-prywatnosci</div>
+  </div>
+</footer>
+
+<button class="to-top" id="to-top" aria-label="Wróć na górę">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+(function () {
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // theme persistence (matches main site)
+  const savedTheme = localStorage.getItem('homdu-theme');
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  document.getElementById('theme-toggle').addEventListener('click', function () {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('homdu-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('homdu-theme', 'dark');
+    }
+  });
+
+  // header shadow on scroll
+  const header = document.getElementById('doc-header');
+  const toTop = document.getElementById('to-top');
+  function onScroll() {
+    if (window.scrollY > 8) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+    if (window.scrollY > 600) toTop.classList.add('is-visible');
+    else toTop.classList.remove('is-visible');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // smooth-scroll on TOC anchor clicks (close mobile accordion afterwards)
+  document.querySelectorAll('a[href^="#sec-"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      const id = a.getAttribute('href');
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 88, behavior: 'smooth' });
+      history.replaceState(null, '', id);
+      const md = document.querySelector('.toc-mobile');
+      if (md && md.open) md.open = false;
+    });
+  });
+
+  // scroll-spy
+  const sections = Array.from(document.querySelectorAll('.doc-section[id]'));
+  const tocLinks = Array.from(document.querySelectorAll('.toc__list a'));
+  function setActive(id) {
+    tocLinks.forEach(function (a) {
+      if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    let visible = new Map();
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) visible.set(en.target.id, en.intersectionRatio);
+        else visible.delete(en.target.id);
+      });
+      // pick the one closest to top of viewport that is intersecting
+      let activeId = null;
+      let bestTop = Infinity;
+      sections.forEach(function (s) {
+        if (visible.has(s.id)) {
+          const t = s.getBoundingClientRect().top;
+          // prefer sections whose top is above middle of viewport but still in view
+          const score = t < 120 ? Math.abs(t - 120) : t;
+          if (score < bestTop) { bestTop = score; activeId = s.id; }
+        }
+      });
+      if (!activeId) {
+        // fallback: nearest above viewport top
+        let nearest = null; let nearestDist = Infinity;
+        sections.forEach(function (s) {
+          const t = s.getBoundingClientRect().top;
+          if (t <= 120 && Math.abs(t) < nearestDist) { nearestDist = Math.abs(t); nearest = s.id; }
+        });
+        activeId = nearest || sections[0].id;
+      }
+      setActive(activeId);
+    }, { rootMargin: '-80px 0px -55% 0px', threshold: [0, 0.1, 0.5, 1] });
+    sections.forEach(function (s) { io.observe(s); });
+  } else {
+    setActive(sections[0].id);
+  }
+})();
+</script>
+
+</body>
+</html>

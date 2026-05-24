@@ -3,6 +3,7 @@ import { useTheme } from "./useTheme.js";
 
 import { Nav } from "./components/Nav.jsx";
 import { Hero } from "./components/Hero.jsx";
+import { VideoSection } from "./components/VideoSection.jsx";
 import { ChaosSection } from "./components/ChaosSection.jsx";
 import { HowItWorks } from "./components/HowItWorks.jsx";
 import { FeatureGrid } from "./components/FeatureGrid.jsx";
@@ -30,6 +31,7 @@ export default function App() {
       <Nav theme={theme} setTheme={setTheme} />
       <main>
         <Hero />
+        <VideoSection />
         <ChaosSection />
         <HowItWorks />
         <FeatureGrid />

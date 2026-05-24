@@ -18,7 +18,12 @@ export function Footer() {
     },
     {
       title: "Prawne",
-      links: ["Regulamin", "Polityka prywatności", "RODO", "Cookies"],
+      links: [
+        { label: "Warunki korzystania", href: "warunki-korzystania.html" },
+        { label: "Polityka prywatności", href: "polityka-prywatnosci.html" },
+        { label: "RODO", href: "polityka-prywatnosci.html#sec-17" },
+        { label: "Cookies", href: "polityka-prywatnosci.html#sec-14" },
+      ],
     },
   ];
 
@@ -44,9 +49,21 @@ export function Footer() {
             <div key={c.title}>
               <h4>{c.title}</h4>
               <ul>
-                {c.links.map((l) => (
-                  <li key={l}><a href="#" onClick={(e) => e.preventDefault()}>{l}</a></li>
-                ))}
+                {c.links.map((l) => {
+                  const lbl = typeof l === "string" ? l : l.label;
+                  const href = typeof l === "string" ? "#" : l.href;
+                  const isInternal = href.startsWith("#");
+                  return (
+                    <li key={lbl}>
+                      <a
+                        href={href}
+                        onClick={isInternal ? (e) => e.preventDefault() : undefined}
+                      >
+                        {lbl}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

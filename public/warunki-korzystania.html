@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Warunki korzystania — homdu</title>
+<meta name="description" content="Warunki korzystania z aplikacji homdu — regulamin świadczenia usług drogą elektroniczną, prawa i obowiązki Użytkownika i Usługodawcy." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+
+<style>
+  /* ── page-local tokens (identyczne jak na stronie Polityki) ─── */
+  :root {
+    --doc-accent:        #C97A1B;
+    --doc-accent-soft:   #F5E7D2;
+    --doc-accent-tint:   rgba(201, 122, 27, 0.08);
+    --doc-ink:           #15171C;
+    --doc-ink-2:         #4A4E58;
+    --doc-paper:         #FBFAF7;
+    --doc-paper-2:       #F4F1EA;
+    --doc-rule:          rgba(20, 22, 28, 0.08);
+    --doc-rule-2:        rgba(20, 22, 28, 0.14);
+    --doc-card:          #FFFFFF;
+    --font-doc:          "Google Sans", "DM Sans", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --read-col:          70ch;
+
+    --c-info:            #2A6FDB;
+    --c-info-tint:       rgba(42, 111, 219, 0.08);
+    --c-info-soft:       rgba(42, 111, 219, 0.22);
+    --c-warn:            #B45C0D;
+    --c-warn-tint:       rgba(180, 92, 13, 0.08);
+    --c-warn-soft:       rgba(180, 92, 13, 0.24);
+  }
+  [data-theme="dark"] {
+    --doc-accent-soft:   rgba(201, 122, 27, 0.18);
+    --doc-accent-tint:   rgba(201, 122, 27, 0.12);
+    --doc-rule:          rgba(255, 255, 255, 0.08);
+    --doc-rule-2:        rgba(255, 255, 255, 0.14);
+    --doc-card:          #15171C;
+    --c-info-tint:       rgba(42, 111, 219, 0.16);
+    --c-warn-tint:       rgba(201, 122, 27, 0.16);
+  }
+
+  body { font-family: var(--font-doc); background: var(--bg); color: var(--ink); }
+
+  /* ── header (sticky, glass) ──────────────────────────── */
+  .doc-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(251, 250, 247, 0.82);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+  }
+  [data-theme="dark"] .doc-header { background: rgba(11, 12, 16, 0.82); }
+  .doc-header.is-scrolled {
+    border-bottom-color: var(--doc-rule);
+    box-shadow: 0 1px 0 var(--doc-rule), 0 8px 24px -16px rgba(20,22,28,0.18);
+  }
+  .doc-header__inner {
+    max-width: 1240px; margin: 0 auto;
+    padding: 14px 32px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .doc-brand {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 600; font-size: 19px; letter-spacing: -0.02em; color: var(--ink);
+  }
+  .doc-brand .logo-mark { width: 28px; height: 28px; }
+  .doc-header__right { display: flex; align-items: center; gap: 8px; }
+
+  .doc-back {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 16px;
+    font-size: 14px; font-weight: 500; color: var(--ink);
+    border: 1px solid var(--doc-rule-2); border-radius: 999px;
+    transition: background 0.2s, transform 0.18s;
+  }
+  .doc-back:hover { background: var(--glass-bg-2); transform: translateY(-1px); }
+  .doc-back svg { width: 14px; height: 14px; }
+  @media (max-width: 640px) {
+    .doc-header__inner { padding: 12px 20px; }
+    .doc-back span { display: none; }
+    .doc-back { padding: 9px 11px; }
+  }
+
+  /* ── legal nav ───────────────────────────────────────── */
+  .legal-nav {
+    display: inline-flex; align-items: center;
+    padding: 4px; gap: 2px;
+    background: var(--doc-paper-2);
+    border: 1px solid var(--doc-rule);
+    border-radius: 999px;
+  }
+  [data-theme="dark"] .legal-nav { background: var(--bg-soft); }
+  .legal-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 14px;
+    font-size: 13px; font-weight: 500;
+    color: var(--ink-2);
+    border-radius: 999px;
+    transition: color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .legal-nav a:hover { color: var(--ink); }
+  .legal-nav a[aria-current="page"] {
+    color: var(--ink);
+    background: var(--doc-card);
+    box-shadow: var(--shadow-sm);
+  }
+  .legal-nav a svg { width: 13px; height: 13px; opacity: 0.7; }
+  @media (max-width: 860px) { .legal-nav a .lbl-long { display: none; } }
+  @media (max-width: 560px) { .legal-nav { display: none; } }
+
+  /* ── hero ─────────────────────────────────────────────── */
+  .doc-hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--doc-rule);
+    position: relative; overflow: hidden;
+  }
+  .doc-hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(60% 60% at 90% 0%, rgba(201, 122, 27, 0.08) 0%, transparent 60%),
+      radial-gradient(50% 50% at 0% 100%, rgba(46, 111, 212, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .doc-hero__inner { max-width: 1240px; margin: 0 auto; padding: 0 32px; position: relative; }
+  .doc-hero .crumbs {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--ink-2);
+    letter-spacing: 0.01em; margin-bottom: 22px;
+  }
+  .doc-hero .crumbs a { color: var(--ink-2); transition: color 0.15s; }
+  .doc-hero .crumbs a:hover { color: var(--doc-accent); }
+  .doc-hero .crumbs .sep { color: var(--ink-3); }
+  .doc-hero .crumbs .here { color: var(--ink); font-weight: 500; }
+  .doc-hero h1 {
+    font-family: var(--font-doc);
+    font-size: clamp(36px, 5.4vw, 60px);
+    line-height: 1.04; letter-spacing: -0.025em;
+    font-weight: 700;
+    margin: 0 0 22px; max-width: 20ch; text-wrap: balance;
+  }
+  .doc-hero .badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; }
+  .doc-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 14px; font-size: 13px; font-weight: 500; color: var(--ink);
+    background: var(--doc-card);
+    border: 1px solid var(--doc-rule);
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+  }
+  .doc-badge .dot {
+    width: 7px; height: 7px; border-radius: 999px;
+    background: var(--doc-accent);
+    box-shadow: 0 0 0 3px var(--doc-accent-tint);
+  }
+  .doc-badge .lbl { color: var(--ink-2); }
+  .doc-badge .val { color: var(--ink); font-variant-numeric: tabular-nums; }
+  .doc-hero .lead {
+    font-size: clamp(17px, 1.4vw, 20px);
+    line-height: 1.6; color: var(--ink-2);
+    max-width: 64ch; margin: 0;
+  }
+  .doc-hero .lead a {
+    color: var(--doc-accent);
+    border-bottom: 1px solid var(--doc-accent-soft);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .doc-hero .lead a:hover { color: var(--ink); border-color: var(--doc-accent); }
+
+  /* ── layout ───────────────────────────────────────────── */
+  .doc-wrap {
+    max-width: 1240px; margin: 0 auto;
+    padding: 56px 32px 96px;
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 64px; align-items: start;
+  }
+  @media (max-width: 980px) {
+    .doc-wrap { grid-template-columns: 1fr; gap: 24px; padding: 32px 20px 80px; }
+  }
+
+  /* ── TOC ──────────────────────────────────────────────── */
+  .toc { position: sticky; top: 88px; max-height: calc(100vh - 110px); overflow-y: auto; padding-right: 8px; }
+  .toc__title {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-3); margin: 0 0 14px; padding-left: 14px;
+  }
+  .toc__list { list-style: none; padding: 0; margin: 0; border-left: 1px solid var(--doc-rule); }
+  .toc__list li { margin: 0; }
+  .toc__list a {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 7px 14px;
+    margin-left: -1px;
+    border-left: 2px solid transparent;
+    font-size: 13.5px; line-height: 1.4; color: var(--ink-2);
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .toc__list a:hover { color: var(--ink); }
+  .toc__list a .num {
+    flex-shrink: 0; font-variant-numeric: tabular-nums;
+    color: var(--ink-3); font-weight: 500; min-width: 18px;
+  }
+  .toc__list a[aria-current="true"] {
+    color: var(--doc-accent);
+    border-left-color: var(--doc-accent);
+    background: var(--doc-accent-tint);
+    font-weight: 500;
+  }
+  .toc__list a[aria-current="true"] .num { color: var(--doc-accent); }
+
+  .toc-mobile {
+    display: none;
+    border: 1px solid var(--doc-rule); border-radius: var(--r-md);
+    background: var(--doc-card); margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .toc-mobile summary {
+    cursor: pointer; padding: 14px 18px;
+    font-size: 14px; font-weight: 600; color: var(--ink);
+    list-style: none;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .toc-mobile summary::-webkit-details-marker { display: none; }
+  .toc-mobile summary::after {
+    content: ""; width: 10px; height: 10px;
+    border-right: 2px solid var(--ink-2);
+    border-bottom: 2px solid var(--ink-2);
+    transform: rotate(45deg); transition: transform 0.2s;
+  }
+  .toc-mobile[open] summary::after { transform: rotate(-135deg); }
+  .toc-mobile .toc__list { border-left: none; padding: 0 8px 14px; }
+  .toc-mobile .toc__list a { padding: 8px 12px; border-left: none; border-radius: 8px; margin: 0; }
+  .toc-mobile .toc__list a[aria-current="true"] { background: var(--doc-accent-tint); }
+  @media (max-width: 980px) {
+    .toc { display: none; }
+    .toc-mobile { display: block; }
+  }
+
+  /* ── typography ──────────────────────────────────────── */
+  .doc-content { min-width: 0; }
+  .doc-section { scroll-margin-top: 96px; padding-top: 8px; }
+  .doc-section + .doc-section { margin-top: 56px; padding-top: 56px; border-top: 1px solid var(--doc-rule); }
+  .doc-section h2 {
+    font-family: var(--font-doc);
+    font-size: clamp(24px, 2.6vw, 32px);
+    line-height: 1.15; letter-spacing: -0.02em; font-weight: 700;
+    margin: 0 0 24px;
+    display: flex; align-items: baseline; gap: 16px; text-wrap: balance;
+  }
+  .doc-section h2 .secnum {
+    flex-shrink: 0;
+    font-size: 14px; font-weight: 600;
+    color: var(--doc-accent);
+    background: var(--doc-accent-tint);
+    border: 1px solid var(--doc-accent-soft);
+    padding: 4px 10px; border-radius: 6px;
+    letter-spacing: 0.02em; font-variant-numeric: tabular-nums;
+    transform: translateY(-3px);
+  }
+  .doc-section h3 {
+    font-family: var(--font-doc);
+    font-size: 18px; font-weight: 600; letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin: 32px 0 14px; color: var(--ink);
+  }
+  .doc-content p, .doc-content li {
+    font-size: 16px; line-height: 1.7;
+    color: var(--doc-ink-2); text-wrap: pretty;
+  }
+  [data-theme="dark"] .doc-content p,
+  [data-theme="dark"] .doc-content li { color: var(--ink-2); }
+  .doc-content p { max-width: var(--read-col); margin: 0 0 14px; }
+  .doc-content strong { color: var(--ink); font-weight: 600; }
+  .doc-content a {
+    color: var(--doc-accent);
+    border-bottom: 1px solid var(--doc-accent-soft);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .doc-content a:hover { color: var(--ink); border-color: var(--doc-accent); }
+  .doc-content ul, .doc-content ol {
+    max-width: var(--read-col); padding-left: 20px; margin: 0 0 18px;
+  }
+  .doc-content li { margin: 6px 0; }
+  .doc-content ul li::marker { color: var(--doc-accent); }
+  .doc-content ol li::marker { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+  /* ── 3 — provider card (identyczna jak admin-card) ───── */
+  .provider-card {
+    display: grid; grid-template-columns: 56px 1fr; gap: 20px;
+    padding: 24px;
+    border: 1px solid var(--doc-rule); border-radius: var(--r-md);
+    background: var(--doc-card); box-shadow: var(--shadow-sm);
+    max-width: var(--read-col); margin: 8px 0 18px;
+    position: relative; overflow: hidden;
+  }
+  .provider-card::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--doc-accent);
+  }
+  .provider-card__icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: var(--doc-accent-tint); color: var(--doc-accent);
+    display: grid; place-items: center;
+  }
+  .provider-card__icon svg { width: 26px; height: 26px; }
+  .provider-card__body { min-width: 0; }
+  .provider-card__role {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--doc-accent); margin: 0 0 6px;
+  }
+  .provider-card__name {
+    font-size: 18px; font-weight: 700; color: var(--ink);
+    margin: 0 0 10px; line-height: 1.3;
+  }
+  .provider-card__lines {
+    display: grid; grid-template-columns: auto 1fr;
+    column-gap: 14px; row-gap: 4px;
+    font-size: 14.5px; line-height: 1.55;
+  }
+  .provider-card__lines dt { color: var(--ink-3); font-weight: 500; }
+  .provider-card__lines dd { margin: 0; color: var(--ink); }
+  .provider-card__lines dd a { color: var(--doc-accent); border: none; }
+  .provider-card__lines dd a:hover { text-decoration: underline; }
+
+  /* ── 2 — glossary ────────────────────────────────────── */
+  .glossary {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 6px 0 18px;
+    max-width: var(--read-col);
+    border-top: 1px solid var(--doc-rule);
+  }
+  .glossary li {
+    display: grid;
+    grid-template-columns: minmax(180px, 28%) 1fr;
+    gap: 24px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--doc-rule);
+    margin: 0;
+  }
+  .glossary li::marker { content: none; }
+  .glossary dt, .glossary .term {
+    color: var(--ink); font-weight: 600;
+    font-size: 15px;
+    padding-top: 1px;
+  }
+  .glossary dd, .glossary .def {
+    margin: 0;
+    color: var(--doc-ink-2);
+    font-size: 15px; line-height: 1.6;
+  }
+  [data-theme="dark"] .glossary dd, [data-theme="dark"] .glossary .def { color: var(--ink-2); }
+  @media (max-width: 640px) {
+    .glossary li { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  /* ── callouts (info / warn) ──────────────────────────── */
+  .callout {
+    display: grid; grid-template-columns: 40px 1fr; gap: 14px;
+    padding: 18px 20px;
+    margin: 14px 0 18px;
+    max-width: var(--read-col);
+    border-radius: var(--r-md);
+    border: 1px solid var(--doc-rule);
+    background: var(--doc-card);
+    box-shadow: var(--shadow-sm);
+    position: relative; overflow: hidden;
+  }
+  .callout::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  }
+  .callout--info::before { background: var(--c-info); }
+  .callout--info { background: linear-gradient(to right, var(--c-info-tint), var(--doc-card) 35%); }
+  .callout--info .callout__icon { background: var(--c-info-tint); color: var(--c-info); border: 1px solid var(--c-info-soft); }
+  .callout--warn::before { background: var(--c-warn); }
+  .callout--warn { background: linear-gradient(to right, var(--c-warn-tint), var(--doc-card) 35%); }
+  .callout--warn .callout__icon { background: var(--c-warn-tint); color: var(--c-warn); border: 1px solid var(--c-warn-soft); }
+  [data-theme="dark"] .callout--info { background: var(--doc-card); }
+  [data-theme="dark"] .callout--warn { background: var(--doc-card); }
+  .callout__icon {
+    width: 32px; height: 32px; border-radius: 999px;
+    display: grid; place-items: center;
+    align-self: start;
+  }
+  .callout__icon svg { width: 16px; height: 16px; }
+  .callout__body { min-width: 0; }
+  .callout__title {
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    margin: 0 0 4px; color: var(--ink);
+  }
+  .callout--info .callout__title { color: var(--c-info); }
+  .callout--warn .callout__title { color: var(--c-warn); }
+  .callout__body p {
+    margin: 4px 0 0 !important;
+    max-width: none !important;
+    font-size: 15px !important; line-height: 1.6 !important;
+  }
+  [data-theme="dark"] .callout--info .callout__title { color: #6FA3F0; }
+  [data-theme="dark"] .callout--warn .callout__title { color: #E8B26F; }
+
+  /* ── bullet list with icons (zakazy/obowiązki) ───────── */
+  .rule-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 6px 0 18px;
+    max-width: var(--read-col);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .rule-list li {
+    display: grid; grid-template-columns: 22px 1fr; gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid var(--doc-rule);
+    border-radius: 12px;
+    background: var(--doc-card);
+    align-items: flex-start;
+    margin: 0 !important;
+  }
+  .rule-list li::marker { content: none; }
+  .rule-list li .ico {
+    width: 22px; height: 22px; border-radius: 6px;
+    display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .rule-list li .ico svg { width: 12px; height: 12px; }
+  .rule-list--block li .ico { background: rgba(201, 65, 65, 0.12); color: #B53A3A; }
+  [data-theme="dark"] .rule-list--block li .ico { background: rgba(229, 102, 102, 0.16); color: #E58282; }
+  .rule-list--allow li .ico { background: rgba(43, 164, 118, 0.14); color: #146E47; }
+  [data-theme="dark"] .rule-list--allow li .ico { background: rgba(67, 192, 142, 0.18); color: #6FCFA3; }
+  .rule-list li .txt { font-size: 15px; line-height: 1.55; color: var(--doc-ink-2); padding-top: 1px; }
+  [data-theme="dark"] .rule-list li .txt { color: var(--ink-2); }
+
+  /* ── 21 — App Store block ─────────────────────────────── */
+  .appstore-block {
+    margin: 8px 0 18px;
+    padding: 24px;
+    border-radius: var(--r-md);
+    border: 1px solid var(--doc-rule);
+    background:
+      radial-gradient(160% 100% at 100% 0%, rgba(20, 22, 28, 0.04) 0%, transparent 50%),
+      var(--doc-card);
+    box-shadow: var(--shadow-sm);
+    max-width: var(--read-col);
+  }
+  [data-theme="dark"] .appstore-block {
+    background:
+      radial-gradient(160% 100% at 100% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+      var(--doc-card);
+  }
+  .appstore-block__hd {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--doc-rule);
+  }
+  .appstore-block__ico {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: var(--ink); color: var(--bg);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .appstore-block__ico svg { width: 24px; height: 24px; }
+  .appstore-block__lbl { margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+  .appstore-block__ttl { margin: 2px 0 0; font-size: 16px; font-weight: 700; color: var(--ink); }
+  .appstore-block__body p { margin: 0 0 10px !important; max-width: none !important; }
+  .appstore-block__body p:last-child { margin-bottom: 0 !important; }
+
+  /* ── 19 — contact / reklamacje ───────────────────────── */
+  .complaint-card {
+    margin: 14px 0 0;
+    padding: 32px;
+    border-radius: var(--r-lg);
+    background: linear-gradient(135deg, #fff 0%, var(--doc-paper-2) 100%);
+    border: 1px solid var(--doc-rule);
+    box-shadow: var(--shadow-md);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px; align-items: center;
+    max-width: var(--read-col);
+    position: relative; overflow: hidden;
+  }
+  [data-theme="dark"] .complaint-card {
+    background: linear-gradient(135deg, var(--bg-elev) 0%, var(--bg-soft) 100%);
+  }
+  .complaint-card::before {
+    content: ""; position: absolute;
+    right: -40px; top: -40px;
+    width: 200px; height: 200px;
+    border-radius: 999px;
+    background: radial-gradient(closest-side, var(--doc-accent-tint), transparent 70%);
+    pointer-events: none;
+  }
+  @media (max-width: 640px) { .complaint-card { grid-template-columns: 1fr; padding: 24px; } }
+  .complaint-card__body { position: relative; z-index: 1; }
+  .complaint-card__role {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--doc-accent); margin: 0 0 8px;
+  }
+  .complaint-card h3 {
+    font-family: var(--font-doc);
+    font-size: 22px; font-weight: 700;
+    margin: 0 0 6px !important;
+    color: var(--ink); letter-spacing: -0.01em;
+  }
+  .complaint-card p { font-size: 14.5px; line-height: 1.6; color: var(--doc-ink-2); margin: 0 0 4px; max-width: none !important; }
+  [data-theme="dark"] .complaint-card p { color: var(--ink-2); }
+  .complaint-card__addr { margin-top: 6px !important; font-size: 14px !important; }
+  .complaint-card__cta {
+    position: relative; z-index: 1;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px;
+    background: var(--ink); color: var(--bg);
+    border-radius: 999px;
+    font-size: 15px; font-weight: 500;
+    border: none;
+    transition: transform 0.18s, box-shadow 0.2s;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.18) inset, 0 8px 24px -8px rgba(20,22,28,0.4);
+    white-space: nowrap;
+  }
+  .complaint-card__cta:hover { transform: translateY(-1px); }
+  .complaint-card__cta svg { width: 16px; height: 16px; }
+  .complaint-card .meta {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--ink-3);
+    margin-top: 10px;
+  }
+  .complaint-card .meta svg { width: 12px; height: 12px; }
+
+  /* ── footer (identyczne) ─────────────────────────────── */
+  .to-top {
+    position: fixed; bottom: 24px; right: 24px;
+    width: 44px; height: 44px; border-radius: 999px;
+    background: var(--ink); color: var(--bg);
+    border: none;
+    display: grid; place-items: center; cursor: pointer;
+    box-shadow: 0 8px 24px -8px rgba(20,22,28,0.4);
+    opacity: 0; transform: translateY(12px); pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 60;
+  }
+  .to-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .to-top:hover { transform: translateY(-2px); }
+  .to-top svg { width: 16px; height: 16px; }
+
+  .doc-foot {
+    border-top: 1px solid var(--doc-rule);
+    background: var(--doc-paper-2);
+    padding: 56px 0 40px;
+  }
+  [data-theme="dark"] .doc-foot { background: var(--bg-soft); }
+  .doc-foot__inner {
+    max-width: 1240px; margin: 0 auto;
+    padding: 0 32px;
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px;
+  }
+  @media (max-width: 720px) { .doc-foot__inner { grid-template-columns: 1fr; gap: 28px; padding: 0 20px; } }
+  .doc-foot h4 {
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-3); margin: 0 0 12px;
+  }
+  .doc-foot p { font-size: 14px; line-height: 1.6; color: var(--ink-2); margin: 0; }
+  .doc-foot p strong { color: var(--ink); font-weight: 600; }
+  .doc-foot ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .doc-foot ul a {
+    font-size: 14px; color: var(--ink-2); transition: color 0.15s;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .doc-foot ul a:hover { color: var(--doc-accent); }
+  .doc-foot__btm {
+    max-width: 1240px; margin: 40px auto 0;
+    padding: 24px 32px 0;
+    border-top: 1px solid var(--doc-rule);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    font-size: 13px; color: var(--ink-3);
+  }
+  @media (max-width: 720px) { .doc-foot__btm { padding: 24px 20px 0; } }
+
+  /* ── final signature block (po sekcji 22) ────────────── */
+  .signature {
+    margin-top: 28px;
+    padding: 18px 22px;
+    border-radius: var(--r-md);
+    background: var(--doc-paper-2);
+    border: 1px solid var(--doc-rule);
+    max-width: var(--read-col);
+    font-size: 14.5px; line-height: 1.6;
+    color: var(--doc-ink-2);
+  }
+  [data-theme="dark"] .signature { background: var(--bg-soft); color: var(--ink-2); }
+  .signature strong { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<!-- ─────────── HEADER ─────────── -->
+<header class="doc-header" id="doc-header">
+  <div class="doc-header__inner">
+    <a class="doc-brand" href="index.html" aria-label="homdu — strona główna">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+      </span>
+      homdu
+    </a>
+
+    <nav class="legal-nav" aria-label="Dokumenty prawne">
+      <a href="polityka-prywatnosci.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg>
+        <span>Polityka<span class="lbl-long"> Prywatności</span></span>
+      </a>
+      <a href="warunki-korzystania.html" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+        <span>Warunki<span class="lbl-long"> korzystania</span></span>
+      </a>
+    </nav>
+
+    <div class="doc-header__right">
+      <a class="doc-back" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        <span>Powrót do strony</span>
+      </a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Przełącz tryb">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ─────────── HERO ─────────── -->
+<section class="doc-hero">
+  <div class="doc-hero__inner">
+    <nav class="crumbs" aria-label="Ścieżka">
+      <a href="index.html">homdu.pl</a>
+      <span class="sep">/</span>
+      <span class="here">Warunki korzystania</span>
+    </nav>
+    <h1>Warunki korzystania z aplikacji homdu.</h1>
+    <div class="badges">
+      <span class="doc-badge"><span class="dot"></span><span class="lbl">Data wejścia w życie:</span> <span class="val">24 maja 2026</span></span>
+      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Ostatnia aktualizacja:</span> <span class="val">24 maja 2026</span></span>
+    </div>
+    <p class="lead">
+      Niniejsze Warunki korzystania z aplikacji homdu (dalej <strong>„Warunki"</strong> lub <strong>„Regulamin"</strong>) określają zasady korzystania z aplikacji mobilnej homdu oraz powiązanych z nią usług. Prosimy o uważne zapoznanie się z Warunkami przed rozpoczęciem korzystania z Aplikacji. Korzystanie z Aplikacji oznacza akceptację niniejszych Warunków.
+    </p>
+    <p class="lead" style="margin-top:14px;">
+      Zasady przetwarzania danych osobowych opisuje odrębny dokument – <a href="polityka-prywatnosci.html"><strong>Polityka Prywatności aplikacji homdu</strong></a>, która stanowi integralne uzupełnienie niniejszych Warunków.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────── BODY ─────────── -->
+<div class="doc-wrap">
+
+  <!-- desktop TOC -->
+  <aside class="toc" aria-label="Spis treści">
+    <p class="toc__title">Spis treści</p>
+    <ul class="toc__list" id="toc-list">
+      <li><a href="#sec-1"><span class="num">1.</span><span>Postanowienia ogólne</span></a></li>
+      <li><a href="#sec-2"><span class="num">2.</span><span>Definicje</span></a></li>
+      <li><a href="#sec-3"><span class="num">3.</span><span>Dane Usługodawcy</span></a></li>
+      <li><a href="#sec-4"><span class="num">4.</span><span>Zakres i charakter Usługi</span></a></li>
+      <li><a href="#sec-5"><span class="num">5.</span><span>Wymagania techniczne</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>Konto Użytkownika i tryb lokalny</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Zasady korzystania z funkcjonalności</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Zasady dodawania Treści</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>Odpowiedzialność za Treści</span></a></li>
+      <li><a href="#sec-10"><span class="num">10.</span><span>Treści Partnerów i rekomendacje</span></a></li>
+      <li><a href="#sec-11"><span class="num">11.</span><span>Program poleceń</span></a></li>
+      <li><a href="#sec-12"><span class="num">12.</span><span>Współdzielenie Inwestycji</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Dozwolone i niedozwolone korzystanie</span></a></li>
+      <li><a href="#sec-14"><span class="num">14.</span><span>Prawa własności intelektualnej</span></a></li>
+      <li><a href="#sec-15"><span class="num">15.</span><span>Odpowiedzialność i jej ograniczenia</span></a></li>
+      <li><a href="#sec-16"><span class="num">16.</span><span>Dostępność, aktualizacje, przerwy</span></a></li>
+      <li><a href="#sec-17"><span class="num">17.</span><span>Bezpieczeństwo Konta</span></a></li>
+      <li><a href="#sec-18"><span class="num">18.</span><span>Usunięcie Konta i zakończenie</span></a></li>
+      <li><a href="#sec-19"><span class="num">19.</span><span>Reklamacje, kontakt i wsparcie</span></a></li>
+      <li><a href="#sec-20"><span class="num">20.</span><span>Zmiany Regulaminu</span></a></li>
+      <li><a href="#sec-21"><span class="num">21.</span><span>Postanowienia App Store (Apple)</span></a></li>
+      <li><a href="#sec-22"><span class="num">22.</span><span>Prawo właściwe i końcowe</span></a></li>
+    </ul>
+  </aside>
+
+  <details class="toc-mobile">
+    <summary>Spis treści — 22 sekcje</summary>
+    <ul class="toc__list">
+      <li><a href="#sec-1"><span class="num">1.</span><span>Postanowienia ogólne</span></a></li>
+      <li><a href="#sec-2"><span class="num">2.</span><span>Definicje</span></a></li>
+      <li><a href="#sec-3"><span class="num">3.</span><span>Dane Usługodawcy</span></a></li>
+      <li><a href="#sec-4"><span class="num">4.</span><span>Zakres Usługi</span></a></li>
+      <li><a href="#sec-5"><span class="num">5.</span><span>Wymagania techniczne</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>Konto i tryb lokalny</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Funkcjonalności</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Dodawanie Treści</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>Odpowiedzialność za Treści</span></a></li>
+      <li><a href="#sec-10"><span class="num">10.</span><span>Treści Partnerów</span></a></li>
+      <li><a href="#sec-11"><span class="num">11.</span><span>Program poleceń</span></a></li>
+      <li><a href="#sec-12"><span class="num">12.</span><span>Współdzielenie</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Zasady korzystania</span></a></li>
+      <li><a href="#sec-14"><span class="num">14.</span><span>Prawa własności intelektualnej</span></a></li>
+      <li><a href="#sec-15"><span class="num">15.</span><span>Odpowiedzialność</span></a></li>
+      <li><a href="#sec-16"><span class="num">16.</span><span>Dostępność i przerwy</span></a></li>
+      <li><a href="#sec-17"><span class="num">17.</span><span>Bezpieczeństwo Konta</span></a></li>
+      <li><a href="#sec-18"><span class="num">18.</span><span>Zakończenie korzystania</span></a></li>
+      <li><a href="#sec-19"><span class="num">19.</span><span>Reklamacje i wsparcie</span></a></li>
+      <li><a href="#sec-20"><span class="num">20.</span><span>Zmiany Regulaminu</span></a></li>
+      <li><a href="#sec-21"><span class="num">21.</span><span>App Store (Apple)</span></a></li>
+      <li><a href="#sec-22"><span class="num">22.</span><span>Prawo właściwe</span></a></li>
+    </ul>
+  </details>
+
+  <main class="doc-content">
+
+    <!-- ── 1 ── -->
+    <section class="doc-section" id="sec-1">
+      <h2><span class="secnum">01</span>Postanowienia ogólne</h2>
+      <p>1.1. Regulamin określa zasady i warunki korzystania z aplikacji mobilnej homdu, zakres usług świadczonych drogą elektroniczną, prawa i obowiązki Użytkownika oraz Usługodawcy, a także zasady odpowiedzialności.</p>
+      <p>1.2. Usługodawca świadczy usługi drogą elektroniczną zgodnie z niniejszym Regulaminem oraz przepisami prawa polskiego, w tym ustawą z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną oraz ustawą z dnia 30 maja 2014 r. o prawach konsumenta.</p>
+      <p>1.3. Regulamin jest udostępniany nieodpłatnie w sposób umożliwiający jego pozyskanie, odtworzenie, utrwalenie i wydrukowanie. Jest dostępny w Aplikacji oraz na stronie internetowej powiązanej z Aplikacją.</p>
+      <p>1.4. Akceptując Regulamin, Użytkownik oświadcza, że zapoznał się z jego treścią, rozumie ją i akceptuje, a także że jest osobą uprawnioną do zawarcia umowy o korzystanie z Aplikacji.</p>
+    </section>
+
+    <!-- ── 2 ── -->
+    <section class="doc-section" id="sec-2">
+      <h2><span class="secnum">02</span>Definicje</h2>
+      <p>Użyte w Regulaminie pojęcia oznaczają:</p>
+
+      <dl class="glossary">
+        <div style="display:contents;"><dt>Usługodawca / homdu</dt><dd>AppSoft Studio Jakub Matwiejczyk, z danymi wskazanymi w sekcji 3.</dd></div>
+        <div style="display:contents;"><dt>Aplikacja</dt><dd>aplikacja mobilna homdu przeznaczona na urządzenia z systemem iOS (oraz, w przyszłości, na inne platformy mobilne), wraz z powiązanymi usługami świadczonymi drogą elektroniczną.</dd></div>
+        <div style="display:contents;"><dt>Usługa</dt><dd>funkcjonalności udostępniane Użytkownikowi w ramach Aplikacji, opisane w sekcji 4.</dd></div>
+        <div style="display:contents;"><dt>Użytkownik</dt><dd>osoba fizyczna korzystająca z Aplikacji; w przypadku konsumenta – osoba fizyczna dokonująca czynności niezwiązanej bezpośrednio z jej działalnością gospodarczą lub zawodową.</dd></div>
+        <div style="display:contents;"><dt>Konsument</dt><dd>Użytkownik będący konsumentem w rozumieniu art. 22(1) Kodeksu cywilnego.</dd></div>
+        <div style="display:contents;"><dt>Konto</dt><dd>wyodrębniony zbiór ustawień i danych powiązany z identyfikatorem Użytkownika, umożliwiający korzystanie z wybranych funkcji Aplikacji.</dd></div>
+        <div style="display:contents;"><dt>Inwestycja</dt><dd>prowadzony przez Użytkownika w Aplikacji projekt budowlany lub remontowy, wraz z przypisanymi etapami, zadaniami, kosztami, dokumentami, zdjęciami, albumami, linkami, kontaktami i notatkami.</dd></div>
+        <div style="display:contents;"><dt>Treści Użytkownika</dt><dd>wszelkie dane i materiały wprowadzane lub przesyłane przez Użytkownika do Aplikacji, w tym opisy inwestycji, notatki, zdjęcia, albumy, dokumenty, pliki, linki oraz dane kontaktowe.</dd></div>
+        <div style="display:contents;"><dt>Treści homdu</dt><dd>treści udostępniane przez Usługodawcę, w tym treści poradnikowe i redakcyjne oraz elementy Aplikacji.</dd></div>
+        <div style="display:contents;"><dt>Treści Partnerów</dt><dd>treści, rekomendacje, materiały i sekcje sponsorowane pochodzące od partnerów biznesowych Usługodawcy.</dd></div>
+        <div style="display:contents;"><dt>Program poleceń</dt><dd>funkcjonalność umożliwiająca polecanie Aplikacji innym osobom, na zasadach opisanych w sekcji 11.</dd></div>
+        <div style="display:contents;"><dt>Polityka Prywatności</dt><dd>dokument opisujący zasady przetwarzania danych osobowych w związku z korzystaniem z Aplikacji — zob. <a href="polityka-prywatnosci.html">polityka-prywatnosci</a>.</dd></div>
+        <div style="display:contents;"><dt>App Store</dt><dd>sklep z aplikacjami prowadzony przez Apple, za pośrednictwem którego dystrybuowana jest Aplikacja.</dd></div>
+      </dl>
+    </section>
+
+    <!-- ── 3 ── -->
+    <section class="doc-section" id="sec-3">
+      <h2><span class="secnum">03</span>Dane Usługodawcy</h2>
+      <p>Usługodawcą i podmiotem świadczącym usługi w ramach Aplikacji jest:</p>
+
+      <div class="provider-card">
+        <div class="provider-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/><path d="M10 10h.01M14 10h.01M10 13h.01M14 13h.01"/></svg>
+        </div>
+        <div class="provider-card__body">
+          <p class="provider-card__role">Usługodawca</p>
+          <p class="provider-card__name">AppSoft Studio Jakub Matwiejczyk</p>
+          <dl class="provider-card__lines">
+            <dt>Adres</dt><dd>ul. Aroniowa 19, 05-555 Kotorydz</dd>
+            <dt>NIP</dt><dd>7133074219</dd>
+            <dt>E-mail</dt><dd><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></dd>
+          </dl>
+        </div>
+      </div>
+
+      <p>Adres e-mail wskazany powyżej służy do kontaktu we wszystkich sprawach związanych z korzystaniem z Aplikacji, w tym do składania reklamacji.</p>
+    </section>
+
+    <!-- ── 4 ── -->
+    <section class="doc-section" id="sec-4">
+      <h2><span class="secnum">04</span>Zakres i charakter Usługi</h2>
+      <p>4.1. Aplikacja homdu jest narzędziem wspierającym <strong>organizację, planowanie i prowadzenie inwestycji budowlanych oraz remontowych</strong>. Aplikacja ma charakter pomocniczy i organizacyjny.</p>
+
+      <p>4.2. W ramach Aplikacji Użytkownik może w szczególności:</p>
+      <ul>
+        <li>tworzyć i prowadzić Inwestycje oraz dodawać i zarządzać ich etapami,</li>
+        <li>zarządzać zadaniami, kosztami i terminami,</li>
+        <li>dodawać i przechowywać dokumenty, pliki, linki i notatki,</li>
+        <li>dodawać zdjęcia i tworzyć albumy oraz opatrywać je opisami,</li>
+        <li>gromadzić dane kontaktowe wykonawców i innych osób,</li>
+        <li>korzystać z treści poradnikowych oraz z Treści Partnerów i sekcji sponsorowanych,</li>
+        <li>importować treści do Aplikacji za pośrednictwem mechanizmu udostępniania systemu (share extension),</li>
+        <li>korzystać z Programu poleceń,</li>
+        <li>otrzymywać powiadomienia push (po wyrażeniu zgody),</li>
+        <li>korzystać z synchronizacji danych pomiędzy urządzeniami Użytkownika.</li>
+      </ul>
+
+      <div class="callout callout--warn" role="note">
+        <div class="callout__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="callout__body">
+          <p class="callout__title">4.3 — Charakter Aplikacji</p>
+          <p>Aplikacja <strong>nie świadczy usług budowlanych, projektowych, wykonawczych, doradczych, prawnych, finansowych ani inwestycyjnych</strong>. Aplikacja nie pośredniczy w zawieraniu umów z wykonawcami ani nie gwarantuje rezultatu Inwestycji. Treści poradnikowe oraz Treści Partnerów mają charakter informacyjny i nie stanowią indywidualnej porady.</p>
+        </div>
+      </div>
+
+      <p>4.4. Korzystanie z Aplikacji w jej podstawowym zakresie jest <strong>nieodpłatne</strong>, chyba że wyraźnie wskazano inaczej. Usługodawca może w przyszłości wprowadzić funkcje płatne; korzystanie z nich będzie wymagało odrębnej, wyraźnej akceptacji warunków oraz ceny przez Użytkownika.</p>
+      <p>4.5. Część funkcji Aplikacji korzysta z usług firm trzecich, w tym usług Apple (np. logowanie Sign in with Apple, synchronizacja iCloud/CloudKit, powiadomienia) oraz innych dostawców infrastruktury i narzędzi. Korzystanie z tych funkcji może podlegać dodatkowo warunkom tych podmiotów.</p>
+    </section>
+
+    <!-- ── 5 ── -->
+    <section class="doc-section" id="sec-5">
+      <h2><span class="secnum">05</span>Wymagania techniczne</h2>
+      <p>5.1. Do korzystania z Aplikacji niezbędne jest:</p>
+      <ul>
+        <li>urządzenie mobilne z systemem operacyjnym iOS w wersji obsługiwanej przez Aplikację,</li>
+        <li>dostęp do sieci Internet,</li>
+        <li>w zakresie wybranych funkcji – konto Apple ID oraz aktywna usługa iCloud,</li>
+        <li>aktualna wersja Aplikacji pobrana z App Store.</li>
+      </ul>
+      <p>5.2. Niektóre funkcje (np. synchronizacja, powiadomienia, logowanie, treści pobierane zdalnie) wymagają aktywnego połączenia z Internetem oraz dostępności usług firm trzecich. Brak połączenia lub niedostępność tych usług może ograniczać dostępność części funkcji.</p>
+      <p>5.3. Usługodawca nie ponosi kosztów transmisji danych ani opłat operatora telekomunikacyjnego Użytkownika związanych z korzystaniem z Aplikacji.</p>
+      <p>5.4. Z korzystaniem z usług świadczonych drogą elektroniczną wiążą się typowe zagrożenia, w tym ryzyko działania złośliwego oprogramowania oraz nieuprawnionego dostępu do urządzenia. Zaleca się stosowanie aktualnego oprogramowania zabezpieczającego oraz aktualizacji systemu.</p>
+    </section>
+
+    <!-- ── 6 ── -->
+    <section class="doc-section" id="sec-6">
+      <h2><span class="secnum">06</span>Konto Użytkownika i korzystanie bez konta</h2>
+      <p>6.1. Korzystanie z części funkcji Aplikacji jest możliwe <strong>bez zakładania Konta</strong>, w trybie lokalnym, w którym dane są przechowywane na urządzeniu Użytkownika.</p>
+      <p>6.2. Pełny zakres funkcji (w tym synchronizacja danych między urządzeniami oraz, w przyszłości, współdzielenie Inwestycji) może wymagać uwierzytelnienia Użytkownika, w szczególności z wykorzystaniem usługi <strong>Sign in with Apple</strong>.</p>
+      <p>6.3. Zawarcie umowy o korzystanie z Aplikacji następuje z chwilą pobrania i uruchomienia Aplikacji oraz zaakceptowania Regulaminu, a w zakresie funkcji wymagających Konta – z chwilą jego utworzenia.</p>
+      <p>6.4. Użytkownik zobowiązany jest korzystać z Aplikacji zgodnie z Regulaminem, przepisami prawa oraz zasadami współżycia społecznego, a także podawać dane prawdziwe i nienaruszające praw osób trzecich.</p>
+      <p>6.5. Umowa o korzystanie z Aplikacji zawierana jest na czas nieoznaczony. Użytkownik może w każdej chwili zakończyć korzystanie z Aplikacji w sposób opisany w sekcji 18.</p>
+    </section>
+
+    <!-- ── 7 ── -->
+    <section class="doc-section" id="sec-7">
+      <h2><span class="secnum">07</span>Zasady korzystania z funkcjonalności Aplikacji</h2>
+      <p>7.1. <strong>Inwestycje i etapy.</strong> Użytkownik samodzielnie tworzy Inwestycje, dodaje etapy, zadania, koszty i terminy oraz odpowiada za ich poprawność i aktualność. Dane finansowe i terminowe wprowadzane przez Użytkownika mają charakter pomocniczy i nie stanowią wyceny ani harmonogramu wiążącego.</p>
+      <p>7.2. <strong>Dokumenty, zdjęcia, albumy, linki i notatki.</strong> Użytkownik może dodawać i przechowywać materiały związane z Inwestycją. Użytkownik odpowiada za posiadanie praw do tych materiałów oraz za ich treść (sekcja 8 i 9).</p>
+      <p>7.3. <strong>Kontakty i wykonawcy.</strong> Użytkownik może gromadzić dane kontaktowe wykonawców oraz innych osób. Dodając dane osób trzecich, Użytkownik oświadcza, że jest uprawniony do ich przetwarzania w tym celu.</p>
+      <p>7.4. <strong>Share extension.</strong> Aplikacja umożliwia importowanie treści za pośrednictwem systemowego mechanizmu udostępniania. Za treści importowane do Aplikacji odpowiada Użytkownik.</p>
+      <p>7.5. <strong>Treści poradnikowe.</strong> Aplikacja może udostępniać materiały informacyjne i poradnikowe. Mają one charakter ogólny i nie uwzględniają indywidualnej sytuacji Użytkownika.</p>
+      <p>7.6. <strong>Powiadomienia push.</strong> Po wyrażeniu zgody systemowej Aplikacja może wysyłać powiadomienia push (np. dotyczące zadań, etapów lub treści). Użytkownik może w każdej chwili zmienić ustawienia powiadomień w ustawieniach urządzenia lub Aplikacji.</p>
+      <p>7.7. <strong>Synchronizacja danych.</strong> Jeżeli Użytkownik korzysta z synchronizacji opartej o iCloud/CloudKit, dane mogą być synchronizowane pomiędzy jego urządzeniami zalogowanymi do tego samego konta Apple. Zasady przechowywania danych lokalnych i synchronizowanych opisuje <a href="polityka-prywatnosci.html#sec-7">Polityka Prywatności</a>.</p>
+    </section>
+
+    <!-- ── 8 ── -->
+    <section class="doc-section" id="sec-8">
+      <h2><span class="secnum">08</span>Zasady dodawania Treści Użytkownika</h2>
+      <p>8.1. Aplikacja umożliwia Użytkownikowi dodawanie Treści Użytkownika, w tym zdjęć, notatek, dokumentów, plików, linków, danych kontaktowych oraz danych dotyczących wykonawców i Inwestycji.</p>
+      <p>8.2. Dodając Treści Użytkownika, Użytkownik oświadcza i gwarantuje, że:</p>
+      <ul>
+        <li>posiada wszelkie prawa lub zgody niezbędne do ich wprowadzenia i wykorzystania w Aplikacji,</li>
+        <li>treści te nie naruszają przepisów prawa, praw osób trzecich (w tym praw autorskich, dóbr osobistych i prawa do prywatności) ani dobrych obyczajów,</li>
+        <li>treści te nie zawierają danych wprowadzonych bez odpowiedniej podstawy, w szczególności danych osobowych osób trzecich, do których przetwarzania Użytkownik nie jest uprawniony.</li>
+      </ul>
+
+      <div class="callout callout--warn" role="note">
+        <div class="callout__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        </div>
+        <div class="callout__body">
+          <p class="callout__title">8.3 — Treści zakazane</p>
+          <p>Niedopuszczalne jest dodawanie do Aplikacji treści wymienionych poniżej:</p>
+        </div>
+      </div>
+
+      <ul class="rule-list rule-list--block">
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">bezprawnych, w tym naruszających prawa własności intelektualnej lub dobra osobiste,</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">naruszających prywatność innych osób bez odpowiedniej podstawy,</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">o charakterze obraźliwym, dyskryminującym, nawołującym do nienawiści lub przemocy,</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">zawierających złośliwe oprogramowanie lub treści zagrażające bezpieczeństwu,</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">wprowadzających w błąd lub naruszających prawa osób trzecich w inny sposób.</span>
+        </li>
+      </ul>
+
+      <p>8.4. Treści Użytkownika pozostają jego własnością. Usługodawca nie rości sobie do nich praw poza zakresem niezbędnym do świadczenia Usługi (np. przechowywanie, wyświetlanie i synchronizacja na potrzeby Użytkownika), zgodnie z sekcją 14.</p>
+      <p>8.5. W zakresie, w jakim Treści Użytkownika są przechowywane wyłącznie lokalnie na urządzeniu lub w prywatnej przestrzeni iCloud Użytkownika, Usługodawca co do zasady nie ma do nich dostępu i nie dokonuje ich moderacji. Jeżeli jednak Usługodawca poweźmie wiarygodną informację o bezprawnym charakterze treści przekazywanych za pośrednictwem usług Usługodawcy, może podjąć działania przewidziane przepisami prawa.</p>
+    </section>
+
+    <!-- ── 9 ── -->
+    <section class="doc-section" id="sec-9">
+      <h2><span class="secnum">09</span>Odpowiedzialność Użytkownika za Treści Użytkownika</h2>
+      <p>9.1. Użytkownik ponosi wyłączną odpowiedzialność za Treści Użytkownika, w tym za ich legalność, poprawność, kompletność i aktualność oraz za skutki ich wykorzystania.</p>
+      <p>9.2. Użytkownik odpowiada za to, aby dodawane przez niego dane osób trzecich (w tym dane wykonawców i kontaktów) były wprowadzane i wykorzystywane zgodnie z prawem, w tym przepisami o ochronie danych osobowych.</p>
+      <p>9.3. W przypadku zgłoszenia przez osobę trzecią lub uprawniony organ roszczeń związanych z Treściami Użytkownika, Użytkownik zobowiązuje się współdziałać z Usługodawcą w wyjaśnieniu sprawy w zakresie dopuszczalnym przepisami prawa. Niniejsze postanowienie nie ogranicza praw Konsumenta wynikających z bezwzględnie obowiązujących przepisów.</p>
+      <p>9.4. Użytkownik powinien we własnym zakresie dbać o kopie zapasowe szczególnie istotnych dla niego Treści Użytkownika, z uwzględnieniem zasad przechowywania i synchronizacji danych opisanych w <a href="polityka-prywatnosci.html#sec-7">Polityce Prywatności</a>.</p>
+    </section>
+
+    <!-- ── 10 ── -->
+    <section class="doc-section" id="sec-10">
+      <h2><span class="secnum">10</span>Treści Partnerów, materiały sponsorowane i rekomendacje</h2>
+      <p>10.1. Aplikacja może prezentować Treści Partnerów, w tym materiały sponsorowane, sekcje partnerskie oraz rekomendacje (w tym rekomendacje dotyczące wykonawców oraz rekomendacje o charakterze finansowym).</p>
+
+      <div class="callout callout--info" role="note">
+        <div class="callout__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        </div>
+        <div class="callout__body">
+          <p class="callout__title">10.2 — Charakter Treści Partnerów</p>
+          <p>Treści Partnerów oraz rekomendacje mają charakter <strong>informacyjny i marketingowy</strong> i <strong>nie stanowią indywidualnej porady prawnej, finansowej, podatkowej, technicznej ani inwestycyjnej</strong>. Nie stanowią również oferty w rozumieniu przepisów prawa, chyba że wyraźnie wskazano inaczej.</p>
+        </div>
+      </div>
+
+      <p>10.3. Decyzje dotyczące skorzystania z ofert, usług lub produktów partnerów Użytkownik podejmuje <strong>samodzielnie i na własne ryzyko</strong>. Stosunek prawny powstały w wyniku skorzystania z oferty partnera łączy Użytkownika bezpośrednio z tym partnerem.</p>
+      <p>10.4. Aplikacja może zawierać linki oraz odesłania do zewnętrznych stron i serwisów, w tym serwisów partnerów. Strony te podlegają własnym regulaminom i politykom prywatności. Usługodawca nie odpowiada za treść ani działanie stron osób trzecich.</p>
+      <p>10.5. Prezentacja Treści Partnerów nie oznacza rekomendacji w rozumieniu przepisów dotyczących doradztwa zawodowego ani potwierdzenia jakości usług danego partnera, chyba że wyraźnie wskazano inaczej.</p>
+    </section>
+
+    <!-- ── 11 ── -->
+    <section class="doc-section" id="sec-11">
+      <h2><span class="secnum">11</span>Program poleceń</h2>
+      <p>11.1. Aplikacja może udostępniać Program poleceń umożliwiający Użytkownikowi polecanie Aplikacji innym osobom.</p>
+      <p>11.2. Szczegółowe zasady Programu poleceń, w tym ewentualne korzyści oraz warunki ich uzyskania, określane są w ramach Aplikacji w momencie udostępnienia danej edycji Programu poleceń. Usługodawca może w każdym czasie wprowadzić, zmienić, zawiesić lub zakończyć Program poleceń, z poszanowaniem praw nabytych Użytkowników.</p>
+      <p>11.3. Korzystanie z Programu poleceń nie może naruszać Regulaminu ani przepisów prawa, w szczególności zakazane jest stosowanie nieuczciwych praktyk, tworzenie fikcyjnych poleceń lub nadużywanie mechanizmu w celu uzyskania nienależnych korzyści.</p>
+      <p>11.4. W przypadku stwierdzenia nadużyć Usługodawca może wstrzymać lub cofnąć korzyści uzyskane z naruszeniem zasad Programu poleceń.</p>
+    </section>
+
+    <!-- ── 12 ── -->
+    <section class="doc-section" id="sec-12">
+      <h2><span class="secnum">12</span>Współdzielenie Inwestycji (funkcja przyszła)</h2>
+      <p>12.1. Usługodawca może w przyszłości udostępnić funkcję <strong>współdzielenia Inwestycji</strong> pomiędzy różnymi Użytkownikami (np. pomiędzy kontami Apple ID).</p>
+      <p>12.2. W przypadku udostępnienia takiej funkcji jej uruchomienie będzie następowało wyłącznie na skutek świadomego działania Użytkownika, który zdecyduje o udostępnieniu wybranej Inwestycji wskazanym osobom oraz o zakresie tego udostępnienia.</p>
+      <p>12.3. Udostępniając Inwestycję, Użytkownik oświadcza, że jest uprawniony do udostępnienia zawartych w niej treści oraz że udostępnienie nie narusza praw osób trzecich. Użytkownik, który uzyskał dostęp do współdzielonej Inwestycji, zobowiązany jest korzystać z niej zgodnie z Regulaminem i przepisami prawa.</p>
+      <p>12.4. Szczegółowe zasady działania funkcji współdzielenia (w tym zakres uprawnień poszczególnych Użytkowników oraz sposób cofania dostępu) zostaną określone w momencie jej udostępnienia, a w razie potrzeby – w zaktualizowanym Regulaminie i Polityce Prywatności.</p>
+    </section>
+
+    <!-- ── 13 ── -->
+    <section class="doc-section" id="sec-13">
+      <h2><span class="secnum">13</span>Zasady dozwolonego i niedozwolonego korzystania</h2>
+      <p>13.1. Użytkownik zobowiązany jest korzystać z Aplikacji zgodnie z jej przeznaczeniem, Regulaminem oraz przepisami prawa.</p>
+      <p>13.2. Zakazane jest w szczególności:</p>
+
+      <ul class="rule-list rule-list--block">
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">korzystanie z Aplikacji w sposób naruszający prawa Usługodawcy lub osób trzecich,</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">podejmowanie działań zakłócających działanie Aplikacji lub jej infrastruktury, w tym przeciążanie, ingerencja w kod lub obchodzenie zabezpieczeń,</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">uzyskiwanie nieuprawnionego dostępu do Aplikacji, kont innych Użytkowników lub danych,</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">wykorzystywanie Aplikacji do działań niezgodnych z prawem, w tym do rozpowszechniania treści bezprawnych,</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">automatyczne pobieranie lub kopiowanie treści (scraping) bez zgody Usługodawcy,</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">wykorzystywanie Aplikacji do celów komercyjnych w sposób wykraczający poza jej przeznaczenie, bez zgody Usługodawcy.</span>
+        </li>
+      </ul>
+
+      <p>13.3. W przypadku istotnego lub powtarzającego się naruszenia Regulaminu Usługodawca może – z poszanowaniem przepisów o ochronie konsumentów – wezwać Użytkownika do zaprzestania naruszeń, a w razie ich kontynuowania ograniczyć lub zakończyć świadczenie Usługi wobec danego Użytkownika.</p>
+    </section>
+
+    <!-- ── 14 ── -->
+    <section class="doc-section" id="sec-14">
+      <h2><span class="secnum">14</span>Prawa własności intelektualnej</h2>
+      <p>14.1. Aplikacja, jej interfejs, kod, struktura, elementy graficzne, znaki towarowe, nazwa „homdu" oraz Treści homdu stanowią przedmiot praw własności intelektualnej Usługodawcy lub podmiotów, z którymi Usługodawca współpracuje, i podlegają ochronie prawnej.</p>
+      <p>14.2. Z chwilą rozpoczęcia korzystania z Aplikacji Usługodawca udziela Użytkownikowi niewyłącznej, nieprzenoszalnej, odwoływalnej licencji na korzystanie z Aplikacji na urządzeniach Użytkownika, wyłącznie w zakresie zgodnym z jej przeznaczeniem i niniejszym Regulaminem. Licencja nie obejmuje prawa do udzielania sublicencji.</p>
+      <p>14.3. Zakazane jest, w zakresie wykraczającym poza granice dozwolone bezwzględnie obowiązującymi przepisami prawa:</p>
+
+      <ul class="rule-list rule-list--block">
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">kopiowanie, modyfikowanie, rozpowszechnianie lub publiczne udostępnianie Aplikacji lub Treści homdu,</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">odsprzedaż, wynajem, użyczanie lub inne komercyjne udostępnianie Aplikacji osobom trzecim,</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">dekompilacja, deasemblacja lub inne formy odtwarzania kodu źródłowego (reverse engineering),</span>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <span class="txt">usuwanie lub modyfikowanie oznaczeń praw autorskich lub znaków towarowych.</span>
+        </li>
+      </ul>
+
+      <p>14.4. Treści Użytkownika pozostają własnością Użytkownika. Użytkownik udziela Usługodawcy niewyłącznej, nieodpłatnej licencji na korzystanie z Treści Użytkownika wyłącznie w zakresie i przez czas niezbędny do świadczenia Usługi na rzecz Użytkownika (w szczególności przechowywanie, wyświetlanie, przetwarzanie techniczne i synchronizacja). Licencja ta wygasa wraz z usunięciem danych treści lub zakończeniem korzystania z Aplikacji, z zastrzeżeniem technicznych okresów wynikających z kopii zapasowych i działania usług firm trzecich.</p>
+    </section>
+
+    <!-- ── 15 ── -->
+    <section class="doc-section" id="sec-15">
+      <h2><span class="secnum">15</span>Odpowiedzialność i jej ograniczenia</h2>
+      <p>15.1. Usługodawca dokłada starań, aby Aplikacja działała prawidłowo i zgodnie z opisem, oraz ponosi odpowiedzialność na zasadach określonych przepisami prawa, w tym przepisami o ochronie konsumentów dotyczącymi zgodności usługi cyfrowej z umową.</p>
+
+      <div class="callout callout--warn" role="note">
+        <div class="callout__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="callout__body">
+          <p class="callout__title">15.2 — Brak gwarancji rezultatu</p>
+          <p>Aplikacja ma charakter narzędzia wspierającego organizację Inwestycji. Usługodawca <strong>nie gwarantuje osiągnięcia określonego rezultatu Inwestycji</strong> ani poprawności decyzji podejmowanych przez Użytkownika na podstawie danych lub materiałów zgromadzonych w Aplikacji.</p>
+        </div>
+      </div>
+
+      <div class="callout callout--warn" role="note">
+        <div class="callout__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="callout__body">
+          <p class="callout__title">15.3 — Wyłączenia odpowiedzialności</p>
+          <p>W zakresie dopuszczalnym przez prawo Usługodawca nie ponosi odpowiedzialności za:</p>
+        </div>
+      </div>
+
+      <ul>
+        <li>działania, zaniechania, jakość usług ani treści wykonawców, partnerów oraz innych podmiotów trzecich,</li>
+        <li>treści i działanie zewnętrznych stron internetowych oraz serwisów, do których prowadzą linki,</li>
+        <li>decyzje Użytkownika podjęte na podstawie Treści homdu, Treści Partnerów lub danych wprowadzonych przez Użytkownika,</li>
+        <li>skutki wprowadzenia przez Użytkownika nieprawidłowych, niekompletnych lub bezprawnych danych,</li>
+        <li>przerwy lub ograniczenia w dostępności usług firm trzecich (w szczególności Apple, dostawców chmury, sieci Internet), na które Usługodawca nie ma wpływu,</li>
+        <li>utratę danych wynikającą z okoliczności niezależnych od Usługodawcy, w tym z działania urządzenia Użytkownika lub usług firm trzecich.</li>
+      </ul>
+
+      <p>15.4. Postanowienia ograniczające odpowiedzialność nie wyłączają ani nie ograniczają odpowiedzialności Usługodawcy w zakresie, w jakim takie wyłączenie lub ograniczenie jest niedopuszczalne na podstawie bezwzględnie obowiązujących przepisów prawa, w szczególności wobec Konsumentów. W stosunku do Użytkowników niebędących Konsumentami odpowiedzialność Usługodawcy z tytułu utraconych korzyści jest wyłączona w zakresie dopuszczalnym przez prawo.</p>
+    </section>
+
+    <!-- ── 16 ── -->
+    <section class="doc-section" id="sec-16">
+      <h2><span class="secnum">16</span>Dostępność Usługi, aktualizacje i przerwy techniczne</h2>
+      <p>16.1. Usługodawca dąży do zapewnienia możliwie nieprzerwanej dostępności Aplikacji, jednak nie gwarantuje jej nieprzerwanego i wolnego od błędów działania, w szczególności z uwagi na zależność od usług firm trzecich i sieci Internet.</p>
+      <p>16.2. Usługodawca może dokonywać aktualizacji Aplikacji, w tym aktualizacji niezbędnych do zachowania zgodności z umową, bezpieczeństwa lub zgodności z przepisami prawa. Niektóre aktualizacje mogą być konieczne do dalszego prawidłowego korzystania z Aplikacji.</p>
+      <p>16.3. Usługodawca może wprowadzać przerwy techniczne, w szczególności w celu konserwacji, rozwoju lub zapewnienia bezpieczeństwa. W miarę możliwości przerwy planowane będą realizowane w sposób ograniczający niedogodności dla Użytkowników.</p>
+      <p>16.4. Usługodawca może modyfikować, rozwijać lub wycofywać poszczególne funkcje Aplikacji. Istotne zmiany ograniczające zakres Usługi będą komunikowane Użytkownikom w sposób adekwatny do ich charakteru, z poszanowaniem praw Konsumentów.</p>
+    </section>
+
+    <!-- ── 17 ── -->
+    <section class="doc-section" id="sec-17">
+      <h2><span class="secnum">17</span>Bezpieczeństwo Konta i danych dostępowych</h2>
+      <p>17.1. Użytkownik zobowiązany jest do zachowania poufności danych umożliwiających dostęp do Aplikacji oraz do zabezpieczenia urządzenia, na którym korzysta z Aplikacji.</p>
+      <p>17.2. W zakresie, w jakim uwierzytelnienie odbywa się z wykorzystaniem usługi Sign in with Apple oraz konta Apple ID, bezpieczeństwo dostępu zależy również od zabezpieczeń konta Apple Użytkownika. Zaleca się stosowanie zabezpieczeń urządzenia (np. kodu, danych biometrycznych) oraz uwierzytelniania dwuskładnikowego konta Apple.</p>
+      <p>17.3. Użytkownik powinien niezwłocznie poinformować Usługodawcę o stwierdzonym nieuprawnionym dostępie do Konta lub naruszeniu bezpieczeństwa danych, korzystając z adresu wskazanego w sekcji 3.</p>
+      <p>17.4. Usługodawca stosuje adekwatne środki techniczne i organizacyjne służące ochronie danych, opisane szczegółowo w <a href="polityka-prywatnosci.html#sec-16">Polityce Prywatności</a>.</p>
+    </section>
+
+    <!-- ── 18 ── -->
+    <section class="doc-section" id="sec-18">
+      <h2><span class="secnum">18</span>Usunięcie Konta i zakończenie korzystania z Aplikacji</h2>
+      <p>18.1. Użytkownik może w każdej chwili zakończyć korzystanie z Aplikacji, w szczególności poprzez:</p>
+      <ul>
+        <li>usunięcie Aplikacji z urządzenia,</li>
+        <li>usunięcie danych w ustawieniach Aplikacji,</li>
+        <li>usunięcie Konta, jeżeli zostało utworzone.</li>
+      </ul>
+      <p>18.2. Usunięcie Aplikacji lub danych powoduje usunięcie danych lokalnych zgodnie z zasadami opisanymi w <a href="polityka-prywatnosci.html#sec-12">Polityce Prywatności</a>. Dane przechowywane w iCloud pozostają pod kontrolą Użytkownika i mogą zostać przez niego usunięte za pośrednictwem ustawień konta Apple.</p>
+      <p>18.3. Usługodawca może zakończyć świadczenie Usługi wobec Użytkownika z ważnych przyczyn, w szczególności w razie istotnego naruszenia Regulaminu lub przepisów prawa, po uprzednim wezwaniu do zaprzestania naruszeń, chyba że natychmiastowe działanie jest konieczne ze względu na bezpieczeństwo lub przepisy prawa. Postanowienie to nie narusza praw Konsumentów.</p>
+      <p>18.4. <strong>Prawo odstąpienia.</strong> W przypadku gdy korzystanie z Aplikacji następuje nieodpłatnie, Konsument może zaprzestać korzystania w każdym czasie bez ponoszenia kosztów. W razie wprowadzenia funkcji płatnych Konsumentowi przysługiwać będą uprawnienia wynikające z ustawy o prawach konsumenta, w tym – z zastrzeżeniem wyjątków przewidzianych ustawą – prawo odstąpienia od umowy w terminie 14 dni; szczegółowe informacje zostaną wówczas udostępnione przed zawarciem umowy odpłatnej.</p>
+    </section>
+
+    <!-- ── 19 ── -->
+    <section class="doc-section" id="sec-19">
+      <h2><span class="secnum">19</span>Reklamacje, kontakt i wsparcie</h2>
+      <p>19.1. Użytkownik może składać reklamacje dotyczące funkcjonowania Aplikacji oraz świadczonych Usług na adres e-mail: <strong>homdu.app@gmail.com</strong>.</p>
+      <p>19.2. Reklamacja powinna zawierać co najmniej: dane umożliwiające kontakt z Użytkownikiem, opis zastrzeżeń oraz – w miarę możliwości – informacje o urządzeniu i wersji Aplikacji.</p>
+      <p>19.3. Usługodawca rozpatruje reklamację bez zbędnej zwłoki, nie później niż w terminie 14 dni od jej otrzymania, i informuje Użytkownika o sposobie jej rozpatrzenia na podany adres kontaktowy. Jeżeli przepisy prawa przewidują inny termin, stosuje się termin wynikający z przepisów.</p>
+      <p>19.4. <strong>Pozasądowe rozwiązywanie sporów.</strong> Konsument ma możliwość skorzystania z pozasądowych sposobów rozpatrywania reklamacji i dochodzenia roszczeń, w tym z pomocy właściwych instytucji ochrony konsumentów. Informacje o platformie internetowego rozstrzygania sporów (ODR) dostępne są pod adresem prowadzonym przez Komisję Europejską. Skorzystanie z tych metod jest dobrowolne.</p>
+
+      <div class="complaint-card">
+        <div class="complaint-card__body">
+          <p class="complaint-card__role">Reklamacje i wsparcie</p>
+          <h3>Napisz do nas — odpowiadamy w 14 dni</h3>
+          <p>Wszystkie sprawy związane z funkcjonowaniem Aplikacji oraz reklamacje prosimy kierować na adres e-mail Usługodawcy.</p>
+          <p class="complaint-card__addr"><strong>homdu.app@gmail.com</strong> · AppSoft Studio Jakub Matwiejczyk</p>
+          <span class="meta" aria-label="Platforma ODR">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Platforma ODR dostępna na stronach Komisji Europejskiej
+          </span>
+        </div>
+        <a class="complaint-card__cta" href="mailto:homdu.app@gmail.com?subject=homdu%20%E2%80%94%20reklamacja%2Fkontakt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Napisz do nas
+        </a>
+      </div>
+    </section>
+
+    <!-- ── 20 ── -->
+    <section class="doc-section" id="sec-20">
+      <h2><span class="secnum">20</span>Zmiany Regulaminu</h2>
+      <p>20.1. Usługodawca może dokonywać zmian Regulaminu z ważnych przyczyn, w szczególności w przypadku: zmiany przepisów prawa, zmiany zakresu lub sposobu świadczenia Usługi, rozwoju Aplikacji, względów bezpieczeństwa lub zmian organizacyjnych po stronie Usługodawcy.</p>
+      <p>20.2. O zmianie Regulaminu Usługodawca poinformuje w sposób adekwatny do jej charakteru, w szczególności poprzez komunikat w Aplikacji lub aktualizację dokumentu wraz ze wskazaniem daty.</p>
+      <p>20.3. Zmiana Regulaminu nie pozbawia Użytkownika praw nabytych. Jeżeli Użytkownik nie akceptuje zmian, może zakończyć korzystanie z Aplikacji w sposób opisany w sekcji 18.</p>
+      <p>20.4. Aktualna wersja Regulaminu jest każdorazowo dostępna w Aplikacji oraz na stronie internetowej powiązanej z Aplikacją.</p>
+    </section>
+
+    <!-- ── 21 ── -->
+    <section class="doc-section" id="sec-21">
+      <h2><span class="secnum">21</span>Postanowienia dotyczące App Store (Apple)</h2>
+
+      <div class="appstore-block">
+        <div class="appstore-block__hd">
+          <div class="appstore-block__ico" aria-hidden="true">
+            <!-- Apple glyph (informacyjnie) -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.83c-.02-2.27 1.86-3.36 1.94-3.41-1.06-1.55-2.71-1.77-3.3-1.79-1.4-.14-2.74.83-3.45.83-.72 0-1.81-.81-2.98-.79-1.53.02-2.95.89-3.74 2.26-1.6 2.77-.41 6.87 1.14 9.12.76 1.1 1.66 2.33 2.84 2.29 1.14-.05 1.57-.74 2.95-.74 1.37 0 1.76.74 2.97.71 1.23-.02 2-1.12 2.74-2.22.87-1.27 1.22-2.5 1.24-2.56-.03-.01-2.38-.91-2.4-3.62zM14.04 5.86c.63-.77 1.06-1.83.95-2.89-.91.04-2.02.61-2.67 1.37-.58.68-1.1 1.78-.96 2.81 1.02.08 2.05-.52 2.68-1.29z"/></svg>
+          </div>
+          <div>
+            <p class="appstore-block__lbl">Informacja o App Store</p>
+            <p class="appstore-block__ttl">Postanowienia dotyczące dystrybucji przez Apple</p>
+          </div>
+        </div>
+        <div class="appstore-block__body">
+          <p>21.1. Aplikacja jest dystrybuowana za pośrednictwem App Store. Niniejszy Regulamin stanowi umowę pomiędzy Użytkownikiem a Usługodawcą, a <strong>nie pomiędzy Użytkownikiem a Apple</strong>. Za Aplikację oraz jej treść odpowiada Usługodawca, a nie Apple.</p>
+          <p>21.2. Licencja na korzystanie z Aplikacji jest ograniczona do niezbywalnego prawa korzystania z Aplikacji na urządzeniach marki Apple, które Użytkownik posiada lub kontroluje, zgodnie z zasadami korzystania określonymi w warunkach App Store.</p>
+          <p>21.3. Wyłącznie Usługodawca, a nie Apple, odpowiada za zapewnienie wsparcia i konserwacji Aplikacji oraz za rozpatrywanie roszczeń dotyczących Aplikacji, w tym roszczeń z tytułu odpowiedzialności za produkt, niezgodności z przepisami oraz naruszenia praw, w tym praw własności intelektualnej.</p>
+          <p>21.4. Użytkownik oświadcza, że nie znajduje się w kraju objętym embargiem oraz nie figuruje na liście podmiotów objętych ograniczeniami, w zakresie wynikającym z obowiązujących przepisów.</p>
+          <p>21.5. Apple oraz podmioty zależne Apple są beneficjentami niniejszego Regulaminu jako osoby trzecie i z chwilą akceptacji Regulaminu przez Użytkownika są uprawnione do egzekwowania jego postanowień wobec Użytkownika w zakresie dotyczącym korzystania z Aplikacji.</p>
+          <p>21.6. Korzystając z Aplikacji, Użytkownik zobowiązany jest przestrzegać również obowiązujących warunków usług firm trzecich, w tym warunków App Store.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 22 ── -->
+    <section class="doc-section" id="sec-22">
+      <h2><span class="secnum">22</span>Prawo właściwe i postanowienia końcowe</h2>
+      <p>22.1. W sprawach nieuregulowanych Regulaminem zastosowanie mają przepisy prawa polskiego, w szczególności Kodeksu cywilnego, ustawy o świadczeniu usług drogą elektroniczną oraz ustawy o prawach konsumenta. Wybór prawa polskiego nie pozbawia Konsumenta ochrony wynikającej z bezwzględnie obowiązujących przepisów prawa państwa jego zwykłego pobytu.</p>
+      <p>22.2. Jeżeli którekolwiek postanowienie Regulaminu okaże się nieważne lub bezskuteczne, pozostałe postanowienia pozostają w mocy.</p>
+      <p>22.3. Ewentualne spory rozstrzygane będą przez sąd powszechny właściwy zgodnie z przepisami prawa. W przypadku Użytkowników niebędących Konsumentami sądem właściwym jest sąd właściwy miejscowo dla siedziby Usługodawcy.</p>
+      <p>22.4. Regulamin wchodzi w życie z dniem wskazanym na początku dokumentu.</p>
+
+      <div class="signature">
+        <strong>Usługodawca:</strong><br />
+        AppSoft Studio Jakub Matwiejczyk, ul. Aroniowa 19, 05-555 Kotorydz, NIP: 7133074219, e-mail: <a href="mailto:homdu.app@gmail.com" style="color:var(--doc-accent); border:none;">homdu.app@gmail.com</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ─────────── FOOTER ─────────── -->
+<footer class="doc-foot">
+  <div class="doc-foot__inner">
+    <div>
+      <h4>Usługodawca</h4>
+      <p><strong>AppSoft Studio Jakub Matwiejczyk</strong></p>
+      <p>ul. Aroniowa 19, 05-555 Kotorydz</p>
+      <p>NIP: 7133074219</p>
+      <p style="margin-top:8px;"><a href="mailto:homdu.app@gmail.com" style="color:var(--doc-accent);">homdu.app@gmail.com</a></p>
+    </div>
+    <div>
+      <h4>Dokumenty</h4>
+      <ul>
+        <li><a href="polityka-prywatnosci.html">Polityka Prywatności</a></li>
+        <li><a href="warunki-korzystania.html">Warunki korzystania</a></li>
+        <li><a href="mailto:homdu.app@gmail.com">Kontakt</a></li>
+        <li><a href="polityka-prywatnosci.html#sec-14">Polityka cookies</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>homdu</h4>
+      <ul>
+        <li><a href="index.html">Strona główna</a></li>
+        <li><a href="index.html#funkcje">Funkcje</a></li>
+        <li><a href="index.html#dla-partnerow">Dla partnerów</a></li>
+        <li><a href="index.html#pobierz">Pobierz aplikację</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="doc-foot__btm">
+    <div>© <span id="year">2026</span> homdu · AppSoft Studio Jakub Matwiejczyk. Wszystkie prawa zastrzeżone.</div>
+    <div>homdu.pl / warunki-korzystania</div>
+  </div>
+</footer>
+
+<button class="to-top" id="to-top" aria-label="Wróć na górę">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+(function () {
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const savedTheme = localStorage.getItem('homdu-theme');
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  document.getElementById('theme-toggle').addEventListener('click', function () {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('homdu-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('homdu-theme', 'dark');
+    }
+  });
+
+  const header = document.getElementById('doc-header');
+  const toTop = document.getElementById('to-top');
+  function onScroll() {
+    if (window.scrollY > 8) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+    if (window.scrollY > 600) toTop.classList.add('is-visible');
+    else toTop.classList.remove('is-visible');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.querySelectorAll('a[href^="#sec-"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      const id = a.getAttribute('href');
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 88, behavior: 'smooth' });
+      history.replaceState(null, '', id);
+      const md = document.querySelector('.toc-mobile');
+      if (md && md.open) md.open = false;
+    });
+  });
+
+  const sections = Array.from(document.querySelectorAll('.doc-section[id]'));
+  const tocLinks = Array.from(document.querySelectorAll('.toc__list a'));
+  function setActive(id) {
+    tocLinks.forEach(function (a) {
+      if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    let visible = new Map();
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) visible.set(en.target.id, en.intersectionRatio);
+        else visible.delete(en.target.id);
+      });
+      let activeId = null;
+      let bestTop = Infinity;
+      sections.forEach(function (s) {
+        if (visible.has(s.id)) {
+          const t = s.getBoundingClientRect().top;
+          const score = t < 120 ? Math.abs(t - 120) : t;
+          if (score < bestTop) { bestTop = score; activeId = s.id; }
+        }
+      });
+      if (!activeId) {
+        let nearest = null; let nearestDist = Infinity;
+        sections.forEach(function (s) {
+          const t = s.getBoundingClientRect().top;
+          if (t <= 120 && Math.abs(t) < nearestDist) { nearestDist = Math.abs(t); nearest = s.id; }
+        });
+        activeId = nearest || sections[0].id;
+      }
+      setActive(activeId);
+    }, { rootMargin: '-80px 0px -55% 0px', threshold: [0, 0.1, 0.5, 1] });
+    sections.forEach(function (s) { io.observe(s); });
+  } else {
+    setActive(sections[0].id);
+  }
+})();
+</script>
+
+</body>
+</html>
