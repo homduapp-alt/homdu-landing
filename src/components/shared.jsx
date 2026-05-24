@@ -19,28 +19,41 @@ export function Reveal({ children, delay = 0, as: As = "div", className = "", st
   );
 }
 
-// ── Logo wordmark ───────────────────────────────────────────────────────────
-export function Logo({ size = "md" }) {
+// ── Logo wordmark (prawdziwe logo homdu) ─────────────────────────────────────
+export function Logo({ size = "md", href = "/" }) {
+  // wysokość wordmarku; ikona to kwadrat ~1.55× wysokości wordmarku
+  const wm = { sm: 16, md: 20, lg: 26 }[size] || 20;
+  const ic = Math.round(wm * 1.55);
   return (
-    <div className="nav__logo">
-      <span className={`logo-mark ${size === "lg" ? "logo-mark--lg" : ""}`}>
-        <Icon.Logo />
-      </span>
-      <span>homdu</span>
-    </div>
+    <a href={href} className="nav__logo" aria-label="homdu — strona główna">
+      <img
+        src="/assets/logo-homdu-icon.jpeg"
+        alt=""
+        aria-hidden="true"
+        className="nav__logo__mark"
+        style={{ width: ic, height: ic }}
+      />
+      <img
+        src="/assets/logo-homdu-wordmark.svg"
+        alt="homdu"
+        className="nav__logo__wm"
+        style={{ height: wm, width: "auto" }}
+      />
+    </a>
   );
 }
 
 // ── App Store badge ─────────────────────────────────────────────────────────
-export function AppStoreBadge({ size = 52 }) {
+export function AppStoreBadge({ size = 52, href = "#pobierz", dark = false, label = "Pobierz w App Store" }) {
+  const isInternal = href.startsWith("#") || href.startsWith("javascript:");
   return (
     <a
-      className="appstore-badge"
-      href="#"
-      aria-label="Pobierz w App Store"
-      onClick={(e) => e.preventDefault()}
+      className={`appstore-badge ${dark ? "appstore-badge--dark" : ""}`}
+      href={href}
+      aria-label={label}
+      onClick={isInternal ? (e) => e.preventDefault() : undefined}
     >
-      <img src="/assets/appstore-badge.svg" alt="Pobierz w App Store" style={{ height: size }} />
+      <img src="/assets/appstore-badge.svg" alt={label} style={{ height: size }} />
     </a>
   );
 }

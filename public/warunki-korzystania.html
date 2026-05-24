@@ -86,10 +86,24 @@
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
   }
   .doc-brand {
-    display: flex; align-items: center; gap: 10px;
-    font-weight: 600; font-size: 19px; letter-spacing: -0.02em; color: var(--ink);
+    display: inline-flex; align-items: center; gap: 10px;
+    color: #0088FF;
+    text-decoration: none;
   }
-  .doc-brand .logo-mark { width: 28px; height: 28px; }
+  .doc-brand__mark {
+    width: 34px; height: 34px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 1px 2px rgba(20,22,28,0.12), 0 2px 6px -2px rgba(20,22,28,0.15);
+    flex-shrink: 0;
+    display: block;
+  }
+  .doc-brand__wm { display: block; height: 22px; width: auto; }
+  @media (max-width: 480px) {
+    .doc-brand { gap: 8px; }
+    .doc-brand__mark { width: 28px; height: 28px; border-radius: 7px; }
+    .doc-brand__wm { height: 18px; }
+  }
   .doc-header__right { display: flex; align-items: center; gap: 8px; }
 
   .doc-back {
@@ -556,7 +570,53 @@
   }
   .complaint-card .meta svg { width: 12px; height: 12px; }
 
-  /* ── footer (identyczne) ─────────────────────────────── */
+  /* ── 393px safety net (Warunki) ──────────────────────── */
+  @media (max-width: 480px) {
+    .doc-hero { padding: 56px 0 44px; }
+    .doc-hero__inner { padding: 0 20px; }
+    .doc-hero h1 { font-size: 30px; line-height: 1.08; }
+    .doc-section h2 { gap: 10px; font-size: 22px; line-height: 1.2; }
+    .doc-section h2 .secnum { font-size: 12px; padding: 3px 8px; transform: translateY(-2px); }
+    .provider-card {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 20px;
+    }
+    .provider-card__icon { width: 44px; height: 44px; border-radius: 12px; }
+    .provider-card__icon svg { width: 22px; height: 22px; }
+    .provider-card__lines {
+      grid-template-columns: 1fr;
+      row-gap: 2px;
+      column-gap: 0;
+    }
+    .provider-card__lines dt {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 8px;
+    }
+    .provider-card__lines dt:first-child { margin-top: 0; }
+    .complaint-card { padding: 22px; gap: 18px; }
+    .complaint-card h3 { font-size: 19px !important; }
+    .complaint-card__cta { width: 100%; justify-content: center; }
+    .doc-content p, .doc-content li { font-size: 15.5px; }
+    .doc-wrap { padding: 24px 16px 64px; }
+    .doc-section + .doc-section { margin-top: 40px; padding-top: 40px; }
+    .toc-mobile summary { padding: 12px 16px; }
+    .doc-foot__inner { padding: 0 16px; }
+    .doc-foot__btm { padding: 24px 16px 0; }
+    .callout { padding: 16px 18px; gap: 12px; grid-template-columns: 32px 1fr; }
+    .callout__icon { width: 28px; height: 28px; }
+    .appstore-block { padding: 20px; }
+    .appstore-block__hd { gap: 12px; padding-bottom: 12px; margin-bottom: 12px; }
+    .appstore-block__ico { width: 40px; height: 40px; }
+    .rule-list li { padding: 10px 12px; }
+  }
+  .doc-content code {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
   .to-top {
     position: fixed; bottom: 24px; right: 24px;
     width: 44px; height: 44px; border-radius: 999px;
@@ -627,10 +687,8 @@
 <header class="doc-header" id="doc-header">
   <div class="doc-header__inner">
     <a class="doc-brand" href="/" aria-label="homdu — strona główna">
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
-      </span>
-      homdu
+      <img src="assets/logo-homdu-icon.jpeg" alt="" aria-hidden="true" class="doc-brand__mark" />
+      <img src="assets/logo-homdu-wordmark.svg" alt="homdu" class="doc-brand__wm" />
     </a>
 
     <nav class="legal-nav" aria-label="Dokumenty prawne">
@@ -1196,8 +1254,10 @@
         <li><a href="/">Strona główna</a></li>
         <li><a href="/#funkcje">Funkcje</a></li>
         <li><a href="/#dla-partnerow">Dla partnerów</a></li>
-        <li><a href="/#pobierz">Pobierz aplikację</a></li>
       </ul>
+      <a class="appstore-badge" href="/#pobierz" aria-label="Pobierz w App Store" style="margin-top:14px;">
+        <img src="assets/appstore-badge.svg" alt="Pobierz w App Store" style="height:40px;" />
+      </a>
     </div>
   </div>
   <div class="doc-foot__btm">

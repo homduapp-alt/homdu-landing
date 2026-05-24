@@ -143,7 +143,7 @@ export function FinalCTA() {
                   fontFamily: "var(--font-mono)",
                 }}>
                   <Icon.Mail style={{ width: 14, height: 14, color: "var(--hdu)" }} />
-                  partners@homdu.pl · odpowiadamy w&nbsp;24h
+                  <a href="mailto:homdu.app@gmail.com" style={{ color: "inherit" }}>homdu.app@gmail.com</a>&nbsp;· odpowiadamy w&nbsp;24h
                 </div>
               </div>
             </div>

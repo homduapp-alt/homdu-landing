@@ -79,6 +79,7 @@
 * { box-sizing: border-box; }
 
 html, body { margin: 0; padding: 0; }
+html { overflow-x: clip; }
 
 body {
   font-family: var(--font-sans);
@@ -93,6 +94,11 @@ body {
 
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; }
+
+/* ── RWD safety net ────────────────────────────────────── */
+html { -webkit-text-size-adjust: 100%; }
+img, video, iframe, svg { max-width: 100%; }
+img, video { height: auto; }
 
 ::selection { background: var(--hdu); color: white; }
 
@@ -252,9 +258,13 @@ button { font: inherit; color: inherit; }
   font-size: 16px;
 }
 
-/* App Store badge: invert in dark mode (it's black on transparent) */
-.appstore-badge { display: inline-block; line-height: 0; transition: transform 0.2s; }
+/* App Store badge */
+.appstore-badge { display: inline-block; line-height: 0; transition: transform 0.2s; vertical-align: middle; }
 .appstore-badge:hover { transform: translateY(-1px); }
+.appstore-badge img { display: block; height: var(--asb-h, 52px); width: auto; max-width: 100%; }
+.appstore-badge--dark img { filter: invert(1); }
+[data-theme="dark"] .appstore-badge:not(.appstore-badge--dark) img { filter: invert(1); }
+[data-theme="dark"] .appstore-badge--dark img { filter: none; }
 .appstore-badge img { display: block; height: 52px; }
 [data-theme="dark"] .appstore-badge img { filter: invert(1); }
 
@@ -296,12 +306,22 @@ button { font: inherit; color: inherit; }
 }
 
 .nav__logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-weight: 600;
-  font-size: 19px;
-  letter-spacing: -0.02em;
+  color: #0088FF;
+  text-decoration: none;
+}
+.nav__logo img { display: block; }
+.nav__logo__mark {
+  border-radius: 7px;
+  object-fit: cover;
+  box-shadow: 0 1px 2px rgba(20,22,28,0.12), 0 2px 6px -2px rgba(20,22,28,0.15);
+  flex-shrink: 0;
+}
+.nav__logo__wm { width: auto; }
+@media (max-width: 480px) {
+  .nav__logo { gap: 8px; }
 }
 
 .nav__links {
@@ -322,8 +342,157 @@ button { font: inherit; color: inherit; }
 
 .nav__cta { display: flex; align-items: center; gap: 8px; }
 
+/* ── mobile hamburger button ───────────────────────────── */
+.nav__hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--line-2);
+  cursor: pointer;
+  color: var(--ink);
+  transition: background 0.2s;
+}
+.nav__hamburger:hover { background: var(--glass-tint); }
+.nav__hamburger__icon {
+  position: relative;
+  width: 18px;
+  height: 14px;
+  display: block;
+}
+.nav__hamburger__icon span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+}
+.nav__hamburger__icon span:nth-child(1) { top: 0; }
+.nav__hamburger__icon span:nth-child(2) { top: 6px; }
+.nav__hamburger__icon span:nth-child(3) { top: 12px; }
+.nav__hamburger__icon.is-open span:nth-child(1) { top: 6px; transform: rotate(45deg); }
+.nav__hamburger__icon.is-open span:nth-child(2) { opacity: 0; }
+.nav__hamburger__icon.is-open span:nth-child(3) { top: 6px; transform: rotate(-45deg); }
+
+/* ── mobile sheet ──────────────────────────────────────── */
+.nav__sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  visibility: hidden;
+  overflow: hidden;
+}
+.nav__sheet.is-open { pointer-events: auto; visibility: visible; }
+.nav__sheet__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 17, 22, 0.55);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.nav__sheet.is-open .nav__sheet__scrim { opacity: 1; }
+.nav__sheet__panel {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: min(360px, 92vw);
+  background: var(--bg);
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px 24px;
+  box-shadow: -20px 0 60px -20px rgba(15,17,22,0.35);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(.22,.61,.36,1);
+  overscroll-behavior: contain;
+}
+.nav__sheet.is-open .nav__sheet__panel { transform: translateX(0); }
+.nav__sheet__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.nav__sheet__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--line-2);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.nav__sheet__close:hover { background: var(--glass-tint); }
+.nav__sheet__close svg { width: 16px; height: 16px; }
+.nav__sheet__links {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+.nav__sheet__links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 14px;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  border-radius: 12px;
+  transition: background 0.2s;
+  min-height: 56px;
+}
+.nav__sheet__links a:hover,
+.nav__sheet__links a:focus-visible { background: var(--glass-tint); outline: none; }
+.nav__sheet__links a svg { width: 16px; height: 16px; color: var(--ink-3); flex-shrink: 0; }
+.nav__sheet__foot {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 18px;
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.nav__sheet__foot__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.nav__sheet__foot__row a { color: var(--ink-2); }
+.nav__sheet__foot__row a:hover { color: var(--ink); }
+
 @media (max-width: 880px) {
   .nav__links { display: none; }
+  .nav__hamburger { display: inline-flex; }
+  /* on tight phones, hide redundant inline Pobierz — it's in the sheet */
+  .nav__download { display: none; }
+}
+@media (max-width: 560px) {
+  .nav { width: calc(100% - 20px); padding: 0 8px 0 16px; gap: 8px; }
 }
 
 /* ── logo mark ─────────────────────────────────────────── */

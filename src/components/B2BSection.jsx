@@ -523,9 +523,12 @@ export function B2BSection() {
                   </div>
                   <div>
                     <div style={{ fontSize: 11, color: "rgba(245,244,240,0.55)" }}>E-mail</div>
-                    <div style={{ fontSize: 15, fontWeight: 600, fontFamily: "var(--font-mono)" }}>
-                      partners@homdu.pl
-                    </div>
+                    <a
+                      href="mailto:homdu.app@gmail.com"
+                      style={{ fontSize: 15, fontWeight: 600, fontFamily: "var(--font-mono)", color: "inherit" }}
+                    >
+                      homdu.app@gmail.com
+                    </a>
                   </div>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 14 }}>

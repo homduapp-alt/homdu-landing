@@ -34,7 +34,7 @@ export function GuidesSection() {
               <p className="sub" style={{ marginBottom: 32, maxWidth: 520 }}>
                 Baza artykułów, wideo i shorts automatycznie filtrowana
                 do Twojego aktualnego etapu prac. Wiedza dokładnie wtedy,
-                gdy jej potrzebujesz — nie random artykuły z Google.
+                gdy jej potrzebujesz — nie chaos z dziesięciu zakładek przeglądarki.
               </p>
             </Reveal>
 

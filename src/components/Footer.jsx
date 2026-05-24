@@ -10,11 +10,17 @@ export function Footer() {
     },
     {
       title: "Dla partnerów",
-      links: ["Formaty współpracy", "Dla kogo", "Umów rozmowę", "Pobierz deck", "partners@homdu.pl"],
+      links: [
+        { label: "Formaty współpracy", href: "#dla-partnerow" },
+        { label: "Dla kogo", href: "#dla-partnerow" },
+        { label: "Umów rozmowę", href: "#partner-cta" },
+        { label: "Pobierz deck", href: "#partner-cta" },
+        { label: "homdu.app@gmail.com", href: "mailto:homdu.app@gmail.com" },
+      ],
     },
     {
       title: "Firma",
-      links: ["O nas", "Blog", "Kariera", "Kontakt"],
+      links: ["O nas", "Blog", "Kariera", { label: "Kontakt", href: "mailto:homdu.app@gmail.com" }],
     },
     {
       title: "Prawne",
@@ -71,7 +77,7 @@ export function Footer() {
         <div className="footer__btm">
           <div>© {new Date().getFullYear()} homdu. Wszystkie prawa zastrzeżone.</div>
           <div style={{ display: "flex", gap: 16 }}>
-            <a href="mailto:hello@homdu.pl">hello@homdu.pl</a>
+            <a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a>
             <span style={{ color: "var(--line-2)" }}>·</span>
             <span>Polska</span>
           </div>

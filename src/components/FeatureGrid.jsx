@@ -45,7 +45,7 @@ export function FeatureGrid() {
       icon: <Icon.Book />,
       gradient: "var(--stg-amber)",
       title: "Poradniki",
-      desc: "Artykuły i wideo dopasowane do Twojego aktualnego etapu prac — nie random treści z Google.",
+      desc: "Artykuły i wideo dopasowane do Twojego aktualnego etapu prac — nie chaos z dziesięciu zakładek przeglądarki.",
     },
     {
       icon: <Icon.Bank />,

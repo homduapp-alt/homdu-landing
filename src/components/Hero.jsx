@@ -4,7 +4,7 @@
 
 import { useEffect, useRef } from "react";
 import { Icon } from "./icons.jsx";
-import { Reveal, IPhone, FloatingChip, CountUp } from "./shared.jsx";
+import { Reveal, IPhone, FloatingChip, CountUp, AppStoreBadge } from "./shared.jsx";
 
 export function Hero() {
   // simple parallax for the floating chips
@@ -100,16 +100,10 @@ export function Hero() {
               </p>
             </Reveal>
 
-            {/* Dual CTA: B2C + B2B */}
+            {/* Dual CTA: B2C App Store badge + B2B */}
             <Reveal delay={320}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
-                <a
-                  href="#pobierz"
-                  className="btn btn--primary btn--lg"
-                >
-                  <Icon.Download style={{ width: 16, height: 16 }} />
-                  Pobierz aplikację
-                </a>
+              <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
+                <AppStoreBadge size={56} />
                 <a href="#dla-partnerow" className="btn btn--ghost btn--lg">
                   <Icon.Briefcase style={{ width: 16, height: 16 }} />
                   Zostań partnerem homdu
