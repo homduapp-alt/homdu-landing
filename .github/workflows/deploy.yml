@@ -29,13 +29,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy przez FTPS
+      - name: Deploy przez FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          # dhosting zrywa szyfrowane połączenie danych (FTPS pasywny → ECONNRESET),
+          # dlatego plain FTP. Uwaga: hasło leci nieszyfrowane — rozważ rotację/SFTP.
+          protocol: ftp
           # Katalog docelowy na serwerze — MUSI kończyć się ukośnikiem,
           # np. "/homdu.pl/public_html/" (dokładną ścieżkę sprawdź w panelu dhosting).
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
