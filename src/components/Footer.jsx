@@ -19,10 +19,10 @@ export function Footer() {
     {
       title: "Prawne",
       links: [
-        { label: "Warunki korzystania", href: "warunki-korzystania.html" },
-        { label: "Polityka prywatności", href: "polityka-prywatnosci.html" },
-        { label: "RODO", href: "polityka-prywatnosci.html#sec-17" },
-        { label: "Cookies", href: "polityka-prywatnosci.html#sec-14" },
+        { label: "Warunki korzystania", href: "warunki-korzystania" },
+        { label: "Polityka prywatności", href: "polityka-prywatnosci" },
+        { label: "RODO", href: "polityka-prywatnosci#sec-17" },
+        { label: "Cookies", href: "polityka-prywatnosci#sec-14" },
       ],
     },
   ];
