@@ -1,7 +1,7 @@
 // StagesSection.jsx — Section 4
-// Stage gradients showcase + StageDetailsView phone mock.
+// Stage gradients showcase + real StageDetails screenshot.
 
-import { Reveal, Checklist, IPhone } from "./shared.jsx";
+import { Reveal, Checklist } from "./shared.jsx";
 
 export function StagesSection() {
   const stages = [
@@ -29,26 +29,20 @@ export function StagesSection() {
         >
           {/* ── Left: copy + grid of stage cards ── */}
           <div>
-            <Reveal>
-              <span className="eyebrow">
-                <span className="dot" />
-                Etap po etapie
-              </span>
-            </Reveal>
             <Reveal delay={80}>
               <h2 className="h-section" style={{ marginTop: 20, marginBottom: 20 }}>
-                Zaplanowane.<br />Etap po etapie.
+                Ogarniaj.<br />Etap po etapie.
               </h2>
             </Reveal>
             <Reveal delay={160}>
               <p className="sub" style={{ marginBottom: 32, maxWidth: 520 }}>
                 Gotowe szablony dla budowy domu, remontu i wykończenia deweloperskiego.
-                Zacznij w 2 minuty.
+                Nic Cię nie zaskoczy.
               </p>
             </Reveal>
             <Reveal delay={240}>
               <Checklist items={[
-                { b: "15+ gotowych szablonów", r: "etapów dla budowy, remontu i wykończenia" },
+                { b: "Gotowe szablony", r: "etapów dla budowy, remontu i wykończenia" },
                 { b: "Zadania z terminami", r: "i powiadomieniami push na telefon" },
                 { b: "Budżet, kontakty i pliki", r: "przypisane do każdego etapu" },
               ]} />
@@ -77,7 +71,7 @@ export function StagesSection() {
             </Reveal>
           </div>
 
-          {/* ── Right: phone ── */}
+          {/* ── Right: phone screenshot ── */}
           <Reveal delay={200}>
             <div style={{ display: "flex", justifyContent: "center", position: "relative" }}>
               {/* background gradient */}
@@ -91,11 +85,28 @@ export function StagesSection() {
                   zIndex: 0,
                 }}
               />
-              <IPhone
-                size="md"
-                slotId="stages-detail"
-                placeholder="StageDetailsView.png — Etap „Instalacje” z partnerem (logo sklepu elektrycznego), tytuł, status „W trakcie”, sekcja zadań (4/7), pasek budżetu 15 000 / 20 000 zł, miniatury 3 albumów"
-              />
+              <div style={{
+                position: "relative",
+                zIndex: 1,
+                width: 340,
+                maxWidth: "100%",
+                aspectRatio: "857 / 1759",
+              }}>
+                <img
+                  src="/assets/stages-detail.png"
+                  alt="Aplikacja homdu — szczegóły etapu Fundamenty: budżet etapu, wydatki i zadania."
+                  width="857"
+                  height="1759"
+                  decoding="async"
+                  loading="lazy"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    display: "block",
+                  }}
+                />
+              </div>
             </div>
           </Reveal>
         </div>

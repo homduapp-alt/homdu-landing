@@ -10,7 +10,6 @@ import { StagesSection } from "./components/StagesSection.jsx";
 import { CostsSection } from "./components/CostsSection.jsx";
 import { DocsPhotosSection } from "./components/DocsPhotosSection.jsx";
 import { GuidesSection } from "./components/GuidesSection.jsx";
-import { UseCases } from "./components/UseCases.jsx";
 import { B2BSection } from "./components/B2BSection.jsx";
 import { RealFlowSection } from "./components/RealFlowSection.jsx";
 import { SocialProof } from "./components/SocialProof.jsx";
@@ -33,7 +32,6 @@ export default function App() {
         <CostsSection />
         <DocsPhotosSection />
         <GuidesSection />
-        <UseCases />
         <B2BSection />
         <RealFlowSection />
         <SocialProof />

@@ -39,7 +39,7 @@ export function FeatureGrid() {
       icon: <Icon.Photo />,
       gradient: "var(--stg-rose)",
       title: "Zdjęcia",
-      desc: "Albumy postępu per etap. Z notatkami, datą i pełnoekranowym podglądem — jak galeria zawodowa.",
+      desc: "Albumy ze zdjęciami z każdego etapu. Dodaj do każdego zdjęcia swoje notatki i potrzebne w przyszłości uwagi.",
     },
     {
       icon: <Icon.Book />,
@@ -59,8 +59,7 @@ export function FeatureGrid() {
     <section className="section section--soft" id="funkcje">
       <div className="container">
         <SectionHeader
-          eyebrow="Wszystko w jednym miejscu"
-          title="Osiem modułów. Jedna aplikacja. Twoja inwestycja od A do Z."
+          title="Wszystko w jednym miejscu. Serio, od A do Z."
           sub="Każdy moduł zaprojektowany pod realny flow polskiej inwestycji budowlanej. Nic czego nie potrzebujesz — wszystko czego potrzebujesz."
           align="center"
         />

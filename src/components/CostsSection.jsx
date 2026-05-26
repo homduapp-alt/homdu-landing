@@ -1,8 +1,8 @@
 // CostsSection.jsx — Section 5
-// Phone mock (CostsDashboardView) + bullets, with a donut chart accent.
+// Real Costs dashboard screenshot + bullets, with a donut chart accent.
 
 import { Icon } from "./icons.jsx";
-import { Reveal, Checklist, IPhone } from "./shared.jsx";
+import { Reveal, Checklist } from "./shared.jsx";
 
 export function CostsSection() {
   return (
@@ -34,39 +34,57 @@ export function CostsSection() {
                   zIndex: 0,
                 }}
               />
-              <IPhone
-                size="md"
-                slotId="costs-dashboard"
-                placeholder="CostsDashboardView.png — Łączny budżet 180 000 zł, wydane 95 000 zł (53%), donut chart kosztów per etap z 5 kategoriami, trend miesięczny (4 miesiące), top 3 wydatki: „Beton — 12 400 zł”, „Drewno konstrukcyjne — 8 200 zł”, „Wynagrodzenie ekipy — 6 800 zł”"
-              />
+              <div style={{
+                position: "relative",
+                zIndex: 1,
+                width: 340,
+                maxWidth: "100%",
+                aspectRatio: "857 / 1759",
+              }}>
+                <img
+                  src="/assets/costs-dashboard.png"
+                  alt="Aplikacja homdu — ekran Koszty: budżet 900 000 zł, wydatki, wykorzystanie 27%."
+                  width="857"
+                  height="1759"
+                  decoding="async"
+                  loading="lazy"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    display: "block",
+                  }}
+                />
+              </div>
 
               {/* floating donut card */}
               <div
                 className="glass-strong donut-float"
                 style={{
                   position: "absolute",
-                  right: -40,
-                  bottom: 24,
-                  padding: 20,
-                  borderRadius: 24,
+                  right: -20,
+                  bottom: 32,
+                  padding: 14,
+                  borderRadius: 18,
                   display: "flex",
                   alignItems: "center",
-                  gap: 16,
+                  gap: 12,
                   animation: "float-y 7s ease-in-out infinite",
                   animationDelay: "0.8s",
+                  zIndex: 2,
                 }}
               >
-                <div className="donut" style={{ width: 88, height: 88 }}>
+                <div className="donut" style={{ width: 56, height: 56 }}>
                   <div className="donut__center">
-                    <span className="v" style={{ fontSize: 16 }}>53%</span>
+                    <span className="v" style={{ fontSize: 12 }}>53%</span>
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 12, color: "var(--ink-2)", fontWeight: 500 }}>Budżet</div>
-                  <div style={{ fontSize: 18, fontWeight: 600, letterSpacing: "-0.02em", fontVariantNumeric: "tabular-nums" }}>
+                  <div style={{ fontSize: 10, color: "var(--ink-2)", fontWeight: 500, letterSpacing: "0.02em" }}>Budżet</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "-0.015em", fontVariantNumeric: "tabular-nums" }}>
                     95&nbsp;000 zł
                   </div>
-                  <div style={{ fontSize: 11, color: "var(--ink-3)", marginTop: 2 }}>z 180 000 zł</div>
+                  <div style={{ fontSize: 10, color: "var(--ink-3)", marginTop: 1 }}>z 180 000 zł</div>
                 </div>
               </div>
 
@@ -115,7 +133,6 @@ export function CostsSection() {
                 { b: "Podział kosztów per etap", r: "z donut chartem i kategoriami" },
                 { b: "Alert gdy przekroczysz", r: "90% budżetu — zanim będzie za późno" },
                 { b: "Trend miesięczny i prognoza", r: "końcowa wartość inwestycji" },
-                { b: "Eksport CSV", r: "z filtrami — dla księgowej lub doradcy" },
               ]} />
             </Reveal>
           </div>

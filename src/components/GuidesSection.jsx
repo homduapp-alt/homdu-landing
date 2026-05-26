@@ -1,8 +1,8 @@
 // GuidesSection.jsx — Section 7
-// Phone (GuidesHomeView) + copy + floating "Dla Ciebie" card.
+// Real Guides screenshot + copy + floating "Dla Ciebie" card.
 
 import { Icon } from "./icons.jsx";
-import { Reveal, Checklist, IPhone } from "./shared.jsx";
+import { Reveal, Checklist } from "./shared.jsx";
 
 export function GuidesSection() {
   return (
@@ -19,12 +19,6 @@ export function GuidesSection() {
         >
           {/* ── Left: copy ── */}
           <div>
-            <Reveal>
-              <span className="eyebrow">
-                <span className="dot" />
-                Wiedza w kontekście
-              </span>
-            </Reveal>
             <Reveal delay={80}>
               <h2 className="h-section" style={{ marginTop: 20, marginBottom: 20 }}>
                 Odpowiedź zanim zadasz pytanie.
@@ -34,7 +28,7 @@ export function GuidesSection() {
               <p className="sub" style={{ marginBottom: 32, maxWidth: 520 }}>
                 Baza artykułów, wideo i shorts automatycznie filtrowana
                 do Twojego aktualnego etapu prac. Wiedza dokładnie wtedy,
-                gdy jej potrzebujesz — nie chaos z dziesięciu zakładek przeglądarki.
+                gdy jej potrzebujesz — a nie chaos z Googla i grup na Facebooku.
               </p>
             </Reveal>
 
@@ -85,7 +79,7 @@ export function GuidesSection() {
             </Reveal>
           </div>
 
-          {/* ── Right: phone ── */}
+          {/* ── Right: phone screenshot ── */}
           <Reveal delay={200}>
             <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
               <div
@@ -98,11 +92,28 @@ export function GuidesSection() {
                   zIndex: 0,
                 }}
               />
-              <IPhone
-                size="md"
-                slotId="guides-home"
-                placeholder="GuidesHomeView.png — Header „Poradniki”, pasek wyszukiwania, category chips (Fundamenty / Instalacje / Wykończenie / Elewacja); sekcja „Dla Ciebie” z 2 kartami wideo (z miniaturami i czasami trwania); poniżej 3 karty artykułów z miniaturami i tytułami w stylu „Jak przygotować się do odbioru elektrycznego”"
-              />
+              <div style={{
+                position: "relative",
+                zIndex: 1,
+                width: 280,
+                maxWidth: "100%",
+                aspectRatio: "857 / 1759",
+              }}>
+                <img
+                  src="/assets/guides-home.png"
+                  alt="Aplikacja homdu — ekran Poradniki: baza artykułów, wideo i shorts."
+                  width="857"
+                  height="1759"
+                  decoding="async"
+                  loading="lazy"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    display: "block",
+                  }}
+                />
+              </div>
 
               {/* floating featured guide */}
               <div
