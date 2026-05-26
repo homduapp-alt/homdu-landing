@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useTheme } from "./useTheme.js";
 
 import { Nav } from "./components/Nav.jsx";
@@ -21,14 +20,9 @@ import { Footer } from "./components/Footer.jsx";
 export default function App() {
   const [theme, setTheme] = useTheme();
 
-  // Przełączanie zmiennych CSS przez atrybut data-theme na <html>.
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
-
   return (
     <>
-      <Nav theme={theme} setTheme={setTheme} />
+      <Nav />
       <main>
         <Hero />
         <VideoSection />
@@ -45,7 +39,7 @@ export default function App() {
         <SocialProof />
         <FinalCTA />
       </main>
-      <Footer />
+      <Footer theme={theme} setTheme={setTheme} />
     </>
   );
 }

@@ -1,10 +1,10 @@
 // Nav.jsx — sticky glass top nav with mobile hamburger sheet
+// (theme toggle moved to the footer in v4)
 
 import { useState, useEffect } from "react";
-import { Icon } from "./icons.jsx";
 import { Logo, AppStoreBadge } from "./shared.jsx";
 
-export function Nav({ theme, setTheme }) {
+export function Nav() {
   const links = [
     { href: "#funkcje", label: "Funkcje" },
     { href: "#etapy", label: "Etapy" },
@@ -34,14 +34,14 @@ export function Nav({ theme, setTheme }) {
 
   return (
     <>
-      <nav className="nav" aria-label="Główna nawigacja">
+      <nav className="nav" aria-label="Główna nawigacja" style={{ fontFamily: "Geist", fontSize: "16px", fontWeight: "600" }}>
         <Logo />
         <ul className="nav__links">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                style={l.emphasis ? { color: "var(--hdu)", fontWeight: 500 } : undefined}
+                style={{ ...(l.emphasis ? { color: "var(--hdu)", fontWeight: 500 } : undefined), fontWeight: "600" }}
               >
                 {l.label}
               </a>
@@ -49,14 +49,6 @@ export function Nav({ theme, setTheme }) {
           ))}
         </ul>
         <div className="nav__cta">
-          <button
-            className="theme-toggle"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            aria-label={theme === "dark" ? "Tryb jasny" : "Tryb ciemny"}
-            title={theme === "dark" ? "Tryb jasny" : "Tryb ciemny"}
-          >
-            {theme === "dark" ? <Icon.Sun /> : <Icon.Moon />}
-          </button>
           <AppStoreBadge size={40} />
           <button
             className="nav__hamburger"

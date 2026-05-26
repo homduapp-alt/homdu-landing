@@ -24,12 +24,8 @@ export function VideoSection() {
               textAlign: "center",
             }}
           >
-            <span className="eyebrow">
-              <span className="dot" />
-              Zobacz homdu w&nbsp;akcji
-            </span>
             <h2 className="h-section" style={{ maxWidth: 760, margin: 0 }}>
-              2 minuty, które pokażą, jak homdu ogarnia całą inwestycję.
+              Zobacz jak homdu ogarnia całą inwestycję.
             </h2>
           </div>
         </Reveal>
@@ -52,7 +48,7 @@ export function VideoSection() {
             }}
           >
             <iframe
-              src="https://www.youtube.com/embed/tFSBNBmIm64?autoplay=1&mute=1&loop=1&playlist=tFSBNBmIm64&controls=1&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+              src="https://www.youtube.com/embed/ryZ5g1eZ-H8?autoplay=1&mute=1&loop=1&playlist=ryZ5g1eZ-H8&controls=1&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
               title="homdu — wideo wprowadzające"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"

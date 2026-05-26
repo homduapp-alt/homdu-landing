@@ -245,6 +245,30 @@ img, video { height: auto; }
 }
 .btn--ghost:hover { background: var(--glass-bg-2); }
 
+.btn--brand {
+  background: var(--hdu-grad);
+  color: #fff;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.22) inset,
+    0 8px 24px -8px rgba(46, 111, 212, 0.55);
+}
+.btn--brand:hover {
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.28) inset,
+    0 14px 36px -10px rgba(46, 111, 212, 0.7);
+}
+
+.btn--brand-outline {
+  background: transparent;
+  color: var(--hdu);
+  border: 1.5px solid var(--hdu);
+}
+.btn--brand-outline:hover {
+  background: rgba(46, 111, 212, 0.08);
+  border-color: var(--hdu-dark);
+  color: var(--hdu-dark);
+}
+
 .btn--glass {
   background: var(--glass-bg-2);
   color: var(--ink);
@@ -977,3 +1001,224 @@ image-slot {
 
 /* ── tweaks panel anchor ─────────────────────────────────────────── */
 /* the tweaks panel from starter handles its own positioning */
+
+/* ── Chaos section: asymmetric "before / after" comparison ───────── */
+.chaos-grid {
+  display: grid;
+  grid-template-columns: 1.18fr auto 1fr;  /* ~54% / arrow / ~46% */
+  gap: 28px;
+  align-items: stretch;
+}
+
+.chaos-card {
+  position: relative;
+  border-radius: 24px;
+  padding: 36px 32px 30px;
+  min-height: 460px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.chaos-card--bad {
+  background: linear-gradient(180deg,
+    color-mix(in srgb, #F5F1EA 92%, var(--bg-panel)) 0%,
+    var(--bg-panel) 100%);
+  border: 1.5px dashed color-mix(in srgb, var(--status-alert) 22%, var(--line-2));
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.4) inset,
+    0 22px 48px -28px rgba(212,74,47,0.28);
+}
+
+.chaos-card--ok {
+  background: linear-gradient(180deg, #F8FAFF 0%, var(--bg-panel) 100%);
+  border: 1px solid #E0E9FF;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.6) inset,
+    0 22px 48px -28px rgba(46,111,212,0.30);
+}
+
+[data-theme="dark"] .chaos-card--bad {
+  background: linear-gradient(180deg,
+    color-mix(in srgb, #2a221a 65%, var(--bg-panel)) 0%,
+    var(--bg-panel) 100%);
+  border-color: color-mix(in srgb, var(--status-alert) 30%, var(--line-2));
+}
+[data-theme="dark"] .chaos-card--ok {
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--hdu) 8%, var(--bg-panel)) 0%,
+    var(--bg-panel) 100%);
+  border-color: color-mix(in srgb, var(--hdu) 28%, var(--line-2));
+}
+
+.chaos-card__noise {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(212,74,47,0.08) 0px,
+    rgba(212,74,47,0.08) 2px,
+    transparent 2px,
+    transparent 11px
+  );
+  pointer-events: none;
+}
+
+.chaos-card__wash {
+  position: absolute; inset: 0;
+  background: radial-gradient(60% 50% at 100% 0%, rgba(46,111,212,0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.chaos-card__head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26px;
+  gap: 12px;
+}
+
+.chaos-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.chaos-card__badge--bad { background: rgba(212,74,47,0.10); color: var(--status-alert); }
+.chaos-card__badge--ok  { background: rgba(30,157,99,0.12);  color: var(--status-done);  }
+
+.chaos-card__metric { font-size: 12px; }
+.chaos-card__metric--bad { color: var(--ink-3); }
+.chaos-card__metric--ok  { color: var(--ink-2); font-weight: 500; }
+
+.chaos-tiles {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.chaos-tile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  transition: transform 220ms cubic-bezier(.2,.7,.2,1), box-shadow 220ms;
+  will-change: transform;
+}
+
+.chaos-tile--bad {
+  background: var(--bg-soft);
+  transform: rotate(var(--rot, 0deg));
+}
+.chaos-tile--bad:hover {
+  transform: rotate(0deg) translateY(-1px);
+  box-shadow: var(--shadow-sm);
+  z-index: 1;
+}
+
+.chaos-tile--ok {
+  background: var(--bg-panel);
+  box-shadow: var(--shadow-sm);
+}
+.chaos-tile--ok:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.chaos-tile__icon {
+  width: 32px; height: 32px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.chaos-tile__icon--bad {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+}
+.chaos-tile__icon--ok {
+  color: white;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset;
+}
+
+.chaos-tile__label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chaos-tile__meta {
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chaos-tile__meta--bad { color: var(--ink-3); }
+.chaos-tile__meta--ok  { color: var(--ink-2); }
+
+.chaos-card__foot {
+  position: relative;
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line-2);
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+/* ── arrow with pulse ── */
+.chaos-arrow {
+  display: grid;
+  place-items: center;
+  padding: 0 6px;
+}
+
+.chaos-arrow__pill {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: var(--hdu-grad);
+  display: grid;
+  place-items: center;
+  color: white;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.25) inset,
+    0 12px 28px -10px rgba(46,111,212,0.5);
+  animation: chaosPulse 2s ease-in-out infinite;
+}
+
+@keyframes chaosPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 12px 28px -10px rgba(46,111,212,0.5); }
+  50%      { transform: scale(1.05); box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 16px 36px -10px rgba(46,111,212,0.65); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chaos-arrow__pill { animation: none; }
+}
+
+/* ── mobile: stack, chaos on top, arrow rotates ── */
+@media (max-width: 880px) {
+  .chaos-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .chaos-arrow {
+    padding: 4px 0;
+    transform: rotate(90deg);
+  }
+  .chaos-card {
+    padding: 28px 22px 24px;
+    min-height: 0;
+  }
+}

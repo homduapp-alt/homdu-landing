@@ -1,10 +1,9 @@
 // Hero.jsx — Section 1
-// Benefit-driven headline, DUAL CTA (B2C + B2B), two-world line.
-// iPhone + ambient blobs + floating chips aesthetic.
+// Benefit-driven headline, dual CTA (App Store badge + B2B), real app screenshot.
 
 import { useEffect, useRef } from "react";
 import { Icon } from "./icons.jsx";
-import { Reveal, IPhone, FloatingChip, CountUp, AppStoreBadge } from "./shared.jsx";
+import { Reveal, FloatingChip, AppStoreBadge } from "./shared.jsx";
 
 export function Hero() {
   // simple parallax for the floating chips
@@ -70,33 +69,26 @@ export function Hero() {
         >
           {/* ── Left: copy ── */}
           <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-            <Reveal>
-              <span className="eyebrow">
-                <span className="dot" />
-                System operacyjny dla Twojej inwestycji
-              </span>
-            </Reveal>
-
             <Reveal delay={100}>
               <h1 className="h-display">
-                Porządek w&nbsp;inwestycji.<br />
-                Kontrola nad&nbsp;kosztami.<br />
+                Budowa i&nbsp;remont pod&nbsp;kontrolą.<br />
                 <span style={{
                   background: "var(--hdu-grad)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
                 }}>
-                  Wszystko w&nbsp;jednym&nbsp;miejscu.
+                  W&nbsp;końcu.
                 </span>
               </h1>
             </Reveal>
 
             <Reveal delay={220}>
               <p className="sub" style={{ maxWidth: 560 }}>
-                homdu prowadzi Cię etap po&nbsp;etapie przez budowę domu lub remont
-                mieszkania. Budżet, dokumenty, zdjęcia, zadania i&nbsp;kalendarz —
-                w&nbsp;jednej aplikacji, zamiast w&nbsp;dziesięciu miejscach.
+                Aplikacja homdu prowadzi Cię etap po&nbsp;etapie przez budowę domu
+                lub remont mieszkania. Budżet, dokumenty, zdjęcia, zadania
+                i&nbsp;kontakty — w&nbsp;jednej aplikacji, zamiast
+                w&nbsp;dziesięciu miejscach.
               </p>
             </Reveal>
 
@@ -104,7 +96,7 @@ export function Hero() {
             <Reveal delay={320}>
               <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
                 <AppStoreBadge size={56} />
-                <a href="#dla-partnerow" className="btn btn--ghost btn--lg">
+                <a href="#dla-partnerow" className="btn btn--brand btn--lg">
                   <Icon.Briefcase style={{ width: 16, height: 16 }} />
                   Zostań partnerem homdu
                 </a>
@@ -150,26 +142,46 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* ── Right: iPhone + floating chips ── */}
+          {/* ── Right: app screenshot + floating chips ── */}
           <div
             ref={wrapRef}
             style={{
               position: "relative",
-              height: 760,
+              height: 680,
               display: "flex",
-              alignItems: "center",
+              alignItems: "flex-start",
               justifyContent: "center",
+              paddingTop: 0,
               transform: "translateY(var(--py, 0))",
               transition: "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
             className="hero-phone-wrap"
           >
             <Reveal delay={200} style={{ position: "relative" }}>
-              <IPhone
-                size="lg"
-                slotId="hero-journal"
-                placeholder="JournalDashboardView.png — Dashboard z cover foto „Dom – Mazowsze”, statusem „W trakcie”, KPI: 45 dni · 6 etapów · 12 zadań · 53% budżetu, 4 quick actions, lista 3 nadchodzących zadań"
-              />
+              <div
+                className="hero-screenshot"
+                style={{
+                  width: 320,
+                  aspectRatio: "857 / 1759",
+                  maxWidth: "100%",
+                  position: "relative",
+                }}
+              >
+                <img
+                  src="/assets/hero-phone.png"
+                  alt="Aplikacja homdu — ekran Dziennik z inwestycją Wymarzony Dom"
+                  width="857"
+                  height="1759"
+                  decoding="async"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    display: "block",
+                    imageRendering: "auto",
+                  }}
+                />
+              </div>
             </Reveal>
 
             {/* Floating chips */}
@@ -180,10 +192,10 @@ export function Hero() {
             >
               <Reveal delay={500}>
                 <FloatingChip
-                  icon={<Icon.Scan />}
+                  icon={<Icon.Users />}
                   gradient="var(--stg-terracotta)"
-                  title="Paragon wczytany"
-                  sub="OCR: 1 248,00 zł · Materiały"
+                  title="Zarządzajcie wspólnie budową"
+                  sub="Udostępnij inwestycję"
                   style={{ top: 60, left: -40 }}
                   anim={0}
                 />
@@ -211,53 +223,6 @@ export function Hero() {
             </div>
           </div>
         </div>
-
-        {/* trust strip */}
-        <Reveal delay={550}>
-          <div
-            style={{
-              marginTop: 64,
-              paddingTop: 28,
-              borderTop: "1px solid var(--line)",
-              display: "flex",
-              alignItems: "center",
-              gap: 40,
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-            }}
-            className="hero-trust"
-          >
-            <div style={{ fontSize: 13, color: "var(--ink-3)", fontWeight: 500, letterSpacing: "0.02em" }}>
-              Bezpłatnie na iPhone · iOS 17+ · Sync iCloud
-            </div>
-            <div style={{ display: "flex", gap: 36, flexWrap: "wrap" }}>
-              <div>
-                <div style={{ fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
-                  <CountUp to={15} suffix="+" />
-                </div>
-                <div style={{ fontSize: 12, color: "var(--ink-2)" }}>szablonów etapów</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
-                  <CountUp to={2} suffix=" min" />
-                </div>
-                <div style={{ fontSize: 12, color: "var(--ink-2)" }}>do gotowego planu</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", fontVariantNumeric: "tabular-nums" }}>
-                  OCR
-                </div>
-                <div style={{ fontSize: 12, color: "var(--ink-2)" }}>paragonów i faktur</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
-                  <CountUp to={8} suffix=" modułów" />
-                </div>
-                <div style={{ fontSize: 12, color: "var(--ink-2)" }}>w&nbsp;jednej aplikacji</div>
-              </div>
-            </div>
-          </div>
-        </Reveal>
       </div>
 
       {/* mobile fallback */}

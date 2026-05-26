@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Motyw: auto-ciemny nocą (Warszawa 22–5) lub zapamiętany wybór — ustawiane przed renderem (bez migotania) -->
+<script>
+  (function(){try{
+    var t=null,h=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Warsaw',hour:'numeric',hour12:false}).format(new Date()),10);
+    if(h>=22||h<5){t='dark';}else{var s=localStorage.getItem('homdu-theme');if(s==='light'||s==='dark')t=s;}
+    document.documentElement.setAttribute('data-theme',t||'light');
+  }catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script>
 <title>homdu — Budujesz. Remontujesz. homdu ogarnie resztę.</title>
 <meta name="description" content="Jeden plan dla całej inwestycji — etapy, koszty, dokumenty, zdjęcia i poradniki w jednym miejscu. Bezpłatna aplikacja na iPhone." />
 

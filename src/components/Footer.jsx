@@ -1,8 +1,9 @@
 // Footer.jsx
 
+import { Icon } from "./icons.jsx";
 import { Logo, AppStoreBadge } from "./shared.jsx";
 
-export function Footer() {
+export function Footer({ theme, setTheme }) {
   const cols = [
     {
       title: "Aplikacja",
@@ -76,10 +77,35 @@ export function Footer() {
         </div>
         <div className="footer__btm">
           <div>© {new Date().getFullYear()} homdu. Wszystkie prawa zastrzeżone.</div>
-          <div style={{ display: "flex", gap: 16 }}>
+          <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
             <a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a>
             <span style={{ color: "var(--line-2)" }}>·</span>
             <span>Polska</span>
+            <span style={{ color: "var(--line-2)" }}>·</span>
+            <button
+              className="theme-toggle"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              aria-label={theme === "dark" ? "Tryb jasny" : "Tryb ciemny"}
+              title={theme === "dark" ? "Tryb jasny" : "Tryb ciemny"}
+              style={{
+                width: "auto",
+                height: "auto",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                background: "transparent",
+                border: "1px solid var(--line-2)",
+                color: "var(--ink-2)",
+                borderRadius: 999,
+                padding: "6px 12px",
+                cursor: "pointer",
+                font: "inherit",
+                fontSize: 13,
+              }}
+            >
+              {theme === "dark" ? <Icon.Sun /> : <Icon.Moon />}
+              <span>{theme === "dark" ? "Tryb jasny" : "Tryb ciemny"}</span>
+            </button>
           </div>
         </div>
       </div>
