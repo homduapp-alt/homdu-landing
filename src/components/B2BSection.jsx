@@ -1,18 +1,29 @@
 // B2BSection.jsx — Full B2B / Partners module
 // Subsections: A. Header/hook · B. Why brands choose homdu · C. Collaboration
-// formats · D. For whom · E. CTA block ("Umów rozmowę" + "Pobierz deck").
+// formats · D. For whom · E. CTA block z Calendly (umów rozmowę) + email.
 
 import React from "react";
 import { Icon } from "./icons.jsx";
 import { Reveal, IPhone } from "./shared.jsx";
 
 export function B2BSection() {
+  const CALENDLY_URL = "https://calendly.com/homdu-app/30min?hide_gdpr_banner=1";
+  const openCalendly = (e) => {
+    if (e) e.preventDefault();
+    if (typeof window !== "undefined" && window.Calendly && window.Calendly.initPopupWidget) {
+      window.Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } else {
+      // fallback: widget script not loaded yet → open in new tab
+      window.open(CALENDLY_URL, "_blank", "noopener");
+    }
+  };
+
   const why = [
     {
       icon: <Icon.Target />,
       g: "var(--stg-blue)",
       title: "Wysoka intencja zakupowa",
-      desc: "Inwestor w homdu nie przegląda — on właśnie kupuje. Beton, projekt, kredyt, ubezpieczenie. Tu jest decyzja, nie ciekawość.",
+      desc: "Inwestor w homdu nie przegląda — on właśnie planuje. Dachówka, okna, pustaki czy rodzaj ubezpieczenia. Tu jest decyzja, nie ciekawość.",
     },
     {
       icon: <Icon.Sliders />,
@@ -122,21 +133,8 @@ export function B2BSection() {
           className="b2b-hero"
         >
           <div>
-            <Reveal>
-              <span
-                className="eyebrow"
-                style={{
-                  background: "rgba(46,111,212,0.10)",
-                  borderColor: "rgba(46,111,212,0.25)",
-                  color: "var(--hdu)",
-                }}
-              >
-                <span className="dot" style={{ background: "var(--hdu)" }} />
-                Dla partnerów branżowych
-              </span>
-            </Reveal>
             <Reveal delay={100}>
-              <h2 className="h-section" style={{ marginTop: 20, marginBottom: 20 }}>
+              <h2 className="h-section" style={{ marginTop: 0, marginBottom: 20 }}>
                 Twoja marka tam, gdzie&nbsp;zapada{" "}
                 <span style={{
                   background: "var(--hdu-grad)",
@@ -157,7 +155,7 @@ export function B2BSection() {
             </Reveal>
             <Reveal delay={300}>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <a href="#partner-cta" className="btn btn--primary btn--lg">
+                <a href="#partner-cta" className="btn btn--primary btn--lg" onClick={openCalendly}>
                   <Icon.Calendar style={{ width: 16, height: 16 }} />
                   Umów rozmowę
                 </a>
@@ -220,18 +218,12 @@ export function B2BSection() {
         {/* ── B. Why partners choose homdu ───────────────────────────────── */}
         <Reveal>
           <div style={{ marginBottom: 32, maxWidth: 760 }}>
-            <div style={{
-              fontSize: 13, fontWeight: 600, letterSpacing: "0.08em",
-              color: "var(--hdu)", textTransform: "uppercase", marginBottom: 12,
-            }}>
-              Dlaczego marki wybierają homdu
-            </div>
             <h3 style={{
               fontSize: "clamp(28px, 3.2vw, 44px)", fontWeight: 600,
               letterSpacing: "-0.025em", lineHeight: 1.08, margin: 0,
               textWrap: "balance",
             }}>
-              Cztery powody, których nie da Ci żaden display.
+              Dlaczego marki wybierają homdu
             </h3>
           </div>
         </Reveal>
@@ -246,8 +238,8 @@ export function B2BSection() {
           className="b2b-why-grid"
         >
           {why.map((w, i) => (
-            <Reveal key={w.title} delay={i * 70}>
-              <div className="feature-card" style={{ minHeight: 240 }}>
+            <Reveal key={w.title} delay={i * 70} style={{ height: "100%" }}>
+              <div className="feature-card" style={{ minHeight: 240, height: "100%" }}>
                 <div className="feature-card__orb" style={{ background: w.g }} />
                 <div className="feature-card__icon" style={{ background: w.g }}>
                   {w.icon}
@@ -431,20 +423,12 @@ export function B2BSection() {
               className="b2b-cta-grid"
             >
               <div>
-                <span className="eyebrow" style={{
-                  background: "rgba(255,255,255,0.08)",
-                  borderColor: "rgba(255,255,255,0.16)",
-                  color: "rgba(255,255,255,0.9)",
-                }}>
-                  <span className="dot" style={{ background: "#3A7FE5", boxShadow: "0 0 0 3px rgba(58,127,229,0.22)" }} />
-                  Rozmowa partnerska
-                </span>
                 <h3 style={{
                   fontSize: "clamp(32px, 4.4vw, 56px)",
                   fontWeight: 600, letterSpacing: "-0.035em", lineHeight: 1.02,
-                  margin: "20px 0 18px", textWrap: "balance",
+                  margin: "0 0 18px", textWrap: "balance",
                 }}>
-                  Pokaż swoją markę w&nbsp;odpowiednim{" "}
+                  Reklamuj się na&nbsp;odpowiednim{" "}
                   <span style={{
                     background: "linear-gradient(180deg, #6CA4F0 0%, #3A7FE5 100%)",
                     WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent",
@@ -463,7 +447,7 @@ export function B2BSection() {
                 <div style={{ marginTop: 32, display: "flex", gap: 12, flexWrap: "wrap" }}>
                   <a
                     href="#"
-                    onClick={(e) => e.preventDefault()}
+                    onClick={openCalendly}
                     className="btn btn--lg"
                     style={{
                       background: "#F5F4F0",
@@ -508,56 +492,72 @@ export function B2BSection() {
                 <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(245,244,240,0.55)" }}>
                   Kontakt partnerski
                 </div>
-                <div style={{
-                  display: "flex", alignItems: "center", gap: 14,
-                  paddingBottom: 18, borderBottom: "1px solid rgba(255,255,255,0.12)",
-                }}>
+                <a
+                  href="mailto:homdu.app@gmail.com"
+                  style={{
+                    display: "flex", alignItems: "center", gap: 14,
+                    width: "100%", textAlign: "left",
+                    padding: "14px 16px", borderRadius: 14,
+                    background: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(255,255,255,0.14)",
+                    color: "#F5F4F0", cursor: "pointer",
+                    textDecoration: "none",
+                    transition: "background 0.25s, border-color 0.25s",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.24)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.06)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.14)"; }}
+                >
                   <div style={{
                     width: 48, height: 48, borderRadius: 14,
                     background: "var(--hdu-grad)",
                     display: "grid", placeItems: "center",
                     color: "white",
                     boxShadow: "0 1px 0 rgba(255,255,255,0.25) inset",
+                    flexShrink: 0,
                   }}>
                     <Icon.Mail style={{ width: 22, height: 22 }} />
                   </div>
-                  <div>
+                  <div style={{ minWidth: 0 }}>
                     <div style={{ fontSize: 11, color: "rgba(245,244,240,0.55)" }}>E-mail</div>
-                    <a
-                      href="mailto:homdu.app@gmail.com"
-                      style={{ fontSize: 15, fontWeight: 600, fontFamily: "var(--font-mono)", color: "inherit" }}
-                    >
+                    <div style={{ fontSize: 15, fontWeight: 600, fontFamily: "var(--font-mono)" }}>
                       homdu.app@gmail.com
-                    </a>
+                    </div>
                   </div>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                  <Icon.Arrow style={{ width: 18, height: 18, marginLeft: "auto", flexShrink: 0, opacity: 0.7 }} />
+                </a>
+                <button
+                  onClick={openCalendly}
+                  style={{
+                    display: "flex", alignItems: "center", gap: 14,
+                    width: "100%", textAlign: "left",
+                    padding: "14px 16px", borderRadius: 14,
+                    background: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(255,255,255,0.14)",
+                    color: "#F5F4F0", cursor: "pointer",
+                    font: "inherit",
+                    transition: "background 0.25s, border-color 0.25s",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.24)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.06)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.14)"; }}
+                >
                   <div style={{
                     width: 48, height: 48, borderRadius: 14,
-                    background: "var(--stg-purple)",
+                    background: "var(--stg-blue)",
                     display: "grid", placeItems: "center",
                     color: "white",
                     boxShadow: "0 1px 0 rgba(255,255,255,0.25) inset",
+                    flexShrink: 0,
                   }}>
-                    <Icon.Briefcase style={{ width: 22, height: 22 }} />
+                    <Icon.Calendar style={{ width: 22, height: 22 }} />
                   </div>
-                  <div>
-                    <div style={{ fontSize: 11, color: "rgba(245,244,240,0.55)" }}>Partnership Lead</div>
+                  <div style={{ minWidth: 0 }}>
+                    <div style={{ fontSize: 11, color: "rgba(245,244,240,0.55)" }}>Kalendarz online</div>
                     <div style={{ fontSize: 15, fontWeight: 600 }}>
-                      Zespół homdu Partners
+                      Wybierz termin rozmowy
                     </div>
                   </div>
-                </div>
-                <div style={{
-                  marginTop: 4, padding: 14, borderRadius: 14,
-                  background: "rgba(46,111,212,0.14)",
-                  border: "1px solid rgba(46,111,212,0.28)",
-                  fontSize: 13, lineHeight: 1.5,
-                  color: "rgba(245,244,240,0.92)",
-                }}>
-                  <b style={{ color: "#fff" }}>Odpowiadamy w&nbsp;24h</b><br />
-                  Dla zapytań partnerskich z&nbsp;branży budowlanej, finansowej i&nbsp;retail.
-                </div>
+                  <Icon.Arrow style={{ width: 18, height: 18, marginLeft: "auto", flexShrink: 0, opacity: 0.7 }} />
+                </button>
               </div>
             </div>
           </div>

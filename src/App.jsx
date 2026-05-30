@@ -11,7 +11,6 @@ import { CostsSection } from "./components/CostsSection.jsx";
 import { DocsPhotosSection } from "./components/DocsPhotosSection.jsx";
 import { GuidesSection } from "./components/GuidesSection.jsx";
 import { B2BSection } from "./components/B2BSection.jsx";
-import { RealFlowSection } from "./components/RealFlowSection.jsx";
 import { SocialProof } from "./components/SocialProof.jsx";
 import { FinalCTA } from "./components/FinalCTA.jsx";
 import { Footer } from "./components/Footer.jsx";
@@ -33,7 +32,6 @@ export default function App() {
         <DocsPhotosSection />
         <GuidesSection />
         <B2BSection />
-        <RealFlowSection />
         <SocialProof />
         <FinalCTA />
       </main>
