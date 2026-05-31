@@ -240,4 +240,9 @@ export const Icon = {
       <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
     </svg>
   ),
+  Bolt: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
+    </svg>
+  ),
 };

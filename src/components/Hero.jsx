@@ -96,7 +96,7 @@ export function Hero() {
             <Reveal delay={320}>
               <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
                 <AppStoreBadge size={56} />
-                <a href="#dla-partnerow" className="btn btn--brand btn--lg">
+                <a href="/partnerzy" className="btn btn--brand btn--lg">
                   <Icon.Briefcase style={{ width: 16, height: 16 }} />
                   Zostań partnerem homdu
                 </a>
@@ -168,7 +168,7 @@ export function Hero() {
                 }}
               >
                 <img
-                  src="/assets/hero-phone.png"
+                  src="/assets/hero-phone.webp"
                   alt="Aplikacja homdu — ekran Dziennik z inwestycją Wymarzony Dom"
                   width="857"
                   height="1759"

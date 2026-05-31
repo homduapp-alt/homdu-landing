@@ -42,7 +42,7 @@ export function CostsSection() {
                 aspectRatio: "857 / 1759",
               }}>
                 <img
-                  src="/assets/costs-dashboard.png"
+                  src="/assets/costs-dashboard.webp"
                   alt="Aplikacja homdu — ekran Koszty: budżet 900 000 zł, wydatki, wykorzystanie 27%."
                   width="857"
                   height="1759"

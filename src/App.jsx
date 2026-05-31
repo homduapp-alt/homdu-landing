@@ -1,3 +1,5 @@
+// App.jsx — B2C page (homdu.pl): inwestorzy.
+
 import { useTheme } from "./useTheme.js";
 
 import { Nav } from "./components/Nav.jsx";
@@ -10,7 +12,7 @@ import { StagesSection } from "./components/StagesSection.jsx";
 import { CostsSection } from "./components/CostsSection.jsx";
 import { DocsPhotosSection } from "./components/DocsPhotosSection.jsx";
 import { GuidesSection } from "./components/GuidesSection.jsx";
-import { B2BSection } from "./components/B2BSection.jsx";
+import { FounderB2C } from "./components/FounderB2C.jsx";
 import { SocialProof } from "./components/SocialProof.jsx";
 import { FinalCTA } from "./components/FinalCTA.jsx";
 import { Footer } from "./components/Footer.jsx";
@@ -31,7 +33,7 @@ export default function App() {
         <CostsSection />
         <DocsPhotosSection />
         <GuidesSection />
-        <B2BSection />
+        <FounderB2C />
         <SocialProof />
         <FinalCTA />
       </main>

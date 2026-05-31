@@ -100,7 +100,7 @@ export function GuidesSection() {
                 aspectRatio: "857 / 1759",
               }}>
                 <img
-                  src="/assets/guides-home.png"
+                  src="/assets/guides-home.webp"
                   alt="Aplikacja homdu — ekran Poradniki: baza artykułów, wideo i shorts."
                   width="857"
                   height="1759"

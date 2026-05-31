@@ -5,6 +5,7 @@
 import React from "react";
 import { Icon } from "./icons.jsx";
 import { Reveal, IPhone } from "./shared.jsx";
+import { FounderB2B } from "./FounderB2B.jsx";
 
 export function B2BSection() {
   const CALENDLY_URL = "https://calendly.com/homdu-app/30min?hide_gdpr_banner=1";
@@ -86,15 +87,23 @@ export function B2BSection() {
       desc: "Niestandardowe formaty: powiadomienia push w odpowiednim etapie, eksperci podpinani do checklist, sponsorowane checklisty zakupowe.",
       bullets: ["Sponsorowane checklisty zakupowe", "Push w kontekście etapu", "Eksperci podpięci do zadań"],
     },
+    {
+      tag: "Fast track",
+      icon: <Icon.Bolt />,
+      g: "var(--stg-green)",
+      title: "Hot leady",
+      desc: "Dostajesz gotowe pliki i informacje potrzebne do przygotowania wyceny. Kontaktuj się z inwestorami w ramach ścieżki fast track.",
+      bullets: ["Komplet plików do wyceny", "Dane kontaktowe inwestora", "Priorytetowa ścieżka fast track"],
+    },
   ];
 
   const segments = [
-    { icon: <Icon.Hammer />,    label: "Producenci materiałów",    desc: "Beton, drewno, izolacje, stolarka" },
+    { icon: <Icon.Hammer />,    label: "Producenci materiałów",    desc: "Dachówki, pompy ciepła, fotowoltaika, okna, drzwi" },
     { icon: <Icon.Sliders />,   label: "Wyposażenie i instalacje", desc: "AGD, hydraulika, oświetlenie, klima" },
-    { icon: <Icon.Bank />,      label: "Banki i finansowanie",     desc: "Kredyty hipoteczne, leasing, BNPL" },
-    { icon: <Icon.Shield />,    label: "Ubezpieczyciele",          desc: "OC inwestora, ubezpieczenie domu" },
+    { icon: <Icon.Bank />,      label: "Banki i finansowanie",     desc: "Kredyty i pożyczki" },
+    { icon: <Icon.Shield />,    label: "Ubezpieczyciele",          desc: "Ubezpieczenie budowy, domu i mieszkania" },
     { icon: <Icon.Store />,     label: "Retailerzy i marketplace", desc: "Sieci budowlane, e-commerce DIY" },
-    { icon: <Icon.Briefcase />, label: "Usługi i deweloperzy",     desc: "Ekipy, dystrybutorzy, biura projektowe" },
+    { icon: <Icon.Briefcase />, label: "Usługodawcy",              desc: "Ekipy, dystrybutorzy, biura projektowe" },
   ];
 
   return (
@@ -217,7 +226,7 @@ export function B2BSection() {
 
         {/* ── B. Why partners choose homdu ───────────────────────────────── */}
         <Reveal>
-          <div style={{ marginBottom: 32, maxWidth: 760 }}>
+          <div id="dlaczego" style={{ marginBottom: 32, maxWidth: 760, scrollMarginTop: 96 }}>
             <h3 style={{
               fontSize: "clamp(28px, 3.2vw, 44px)", fontWeight: 600,
               letterSpacing: "-0.025em", lineHeight: 1.08, margin: 0,
@@ -253,7 +262,7 @@ export function B2BSection() {
 
         {/* ── C. Collaboration formats ───────────────────────────────────── */}
         <Reveal>
-          <div style={{ marginBottom: 32, maxWidth: 760 }}>
+          <div id="formaty" style={{ marginBottom: 32, maxWidth: 760, scrollMarginTop: 96 }}>
             <div style={{
               fontSize: 13, fontWeight: 600, letterSpacing: "0.08em",
               color: "var(--hdu)", textTransform: "uppercase", marginBottom: 12,
@@ -265,7 +274,7 @@ export function B2BSection() {
               letterSpacing: "-0.025em", lineHeight: 1.08, margin: 0,
               textWrap: "balance",
             }}>
-              Pięć sposobów obecności w&nbsp;inwestycji.
+              Sześć sposobów obecności w&nbsp;inwestycji.
             </h3>
             <p className="sub" style={{ marginTop: 14, maxWidth: 620 }}>
               Od głównego partnera etapu, przez producenta w&nbsp;katalogu, po sponsorowane
@@ -307,22 +316,14 @@ export function B2BSection() {
         </div>
 
         {/* ── D. For whom ────────────────────────────────────────────────── */}
-        <div style={{ marginTop: 96, marginBottom: 32, maxWidth: 760 }}>
+        <div id="dla-kogo" style={{ marginTop: 96, marginBottom: 32, maxWidth: 760, scrollMarginTop: 96 }}>
           <Reveal>
-            <div style={{
-              fontSize: 13, fontWeight: 600, letterSpacing: "0.08em",
-              color: "var(--hdu)", textTransform: "uppercase", marginBottom: 12,
-            }}>
-              Dla kogo jest współpraca
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
             <h3 style={{
               fontSize: "clamp(28px, 3.2vw, 44px)", fontWeight: 600,
               letterSpacing: "-0.025em", lineHeight: 1.08, margin: 0,
               textWrap: "balance",
             }}>
-              Sześć segmentów, jeden punkt styku z&nbsp;inwestorem.
+              Dla kogo jest współpraca z&nbsp;homdu?
             </h3>
           </Reveal>
         </div>
@@ -375,7 +376,10 @@ export function B2BSection() {
           ))}
         </div>
 
-        {/* ── E. CTA block ───────────────────────────────────────────────── */}
+        {/* ── E. Founder (premium, dark) ─────────────────────────────────── */}
+        <FounderB2B onSchedule={openCalendly} />
+
+        {/* ── F. CTA block ───────────────────────────────────────────────── */}
         <Reveal>
           <div
             id="partner-cta"
@@ -388,6 +392,7 @@ export function B2BSection() {
               overflow: "hidden",
               isolation: "isolate",
               boxShadow: "var(--shadow-lg)",
+              scrollMarginTop: 96,
             }}
             className="b2b-cta-card"
           >

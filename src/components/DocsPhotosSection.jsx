@@ -88,7 +88,7 @@ export function DocsPhotosSection() {
                 aspectRatio: "857 / 1759",
               }}>
                 <img
-                  src="/assets/docs-list.png"
+                  src="/assets/docs-list.webp"
                   alt="Aplikacja homdu — ekran Dokumenty: kategorie i lista plików."
                   width="857"
                   height="1759"
@@ -170,7 +170,7 @@ export function DocsPhotosSection() {
                 aspectRatio: "857 / 1759",
               }}>
                 <img
-                  src="/assets/album-grid.png"
+                  src="/assets/album-grid.webp"
                   alt="Aplikacja homdu — ekran Album: zdjęcia postępu budowy."
                   width="857"
                   height="1759"

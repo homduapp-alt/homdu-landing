@@ -93,7 +93,7 @@ export function StagesSection() {
                 aspectRatio: "857 / 1759",
               }}>
                 <img
-                  src="/assets/stages-detail.png"
+                  src="/assets/stages-detail.webp"
                   alt="Aplikacja homdu — szczegóły etapu Fundamenty: budżet etapu, wydatki i zadania."
                   width="857"
                   height="1759"

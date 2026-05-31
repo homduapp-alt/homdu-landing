@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Motyw: auto-ciemny nocą (Warszawa 22–5) lub zapamiętany wybór — ustawiane przed renderem (bez migotania) -->
+<script>
+  (function(){try{
+    var t=null,h=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Warsaw',hour:'numeric',hour12:false}).format(new Date()),10);
+    if(h>=22||h<5){t='dark';}else{var s=localStorage.getItem('homdu-theme');if(s==='light'||s==='dark')t=s;}
+    document.documentElement.setAttribute('data-theme',t||'light');
+  }catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script>
+<title>homdu dla partnerów — Twoja marka tam, gdzie zapada decyzja inwestycyjna</title>
+<meta name="description" content="Kontekstowy kanał dotarcia do inwestora budowlanego i remontowego — w momencie, w którym planuje, kupuje i wykonuje. Formaty współpracy dla producentów, banków, ubezpieczycieli i retailu." />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="homdu" />
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:title" content="homdu dla partnerów — Twoja marka w etapie decyzji inwestycyjnej" />
+<meta property="og:description" content="Dotrzyj do inwestora wtedy, kiedy podejmuje decyzje zakupowe. Partner etapu, producenci, poradniki ekspertów, oferty finansowe — formaty współpracy w aplikacji homdu." />
+<meta property="og:url" content="https://homdu.pl/partnerzy" />
+<meta property="og:image" content="https://homdu.pl/assets/logo-homdu-icon.jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#2E6FD4" />
+<link rel="canonical" href="https://homdu.pl/partnerzy" />
+<link rel="icon" type="image/svg+xml" href="/assets/logo-homdu.svg" />
+<link rel="apple-touch-icon" href="/assets/logo-homdu-icon.jpeg" />
+
+<!-- Google Analytics 4 + Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){var c=null;try{c=localStorage.getItem('homdu-consent');}catch(e){}
+    gtag('consent','default',{
+      ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied',
+      analytics_storage: c==='granted' ? 'granted' : 'denied',
+      functionality_storage:'granted', security_storage:'granted', wait_for_update:500
+    });})();
+  gtag('js', new Date());
+  gtag('config', 'G-EQ750JCPRQ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ750JCPRQ"></script>
+<script defer src="/cookie-consent.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Calendly (popup do umawiania rozmów partnerskich) -->
+<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="/src/main-partners.jsx"></script>
+</body>
+</html>

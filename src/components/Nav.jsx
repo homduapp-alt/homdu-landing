@@ -1,17 +1,27 @@
-// Nav.jsx — sticky glass top nav with mobile hamburger sheet
-// (theme toggle moved to the footer in v4)
+// Nav.jsx — sticky glass top nav with mobile hamburger sheet.
+// `variant` switches between the B2C (investors) and B2B (partners) funnels.
 
 import { useState, useEffect } from "react";
+import { Icon } from "./icons.jsx";
 import { Logo, AppStoreBadge } from "./shared.jsx";
 
-export function Nav() {
-  const links = [
-    { href: "#funkcje", label: "Funkcje" },
-    { href: "#etapy", label: "Etapy" },
-    { href: "#koszty", label: "Koszty" },
-    { href: "#poradniki", label: "Poradniki" },
-    { href: "#dla-partnerow", label: "Dla partnerów", emphasis: true },
-  ];
+export function Nav({ variant = "b2c" }) {
+  const links =
+    variant === "b2b"
+      ? [
+          { href: "#dlaczego", label: "Dlaczego homdu" },
+          { href: "#formaty", label: "Formaty współpracy" },
+          { href: "#dla-kogo", label: "Dla kogo" },
+          { href: "#partner-cta", label: "Kontakt" },
+          { href: "/", label: "Strona dla inwestorów", emphasis: true },
+        ]
+      : [
+          { href: "#funkcje", label: "Funkcje" },
+          { href: "#etapy", label: "Etapy" },
+          { href: "#koszty", label: "Koszty" },
+          { href: "#poradniki", label: "Poradniki" },
+          { href: "/partnerzy", label: "Dla partnerów", emphasis: true },
+        ];
 
   const [open, setOpen] = useState(false);
 
@@ -49,7 +59,14 @@ export function Nav() {
           ))}
         </ul>
         <div className="nav__cta">
-          <AppStoreBadge size={40} />
+          {variant === "b2b" ? (
+            <a href="#partner-cta" className="btn btn--primary nav__cta-btn" style={{ padding: "10px 18px", fontSize: 14 }}>
+              <Icon.Calendar style={{ width: 15, height: 15 }} />
+              Umów rozmowę
+            </a>
+          ) : (
+            <AppStoreBadge size={40} />
+          )}
           <button
             className="nav__hamburger"
             aria-label={open ? "Zamknij menu" : "Otwórz menu"}
@@ -106,7 +123,14 @@ export function Nav() {
 
           <div className="nav__sheet__foot">
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <AppStoreBadge size={56} />
+              {variant === "b2b" ? (
+                <a href="#partner-cta" onClick={close} className="btn btn--primary btn--lg">
+                  <Icon.Calendar style={{ width: 16, height: 16 }} />
+                  Umów rozmowę
+                </a>
+              ) : (
+                <AppStoreBadge size={56} />
+              )}
             </div>
             <div className="nav__sheet__foot__row">
               <a href="/polityka-prywatnosci" onClick={close}>Polityka prywatności</a>

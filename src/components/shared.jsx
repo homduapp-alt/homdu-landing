@@ -44,13 +44,17 @@ export function Logo({ size = "md", href = "/" }) {
 }
 
 // ── App Store badge ─────────────────────────────────────────────────────────
-export function AppStoreBadge({ size = 52, href = "#pobierz", dark = false, label = "Pobierz w App Store" }) {
+const APP_STORE_URL = "https://apps.apple.com/us/app/homdu-budowa-i-remont/id6759539185";
+
+export function AppStoreBadge({ size = 52, href = APP_STORE_URL, dark = false, label = "Pobierz w App Store" }) {
   const isInternal = href.startsWith("#") || href.startsWith("javascript:");
   return (
     <a
       className={`appstore-badge ${dark ? "appstore-badge--dark" : ""}`}
       href={href}
       aria-label={label}
+      target={isInternal ? undefined : "_blank"}
+      rel={isInternal ? undefined : "noopener noreferrer"}
       onClick={isInternal ? (e) => e.preventDefault() : undefined}
     >
       <img src="/assets/appstore-badge.svg" alt={label} style={{ height: size }} />
