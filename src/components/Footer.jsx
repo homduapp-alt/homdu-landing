@@ -28,7 +28,6 @@ export function Footer({ theme, setTheme, variant = "b2c" }) {
           links: [
             { label: "Umów rozmowę", href: "#partner-cta" },
             { label: "Pobierz deck", href: "#partner-cta" },
-            { label: "partners@homdu.pl", href: "mailto:partners@homdu.pl" },
             { label: "homdu.app@gmail.com", href: "mailto:homdu.app@gmail.com" },
           ],
         },
@@ -139,9 +138,7 @@ export function Footer({ theme, setTheme, variant = "b2c" }) {
         <div className="footer__btm">
           <div>© {new Date().getFullYear()} homdu. Wszystkie prawa zastrzeżone.</div>
           <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-            <a href={isB2B ? "mailto:partners@homdu.pl" : "mailto:homdu.app@gmail.com"}>
-              {isB2B ? "partners@homdu.pl" : "homdu.app@gmail.com"}
-            </a>
+            <a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a>
             <span style={{ color: "var(--line-2)" }}>·</span>
             <span>Polska</span>
             <span style={{ color: "var(--line-2)" }}>·</span>
