@@ -27,7 +27,7 @@ export function Logo({ size = "md", href = "/" }) {
   return (
     <a href={href} className="nav__logo" aria-label="homdu — strona główna">
       <img
-        src="/assets/logo-homdu-icon.jpeg"
+        src="/assets/logo-homdu-icon.webp"
         alt=""
         aria-hidden="true"
         className="nav__logo__mark"

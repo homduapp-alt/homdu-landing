@@ -4,7 +4,7 @@
 
 import React from "react";
 import { Icon } from "./icons.jsx";
-import { Reveal, IPhone } from "./shared.jsx";
+import { Reveal } from "./shared.jsx";
 import { FounderB2B } from "./FounderB2B.jsx";
 
 export function B2BSection() {
@@ -187,10 +187,22 @@ export function B2BSection() {
                   filter: "blur(20px)", zIndex: 0,
                 }}
               />
-              <IPhone
-                size="md"
-                slotId="b2b-partner-stage"
-                placeholder="StageDetailsView z partnerem.png — Etap „Instalacje” z headerem partnera (logo + nazwa producenta), karta „Rekomendowane produkty” (3 produkty z cenami), sekcja „Poradnik partnera” (artykuł + wideo), pasek budżetu 15 000 / 20 000 zł, lista 4 zadań etapu"
+              <img
+                src="/assets/partner-fundamenty.webp"
+                alt="Aplikacja homdu — etap Fundamenty: główny partner etapu, inni producenci etapu i budżet etapu (5000 / 45 000 zł)."
+                width="857"
+                height="1759"
+                decoding="async"
+                loading="lazy"
+                style={{
+                  position: "relative",
+                  zIndex: 1,
+                  width: 320,
+                  maxWidth: "100%",
+                  height: "auto",
+                  display: "block",
+                  filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.35))",
+                }}
               />
 
               {/* Brand chip */}

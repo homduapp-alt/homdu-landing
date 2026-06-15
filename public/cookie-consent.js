@@ -17,21 +17,58 @@
     store("denied");
   }
 
-  // ── Zdarzenia własne (delegacja klików, działa na wszystkich stronach) ──
-  function ev(name, params) { if (typeof window.gtag === "function") window.gtag("event", name, params || {}); }
+  // ── Zdarzenia własne (delegacja klików, działa na obu stronach) ──
+  // Lejek (b2c = strona główna / inwestorzy, b2b = /partnerzy) dołączany do
+  // każdego zdarzenia, żeby raporty GA4 segmentowały po grupie odbiorców.
+  function funnel() {
+    return location.pathname.indexOf("/partnerzy") === 0 ? "b2b" : "b2c";
+  }
+  function ev(name, params) {
+    if (typeof window.gtag !== "function") return;
+    var p = { funnel: funnel(), page_path: location.pathname };
+    if (params) for (var k in params) p[k] = params[k];
+    window.gtag("event", name, p);
+  }
+
   document.addEventListener("click", function (e) {
     var el = e.target && e.target.closest ? e.target.closest("a, button") : null;
     if (!el) return;
+    var href = (el.getAttribute && el.getAttribute("href")) || "";
+    var txt = (el.textContent || "").trim();
+    var lc = txt.toLowerCase();
+    var label = txt.slice(0, 60);
+
     if (el.classList && el.classList.contains("appstore-badge")) {
-      ev("app_store_click", { page_location: location.pathname });
-    } else if (el.matches && el.matches('a[href="#pobierz"]')) {
-      ev("cta_download", { label: (el.textContent || "").trim().slice(0, 40) });
-    } else if (el.matches && el.matches('a[href="#dla-partnerow"], a[href="#partner-cta"]')) {
-      ev("partner_cta", { label: (el.textContent || "").trim().slice(0, 40) });
+      // Pobranie aplikacji — kliknięcie badge App Store (B2C).
+      ev("app_store_click", { label: label });
+    } else if (lc.indexOf("umów rozmow") >= 0 || lc.indexOf("nawiąż współprac") >= 0) {
+      // Intencja umówienia rozmowy partnerskiej (otwiera Calendly lub przewija do CTA).
+      ev("schedule_call_click", { label: label });
+    } else if (lc.indexOf("pobierz deck") >= 0) {
+      ev("deck_click", { label: label });
+    } else if (href === "/partnerzy" || href.indexOf("/partnerzy") === 0) {
+      // Przejście inwestor → partnerzy (nawigacja / hero / pasek krzyżowy).
+      ev("go_to_partners", { label: label });
+    } else if (el.classList && el.classList.contains("footer__cross") && href === "/") {
+      // Przejście partner → strona dla inwestorów.
+      ev("go_to_investors", { label: label });
+    } else if (href.indexOf("mailto:") === 0) {
+      ev("email_click", { email: href.replace("mailto:", "").slice(0, 60) });
     } else if (el.classList && el.classList.contains("theme-toggle")) {
       ev("theme_toggle");
     }
   }, true);
+
+  // ── Realna konwersja: rezerwacja rozmowy w Calendly ───────────────────────
+  // Calendly w popupie wysyła window.postMessage przy zaplanowaniu spotkania.
+  window.addEventListener("message", function (e) {
+    if (e && e.data && typeof e.data.event === "string" &&
+        e.data.event.indexOf("calendly.") === 0) {
+      if (e.data.event === "calendly.event_scheduled") {
+        ev("calendly_booked", {});   // partner zarezerwował rozmowę — lead
+      }
+    }
+  });
 
   // ── Baner zgody ──
   function renderBanner() {
