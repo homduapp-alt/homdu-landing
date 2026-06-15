@@ -6,7 +6,7 @@ import { Reveal } from "./shared.jsx";
 
 export function SocialProof() {
   return (
-    <section className="section">
+    <section className="section" style={{ paddingTop: 32, paddingBottom: 32 }}>
       <div className="container">
         <Reveal>
           <div

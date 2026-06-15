@@ -4,19 +4,10 @@
 // Rendered inside B2BSection, just before the #partner-cta block.
 // `onSchedule` is passed down from B2BSection so it shares the Calendly popup.
 
-import React from "react";
 import { Icon } from "./icons.jsx";
 import { Reveal } from "./shared.jsx";
 
 export function FounderB2B({ onSchedule }) {
-  const pills = [
-    { icon: <Icon.Sparkle />,    label: "5+ lat UX/UI w fintechu" },
-    { icon: <Icon.Stages />,     label: "Design systemy budowane od zera" },
-    { icon: <Icon.ChartLine />,  label: "Cyfrowe procesy dużej skali" },
-    { icon: <Icon.Users />,      label: "58 tys. subskrybentów · 11 mln wyświetleń" },
-    { icon: <Icon.Shield />,     label: "Apple Certified Support Professional" },
-  ];
-
   return (
     <div className="founder-b2b" id="o-tworcy-b2b">
       {/* grid + glow backdrop */}
@@ -27,40 +18,20 @@ export function FounderB2B({ onSchedule }) {
       <div className="founder-b2b__inner">
         {/* ── Text (left) ── */}
         <div className="founder-b2b__copy">
-          <Reveal>
-            <span className="eyebrow founder-b2b__eyebrow">
-              <span className="dot" style={{ background: "#6CA4F0", boxShadow: "0 0 0 3px rgba(108,164,240,0.22)" }} />
-              Founder homdu
-            </span>
-          </Reveal>
           <Reveal delay={80}>
             <h2 style={{
               fontSize: "clamp(28px, 3.4vw, 46px)",
               fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.06,
               margin: "20px 0 0", color: "#F5F4F0", textWrap: "balance",
             }}>
-              homdu to nie tylko aplikacja. To{" "}
+              Moje pomysły zmieniam{" "}
               <span style={{
                 background: "linear-gradient(180deg, #6CA4F0 0%, #3A7FE5 100%)",
                 WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent",
               }}>
-                nowe miejsce kontaktu z&nbsp;inwestorem.
+                w&nbsp;aplikacje.
               </span>
             </h2>
-          </Reveal>
-
-          {/* credibility pills */}
-          <Reveal delay={140}>
-            <div className="founder-b2b__pills">
-              {pills.map((p) => (
-                <div className="founder-b2b__pill" key={p.label}>
-                  <span className="founder-b2b__pill-icon">
-                    {React.cloneElement(p.icon, { style: { width: 15, height: 15 } })}
-                  </span>
-                  <span>{p.label}</span>
-                </div>
-              ))}
-            </div>
           </Reveal>
 
           <Reveal delay={200}>

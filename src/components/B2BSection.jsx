@@ -168,10 +168,6 @@ export function B2BSection() {
                   <Icon.Calendar style={{ width: 16, height: 16 }} />
                   Umów rozmowę
                 </a>
-                <a href="#partner-cta" className="btn btn--ghost btn--lg">
-                  <Icon.Download style={{ width: 16, height: 16 }} />
-                  Pobierz deck współpracy
-                </a>
               </div>
             </Reveal>
           </div>
@@ -397,6 +393,7 @@ export function B2BSection() {
             id="partner-cta"
             style={{
               position: "relative",
+              marginTop: 28,
               borderRadius: 36,
               padding: "64px 56px",
               background: "linear-gradient(160deg, #15171C 0%, #0B0C10 100%)",
@@ -474,20 +471,6 @@ export function B2BSection() {
                   >
                     <Icon.Calendar style={{ width: 16, height: 16 }} />
                     Umów rozmowę
-                  </a>
-                  <a
-                    href="#"
-                    onClick={(e) => e.preventDefault()}
-                    className="btn btn--lg"
-                    style={{
-                      background: "rgba(255,255,255,0.08)",
-                      color: "#F5F4F0",
-                      border: "1px solid rgba(255,255,255,0.18)",
-                      backdropFilter: "blur(20px)",
-                    }}
-                  >
-                    <Icon.Download style={{ width: 16, height: 16 }} />
-                    Pobierz deck współpracy
                   </a>
                 </div>
               </div>

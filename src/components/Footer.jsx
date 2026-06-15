@@ -24,14 +24,6 @@ export function Footer({ theme, setTheme, variant = "b2c" }) {
           ],
         },
         {
-          title: "Kontakt partnerski",
-          links: [
-            { label: "Umów rozmowę", href: "#partner-cta" },
-            { label: "Pobierz deck", href: "#partner-cta" },
-            { label: "homdu.app@gmail.com", href: "mailto:homdu.app@gmail.com" },
-          ],
-        },
-        {
           title: "Prawne",
           links: [
             { label: "Warunki korzystania", href: "/warunki-korzystania" },
@@ -54,9 +46,6 @@ export function Footer({ theme, setTheme, variant = "b2c" }) {
         {
           title: "Firma",
           links: [
-            "O nas",
-            "Blog",
-            "Kariera",
             { label: "Kontakt", href: "mailto:homdu.app@gmail.com" },
           ],
         },
@@ -150,21 +139,19 @@ export function Footer({ theme, setTheme, variant = "b2c" }) {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: 8,
+                justifyContent: "center",
                 background: "transparent",
                 border: "1px solid var(--line-2)",
                 color: "var(--ink-2)",
                 borderRadius: 999,
-                padding: "6px 12px",
+                width: 36,
+                height: 36,
+                padding: 0,
                 cursor: "pointer",
-                font: "inherit",
-                fontSize: 13,
-                whiteSpace: "nowrap",
                 flexShrink: 0,
               }}
             >
               {theme === "dark" ? <Icon.Sun /> : <Icon.Moon />}
-              <span style={{ whiteSpace: "nowrap" }}>{theme === "dark" ? "Tryb jasny" : "Tryb ciemny"}</span>
             </button>
           </div>
         </div>
