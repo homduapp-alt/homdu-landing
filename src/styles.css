@@ -1286,3 +1286,7 @@ image-slot {
     text-overflow: clip;
   }
 }
+
+/* Hero B2B secondary CTA */
+.hero-b2b-cta svg { transition: transform 0.2s ease; }
+.hero-b2b-cta:hover svg { transform: translateX(3px); }

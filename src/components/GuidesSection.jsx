@@ -21,7 +21,7 @@ export function GuidesSection() {
           <div>
             <Reveal delay={80}>
               <h2 className="h-section" style={{ marginTop: 20, marginBottom: 20 }}>
-                Odpowiedź zanim zadasz pytanie.
+                Poradniki z odpowiedziami na Twoje pytania.
               </h2>
             </Reveal>
             <Reveal delay={160}>

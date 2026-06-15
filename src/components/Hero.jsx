@@ -92,53 +92,41 @@ export function Hero() {
               </p>
             </Reveal>
 
-            {/* Dual CTA: B2C App Store badge + B2B */}
+            {/* B2C primary CTA: App Store */}
             <Reveal delay={320}>
               <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
                 <AppStoreBadge size={56} />
-                <a href="/partnerzy" className="btn btn--brand btn--lg">
-                  <Icon.Briefcase style={{ width: 16, height: 16 }} />
-                  Zostań partnerem homdu
-                </a>
+                <div style={{ fontSize: 13, color: "var(--ink-3)", lineHeight: 1.4 }}>
+                  Bezpłatnie na iPhone
+                </div>
               </div>
             </Reveal>
 
-            {/* Two-world split line */}
+            {/* B2B secondary CTA: partnerzy */}
             <Reveal delay={400}>
-              <div
-                className="hero-twoworlds"
+              <a
+                href="/partnerzy"
+                className="hero-b2b-cta"
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: 0,
-                  marginTop: 12,
-                  paddingTop: 20,
-                  borderTop: "1px solid var(--line)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  marginTop: 22,
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: "var(--ink-2)",
+                  textDecoration: "none",
                 }}
               >
-                <div style={{ paddingRight: 20, borderRight: "1px solid var(--line)" }}>
-                  <div style={{
-                    fontSize: 11, fontWeight: 600, letterSpacing: "0.08em",
-                    color: "var(--hdu)", textTransform: "uppercase", marginBottom: 6,
-                  }}>
-                    Dla inwestorów
-                  </div>
-                  <div style={{ fontSize: 14, lineHeight: 1.45, color: "var(--ink-2)" }}>
-                    Pełna kontrola nad budową i remontem od pierwszego dnia.
-                  </div>
-                </div>
-                <div style={{ paddingLeft: 20 }}>
-                  <div style={{
-                    fontSize: 11, fontWeight: 600, letterSpacing: "0.08em",
-                    color: "var(--ink)", textTransform: "uppercase", marginBottom: 6,
-                  }}>
-                    Dla partnerów branżowych
-                  </div>
-                  <div style={{ fontSize: 14, lineHeight: 1.45, color: "var(--ink-2)" }}>
-                    Kontekstowy kanał dotarcia do inwestora w&nbsp;momencie decyzji.
-                  </div>
-                </div>
-              </div>
+                <span style={{ color: "var(--ink-3)", fontWeight: 500 }}>Jesteś producentem lub partnerem?</span>
+                <span style={{ color: "var(--hdu)", display: "inline-flex", alignItems: "center", gap: 4 }}>
+                  homdu dla partnerów
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M5 12h14" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
             </Reveal>
           </div>
 
@@ -231,9 +219,6 @@ export function Hero() {
           .hero-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
           .hero-phone-wrap { height: auto !important; padding: 24px 0; }
           .hero-chips { display: none !important; }
-          .hero-twoworlds { grid-template-columns: 1fr !important; gap: 16px !important; }
-          .hero-twoworlds > div:first-child { padding-right: 0 !important; border-right: none !important; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
-          .hero-twoworlds > div:last-child { padding-left: 0 !important; padding-top: 16px; }
         }
       `}</style>
     </section>
