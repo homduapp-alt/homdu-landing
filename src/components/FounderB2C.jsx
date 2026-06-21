@@ -1,9 +1,10 @@
+import { tr } from "../i18n.js";
+import { Icon } from "./icons.jsx";
+import { Reveal } from "./shared.jsx";
+
 // FounderB2C.jsx — "O twórcy" for investors (B2C).
 // Warm, personal, human. Photo left / text right; stacks on mobile.
 // Lives on index.html, just before SocialProof.
-
-import { Icon } from "./icons.jsx";
-import { Reveal } from "./shared.jsx";
 
 export function FounderB2C() {
   return (
@@ -15,7 +16,7 @@ export function FounderB2C() {
             <div className="founder-b2c-photo">
               <img
                 src="/assets/founder-site.webp"
-                alt="Jakub Matwiejczyk, twórca homdu, przy fundamentach budowanego domu — ujęcie z drona, las w tle"
+                alt={tr("Jakub Matwiejczyk, twórca homdu, przy fundamentach budowanego domu — ujęcie z drona, las w tle", "Jakub Matwiejczyk, founder of homdu, by the foundations of his house under construction — drone shot, forest behind")}
                 loading="lazy"
                 decoding="async"
               />
@@ -24,8 +25,8 @@ export function FounderB2C() {
                   <Icon.House />
                 </span>
                 <div>
-                  <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>Budowa domu</div>
-                  <div className="sub-line" style={{ whiteSpace: "nowrap" }}>Mazowsze</div>
+                  <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>{tr("Budowa domu", "House build")}</div>
+                  <div className="sub-line" style={{ whiteSpace: "nowrap" }}>{tr("Mazowsze", "Mazovia")}</div>
                 </div>
               </div>
             </div>
@@ -35,25 +36,19 @@ export function FounderB2C() {
           <div className="founder-b2c-copy">
             <Reveal delay={80}>
               <h2 className="h-section" style={{ marginTop: 0, marginBottom: 22 }}>
-                Stworzyłem homdu, bo sam wiem, jak łatwo zgubić kontrolę nad&nbsp;budową.
+                {tr("Stworzyłem homdu, bo sam wiem, jak łatwo zgubić kontrolę nad\u00a0budową.", "I built homdu because I know first-hand how easily you can lose control of a build.")}
               </h2>
             </Reveal>
             <Reveal delay={140}>
               <div className="founder-b2c-prose">
                 <p>
-                  Nazywam się Jakub Matwiejczyk i&nbsp;stworzyłem homdu z&nbsp;bardzo prostego
-                  powodu — budowa domu albo remont nie powinny opierać się na&nbsp;chaosie
-                  w&nbsp;notatkach, zdjęciach, plikach PDF, wiadomościach od&nbsp;ekip
-                  i&nbsp;dziesiątkach otwartych kart w&nbsp;Google.
+                  {tr("Nazywam się Jakub Matwiejczyk i\u00a0stworzyłem homdu z\u00a0bardzo prostego powodu — budowa domu albo remont nie powinny opierać się na\u00a0chaosie w\u00a0notatkach, zdjęciach, plikach PDF, wiadomościach od\u00a0ekip i\u00a0dziesiątkach otwartych kart w\u00a0Google.", "My name is Jakub Matwiejczyk, and I built homdu for a very simple reason — building or renovating a home shouldn't rest on chaos spread across notes, photos, PDFs, messages from crews and dozens of open Google tabs.")}
                 </p>
                 <p>
-                  homdu powstało z&nbsp;realnej potrzeby: uporządkować cały proces inwestycji
-                  w&nbsp;jednym miejscu. Etapy, dokumenty, budżet, decyzje, wykonawcy i&nbsp;ważne
-                  informacje są zawsze pod&nbsp;ręką — dokładnie wtedy, kiedy ich potrzebujesz.
+                  {tr("homdu powstało z\u00a0realnej potrzeby: uporządkować cały proces inwestycji w\u00a0jednym miejscu. Etapy, dokumenty, budżet, decyzje, wykonawcy i\u00a0ważne informacje są zawsze pod\u00a0ręką — dokładnie wtedy, kiedy ich potrzebujesz.", "homdu came from a real need: to bring the whole project into one place. Stages, documents, budget, decisions, contractors and key information are always to hand — exactly when you need them.")}
                 </p>
                 <p>
-                  To aplikacja dla osób, które chcą budować spokojniej, mądrzej
-                  i&nbsp;z&nbsp;większą kontrolą.
+                  {tr("To aplikacja dla osób, które chcą budować spokojniej, mądrzej i\u00a0z\u00a0większą kontrolą.", "It's an app for people who want to build more calmly, more wisely and with greater control.")}
                 </p>
               </div>
             </Reveal>
@@ -64,11 +59,11 @@ export function FounderB2C() {
                   <div style={{ fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em" }}>
                     Jakub Matwiejczyk
                   </div>
-                  <div style={{ fontSize: 13, color: "var(--ink-2)" }}>twórca homdu</div>
+                  <div style={{ fontSize: 13, color: "var(--ink-2)" }}>{tr("twórca homdu", "founder of homdu")}</div>
                 </div>
               </div>
               <div style={{ fontSize: 13, color: "var(--ink-3)", marginTop: 14, lineHeight: 1.5 }}>
-                Projektant produktów cyfrowych · twórca treści technologicznych · buduję własny dom
+                {tr("Projektant produktów cyfrowych · twórca treści technologicznych · buduję własny dom", "Digital product designer · technology content creator · building my own house")}
               </div>
             </Reveal>
           </div>

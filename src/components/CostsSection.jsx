@@ -1,8 +1,9 @@
-// CostsSection.jsx — Section 5
-// Real Costs dashboard screenshot + bullets, with a donut chart accent.
-
+import { tr } from "../i18n.js";
 import { Icon } from "./icons.jsx";
 import { Reveal, Checklist } from "./shared.jsx";
+
+// CostsSection.jsx — Section 5
+// Phone mock (CostsDashboardView) + bullets, with a donut chart accent.
 
 export function CostsSection() {
   return (
@@ -43,7 +44,7 @@ export function CostsSection() {
               }}>
                 <img
                   src="/assets/costs-dashboard.webp"
-                  alt="Aplikacja homdu — ekran Koszty: budżet 900 000 zł, wydatki, wykorzystanie 27%."
+                  alt={tr("Aplikacja homdu — ekran Koszty: budżet 900 000 zł, wydatki, wykorzystanie 27%.", "homdu app — Costs screen: budget 900,000 zł, expenses, 27% used.")}
                   width="857"
                   height="1759"
                   decoding="async"
@@ -80,11 +81,11 @@ export function CostsSection() {
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 10, color: "var(--ink-2)", fontWeight: 500, letterSpacing: "0.02em" }}>Budżet</div>
+                  <div style={{ fontSize: 10, color: "var(--ink-2)", fontWeight: 500, letterSpacing: "0.02em" }}>{tr("Budżet", "Budget")}</div>
                   <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "-0.015em", fontVariantNumeric: "tabular-nums" }}>
                     95&nbsp;000 zł
                   </div>
-                  <div style={{ fontSize: 10, color: "var(--ink-3)", marginTop: 1 }}>z 180 000 zł</div>
+                  <div style={{ fontSize: 10, color: "var(--ink-3)", marginTop: 1 }}>{tr("z 180 000 zł", "of 180,000 zł")}</div>
                 </div>
               </div>
 
@@ -101,8 +102,8 @@ export function CostsSection() {
                   <Icon.Scan />
                 </span>
                 <div>
-                  <div>Skan paragonu</div>
-                  <div className="sub-line">OCR: 2 489,00 zł</div>
+                  <div>{tr("Skan paragonu", "Receipt scan")}</div>
+                  <div className="sub-line">{tr("OCR: 2 489,00 zł", "OCR: 2,489.00 zł")}</div>
                 </div>
               </div>
             </div>
@@ -113,26 +114,25 @@ export function CostsSection() {
             <Reveal>
               <span className="eyebrow">
                 <span className="dot" />
-                Koszty pod kontrolą
+                {tr("Koszty pod kontrolą", "Costs under control")}
               </span>
             </Reveal>
             <Reveal delay={80}>
               <h2 className="h-section" style={{ marginTop: 20, marginBottom: 20 }}>
-                Żaden wydatek nie&nbsp;umknie.
+                {tr("Żaden wydatek nie\u00a0umknie.", "No expense slips through.")}
               </h2>
             </Reveal>
             <Reveal delay={160}>
               <p className="sub" style={{ marginBottom: 32, maxWidth: 520 }}>
-                Zrób zdjęcie faktury — OCR wczyta kwotę automatycznie.
-                Zawsze wiesz ile zostało z budżetu, do złotówki.
+                {tr("Zrób zdjęcie faktury — OCR wczyta kwotę automatycznie. Zawsze wiesz ile zostało z budżetu, do złotówki.", "Snap a photo of an invoice — OCR reads the amount automatically. You always know how much budget is left, to the penny.")}
               </p>
             </Reveal>
             <Reveal delay={240}>
               <Checklist items={[
-                { b: "Skanowanie paragonów", r: "z automatycznym rozpoznawaniem kwot" },
-                { b: "Podział kosztów per etap", r: "z donut chartem i kategoriami" },
-                { b: "Alert gdy przekroczysz", r: "90% budżetu — zanim będzie za późno" },
-                { b: "Trend miesięczny i prognoza", r: "końcowa wartość inwestycji" },
+                { b: tr("Skanowanie paragonów", "Receipt scanning"), r: tr("z automatycznym rozpoznawaniem kwot", "with automatic amount recognition") },
+                { b: tr("Podział kosztów per etap", "Cost breakdown per stage"), r: tr("z donut chartem i kategoriami", "with a donut chart and categories") },
+                { b: tr("Alert gdy przekroczysz", "An alert when you pass"), r: tr("90% budżetu — zanim będzie za późno", "90% of budget — before it's too late") },
+                { b: tr("Trend miesięczny i prognoza", "Monthly trend and forecast"), r: tr("końcowa wartość inwestycji", "of the final project cost") },
               ]} />
             </Reveal>
           </div>

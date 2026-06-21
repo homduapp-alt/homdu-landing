@@ -1,32 +1,33 @@
-// HowItWorks.jsx — Section 2
-// 3-step explainer with real app screenshots.
-
+import { tr } from "../i18n.js";
 import { Reveal, SectionHeader } from "./shared.jsx";
+
+// HowItWorks.jsx — Section 2
+// 3-step explainer with mini phones for each step.
 
 export function HowItWorks() {
   const steps = [
     {
       n: "01",
-      title: "Stwórz inwestycję",
-      desc: "Wybierz typ — budowa, remont lub wykończenie. Odpowiedz na 5 prostych pytań.",
+      title: tr("Stwórz inwestycję", "Create your project"),
+      desc: tr("Wybierz typ — budowa, remont lub wykończenie. Odpowiedz na 5 prostych pytań.", "Choose the type — build, renovation or fit-out. Answer 5 simple questions."),
       img: "/assets/how-step-1.webp",
-      alt: "Konfiguracja inwestycji — wybór typu (Budowa domu / Remont / Wykończenie deweloperskie).",
+      alt: tr("Konfiguracja inwestycji — wybór typu (Budowa domu / Remont / Wykończenie deweloperskie).", "Project setup — choosing the type (House build / Renovation / Developer fit-out)."),
       gradient: "var(--stg-blue)",
     },
     {
       n: "02",
-      title: "Prowadź etap po etapie",
-      desc: "Każdy etap ma własny budżet, listę zadań, zdjęcia, dokumenty i kontakty do ekip.",
+      title: tr("Prowadź etap po etapie", "Run it stage by stage"),
+      desc: tr("Każdy etap ma własny budżet, listę zadań, zdjęcia, dokumenty i kontakty do ekip.", "Each stage has its own budget, task list, photos, documents and contractor contacts."),
       img: "/assets/how-step-2.webp",
-      alt: "Lista etapów inwestycji w aplikacji homdu — Wszystkie etapy.",
+      alt: tr("Lista etapów inwestycji w aplikacji homdu — Wszystkie etapy.", "List of project stages in the homdu app — All stages."),
       gradient: "var(--stg-purple)",
     },
     {
       n: "03",
-      title: "Liczy się każdy paragon.",
-      desc: "Kontroluj każdy wydatek i całkowity koszt inwestycji.",
+      title: tr("Liczy się każdy paragon.", "Every receipt counts."),
+      desc: tr("Kontroluj każdy wydatek i całkowity koszt inwestycji.", "Track every expense and the total cost of your project."),
       img: "/assets/how-step-3.webp",
-      alt: "Ekran Koszty w aplikacji homdu — budżet, wydatki i wykorzystanie.",
+      alt: tr("Ekran Koszty w aplikacji homdu — budżet, wydatki i wykorzystanie.", "Costs screen in the homdu app — budget, expenses and usage."),
       gradient: "var(--stg-teal)",
     },
   ];
@@ -35,8 +36,8 @@ export function HowItWorks() {
     <section className="section" id="jak-to-dziala">
       <div className="container">
         <SectionHeader
-          title="Bez kursu obsługi. Skonfigurowane w minutę."
-          sub="Trzy kroki dzielą Cię od pełnej kontroli nad inwestycją."
+          title={tr("Bez kursu obsługi. Skonfigurowane w minutę.", "No manual needed. Set up in a minute.")}
+          sub={tr("Trzy kroki dzielą Cię od pełnej kontroli nad inwestycją.", "Three steps stand between you and full control of your project.")}
           align="center"
         />
 

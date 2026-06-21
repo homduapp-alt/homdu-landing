@@ -1,16 +1,17 @@
-// DocsPhotosSection.jsx — Section 6
-// Split layout: Documents (left) + Album (right) with real screenshots.
-
+import { tr } from "../i18n.js";
 import { Icon } from "./icons.jsx";
 import { Reveal, SectionHeader } from "./shared.jsx";
+
+// DocsPhotosSection.jsx — Section 6
+// Split layout: DocumentsView (left) + AlbumDetailView (right), with a hero headline above.
 
 export function DocsPhotosSection() {
   return (
     <section className="section">
       <div className="container">
         <SectionHeader
-          title="Koniec szukania w skrzynce mailowej."
-          sub="Umowy, projekty, pozwolenia — skategoryzowane i zawsze dostępne. A zdjęcia postępu trafiają prosto do albumu etapu — z notatkami i datą."
+          title={tr("Koniec szukania w skrzynce mailowej.", "No more digging through your inbox.")}
+          sub={tr("Umowy, projekty, pozwolenia — skategoryzowane i zawsze dostępne. A zdjęcia postępu trafiają prosto do albumu etapu — z notatkami i datą.", "Contracts, plans, permits — categorised and always to hand. And progress photos go straight into the stage album — with notes and a date.")}
           align="center"
         />
 
@@ -60,7 +61,7 @@ export function DocsPhotosSection() {
                   letterSpacing: "0.02em",
                 }}>
                   <Icon.Docs style={{ width: 13, height: 13 }} />
-                  Dokumenty
+                  {tr("Dokumenty", "Documents")}
                 </div>
                 <h3 style={{
                   fontSize: 28,
@@ -69,7 +70,7 @@ export function DocsPhotosSection() {
                   lineHeight: 1.1,
                   margin: 0,
                 }}>
-                  Skategoryzowane i&nbsp;zawsze pod ręką
+                  {tr("Skategoryzowane i\u00a0zawsze pod ręką", "Categorised and always to hand")}
                 </h3>
                 <p style={{
                   fontSize: 15,
@@ -77,8 +78,7 @@ export function DocsPhotosSection() {
                   color: "rgba(255,255,255,0.85)",
                   marginTop: 14,
                 }}>
-                  Umowa, projekt budowlany, pozwolenie na budowę. homdu podpowie,
-                  których dokumentów jeszcze brakuje.
+                  {tr("Umowa, projekt budowlany, pozwolenie na budowę. homdu podpowie, których dokumentów jeszcze brakuje.", "Contract, building plans, construction permit. homdu suggests which documents are still missing.")}
                 </p>
               </div>
               <div style={{
@@ -89,7 +89,7 @@ export function DocsPhotosSection() {
               }}>
                 <img
                   src="/assets/docs-list.webp"
-                  alt="Aplikacja homdu — ekran Dokumenty: kategorie i lista plików."
+                  alt={tr("Aplikacja homdu — ekran Dokumenty: kategorie i lista plików.", "homdu app — Documents screen: categories and file list.")}
                   width="857"
                   height="1759"
                   decoding="async"
@@ -142,7 +142,7 @@ export function DocsPhotosSection() {
                   letterSpacing: "0.02em",
                 }}>
                   <Icon.Photo style={{ width: 13, height: 13 }} />
-                  Zdjęcia
+                  {tr("Zdjęcia", "Photos")}
                 </div>
                 <h3 style={{
                   fontSize: 28,
@@ -151,7 +151,7 @@ export function DocsPhotosSection() {
                   lineHeight: 1.1,
                   margin: 0,
                 }}>
-                  Historia postępu Twojej budowy
+                  {tr("Historia postępu Twojej budowy", "The progress story of your build")}
                 </h3>
                 <p style={{
                   fontSize: 15,
@@ -159,8 +159,7 @@ export function DocsPhotosSection() {
                   color: "rgba(255,255,255,0.85)",
                   marginTop: 14,
                 }}>
-                  Albumy postępu prac przypisane do etapu. Przeglądaj jak galerię
-                  — z możliwością zoom i notatką do każdego zdjęcia.
+                  {tr("Albumy postępu prac przypisane do etapu. Przeglądaj jak galerię — z możliwością zoom i notatką do każdego zdjęcia.", "Progress albums assigned to each stage. Browse them like a gallery — with zoom and a note on every photo.")}
                 </p>
               </div>
               <div style={{
@@ -171,7 +170,7 @@ export function DocsPhotosSection() {
               }}>
                 <img
                   src="/assets/album-grid.webp"
-                  alt="Aplikacja homdu — ekran Album: zdjęcia postępu budowy."
+                  alt={tr("Aplikacja homdu — ekran Album: zdjęcia postępu budowy.", "homdu app — Album screen: build progress photos.")}
                   width="857"
                   height="1759"
                   decoding="async"

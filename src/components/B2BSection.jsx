@@ -1,20 +1,32 @@
-// B2BSection.jsx — Full B2B / Partners module
-// Subsections: A. Header/hook · B. Why brands choose homdu · C. Collaboration
-// formats · D. For whom · E. CTA block z Calendly (umów rozmowę) + email.
-
+import { tr } from "../i18n.js";
 import React from "react";
 import { Icon } from "./icons.jsx";
-import { Reveal } from "./shared.jsx";
+import { Reveal, Logo } from "./shared.jsx";
 import { FounderB2B } from "./FounderB2B.jsx";
+
+// B2BSection.jsx — Full B2B / Partners module
+// Stays in homdu's design language: deep-blue accent, glass cards, gradient tiles,
+// iPhone mock — but a darker, more "operacyjny" container so the section reads as
+// a parallel world (investor ↔ partner) without breaking the aesthetic.
+//
+// Subsections:
+//   A. Header / hook
+//   B. Why brands choose homdu (4 reasons)
+//   C. Collaboration formats (5 cards)
+//   D. For whom (6 segments)
+//   E. CTA block: "Umów rozmowę" + "Pobierz deck"
 
 export function B2BSection() {
   const CALENDLY_URL = "https://calendly.com/homdu-app/30min?hide_gdpr_banner=1";
   const openCalendly = (e) => {
     if (e) e.preventDefault();
-    if (typeof window !== "undefined" && window.Calendly && window.Calendly.initPopupWidget) {
+    // Meta Pixel: opening Calendly = Contact (initiation). Lead fires only on
+    // the confirmed booking (calendly.event_scheduled), handled in analytics.js.
+    if (window.homduAnalytics) window.homduAnalytics.contactCalendly("partner_cta");
+    if (window.Calendly && window.Calendly.initPopupWidget) {
       window.Calendly.initPopupWidget({ url: CALENDLY_URL });
     } else {
-      // fallback: widget script not loaded yet → open in new tab
+      // fallback if the widget script hasn't loaded yet
       window.open(CALENDLY_URL, "_blank", "noopener");
     }
   };
@@ -23,87 +35,87 @@ export function B2BSection() {
     {
       icon: <Icon.Target />,
       g: "var(--stg-blue)",
-      title: "Wysoka intencja zakupowa",
-      desc: "Inwestor w homdu nie przegląda — on właśnie planuje. Dachówka, okna, pustaki czy rodzaj ubezpieczenia. Tu jest decyzja, nie ciekawość.",
+      title: tr("Wysoka intencja zakupowa", "High purchase intent"),
+      desc: tr("Inwestor w homdu nie przegląda — on właśnie planuje. Dachówka, okna, pustaki czy rodzaj ubezpieczenia. Tu jest decyzja, nie ciekawość.", "A homeowner in homdu isn't browsing — they're planning. Roof tiles, windows, blocks or the type of insurance. This is the decision, not idle curiosity."),
     },
     {
       icon: <Icon.Sliders />,
       g: "var(--stg-teal)",
-      title: "Ekspozycja w kontekście etapu",
-      desc: "Twoja marka pojawia się dokładnie wtedy, kiedy użytkownik jest na etapie, w którym Twój produkt ma sens. Nie wcześniej. Nie później.",
+      title: tr("Ekspozycja w kontekście etapu", "Exposure in the context of the stage"),
+      desc: tr("Twoja marka pojawia się dokładnie wtedy, kiedy użytkownik jest na etapie, w którym Twój produkt ma sens. Nie wcześniej. Nie później.", "Your brand appears exactly when the user is at the stage where your product makes sense. Not earlier. Not later."),
     },
     {
       icon: <Icon.Book />,
       g: "var(--stg-amber)",
-      title: "Wartościowy content, nie display",
-      desc: "Łączymy obecność marki z poradnikami, kalkulatorami i checklistami. Użytkownik zostaje — bo dostaje wartość, nie tylko kreację.",
+      title: tr("Wartościowy content, nie display", "Valuable content, not display ads"),
+      desc: tr("Łączymy obecność marki z poradnikami, kalkulatorami i checklistami. Użytkownik zostaje — bo dostaje wartość, nie tylko kreację.", "We pair your brand presence with guides, calculators and checklists. Users stay — because they get value, not just a banner."),
     },
     {
       icon: <Icon.ChartLine />,
       g: "var(--stg-purple)",
-      title: "Bliżej decyzji niż display",
-      desc: "Pomijamy etap „buduję świadomość”. Stoimy obok decyzji zakupowej — tam gdzie klasyczna reklama nie dochodzi.",
+      title: tr("Bliżej decyzji niż display", "Closer to the decision than display"),
+      desc: tr("Pomijamy etap „buduję świadomość”. Stoimy obok decyzji zakupowej — tam gdzie klasyczna reklama nie dochodzi.", "We skip the 'building awareness' stage. We stand right beside the purchase decision — where classic advertising never reaches."),
     },
   ];
 
   const formats = [
     {
-      tag: "Najwyższa ekspozycja",
+      tag: tr("Najwyższa ekspozycja", "Top exposure"),
       icon: <Icon.Trophy />,
       g: "var(--stg-blue)",
-      title: "Główny partner etapu",
-      desc: "Twoja marka jako oficjalny partner wybranego etapu — logo, opis, rekomendowane produkty. Maksymalna widoczność w realnym kontekście.",
-      bullets: ["Logo i CTA w nagłówku etapu", "Lista rekomendowanych produktów", "Karta partnera z opisem"],
+      title: tr("Główny partner etapu", "Lead stage partner"),
+      desc: tr("Twoja marka jako oficjalny partner wybranego etapu — logo, opis, rekomendowane produkty. Maksymalna widoczność w realnym kontekście.", "Your brand as the official partner of a chosen stage — logo, description, recommended products. Maximum visibility in a real context."),
+      bullets: [tr("Logo i CTA w nagłówku etapu", "Logo and CTA in the stage header"), tr("Lista rekomendowanych produktów", "List of recommended products"), tr("Karta partnera z opisem", "Partner card with a description")],
     },
     {
-      tag: "Skala",
+      tag: tr("Skala", "Scale"),
       icon: <Icon.Store />,
       g: "var(--stg-teal)",
-      title: "Producenci w etapie",
-      desc: "Obecność wielu marek w katalogu etapu. Idealne dla producentów materiałów, narzędzi i wyposażenia.",
-      bullets: ["Karta producenta w katalogu", "Linki do kart produktów", "Filtry per kategoria"],
+      title: tr("Producenci w etapie", "Manufacturers in a stage"),
+      desc: tr("Obecność wielu marek w katalogu etapu. Idealne dla producentów materiałów, narzędzi i wyposażenia.", "A presence for multiple brands in the stage catalogue. Ideal for manufacturers of materials, tools and equipment."),
+      bullets: [tr("Karta producenta w katalogu", "Manufacturer card in the catalogue"), tr("Linki do kart produktów", "Links to product pages"), tr("Filtry per kategoria", "Filters per category")],
     },
     {
-      tag: "Content",
+      tag: tr("Content", "Content"),
       icon: <Icon.Book />,
       g: "var(--stg-amber)",
-      title: "Poradniki i treści eksperckie",
-      desc: "Artykuły, wideo i shorts pod marką eksperta — czytane wtedy, kiedy są potrzebne. Bez bannerów, z merytoryką.",
-      bullets: ["Artykuły z brandingiem", "Wideo i shorts feed", "Pozycja eksperta w kategorii"],
+      title: tr("Poradniki i treści eksperckie", "Guides and expert content"),
+      desc: tr("Artykuły, wideo i shorts pod marką eksperta — czytane wtedy, kiedy są potrzebne. Bez bannerów, z merytoryką.", "Articles, videos and shorts under an expert's brand — read exactly when they're needed. No banners, all substance."),
+      bullets: [tr("Artykuły z brandingiem", "Branded articles"), tr("Wideo i shorts feed", "Video and shorts feed"), tr("Pozycja eksperta w kategorii", "Expert positioning in a category")],
     },
     {
-      tag: "Finanse",
+      tag: tr("Finanse", "Finance"),
       icon: <Icon.Bank />,
       g: "var(--stg-purple)",
-      title: "Rekomendacje finansowe i ubezpieczeniowe",
-      desc: "Oferty kredytowe, leasingowe i ubezpieczeniowe podane w momencie planowania budżetu inwestycji. Konwersja bliżej decyzji.",
-      bullets: ["Kalkulator kredytu i raty", "Status ubezpieczenia inwestycji", "Lead z kontekstem inwestycji"],
+      title: tr("Rekomendacje finansowe i ubezpieczeniowe", "Financial and insurance recommendations"),
+      desc: tr("Oferty kredytowe, leasingowe i ubezpieczeniowe podane w momencie planowania budżetu inwestycji. Konwersja bliżej decyzji.", "Loan, leasing and insurance offers shown at the moment the project budget is being planned. Conversion closer to the decision."),
+      bullets: [tr("Kalkulator kredytu i raty", "Loan and instalment calculator"), tr("Status ubezpieczenia inwestycji", "Project insurance status"), tr("Lead z kontekstem inwestycji", "Lead with project context")],
     },
     {
-      tag: "Timing",
+      tag: tr("Timing", "Timing"),
       icon: <Icon.Megaphone />,
       g: "var(--stg-rose)",
-      title: "Obecność w momencie decyzji",
-      desc: "Niestandardowe formaty: powiadomienia push w odpowiednim etapie, eksperci podpinani do checklist, sponsorowane checklisty zakupowe.",
-      bullets: ["Sponsorowane checklisty zakupowe", "Push w kontekście etapu", "Eksperci podpięci do zadań"],
+      title: tr("Obecność w momencie decyzji", "Presence at the moment of decision"),
+      desc: tr("Niestandardowe formaty: powiadomienia push w odpowiednim etapie, eksperci podpinani do checklist, sponsorowane checklisty zakupowe.", "Custom formats: push notifications at the right stage, experts linked to checklists, sponsored shopping checklists."),
+      bullets: [tr("Sponsorowane checklisty zakupowe", "Sponsored shopping checklists"), tr("Push w kontekście etapu", "Push in the context of a stage"), tr("Eksperci podpięci do zadań", "Experts linked to tasks")],
     },
     {
-      tag: "Fast track",
+      tag: tr("Fast track", "Fast track"),
       icon: <Icon.Bolt />,
       g: "var(--stg-green)",
-      title: "Hot leady",
-      desc: "Dostajesz gotowe pliki i informacje potrzebne do przygotowania wyceny. Kontaktuj się z inwestorami w ramach ścieżki fast track.",
-      bullets: ["Komplet plików do wyceny", "Dane kontaktowe inwestora", "Priorytetowa ścieżka fast track"],
+      title: tr("Hot leady", "Hot leads"),
+      desc: tr("Dostajesz gotowe pliki i informacje potrzebne do przygotowania wyceny. Kontaktuj się z inwestorami w ramach ścieżki fast track.", "You get ready-made files and the information needed to prepare a quote. Reach homeowners through the fast-track path."),
+      bullets: [tr("Komplet plików do wyceny", "A complete file set for a quote"), tr("Dane kontaktowe inwestora", "Homeowner contact details"), tr("Priorytetowa ścieżka fast track", "Priority fast-track path")],
     },
   ];
 
   const segments = [
-    { icon: <Icon.Hammer />,    label: "Producenci materiałów",    desc: "Dachówki, pompy ciepła, fotowoltaika, okna, drzwi" },
-    { icon: <Icon.Sliders />,   label: "Wyposażenie i instalacje", desc: "AGD, hydraulika, oświetlenie, klima" },
-    { icon: <Icon.Bank />,      label: "Banki i finansowanie",     desc: "Kredyty i pożyczki" },
-    { icon: <Icon.Shield />,    label: "Ubezpieczyciele",          desc: "Ubezpieczenie budowy, domu i mieszkania" },
-    { icon: <Icon.Store />,     label: "Retailerzy i marketplace", desc: "Sieci budowlane, e-commerce DIY" },
-    { icon: <Icon.Briefcase />, label: "Usługodawcy",              desc: "Ekipy, dystrybutorzy, biura projektowe" },
+    { icon: <Icon.Hammer />,    label: tr("Producenci materiałów", "Material manufacturers"),    desc: tr("Dachówki, pompy ciepła, fotowoltaika, okna, drzwi", "Roof tiles, heat pumps, solar PV, windows, doors") },
+    { icon: <Icon.Sliders />,   label: tr("Wyposażenie i instalacje", "Fittings and utilities"), desc: tr("AGD, hydraulika, oświetlenie, klima", "Appliances, plumbing, lighting, air-con") },
+    { icon: <Icon.Bank />,      label: tr("Banki i finansowanie", "Banks and financing"),     desc: tr("Kredyty i pożyczki", "Loans and credit") },
+    { icon: <Icon.Shield />,    label: tr("Ubezpieczyciele", "Insurers"),          desc: tr("Ubezpieczenie budowy, domu i mieszkania", "Build, home and flat insurance") },
+    { icon: <Icon.Store />,     label: tr("Retailerzy i marketplace", "Retailers and marketplaces"), desc: tr("Sieci budowlane, e-commerce DIY", "Builders' merchants, DIY e-commerce") },
+    { icon: <Icon.Briefcase />, label: tr("Usługodawcy", "Service providers"),     desc: tr("Ekipy, dystrybutorzy, biura projektowe", "Crews, distributors, design studios") },
   ];
 
   return (
@@ -144,29 +156,27 @@ export function B2BSection() {
           <div>
             <Reveal delay={100}>
               <h2 className="h-section" style={{ marginTop: 0, marginBottom: 20 }}>
-                Twoja marka tam, gdzie&nbsp;zapada{" "}
+                {tr("Twoja marka tam, gdzie\u00a0zapada", "Your brand where the")}{" "}
                 <span style={{
                   background: "var(--hdu-grad)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
                 }}>
-                  decyzja inwestycyjna.
+                  {tr("decyzja inwestycyjna.", "investment decision is made.")}
                 </span>
               </h2>
             </Reveal>
             <Reveal delay={200}>
               <p className="sub" style={{ marginBottom: 28, maxWidth: 560 }}>
-                homdu to kontekstowy kanał dotarcia do inwestora — wtedy, kiedy
-                planuje, kupuje i&nbsp;wykonuje. Obecność marki osadzona w&nbsp;realnym
-                etapie budowy lub remontu, nie w&nbsp;banerze obok artykułu.
+                {tr("homdu to kontekstowy kanał dotarcia do inwestora — wtedy, kiedy planuje, kupuje i\u00a0wykonuje. Obecność marki osadzona w\u00a0realnym etapie budowy lub remontu, nie w\u00a0banerze obok artykułu.", "homdu is a contextual channel for reaching the homeowner — when they're planning, buying and building. Brand presence embedded in a real stage of the build or renovation, not in a banner next to an article.")}
               </p>
             </Reveal>
             <Reveal delay={300}>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <a href="#partner-cta" className="btn btn--primary btn--lg" onClick={openCalendly}>
                   <Icon.Calendar style={{ width: 16, height: 16 }} />
-                  Umów rozmowę
+                  {tr("Umów rozmowę", "Book a call")}
                 </a>
               </div>
             </Reveal>
@@ -185,11 +195,7 @@ export function B2BSection() {
               />
               <img
                 src="/assets/partner-fundamenty.webp"
-                alt="Aplikacja homdu — etap Fundamenty: główny partner etapu, inni producenci etapu i budżet etapu (5000 / 45 000 zł)."
-                width="857"
-                height="1759"
-                decoding="async"
-                loading="lazy"
+                alt={tr("Aplikacja homdu — etap Fundamenty: główny partner etapu, inni producenci etapu i budżet etapu (5000 / 45 000 zł).", "homdu app — Foundations stage: lead stage partner, other manufacturers in the stage and the stage budget (5,000 / 45,000 zł).")}
                 style={{
                   position: "relative",
                   zIndex: 1,
@@ -210,8 +216,8 @@ export function B2BSection() {
                   <Icon.Briefcase />
                 </span>
                 <div>
-                  <div>Partner etapu</div>
-                  <div className="sub-line">Marka X · Instalacje</div>
+                  <div>{tr("Partner etapu", "Stage partner")}</div>
+                  <div className="sub-line">{tr("Marka X · Instalacje", "Brand X · Utilities")}</div>
                 </div>
               </div>
 
@@ -224,8 +230,8 @@ export function B2BSection() {
                   <Icon.ChartLine />
                 </span>
                 <div>
-                  <div>Lead z kontekstem</div>
-                  <div className="sub-line">Etap · Budżet · Lokalizacja</div>
+                  <div>{tr("Lead z kontekstem", "Lead with context")}</div>
+                  <div className="sub-line">{tr("Etap · Budżet · Lokalizacja", "Stage · Budget · Location")}</div>
                 </div>
               </div>
             </div>
@@ -240,7 +246,7 @@ export function B2BSection() {
               letterSpacing: "-0.025em", lineHeight: 1.08, margin: 0,
               textWrap: "balance",
             }}>
-              Dlaczego marki wybierają homdu
+              {tr("Dlaczego marki wybierają homdu", "Why brands choose homdu")}
             </h3>
           </div>
         </Reveal>
@@ -275,18 +281,17 @@ export function B2BSection() {
               fontSize: 13, fontWeight: 600, letterSpacing: "0.08em",
               color: "var(--hdu)", textTransform: "uppercase", marginBottom: 12,
             }}>
-              Formaty współpracy
+              {tr("Formaty współpracy", "Partnership formats")}
             </div>
             <h3 style={{
               fontSize: "clamp(28px, 3.2vw, 44px)", fontWeight: 600,
               letterSpacing: "-0.025em", lineHeight: 1.08, margin: 0,
               textWrap: "balance",
             }}>
-              Sześć sposobów obecności w&nbsp;inwestycji.
+              {tr("Sześć sposobów obecności w\u00a0inwestycji.", "Six ways to be present in a project.")}
             </h3>
             <p className="sub" style={{ marginTop: 14, maxWidth: 620 }}>
-              Od głównego partnera etapu, przez producenta w&nbsp;katalogu, po sponsorowane
-              poradniki i&nbsp;oferty finansowe. Dobieramy format pod cel kampanii.
+              {tr("Od głównego partnera etapu, przez producenta w\u00a0katalogu, po sponsorowane poradniki i\u00a0oferty finansowe. Dobieramy format pod cel kampanii.", "From lead stage partner, through manufacturer in the catalogue, to sponsored guides and financial offers. We match the format to your campaign goal.")}
             </p>
           </div>
         </Reveal>
@@ -331,7 +336,7 @@ export function B2BSection() {
               letterSpacing: "-0.025em", lineHeight: 1.08, margin: 0,
               textWrap: "balance",
             }}>
-              Dla kogo jest współpraca z&nbsp;homdu?
+              {tr("Dla kogo jest współpraca z\u00a0homdu?", "Who is a homdu partnership for?")}
             </h3>
           </Reveal>
         </div>
@@ -442,12 +447,12 @@ export function B2BSection() {
                   fontWeight: 600, letterSpacing: "-0.035em", lineHeight: 1.02,
                   margin: "0 0 18px", textWrap: "balance",
                 }}>
-                  Reklamuj się na&nbsp;odpowiednim{" "}
+                  {tr("Reklamuj się na\u00a0odpowiednim", "Advertise at the right")}{" "}
                   <span style={{
                     background: "linear-gradient(180deg, #6CA4F0 0%, #3A7FE5 100%)",
                     WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent",
                   }}>
-                    etapie inwestycji.
+                    {tr("etapie inwestycji.", "stage of the project.")}
                   </span>
                 </h3>
                 <p style={{
@@ -455,8 +460,7 @@ export function B2BSection() {
                   color: "rgba(245,244,240,0.7)",
                   margin: 0, maxWidth: 520,
                 }}>
-                  30 minut rozmowy. Pokażemy realne miejsca w&nbsp;aplikacji, dobierzemy
-                  format pod Twój cel i&nbsp;zaproponujemy wstępny scenariusz współpracy.
+                  {tr("30 minut rozmowy. Pokażemy realne miejsca w\u00a0aplikacji, dobierzemy format pod Twój cel i\u00a0zaproponujemy wstępny scenariusz współpracy.", "A 30-minute call. We'll show you real placements in the app, match a format to your goal and propose an initial outline for working together.")}
                 </p>
                 <div style={{ marginTop: 32, display: "flex", gap: 12, flexWrap: "wrap" }}>
                   <a
@@ -470,7 +474,7 @@ export function B2BSection() {
                     }}
                   >
                     <Icon.Calendar style={{ width: 16, height: 16 }} />
-                    Umów rozmowę
+                    {tr("Umów rozmowę", "Book a call")}
                   </a>
                 </div>
               </div>
@@ -490,7 +494,7 @@ export function B2BSection() {
                 }}
               >
                 <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(245,244,240,0.55)" }}>
-                  Kontakt partnerski
+                  {tr("Kontakt partnerski", "Partner contact")}
                 </div>
                 <a
                   href="mailto:homdu.app@gmail.com"
@@ -518,7 +522,7 @@ export function B2BSection() {
                     <Icon.Mail style={{ width: 22, height: 22 }} />
                   </div>
                   <div style={{ minWidth: 0 }}>
-                    <div style={{ fontSize: 11, color: "rgba(245,244,240,0.55)" }}>E-mail</div>
+                    <div style={{ fontSize: 11, color: "rgba(245,244,240,0.55)" }}>{tr("E-mail", "Email")}</div>
                     <div style={{ fontSize: 15, fontWeight: 600, fontFamily: "var(--font-mono)" }}>
                       homdu.app@gmail.com
                     </div>
@@ -551,9 +555,9 @@ export function B2BSection() {
                     <Icon.Calendar style={{ width: 22, height: 22 }} />
                   </div>
                   <div style={{ minWidth: 0 }}>
-                    <div style={{ fontSize: 11, color: "rgba(245,244,240,0.55)" }}>Kalendarz online</div>
+                    <div style={{ fontSize: 11, color: "rgba(245,244,240,0.55)" }}>{tr("Kalendarz online", "Online calendar")}</div>
                     <div style={{ fontSize: 15, fontWeight: 600 }}>
-                      Wybierz termin rozmowy
+                      {tr("Wybierz termin rozmowy", "Pick a time to talk")}
                     </div>
                   </div>
                   <Icon.Arrow style={{ width: 18, height: 18, marginLeft: "auto", flexShrink: 0, opacity: 0.7 }} />

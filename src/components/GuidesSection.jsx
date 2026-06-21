@@ -1,8 +1,9 @@
-// GuidesSection.jsx — Section 7
-// Real Guides screenshot + copy + floating "Dla Ciebie" card.
-
+import { tr } from "../i18n.js";
 import { Icon } from "./icons.jsx";
 import { Reveal, Checklist } from "./shared.jsx";
+
+// GuidesSection.jsx — Section 7
+// Phone (GuidesHomeView) + copy + floating "Dla Ciebie" card.
 
 export function GuidesSection() {
   return (
@@ -21,14 +22,12 @@ export function GuidesSection() {
           <div>
             <Reveal delay={80}>
               <h2 className="h-section" style={{ marginTop: 20, marginBottom: 20 }}>
-                Poradniki z odpowiedziami na Twoje pytania.
+                {tr("Poradniki z odpowiedziami na Twoje pytania.", "Guides with answers to your questions.")}
               </h2>
             </Reveal>
             <Reveal delay={160}>
               <p className="sub" style={{ marginBottom: 32, maxWidth: 520 }}>
-                Baza artykułów, wideo i shorts automatycznie filtrowana
-                do Twojego aktualnego etapu prac. Wiedza dokładnie wtedy,
-                gdy jej potrzebujesz — a nie chaos z Googla i grup na Facebooku.
+                {tr("Baza artykułów, wideo i shorts automatycznie filtrowana do Twojego aktualnego etapu prac. Wiedza dokładnie wtedy, gdy jej potrzebujesz — a nie chaos z Googla i grup na Facebooku.", "A library of articles, videos and shorts, automatically filtered to your current stage of work. Knowledge exactly when you need it — not chaos from Google and Facebook groups.")}
               </p>
             </Reveal>
 
@@ -44,12 +43,12 @@ export function GuidesSection() {
                 className="guide-chips"
               >
                 {[
-                  { l: "Fundamenty", g: "var(--stg-blue)" },
-                  { l: "Instalacje", g: "var(--stg-purple)" },
-                  { l: "Wykończenie", g: "var(--stg-terracotta)" },
-                  { l: "Elewacja", g: "var(--stg-rose)" },
-                  { l: "Ogród", g: "var(--stg-green)" },
-                  { l: "Odbiory", g: "var(--stg-slate)" },
+                  { l: tr("Fundamenty", "Foundations"), g: "var(--stg-blue)" },
+                  { l: tr("Instalacje", "Utilities"), g: "var(--stg-purple)" },
+                  { l: tr("Wykończenie", "Finishing"), g: "var(--stg-terracotta)" },
+                  { l: tr("Elewacja", "Façade"), g: "var(--stg-rose)" },
+                  { l: tr("Ogród", "Garden"), g: "var(--stg-green)" },
+                  { l: tr("Odbiory", "Inspections"), g: "var(--stg-slate)" },
                 ].map((c) => (
                   <div
                     key={c.l}
@@ -72,14 +71,14 @@ export function GuidesSection() {
 
             <Reveal delay={320}>
               <Checklist items={[
-                { b: "Sekcja „Dla Ciebie”", r: "z treściami dopasowanymi do Twojego etapu" },
-                { b: "Shorts feed", r: "krótkie wideo w stylu TikTok — od ekspertów branży" },
-                { b: "Pełna baza artykułów", r: "od fundamentów po odbiory budowlane" },
+                { b: tr("Sekcja „Dla Ciebie”", "A ‘For You’ section"), r: tr("z treściami dopasowanymi do Twojego etapu", "with content matched to your stage") },
+                { b: tr("Shorts feed", "Shorts feed"), r: tr("krótkie wideo w stylu TikTok — od ekspertów branży", "short TikTok-style videos — from industry experts") },
+                { b: tr("Pełna baza artykułów", "A full article library"), r: tr("od fundamentów po odbiory budowlane", "from foundations to final inspections") },
               ]} />
             </Reveal>
           </div>
 
-          {/* ── Right: phone screenshot ── */}
+          {/* ── Right: phone ── */}
           <Reveal delay={200}>
             <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
               <div
@@ -101,7 +100,7 @@ export function GuidesSection() {
               }}>
                 <img
                   src="/assets/guides-home.webp"
-                  alt="Aplikacja homdu — ekran Poradniki: baza artykułów, wideo i shorts."
+                  alt={tr("Aplikacja homdu — ekran Poradniki: baza artykułów, wideo i shorts.", "homdu app — Guides screen: library of articles, videos and shorts.")}
                   width="857"
                   height="1759"
                   decoding="async"
@@ -129,8 +128,8 @@ export function GuidesSection() {
                   <Icon.PlayCircle />
                 </span>
                 <div>
-                  <div>Dla Ciebie — Instalacje</div>
-                  <div className="sub-line">8 artykułów · 3 wideo</div>
+                  <div>{tr("Dla Ciebie — Instalacje", "For You — Utilities")}</div>
+                  <div className="sub-line">{tr("8 artykułów · 3 wideo", "8 articles · 3 videos")}</div>
                 </div>
               </div>
             </div>

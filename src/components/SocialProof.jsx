@@ -1,8 +1,9 @@
-// SocialProof.jsx — Section 8
-// Compact App Store 5-star rating.
-
+import { tr } from "../i18n.js";
 import { Icon } from "./icons.jsx";
 import { Reveal } from "./shared.jsx";
+
+// SocialProof.jsx — Section 8
+// Compact App Store 5-star rating.
 
 export function SocialProof() {
   return (
@@ -29,10 +30,10 @@ export function SocialProof() {
               ))}
             </div>
             <div style={{ fontSize: 44, fontWeight: 700, letterSpacing: "-0.02em", color: "var(--ink)", lineHeight: 1 }}>
-              5,0
+              {tr("5,0", "5.0")}
             </div>
             <div style={{ fontSize: 15, color: "var(--ink-2)", fontWeight: 500 }}>
-              Ocena w App Store
+              {tr("Ocena w App Store", "App Store rating")}
             </div>
           </div>
         </Reveal>

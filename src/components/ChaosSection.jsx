@@ -1,36 +1,37 @@
-// ChaosSection.jsx — "Przed i po" / asymmetric chaos→order comparison.
-// Left card (chaos) is visually heavier and warmer; right card (homdu) is
-// quieter, cooler, perfectly aligned — kontrast emocjonalny = kontrast wizualny.
-
+import { tr } from "../i18n.js";
 import React from "react";
 import { Icon } from "./icons.jsx";
 import { Reveal, SectionHeader } from "./shared.jsx";
 
+// ChaosSection.jsx — "Przed i po" / asymmetric chaos→order comparison.
+// Left card (chaos) is visually heavier and warmer; right card (homdu) is
+// quieter, cooler, perfectly aligned — kontrast emocjonalny = kontrast wizualny.
+
 export function ChaosSection() {
   const chaos = [
-    { icon: <Icon.Note />,   label: "Notatki w telefonie",  meta: "47 notatek · gdzie był ten wymiar?" },
-    { icon: <Icon.Photo />,  label: "Galerie zdjęć",        meta: "iCloud · 12 albumów · które to przed?" },
-    { icon: <Icon.Mail />,   label: "Maile z wykonawcami",  meta: "Skrzynka · 312 · szukasz tej wyceny" },
-    { icon: <Icon.Excel />,  label: "Excel z budżetem",     meta: "budzet_v9_FINAL.xlsx · czy na pewno final?" },
-    { icon: <Icon.Folder />, label: "Foldery z plikami",    meta: "Drive · 8 folderów · w którym umowa?" },
-    { icon: <Icon.Phone />,  label: "Screeny z WhatsApp",   meta: "182 wiadomości · scroll w nieskończoność" },
+    { icon: <Icon.Note />,   label: tr("Notatki w telefonie", "Notes on your phone"),  meta: tr("47 notatek · gdzie był ten wymiar?", "47 notes · where was that measurement?") },
+    { icon: <Icon.Photo />,  label: tr("Galerie zdjęć", "Photo galleries"),        meta: tr("iCloud · 12 albumów · które to przed?", "iCloud · 12 albums · which is the 'before'?") },
+    { icon: <Icon.Mail />,   label: tr("Maile z wykonawcami", "Emails with contractors"),  meta: tr("Skrzynka · 312 · szukasz tej wyceny", "Inbox · 312 · hunting for that quote") },
+    { icon: <Icon.Excel />,  label: tr("Excel z budżetem", "Budget spreadsheet"),     meta: tr("budzet_v9_FINAL.xlsx · czy na pewno final?", "budget_v9_FINAL.xlsx · final, really?") },
+    { icon: <Icon.Folder />, label: tr("Foldery z plikami", "Folders of files"),    meta: tr("Drive · 8 folderów · w którym umowa?", "Drive · 8 folders · which one has the contract?") },
+    { icon: <Icon.Phone />,  label: tr("Screeny z WhatsApp", "WhatsApp screenshots"),   meta: tr("182 wiadomości · scroll w nieskończoność", "182 messages · endless scrolling") },
   ];
 
   const system = [
-    { icon: <Icon.Stages />,    label: "Etapy",      sub: "oś całej inwestycji",         g: "var(--stg-blue)" },
-    { icon: <Icon.Costs />,     label: "Budżet",     sub: "aktualny co do złotówki",      g: "var(--stg-terracotta)" },
-    { icon: <Icon.Docs />,      label: "Dokumenty",  sub: "przy właściwym etapie",        g: "var(--stg-purple)" },
-    { icon: <Icon.Photo />,     label: "Zdjęcia",    sub: "postęp w czasie",              g: "var(--stg-rose)" },
-    { icon: <Icon.Tasks />,     label: "Zadania",    sub: "wiesz, co dalej",              g: "var(--stg-green)" },
-    { icon: <Icon.Calendar />,  label: "Kalendarz",  sub: "terminy bez stresu",           g: "var(--stg-teal)" },
+    { icon: <Icon.Stages />,    label: tr("Etapy", "Stages"),      sub: tr("oś całej inwestycji", "the spine of the project"),         g: "var(--stg-blue)" },
+    { icon: <Icon.Costs />,     label: tr("Budżet", "Budget"),     sub: tr("aktualny co do złotówki", "accurate to the penny"),      g: "var(--stg-terracotta)" },
+    { icon: <Icon.Docs />,      label: tr("Dokumenty", "Documents"),  sub: tr("przy właściwym etapie", "with the right stage"),        g: "var(--stg-purple)" },
+    { icon: <Icon.Photo />,     label: tr("Zdjęcia", "Photos"),    sub: tr("postęp w czasie", "progress over time"),              g: "var(--stg-rose)" },
+    { icon: <Icon.Tasks />,     label: tr("Zadania", "Tasks"),     sub: tr("wiesz, co dalej", "you know what's next"),              g: "var(--stg-green)" },
+    { icon: <Icon.Calendar />,  label: tr("Kalendarz", "Calendar"),  sub: tr("terminy bez stresu", "deadlines without stress"),           g: "var(--stg-teal)" },
   ];
 
   return (
     <section className="section" id="chaos">
       <div className="container">
         <SectionHeader
-          title="Jedna aplikacja zamiast chaosu."
-          sub="Budowa i remont nie muszą oznaczać frustracji i wkurzenia. homdu porządkuje wszystko w jednym miejscu czyniąc Twój najważniejszy projekt życiowy prostym do ogarnięcia."
+          title={tr("Jedna aplikacja zamiast chaosu.", "One app instead of chaos.")}
+          sub={tr("Budowa i remont nie muszą oznaczać frustracji i wkurzenia. homdu porządkuje wszystko w jednym miejscu czyniąc Twój najważniejszy projekt życiowy prostym do ogarnięcia.", "Building and renovating don't have to mean frustration and stress. homdu brings everything together in one place, making the most important project of your life simple to manage.")}
           align="center"
         />
 
@@ -44,9 +45,9 @@ export function ChaosSection() {
               <div className="chaos-card__head">
                 <div className="chaos-card__badge chaos-card__badge--bad">
                   <Icon.X style={{ width: 12, height: 12 }} />
-                  Tak teraz
+                  {tr("Tak teraz", "How it is now")}
                 </div>
-                <div className="chaos-card__metric chaos-card__metric--bad">6 narzędzi · 0 połączeń</div>
+                <div className="chaos-card__metric chaos-card__metric--bad">{tr("6 narzędzi · 0 połączeń", "6 tools · 0 connections")}</div>
               </div>
 
               <div className="chaos-tiles chaos-tiles--bad">
@@ -68,7 +69,7 @@ export function ChaosSection() {
               </div>
 
               <div className="chaos-card__foot">
-                <b style={{ color: "var(--ink)" }}>Co tracisz:</b> czas, kontrolę, kontekst. Decydujesz na podstawie wczorajszego screena.
+                <b style={{ color: "var(--ink)" }}>{tr("Co tracisz:", "What you lose:")}</b> {tr("czas, kontrolę, kontekst. Decydujesz na podstawie wczorajszego screena.", "time, control, context. You decide based on yesterday's screenshot.")}
               </div>
             </div>
           </Reveal>
@@ -88,9 +89,9 @@ export function ChaosSection() {
               <div className="chaos-card__head">
                 <div className="chaos-card__badge chaos-card__badge--ok">
                   <Icon.Check style={{ width: 12, height: 12 }} />
-                  Z homdu
+                  {tr("Z homdu", "With homdu")}
                 </div>
-                <div className="chaos-card__metric chaos-card__metric--ok">1 aplikacja · 6 modułów</div>
+                <div className="chaos-card__metric chaos-card__metric--ok">{tr("1 aplikacja · 6 modułów", "1 app · 6 modules")}</div>
               </div>
 
               <div className="chaos-tiles chaos-tiles--ok">
@@ -112,7 +113,7 @@ export function ChaosSection() {
               </div>
 
               <div className="chaos-card__foot">
-                <b style={{ color: "var(--ink)" }}>Co zyskujesz:</b> jeden kontekst, jedna decyzja. Każdy etap z&nbsp;budżetem, dokumentem, zdjęciem i&nbsp;zadaniem obok.
+                <b style={{ color: "var(--ink)" }}>{tr("Co zyskujesz:", "What you gain:")}</b> {tr("jeden kontekst, jedna decyzja. Każdy etap z\u00a0budżetem, dokumentem, zdjęciem i\u00a0zadaniem obok.", "one context, one decision. Every stage with its budget, document, photo and task right there.")}
               </div>
             </div>
           </Reveal>

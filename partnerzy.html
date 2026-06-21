@@ -4,6 +4,42 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<!-- i18n core: PL/EN język, trwały + reaktywny przez reload -->
+<script>
+(function () {
+  var l;
+  try { l = localStorage.getItem('homdu-lang'); } catch (e) {}
+  if (l !== 'en' && l !== 'pl') l = 'pl';
+  window.LANG = l;
+  document.documentElement.lang = l;
+  window.tr = function (pl, en) { return window.LANG === 'en' ? en : pl; };
+  window.setLang = function (next) {
+    if (next !== 'en' && next !== 'pl') return;
+    try { localStorage.setItem('homdu-lang', next); } catch (e) {}
+    window.LANG = next;
+    window.location.reload();
+  };
+  document.title = window.tr(
+    'homdu dla partnerów — Twoja marka tam, gdzie zapada decyzja inwestycyjna',
+    'homdu for partners — Your brand where the investment decision is made'
+  );
+  var setMeta = function (sel, val) { var el = document.querySelector(sel); if (el) el.setAttribute('content', val); };
+  setMeta('meta[name="description"]', window.tr(
+    'Kontekstowy kanał dotarcia do inwestora budowlanego i remontowego — w momencie, w którym planuje, kupuje i wykonuje. Formaty współpracy dla producentów, banków, ubezpieczycieli i retailu.',
+    'A contextual channel to reach the construction and renovation investor — at the moment they plan, buy and build. Partnership formats for manufacturers, banks, insurers and retail.'
+  ));
+  setMeta('meta[property="og:title"]', window.tr(
+    'homdu dla partnerów — Twoja marka w etapie decyzji inwestycyjnej',
+    'homdu for partners — Your brand at the investment decision stage'
+  ));
+  setMeta('meta[property="og:description"]', window.tr(
+    'Dotrzyj do inwestora wtedy, kiedy podejmuje decyzje zakupowe. Partner etapu, producenci, poradniki ekspertów, oferty finansowe — formaty współpracy w aplikacji homdu.',
+    'Reach the investor when they make purchasing decisions. Stage partner, manufacturers, expert guides, financial offers — partnership formats inside the homdu app.'
+  ));
+  setMeta('meta[property="og:locale"]', window.LANG === 'en' ? 'en_US' : 'pl_PL');
+})();
+</script>
+
 <!-- Motyw: auto-ciemny nocą (Warszawa 22–5) lub zapamiętany wybór — ustawiane przed renderem (bez migotania) -->
 <script>
   (function(){try{
@@ -12,6 +48,7 @@
     document.documentElement.setAttribute('data-theme',t||'light');
   }catch(e){document.documentElement.setAttribute('data-theme','light');}})();
 </script>
+
 <title>homdu dla partnerów — Twoja marka tam, gdzie zapada decyzja inwestycyjna</title>
 <meta name="description" content="Kontekstowy kanał dotarcia do inwestora budowlanego i remontowego — w momencie, w którym planuje, kupuje i wykonuje. Formaty współpracy dla producentów, banków, ubezpieczycieli i retailu." />
 
@@ -28,21 +65,20 @@
 <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png" />
 <link rel="apple-touch-icon" href="/assets/favicon-180.png" />
 
-<!-- Google Analytics 4 + Consent Mode v2 -->
+<!-- Google Analytics 4 + Consent Mode v2 (denied dopóki banner nie nada zgody) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  (function(){var c=null;try{c=localStorage.getItem('homdu-consent');}catch(e){}
+  (function(){var g='denied';try{var c=JSON.parse(localStorage.getItem('homdu-consent'));if(c&&c.marketing)g='granted';}catch(e){}
     gtag('consent','default',{
-      ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied',
-      analytics_storage: c==='granted' ? 'granted' : 'denied',
+      ad_storage: g, ad_user_data: g, ad_personalization: g,
+      analytics_storage: g,
       functionality_storage:'granted', security_storage:'granted', wait_for_update:500
     });})();
   gtag('js', new Date());
   gtag('config', 'G-EQ750JCPRQ');
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ750JCPRQ"></script>
-<script defer src="/cookie-consent.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,5 +91,9 @@
 <body>
 <div id="root"></div>
 <script type="module" src="/src/main-partners.jsx"></script>
+
+<!-- Analytics: Meta Pixel (consent-gated) + GA4 mirror + banner zgody -->
+<script defer src="/analytics.js"></script>
+<script defer src="/consent-banner.js"></script>
 </body>
 </html>

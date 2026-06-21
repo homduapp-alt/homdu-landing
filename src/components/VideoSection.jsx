@@ -1,6 +1,7 @@
-// VideoSection.jsx — autoplaying YouTube preview placed under the Hero.
-
+import { tr } from "../i18n.js";
 import { Reveal } from "./shared.jsx";
+
+// VideoSection.jsx — autoplaying YouTube preview placed under the Hero.
 
 export function VideoSection() {
   return (
@@ -25,7 +26,7 @@ export function VideoSection() {
             }}
           >
             <h2 className="h-section" style={{ maxWidth: 760, margin: 0 }}>
-              Zobacz jak homdu ogarnia całą inwestycję.
+              {tr("Zobacz jak homdu ogarnia całą inwestycję.", "See how homdu keeps your whole project in order.")}
             </h2>
           </div>
         </Reveal>
@@ -48,8 +49,8 @@ export function VideoSection() {
             }}
           >
             <iframe
-              src="https://www.youtube.com/embed/ryZ5g1eZ-H8?autoplay=1&mute=1&loop=1&playlist=ryZ5g1eZ-H8&controls=1&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
-              title="homdu — wideo wprowadzające"
+              src="https://www.youtube.com/embed/ryZ5g1eZ-H8?autoplay=1&mute=1&loop=1&playlist=ryZ5g1eZ-H8&controls=1&rel=0&modestbranding=1&playsinline=1"
+              title={tr("homdu — wideo wprowadzające", "homdu — intro video")}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen

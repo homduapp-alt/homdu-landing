@@ -1,13 +1,22 @@
+import { tr } from "../i18n.js";
+import { Icon } from "./icons.jsx";
+import { Reveal } from "./shared.jsx";
+
 // FounderB2B.jsx — "O twórcy" for partners (B2B).
 // Premium / corporate, founder-as-visionary. Self-contained dark block
 // (independent of light/dark theme). Text left / portrait right.
 // Rendered inside B2BSection, just before the #partner-cta block.
 // `onSchedule` is passed down from B2BSection so it shares the Calendly popup.
 
-import { Icon } from "./icons.jsx";
-import { Reveal } from "./shared.jsx";
-
 export function FounderB2B({ onSchedule }) {
+  const pills = [
+    { icon: <Icon.Sparkle />,    label: "5+ lat UX/UI w fintechu" },
+    { icon: <Icon.Stages />,     label: "Design systemy budowane od zera" },
+    { icon: <Icon.ChartLine />,  label: "Cyfrowe procesy dużej skali" },
+    { icon: <Icon.Users />,      label: "58 tys. subskrybentów · 11 mln wyświetleń" },
+    { icon: <Icon.Shield />,     label: "Apple Certified Support Professional" },
+  ];
+
   return (
     <div className="founder-b2b" id="o-tworcy-b2b">
       {/* grid + glow backdrop */}
@@ -24,12 +33,12 @@ export function FounderB2B({ onSchedule }) {
               fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.06,
               margin: "20px 0 0", color: "#F5F4F0", textWrap: "balance",
             }}>
-              Moje pomysły zmieniam{" "}
+              {tr("Moje pomysły zmieniam", "I turn my ideas")}{" "}
               <span style={{
                 background: "linear-gradient(180deg, #6CA4F0 0%, #3A7FE5 100%)",
                 WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent",
               }}>
-                w&nbsp;aplikacje.
+                {tr("w\u00a0aplikacje.", "into apps.")}
               </span>
             </h2>
           </Reveal>
@@ -37,31 +46,19 @@ export function FounderB2B({ onSchedule }) {
           <Reveal delay={200}>
             <div className="founder-b2b__prose">
               <p>
-                Jako twórca homdu buduję produkt, który odpowiada na&nbsp;realny problem
-                rynku budowlanego: brak jednego, uporządkowanego miejsca, w&nbsp;którym
-                inwestor prowadzi swoją budowę lub&nbsp;remont od&nbsp;pierwszej decyzji
-                do&nbsp;zakończenia prac.
+                {tr("Jako twórca homdu buduję produkt, który odpowiada na\u00a0realny problem rynku budowlanego: brak jednego, uporządkowanego miejsca, w\u00a0którym inwestor prowadzi swoją budowę lub\u00a0remont od\u00a0pierwszej decyzji do\u00a0zakończenia prac.", "As the founder of homdu, I'm building a product that answers a real problem in the construction market: the lack of a single, organised place where a homeowner runs their build or renovation from the first decision to the final handover.")}
               </p>
               <p>
-                Z&nbsp;wykształcenia projektant UX/UI z&nbsp;ponad 5-letnim doświadczeniem
-                w&nbsp;branży finansowej — projektowałem procesy cyfrowe i&nbsp;aplikacje
-                o&nbsp;dużej skali oraz design systemy budowane od&nbsp;podstaw. Równolegle
-                zbudowałem społeczność 58&nbsp;tysięcy subskrybentów wokół treści
-                technologicznych. To połączenie — głęboka wiedza produktowa i&nbsp;realna
-                umiejętność dotarcia do&nbsp;odbiorcy — jest fundamentem homdu.
+                {tr("Z\u00a0wykształcenia projektant UX/UI z\u00a0ponad 5-letnim doświadczeniem w\u00a0branży finansowej — projektowałem procesy cyfrowe i\u00a0aplikacje o\u00a0dużej skali oraz design systemy budowane od\u00a0podstaw. Równolegle zbudowałem społeczność 58\u00a0tysięcy subskrybentów wokół treści technologicznych. To połączenie — głęboka wiedza produktowa i\u00a0realna umiejętność dotarcia do\u00a0odbiorcy — jest fundamentem homdu.", "By training a UX/UI designer with over five years' experience in the financial sector — I designed large-scale digital processes and applications, plus design systems built from scratch. Alongside that, I built a community of 58,000 subscribers around technology content. That combination — deep product knowledge and a genuine ability to reach an audience — is the foundation of homdu.")}
               </p>
               <p>
-                homdu łączy technologię, wiedzę i&nbsp;praktyczne zarządzanie inwestycją.
-                Dzięki temu może stać się naturalnym punktem styku między użytkownikami
-                a&nbsp;markami, producentami, wykonawcami i&nbsp;ekspertami z&nbsp;branży.
+                {tr("homdu łączy technologię, wiedzę i\u00a0praktyczne zarządzanie inwestycją. Dzięki temu może stać się naturalnym punktem styku między użytkownikami a\u00a0markami, producentami, wykonawcami i\u00a0ekspertami z\u00a0branży.", "homdu brings together technology, knowledge and practical project management. That makes it a natural point of contact between users and brands, manufacturers, contractors and industry experts.")}
               </p>
               <p>
-                Szukam partnerów, którzy chcą być blisko inwestora dokładnie w&nbsp;momencie,
-                w&nbsp;którym podejmuje decyzje zakupowe i&nbsp;projektowe.
+                {tr("Szukam partnerów, którzy chcą być blisko inwestora dokładnie w\u00a0momencie, w\u00a0którym podejmuje decyzje zakupowe i\u00a0projektowe.", "I'm looking for partners who want to be close to the homeowner at exactly the moment they make their purchasing and design decisions.")}
               </p>
               <p style={{ color: "#F5F4F0", fontWeight: 500 }}>
-                Jeżeli Twoja firma chce współtworzyć nowoczesny ekosystem budowy
-                i&nbsp;remontu — porozmawiajmy.
+                {tr("Jeżeli Twoja firma chce współtworzyć nowoczesny ekosystem budowy i\u00a0remontu — porozmawiajmy.", "If your company wants to help shape a modern ecosystem for building and renovation — let's talk.")}
               </p>
             </div>
           </Reveal>
@@ -78,14 +75,14 @@ export function FounderB2B({ onSchedule }) {
                 }}
               >
                 <Icon.Calendar style={{ width: 16, height: 16 }} />
-                Nawiąż współpracę z&nbsp;homdu
+                {tr("Nawiąż współpracę z\u00a0homdu", "Partner with homdu")}
               </a>
               <a
                 href="mailto:homdu.app@gmail.com"
                 className="btn btn--lg founder-b2b__ghost"
               >
                 <Icon.Mail style={{ width: 16, height: 16 }} />
-                Porozmawiajmy o&nbsp;partnerstwie
+                {tr("Porozmawiajmy o\u00a0partnerstwie", "Let's talk partnership")}
               </a>
             </div>
           </Reveal>
@@ -97,7 +94,7 @@ export function FounderB2B({ onSchedule }) {
             <div className="founder-b2b__portrait">
               <img
                 src="/assets/founder-portrait.webp"
-                alt="Jakub Matwiejczyk, founder homdu — studyjny portret na ciemnym tle"
+                alt={tr("Jakub Matwiejczyk, founder homdu — studyjny portret na ciemnym tle", "Jakub Matwiejczyk, founder of homdu — studio portrait on a dark background")}
                 loading="lazy"
                 decoding="async"
               />

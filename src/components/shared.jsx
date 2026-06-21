@@ -1,12 +1,10 @@
 // shared.jsx — reusable UI primitives
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "./icons.jsx";
+import { tr, getLang } from "../i18n.js";
 
 // ── Reveal wrapper: CSS-driven entrance animation (auto-plays on mount).
-// We deliberately don't gate this on scroll/IntersectionObserver — preview
-// iframes don't run IO reliably and React re-renders can strip imperative
-// class changes. Auto-playing animation is robust + good enough.
 export function Reveal({ children, delay = 0, as: As = "div", className = "", style, ...rest }) {
   return (
     <As
@@ -21,11 +19,10 @@ export function Reveal({ children, delay = 0, as: As = "div", className = "", st
 
 // ── Logo wordmark (prawdziwe logo homdu) ─────────────────────────────────────
 export function Logo({ size = "md", href = "/" }) {
-  // wysokość wordmarku; ikona to kwadrat ~1.55× wysokości wordmarku
   const wm = { sm: 16, md: 20, lg: 26 }[size] || 20;
   const ic = Math.round(wm * 1.55);
   return (
-    <a href={href} className="nav__logo" aria-label="homdu — strona główna">
+    <a href={href} className="nav__logo" aria-label={tr("homdu — strona główna", "homdu — home")}>
       <img
         src="/assets/logo-homdu-icon.webp"
         alt=""
@@ -46,45 +43,38 @@ export function Logo({ size = "md", href = "/" }) {
 // ── App Store badge ─────────────────────────────────────────────────────────
 const APP_STORE_URL = "https://apps.apple.com/us/app/homdu-budowa-i-remont/id6759539185";
 
-export function AppStoreBadge({ size = 52, href = APP_STORE_URL, dark = false, label = "Pobierz w App Store" }) {
+export function AppStoreBadge({ size = 52, href = APP_STORE_URL, dark = false, label, placement }) {
+  label = label || tr("Pobierz w App Store", "Download on the App Store");
   const isInternal = href.startsWith("#") || href.startsWith("javascript:");
   return (
     <a
       className={`appstore-badge ${dark ? "appstore-badge--dark" : ""}`}
       href={href}
+      data-placement={placement}
       aria-label={label}
       target={isInternal ? undefined : "_blank"}
       rel={isInternal ? undefined : "noopener noreferrer"}
       onClick={isInternal ? (e) => e.preventDefault() : undefined}
     >
-      <img src="/assets/appstore-badge.svg" alt={label} style={{ height: size }} />
+      <img src={tr("/assets/appstore-badge.svg", "/assets/appstore-badge-en.svg")} alt={label} style={{ height: size }} />
     </a>
   );
 }
 
 // ── iPhone frame ────────────────────────────────────────────────────────────
-// Use `slotId` + `placeholder` to wire up an image-slot inside the screen.
-// The screen is just the bezel + dynamic island — the user's screenshot fills
-// the rest (and will include its own status bar / chrome).
 export function IPhone({ size = "md", slotId, placeholder, className = "", style }) {
   const sizeClass = size === "sm" ? "iphone--sm" : size === "lg" ? "iphone--lg" : "";
   return (
     <div className={`iphone ${sizeClass} iphone--bleed ${className}`} style={style}>
       <div className="iphone__screen">
         <div className="iphone__island" />
-        <image-slot
-          id={slotId}
-          placeholder={placeholder || "Drop screenshot here"}
-          shape="rect"
-        />
+        <image-slot id={slotId} placeholder={placeholder || "Drop screenshot here"} shape="rect" />
       </div>
     </div>
   );
 }
 
 // ── Animated counter ────────────────────────────────────────────────────────
-// Uses setInterval (which always ticks) rather than rAF so the count-up
-// works even in preview iframes whose document timeline is frozen.
 export function CountUp({ to, duration = 1600, suffix = "", className = "" }) {
   const [val, setVal] = useState(to);
   useEffect(() => {
@@ -101,7 +91,7 @@ export function CountUp({ to, duration = 1600, suffix = "", className = "" }) {
 
   return (
     <span className={className}>
-      {val.toLocaleString("pl-PL")}{suffix}
+      {val.toLocaleString(getLang() === "en" ? "en-GB" : "pl-PL")}{suffix}
     </span>
   );
 }

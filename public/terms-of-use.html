@@ -1,41 +1,26 @@
 <!DOCTYPE html>
-<html lang="pl">
+<!-- @dsCard group="Brand" name="Terms of Use (EN)" subtitle="English Terms of Use — homdu.pl/terms-of-use" -->
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Warunki korzystania — homdu</title>
-<meta name="description" content="Warunki korzystania z aplikacji homdu — regulamin świadczenia usług drogą elektroniczną, prawa i obowiązki Użytkownika i Usługodawcy." />
+<title>Terms of Use — homdu</title>
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png" />
+<link rel="apple-touch-icon" href="/assets/favicon-180.png" />
+<link rel="canonical" href="https://homdu.pl/terms-of-use" />
+<meta name="description" content="Terms of use for the homdu app — rules for providing services electronically, rights and obligations of the User and the Provider." />
+<link rel="alternate" hreflang="pl" href="/warunki-korzystania" />
+<link rel="alternate" hreflang="en" href="/terms-of-use" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700&display=swap" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-<link rel="canonical" href="https://homdu.pl/warunki-korzystania" />
-<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png" />
-<link rel="apple-touch-icon" href="/assets/favicon-180.png" />
-
-<!-- Google Analytics 4 + Consent Mode v2 -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  (function(){var g='denied';try{var c=JSON.parse(localStorage.getItem('homdu-consent'));if(c&&c.marketing)g='granted';}catch(e){}
-    gtag('consent','default',{
-      ad_storage: g, ad_user_data: g, ad_personalization: g,
-      analytics_storage: g,
-      functionality_storage:'granted', security_storage:'granted', wait_for_update:500
-    });})();
-  gtag('js', new Date());
-  gtag('config', 'G-EQ750JCPRQ');
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ750JCPRQ"></script>
-<script defer src="/analytics.js"></script>
-<script defer src="/consent-banner.js"></script>
-
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="/styles.css" />
 
 <style>
-  /* ── page-local tokens (identyczne jak na stronie Polityki) ─── */
+  /* ── page-local tokens (identical to the Privacy page) ─── */
   :root {
     --doc-accent:        #C97A1B;
     --doc-accent-soft:   #F5E7D2;
@@ -108,6 +93,23 @@
     .doc-brand__wm { height: 18px; }
   }
   .doc-header__right { display: flex; align-items: center; gap: 8px; }
+
+  /* ── language switch ─────────────────────────────────── */
+  .lang-switch {
+    display: inline-flex; align-items: center; gap: 2px;
+    padding: 3px;
+    border-radius: 999px;
+    border: 1px solid var(--doc-rule-2);
+    flex-shrink: 0;
+  }
+  .lang-switch a {
+    padding: 6px 10px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; line-height: 1;
+    color: var(--ink-2);
+    transition: background 0.18s, color 0.18s;
+  }
+  .lang-switch a:hover { color: var(--ink); }
+  .lang-switch a[aria-current="true"] { background: var(--hdu, #0088FF); color: #fff; }
 
   .doc-back {
     display: inline-flex; align-items: center; gap: 8px;
@@ -328,7 +330,7 @@
   .doc-content ul li::marker { color: var(--doc-accent); }
   .doc-content ol li::marker { color: var(--ink-3); font-variant-numeric: tabular-nums; }
 
-  /* ── 3 — provider card (identyczna jak admin-card) ───── */
+  /* ── 3 — provider card ───────────────────────────────── */
   .provider-card {
     display: grid; grid-template-columns: 56px 1fr; gap: 20px;
     padding: 24px;
@@ -444,7 +446,7 @@
   [data-theme="dark"] .callout--info .callout__title { color: #6FA3F0; }
   [data-theme="dark"] .callout--warn .callout__title { color: #E8B26F; }
 
-  /* ── bullet list with icons (zakazy/obowiązki) ───────── */
+  /* ── bullet list with icons ──────────────────────────── */
   .rule-list {
     list-style: none !important;
     padding-left: 0 !important;
@@ -511,7 +513,7 @@
   .appstore-block__body p { margin: 0 0 10px !important; max-width: none !important; }
   .appstore-block__body p:last-child { margin-bottom: 0 !important; }
 
-  /* ── 19 — contact / reklamacje ───────────────────────── */
+  /* ── 19 — contact / complaints ───────────────────────── */
   .complaint-card {
     margin: 14px 0 0;
     padding: 32px;
@@ -573,7 +575,7 @@
   }
   .complaint-card .meta svg { width: 12px; height: 12px; }
 
-  /* ── 393px safety net (Warunki) ──────────────────────── */
+  /* ── 393px safety net ────────────────────────────────── */
   @media (max-width: 480px) {
     .doc-hero { padding: 56px 0 44px; }
     .doc-hero__inner { padding: 0 20px; }
@@ -669,7 +671,7 @@
   }
   @media (max-width: 720px) { .doc-foot__btm { padding: 24px 20px 0; } }
 
-  /* ── final signature block (po sekcji 22) ────────────── */
+  /* ── final signature block ───────────────────────────── */
   .signature {
     margin-top: 28px;
     padding: 18px 22px;
@@ -683,34 +685,48 @@
   [data-theme="dark"] .signature { background: var(--bg-soft); color: var(--ink-2); }
   .signature strong { color: var(--ink); }
 </style>
+<!-- Google Analytics 4 + Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){var g="denied";try{var c=JSON.parse(localStorage.getItem("homdu-consent"));if(c&&c.marketing)g="granted";}catch(e){}
+    gtag("consent","default",{ad_storage:g,ad_user_data:g,ad_personalization:g,analytics_storage:g,functionality_storage:"granted",security_storage:"granted",wait_for_update:500});})();
+  gtag("js", new Date());
+  gtag("config", "G-EQ750JCPRQ");
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ750JCPRQ"></script>
 </head>
 <body>
 
 <!-- ─────────── HEADER ─────────── -->
 <header class="doc-header" id="doc-header">
   <div class="doc-header__inner">
-    <a class="doc-brand" href="/" aria-label="homdu — strona główna">
-      <img src="assets/logo-homdu-icon.webp" alt="" aria-hidden="true" class="doc-brand__mark" />
-      <img src="assets/logo-homdu-wordmark.svg" alt="homdu" class="doc-brand__wm" />
+    <a class="doc-brand" href="/" aria-label="homdu — home">
+      <img src="/assets/logo-homdu-icon.png" alt="" aria-hidden="true" class="doc-brand__mark" />
+      <img src="/assets/logo-homdu-wordmark.svg" alt="homdu" class="doc-brand__wm" />
     </a>
 
-    <nav class="legal-nav" aria-label="Dokumenty prawne">
-      <a href="polityka-prywatnosci">
+    <nav class="legal-nav" aria-label="Legal documents">
+      <a href="/privacy-policy">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg>
-        <span>Polityka<span class="lbl-long"> Prywatności</span></span>
+        <span>Privacy<span class="lbl-long"> Policy</span></span>
       </a>
-      <a href="warunki-korzystania" aria-current="page">
+      <a href="/terms-of-use" aria-current="page">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
-        <span>Warunki<span class="lbl-long"> korzystania</span></span>
+        <span>Terms<span class="lbl-long"> of Use</span></span>
       </a>
     </nav>
 
     <div class="doc-header__right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="/warunki-korzystania" onclick="try{localStorage.setItem('homdu-lang','pl')}catch(e){}">PL</a>
+        <a href="/terms-of-use" aria-current="true" onclick="try{localStorage.setItem('homdu-lang','en')}catch(e){}">EN</a>
+      </div>
       <a class="doc-back" href="/">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-        <span>Powrót do strony</span>
+        <span>Back to site</span>
       </a>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Przełącz tryb">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
     </div>
@@ -720,21 +736,21 @@
 <!-- ─────────── HERO ─────────── -->
 <section class="doc-hero">
   <div class="doc-hero__inner">
-    <nav class="crumbs" aria-label="Ścieżka">
+    <nav class="crumbs" aria-label="Breadcrumb">
       <a href="/">homdu.pl</a>
       <span class="sep">/</span>
-      <span class="here">Warunki korzystania</span>
+      <span class="here">Terms of Use</span>
     </nav>
-    <h1>Warunki korzystania z aplikacji homdu.</h1>
+    <h1>Terms of use of the homdu app.</h1>
     <div class="badges">
-      <span class="doc-badge"><span class="dot"></span><span class="lbl">Data wejścia w życie:</span> <span class="val">24 maja 2026</span></span>
-      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Ostatnia aktualizacja:</span> <span class="val">24 maja 2026</span></span>
+      <span class="doc-badge"><span class="dot"></span><span class="lbl">Effective date:</span> <span class="val">24 May 2026</span></span>
+      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Last updated:</span> <span class="val">24 May 2026</span></span>
     </div>
     <p class="lead">
-      Niniejsze Warunki korzystania z aplikacji homdu (dalej <strong>„Warunki"</strong> lub <strong>„Regulamin"</strong>) określają zasady korzystania z aplikacji mobilnej homdu oraz powiązanych z nią usług. Prosimy o uważne zapoznanie się z Warunkami przed rozpoczęciem korzystania z Aplikacji. Korzystanie z Aplikacji oznacza akceptację niniejszych Warunków.
+      These Terms of Use of the homdu app (the <strong>"Terms"</strong>) set out the rules for using the homdu mobile app and the services associated with it. Please read the Terms carefully before you start using the App. Using the App means you accept these Terms.
     </p>
     <p class="lead" style="margin-top:14px;">
-      Zasady przetwarzania danych osobowych opisuje odrębny dokument – <a href="polityka-prywatnosci"><strong>Polityka Prywatności aplikacji homdu</strong></a>, która stanowi integralne uzupełnienie niniejszych Warunków.
+      The rules for processing personal data are described in a separate document – the <a href="/privacy-policy"><strong>homdu Privacy Policy</strong></a>, which forms an integral supplement to these Terms.
     </p>
   </div>
 </section>
@@ -743,59 +759,59 @@
 <div class="doc-wrap">
 
   <!-- desktop TOC -->
-  <aside class="toc" aria-label="Spis treści">
-    <p class="toc__title">Spis treści</p>
+  <aside class="toc" aria-label="Table of contents">
+    <p class="toc__title">Contents</p>
     <ul class="toc__list" id="toc-list">
-      <li><a href="#sec-1"><span class="num">1.</span><span>Postanowienia ogólne</span></a></li>
-      <li><a href="#sec-2"><span class="num">2.</span><span>Definicje</span></a></li>
-      <li><a href="#sec-3"><span class="num">3.</span><span>Dane Usługodawcy</span></a></li>
-      <li><a href="#sec-4"><span class="num">4.</span><span>Zakres i charakter Usługi</span></a></li>
-      <li><a href="#sec-5"><span class="num">5.</span><span>Wymagania techniczne</span></a></li>
-      <li><a href="#sec-6"><span class="num">6.</span><span>Konto Użytkownika i tryb lokalny</span></a></li>
-      <li><a href="#sec-7"><span class="num">7.</span><span>Zasady korzystania z funkcjonalności</span></a></li>
-      <li><a href="#sec-8"><span class="num">8.</span><span>Zasady dodawania Treści</span></a></li>
-      <li><a href="#sec-9"><span class="num">9.</span><span>Odpowiedzialność za Treści</span></a></li>
-      <li><a href="#sec-10"><span class="num">10.</span><span>Treści Partnerów i rekomendacje</span></a></li>
-      <li><a href="#sec-11"><span class="num">11.</span><span>Program poleceń</span></a></li>
-      <li><a href="#sec-12"><span class="num">12.</span><span>Współdzielenie Inwestycji</span></a></li>
-      <li><a href="#sec-13"><span class="num">13.</span><span>Dozwolone i niedozwolone korzystanie</span></a></li>
-      <li><a href="#sec-14"><span class="num">14.</span><span>Prawa własności intelektualnej</span></a></li>
-      <li><a href="#sec-15"><span class="num">15.</span><span>Odpowiedzialność i jej ograniczenia</span></a></li>
-      <li><a href="#sec-16"><span class="num">16.</span><span>Dostępność, aktualizacje, przerwy</span></a></li>
-      <li><a href="#sec-17"><span class="num">17.</span><span>Bezpieczeństwo Konta</span></a></li>
-      <li><a href="#sec-18"><span class="num">18.</span><span>Usunięcie Konta i zakończenie</span></a></li>
-      <li><a href="#sec-19"><span class="num">19.</span><span>Reklamacje, kontakt i wsparcie</span></a></li>
-      <li><a href="#sec-20"><span class="num">20.</span><span>Zmiany Regulaminu</span></a></li>
-      <li><a href="#sec-21"><span class="num">21.</span><span>Postanowienia App Store (Apple)</span></a></li>
-      <li><a href="#sec-22"><span class="num">22.</span><span>Prawo właściwe i końcowe</span></a></li>
+      <li><a href="#sec-1"><span class="num">1.</span><span>General provisions</span></a></li>
+      <li><a href="#sec-2"><span class="num">2.</span><span>Definitions</span></a></li>
+      <li><a href="#sec-3"><span class="num">3.</span><span>Provider details</span></a></li>
+      <li><a href="#sec-4"><span class="num">4.</span><span>Scope and nature of the Service</span></a></li>
+      <li><a href="#sec-5"><span class="num">5.</span><span>Technical requirements</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>User Account and local mode</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Rules for using features</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Rules for adding Content</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>Liability for Content</span></a></li>
+      <li><a href="#sec-10"><span class="num">10.</span><span>Partner Content and recommendations</span></a></li>
+      <li><a href="#sec-11"><span class="num">11.</span><span>Referral programme</span></a></li>
+      <li><a href="#sec-12"><span class="num">12.</span><span>Sharing a Project</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Permitted and prohibited use</span></a></li>
+      <li><a href="#sec-14"><span class="num">14.</span><span>Intellectual property rights</span></a></li>
+      <li><a href="#sec-15"><span class="num">15.</span><span>Liability and its limits</span></a></li>
+      <li><a href="#sec-16"><span class="num">16.</span><span>Availability, updates, downtime</span></a></li>
+      <li><a href="#sec-17"><span class="num">17.</span><span>Account security</span></a></li>
+      <li><a href="#sec-18"><span class="num">18.</span><span>Account deletion and termination</span></a></li>
+      <li><a href="#sec-19"><span class="num">19.</span><span>Complaints, contact and support</span></a></li>
+      <li><a href="#sec-20"><span class="num">20.</span><span>Changes to the Terms</span></a></li>
+      <li><a href="#sec-21"><span class="num">21.</span><span>App Store provisions (Apple)</span></a></li>
+      <li><a href="#sec-22"><span class="num">22.</span><span>Governing law and final provisions</span></a></li>
     </ul>
   </aside>
 
   <details class="toc-mobile">
-    <summary>Spis treści — 22 sekcje</summary>
+    <summary>Contents — 22 sections</summary>
     <ul class="toc__list">
-      <li><a href="#sec-1"><span class="num">1.</span><span>Postanowienia ogólne</span></a></li>
-      <li><a href="#sec-2"><span class="num">2.</span><span>Definicje</span></a></li>
-      <li><a href="#sec-3"><span class="num">3.</span><span>Dane Usługodawcy</span></a></li>
-      <li><a href="#sec-4"><span class="num">4.</span><span>Zakres Usługi</span></a></li>
-      <li><a href="#sec-5"><span class="num">5.</span><span>Wymagania techniczne</span></a></li>
-      <li><a href="#sec-6"><span class="num">6.</span><span>Konto i tryb lokalny</span></a></li>
-      <li><a href="#sec-7"><span class="num">7.</span><span>Funkcjonalności</span></a></li>
-      <li><a href="#sec-8"><span class="num">8.</span><span>Dodawanie Treści</span></a></li>
-      <li><a href="#sec-9"><span class="num">9.</span><span>Odpowiedzialność za Treści</span></a></li>
-      <li><a href="#sec-10"><span class="num">10.</span><span>Treści Partnerów</span></a></li>
-      <li><a href="#sec-11"><span class="num">11.</span><span>Program poleceń</span></a></li>
-      <li><a href="#sec-12"><span class="num">12.</span><span>Współdzielenie</span></a></li>
-      <li><a href="#sec-13"><span class="num">13.</span><span>Zasady korzystania</span></a></li>
-      <li><a href="#sec-14"><span class="num">14.</span><span>Prawa własności intelektualnej</span></a></li>
-      <li><a href="#sec-15"><span class="num">15.</span><span>Odpowiedzialność</span></a></li>
-      <li><a href="#sec-16"><span class="num">16.</span><span>Dostępność i przerwy</span></a></li>
-      <li><a href="#sec-17"><span class="num">17.</span><span>Bezpieczeństwo Konta</span></a></li>
-      <li><a href="#sec-18"><span class="num">18.</span><span>Zakończenie korzystania</span></a></li>
-      <li><a href="#sec-19"><span class="num">19.</span><span>Reklamacje i wsparcie</span></a></li>
-      <li><a href="#sec-20"><span class="num">20.</span><span>Zmiany Regulaminu</span></a></li>
+      <li><a href="#sec-1"><span class="num">1.</span><span>General provisions</span></a></li>
+      <li><a href="#sec-2"><span class="num">2.</span><span>Definitions</span></a></li>
+      <li><a href="#sec-3"><span class="num">3.</span><span>Provider details</span></a></li>
+      <li><a href="#sec-4"><span class="num">4.</span><span>Scope of the Service</span></a></li>
+      <li><a href="#sec-5"><span class="num">5.</span><span>Technical requirements</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>Account and local mode</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Features</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Adding Content</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>Liability for Content</span></a></li>
+      <li><a href="#sec-10"><span class="num">10.</span><span>Partner Content</span></a></li>
+      <li><a href="#sec-11"><span class="num">11.</span><span>Referral programme</span></a></li>
+      <li><a href="#sec-12"><span class="num">12.</span><span>Sharing</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Rules of use</span></a></li>
+      <li><a href="#sec-14"><span class="num">14.</span><span>Intellectual property</span></a></li>
+      <li><a href="#sec-15"><span class="num">15.</span><span>Liability</span></a></li>
+      <li><a href="#sec-16"><span class="num">16.</span><span>Availability and downtime</span></a></li>
+      <li><a href="#sec-17"><span class="num">17.</span><span>Account security</span></a></li>
+      <li><a href="#sec-18"><span class="num">18.</span><span>Termination of use</span></a></li>
+      <li><a href="#sec-19"><span class="num">19.</span><span>Complaints and support</span></a></li>
+      <li><a href="#sec-20"><span class="num">20.</span><span>Changes to the Terms</span></a></li>
       <li><a href="#sec-21"><span class="num">21.</span><span>App Store (Apple)</span></a></li>
-      <li><a href="#sec-22"><span class="num">22.</span><span>Prawo właściwe</span></a></li>
+      <li><a href="#sec-22"><span class="num">22.</span><span>Governing law</span></a></li>
     </ul>
   </details>
 
@@ -803,75 +819,75 @@
 
     <!-- ── 1 ── -->
     <section class="doc-section" id="sec-1">
-      <h2><span class="secnum">01</span>Postanowienia ogólne</h2>
-      <p>1.1. Regulamin określa zasady i warunki korzystania z aplikacji mobilnej homdu, zakres usług świadczonych drogą elektroniczną, prawa i obowiązki Użytkownika oraz Usługodawcy, a także zasady odpowiedzialności.</p>
-      <p>1.2. Usługodawca świadczy usługi drogą elektroniczną zgodnie z niniejszym Regulaminem oraz przepisami prawa polskiego, w tym ustawą z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną oraz ustawą z dnia 30 maja 2014 r. o prawach konsumenta.</p>
-      <p>1.3. Regulamin jest udostępniany nieodpłatnie w sposób umożliwiający jego pozyskanie, odtworzenie, utrwalenie i wydrukowanie. Jest dostępny w Aplikacji oraz na stronie internetowej powiązanej z Aplikacją.</p>
-      <p>1.4. Akceptując Regulamin, Użytkownik oświadcza, że zapoznał się z jego treścią, rozumie ją i akceptuje, a także że jest osobą uprawnioną do zawarcia umowy o korzystanie z Aplikacji.</p>
+      <h2><span class="secnum">01</span>General provisions</h2>
+      <p>1.1. These Terms set out the rules and conditions for using the homdu mobile app, the scope of the services provided electronically, the rights and obligations of the User and the Provider, and the principles of liability.</p>
+      <p>1.2. The Provider supplies services electronically in accordance with these Terms and with Polish law, including the Act of 18 July 2002 on providing services electronically and the Act of 30 May 2014 on consumer rights.</p>
+      <p>1.3. The Terms are made available free of charge in a way that allows them to be obtained, reproduced, recorded and printed. They are available in the App and on the website associated with the App.</p>
+      <p>1.4. By accepting the Terms, the User declares that they have read and understood the Terms and accept them, and that they are entitled to enter into an agreement for the use of the App.</p>
     </section>
 
     <!-- ── 2 ── -->
     <section class="doc-section" id="sec-2">
-      <h2><span class="secnum">02</span>Definicje</h2>
-      <p>Użyte w Regulaminie pojęcia oznaczają:</p>
+      <h2><span class="secnum">02</span>Definitions</h2>
+      <p>The terms used in these Terms have the following meanings:</p>
 
       <dl class="glossary">
-        <div style="display:contents;"><dt>Usługodawca / homdu</dt><dd>AppSoft Studio Jakub Matwiejczyk, z danymi wskazanymi w sekcji 3.</dd></div>
-        <div style="display:contents;"><dt>Aplikacja</dt><dd>aplikacja mobilna homdu przeznaczona na urządzenia z systemem iOS (oraz, w przyszłości, na inne platformy mobilne), wraz z powiązanymi usługami świadczonymi drogą elektroniczną.</dd></div>
-        <div style="display:contents;"><dt>Usługa</dt><dd>funkcjonalności udostępniane Użytkownikowi w ramach Aplikacji, opisane w sekcji 4.</dd></div>
-        <div style="display:contents;"><dt>Użytkownik</dt><dd>osoba fizyczna korzystająca z Aplikacji; w przypadku konsumenta – osoba fizyczna dokonująca czynności niezwiązanej bezpośrednio z jej działalnością gospodarczą lub zawodową.</dd></div>
-        <div style="display:contents;"><dt>Konsument</dt><dd>Użytkownik będący konsumentem w rozumieniu art. 22(1) Kodeksu cywilnego.</dd></div>
-        <div style="display:contents;"><dt>Konto</dt><dd>wyodrębniony zbiór ustawień i danych powiązany z identyfikatorem Użytkownika, umożliwiający korzystanie z wybranych funkcji Aplikacji.</dd></div>
-        <div style="display:contents;"><dt>Inwestycja</dt><dd>prowadzony przez Użytkownika w Aplikacji projekt budowlany lub remontowy, wraz z przypisanymi etapami, zadaniami, kosztami, dokumentami, zdjęciami, albumami, linkami, kontaktami i notatkami.</dd></div>
-        <div style="display:contents;"><dt>Treści Użytkownika</dt><dd>wszelkie dane i materiały wprowadzane lub przesyłane przez Użytkownika do Aplikacji, w tym opisy inwestycji, notatki, zdjęcia, albumy, dokumenty, pliki, linki oraz dane kontaktowe.</dd></div>
-        <div style="display:contents;"><dt>Treści homdu</dt><dd>treści udostępniane przez Usługodawcę, w tym treści poradnikowe i redakcyjne oraz elementy Aplikacji.</dd></div>
-        <div style="display:contents;"><dt>Treści Partnerów</dt><dd>treści, rekomendacje, materiały i sekcje sponsorowane pochodzące od partnerów biznesowych Usługodawcy.</dd></div>
-        <div style="display:contents;"><dt>Program poleceń</dt><dd>funkcjonalność umożliwiająca polecanie Aplikacji innym osobom, na zasadach opisanych w sekcji 11.</dd></div>
-        <div style="display:contents;"><dt>Polityka Prywatności</dt><dd>dokument opisujący zasady przetwarzania danych osobowych w związku z korzystaniem z Aplikacji — zob. <a href="polityka-prywatnosci">polityka-prywatnosci</a>.</dd></div>
-        <div style="display:contents;"><dt>App Store</dt><dd>sklep z aplikacjami prowadzony przez Apple, za pośrednictwem którego dystrybuowana jest Aplikacja.</dd></div>
+        <div style="display:contents;"><dt>Provider / homdu</dt><dd>AppSoft Studio Jakub Matwiejczyk, with the details set out in section 3.</dd></div>
+        <div style="display:contents;"><dt>App</dt><dd>the homdu mobile app for iOS devices (and, in the future, for other mobile platforms), together with the associated services provided electronically.</dd></div>
+        <div style="display:contents;"><dt>Service</dt><dd>the features made available to the User within the App, described in section 4.</dd></div>
+        <div style="display:contents;"><dt>User</dt><dd>a natural person using the App; in the case of a consumer – a natural person performing an act not directly related to their business or professional activity.</dd></div>
+        <div style="display:contents;"><dt>Consumer</dt><dd>a User who is a consumer within the meaning of art. 22(1) of the Polish Civil Code.</dd></div>
+        <div style="display:contents;"><dt>Account</dt><dd>a separate set of settings and data linked to the User's identifier, enabling the use of selected App features.</dd></div>
+        <div style="display:contents;"><dt>Project</dt><dd>a building or renovation project run by the User in the App, together with its assigned stages, tasks, costs, documents, photos, albums, links, contacts and notes.</dd></div>
+        <div style="display:contents;"><dt>User Content</dt><dd>any data and materials entered or uploaded by the User into the App, including project descriptions, notes, photos, albums, documents, files, links and contact details.</dd></div>
+        <div style="display:contents;"><dt>homdu Content</dt><dd>content made available by the Provider, including guide and editorial content and elements of the App.</dd></div>
+        <div style="display:contents;"><dt>Partner Content</dt><dd>content, recommendations, materials and sponsored sections originating from the Provider's business partners.</dd></div>
+        <div style="display:contents;"><dt>Referral programme</dt><dd>a feature allowing the User to refer the App to other people, under the rules described in section 11.</dd></div>
+        <div style="display:contents;"><dt>Privacy Policy</dt><dd>the document describing the rules for processing personal data in connection with the use of the App — see <a href="/privacy-policy">privacy-policy</a>.</dd></div>
+        <div style="display:contents;"><dt>App Store</dt><dd>the app store operated by Apple, through which the App is distributed.</dd></div>
       </dl>
     </section>
 
     <!-- ── 3 ── -->
     <section class="doc-section" id="sec-3">
-      <h2><span class="secnum">03</span>Dane Usługodawcy</h2>
-      <p>Usługodawcą i podmiotem świadczącym usługi w ramach Aplikacji jest:</p>
+      <h2><span class="secnum">03</span>Provider details</h2>
+      <p>The Provider and the entity supplying the services within the App is:</p>
 
       <div class="provider-card">
         <div class="provider-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/><path d="M10 10h.01M14 10h.01M10 13h.01M14 13h.01"/></svg>
         </div>
         <div class="provider-card__body">
-          <p class="provider-card__role">Usługodawca</p>
+          <p class="provider-card__role">Provider</p>
           <p class="provider-card__name">AppSoft Studio Jakub Matwiejczyk</p>
           <dl class="provider-card__lines">
-            <dt>Adres</dt><dd>ul. Aroniowa 19, 05-555 Kotorydz</dd>
-            <dt>NIP</dt><dd>7133074219</dd>
-            <dt>E-mail</dt><dd><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></dd>
+            <dt>Address</dt><dd>ul. Aroniowa 19, 05-555 Kotorydz, Poland</dd>
+            <dt>Tax ID (NIP)</dt><dd>7133074219</dd>
+            <dt>Email</dt><dd><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></dd>
           </dl>
         </div>
       </div>
 
-      <p>Adres e-mail wskazany powyżej służy do kontaktu we wszystkich sprawach związanych z korzystaniem z Aplikacji, w tym do składania reklamacji.</p>
+      <p>The email address indicated above is used for contact in all matters related to the use of the App, including for submitting complaints.</p>
     </section>
 
     <!-- ── 4 ── -->
     <section class="doc-section" id="sec-4">
-      <h2><span class="secnum">04</span>Zakres i charakter Usługi</h2>
-      <p>4.1. Aplikacja homdu jest narzędziem wspierającym <strong>organizację, planowanie i prowadzenie inwestycji budowlanych oraz remontowych</strong>. Aplikacja ma charakter pomocniczy i organizacyjny.</p>
+      <h2><span class="secnum">04</span>Scope and nature of the Service</h2>
+      <p>4.1. The homdu app is a tool that supports the <strong>organisation, planning and management of building and renovation projects</strong>. The App is supplementary and organisational in nature.</p>
 
-      <p>4.2. W ramach Aplikacji Użytkownik może w szczególności:</p>
+      <p>4.2. Within the App the User may, in particular:</p>
       <ul>
-        <li>tworzyć i prowadzić Inwestycje oraz dodawać i zarządzać ich etapami,</li>
-        <li>zarządzać zadaniami, kosztami i terminami,</li>
-        <li>dodawać i przechowywać dokumenty, pliki, linki i notatki,</li>
-        <li>dodawać zdjęcia i tworzyć albumy oraz opatrywać je opisami,</li>
-        <li>gromadzić dane kontaktowe wykonawców i innych osób,</li>
-        <li>korzystać z treści poradnikowych oraz z Treści Partnerów i sekcji sponsorowanych,</li>
-        <li>importować treści do Aplikacji za pośrednictwem mechanizmu udostępniania systemu (share extension),</li>
-        <li>korzystać z Programu poleceń,</li>
-        <li>otrzymywać powiadomienia push (po wyrażeniu zgody),</li>
-        <li>korzystać z synchronizacji danych pomiędzy urządzeniami Użytkownika.</li>
+        <li>create and run Projects and add and manage their stages,</li>
+        <li>manage tasks, costs and deadlines,</li>
+        <li>add and store documents, files, links and notes,</li>
+        <li>add photos and create albums and add descriptions to them,</li>
+        <li>collect contact details of contractors and other people,</li>
+        <li>use guide content as well as Partner Content and sponsored sections,</li>
+        <li>import content into the App via the system share extension,</li>
+        <li>use the Referral programme,</li>
+        <li>receive push notifications (after giving consent),</li>
+        <li>use data synchronisation between the User's devices.</li>
       </ul>
 
       <div class="callout callout--warn" role="note">
@@ -879,61 +895,61 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
         <div class="callout__body">
-          <p class="callout__title">4.3 — Charakter Aplikacji</p>
-          <p>Aplikacja <strong>nie świadczy usług budowlanych, projektowych, wykonawczych, doradczych, prawnych, finansowych ani inwestycyjnych</strong>. Aplikacja nie pośredniczy w zawieraniu umów z wykonawcami ani nie gwarantuje rezultatu Inwestycji. Treści poradnikowe oraz Treści Partnerów mają charakter informacyjny i nie stanowią indywidualnej porady.</p>
+          <p class="callout__title">4.3 — Nature of the App</p>
+          <p>The App <strong>does not provide construction, design, contracting, advisory, legal, financial or investment services</strong>. The App does not broker contracts with contractors and does not guarantee the outcome of a Project. Guide content and Partner Content are informational in nature and do not constitute individual advice.</p>
         </div>
       </div>
 
-      <p>4.4. Korzystanie z Aplikacji w jej podstawowym zakresie jest <strong>nieodpłatne</strong>, chyba że wyraźnie wskazano inaczej. Usługodawca może w przyszłości wprowadzić funkcje płatne; korzystanie z nich będzie wymagało odrębnej, wyraźnej akceptacji warunków oraz ceny przez Użytkownika.</p>
-      <p>4.5. Część funkcji Aplikacji korzysta z usług firm trzecich, w tym usług Apple (np. logowanie Sign in with Apple, synchronizacja iCloud/CloudKit, powiadomienia) oraz innych dostawców infrastruktury i narzędzi. Korzystanie z tych funkcji może podlegać dodatkowo warunkom tych podmiotów.</p>
+      <p>4.4. Using the App in its basic scope is <strong>free of charge</strong>, unless expressly stated otherwise. The Provider may introduce paid features in the future; using them will require the User's separate, explicit acceptance of the terms and price.</p>
+      <p>4.5. Some App features rely on third-party services, including Apple services (e.g. Sign in with Apple, iCloud/CloudKit synchronisation, notifications) and other infrastructure and tooling providers. Use of these features may additionally be subject to the terms of those entities.</p>
     </section>
 
     <!-- ── 5 ── -->
     <section class="doc-section" id="sec-5">
-      <h2><span class="secnum">05</span>Wymagania techniczne</h2>
-      <p>5.1. Do korzystania z Aplikacji niezbędne jest:</p>
+      <h2><span class="secnum">05</span>Technical requirements</h2>
+      <p>5.1. To use the App you need:</p>
       <ul>
-        <li>urządzenie mobilne z systemem operacyjnym iOS w wersji obsługiwanej przez Aplikację,</li>
-        <li>dostęp do sieci Internet,</li>
-        <li>w zakresie wybranych funkcji – konto Apple ID oraz aktywna usługa iCloud,</li>
-        <li>aktualna wersja Aplikacji pobrana z App Store.</li>
+        <li>a mobile device running an iOS version supported by the App,</li>
+        <li>access to the internet,</li>
+        <li>for selected features – an Apple ID account and an active iCloud service,</li>
+        <li>a current version of the App downloaded from the App Store.</li>
       </ul>
-      <p>5.2. Niektóre funkcje (np. synchronizacja, powiadomienia, logowanie, treści pobierane zdalnie) wymagają aktywnego połączenia z Internetem oraz dostępności usług firm trzecich. Brak połączenia lub niedostępność tych usług może ograniczać dostępność części funkcji.</p>
-      <p>5.3. Usługodawca nie ponosi kosztów transmisji danych ani opłat operatora telekomunikacyjnego Użytkownika związanych z korzystaniem z Aplikacji.</p>
-      <p>5.4. Z korzystaniem z usług świadczonych drogą elektroniczną wiążą się typowe zagrożenia, w tym ryzyko działania złośliwego oprogramowania oraz nieuprawnionego dostępu do urządzenia. Zaleca się stosowanie aktualnego oprogramowania zabezpieczającego oraz aktualizacji systemu.</p>
+      <p>5.2. Some features (e.g. synchronisation, notifications, sign-in, remotely fetched content) require an active internet connection and the availability of third-party services. A lack of connection or the unavailability of these services may limit the availability of some features.</p>
+      <p>5.3. The Provider does not bear the cost of data transmission or the User's telecommunications operator charges related to using the App.</p>
+      <p>5.4. Using services provided electronically carries typical risks, including the risk of malware and unauthorised access to the device. We recommend using up-to-date security software and system updates.</p>
     </section>
 
     <!-- ── 6 ── -->
     <section class="doc-section" id="sec-6">
-      <h2><span class="secnum">06</span>Konto Użytkownika i korzystanie bez konta</h2>
-      <p>6.1. Korzystanie z części funkcji Aplikacji jest możliwe <strong>bez zakładania Konta</strong>, w trybie lokalnym, w którym dane są przechowywane na urządzeniu Użytkownika.</p>
-      <p>6.2. Pełny zakres funkcji (w tym synchronizacja danych między urządzeniami oraz, w przyszłości, współdzielenie Inwestycji) może wymagać uwierzytelnienia Użytkownika, w szczególności z wykorzystaniem usługi <strong>Sign in with Apple</strong>.</p>
-      <p>6.3. Zawarcie umowy o korzystanie z Aplikacji następuje z chwilą pobrania i uruchomienia Aplikacji oraz zaakceptowania Regulaminu, a w zakresie funkcji wymagających Konta – z chwilą jego utworzenia.</p>
-      <p>6.4. Użytkownik zobowiązany jest korzystać z Aplikacji zgodnie z Regulaminem, przepisami prawa oraz zasadami współżycia społecznego, a także podawać dane prawdziwe i nienaruszające praw osób trzecich.</p>
-      <p>6.5. Umowa o korzystanie z Aplikacji zawierana jest na czas nieoznaczony. Użytkownik może w każdej chwili zakończyć korzystanie z Aplikacji w sposób opisany w sekcji 18.</p>
+      <h2><span class="secnum">06</span>User Account and use without an account</h2>
+      <p>6.1. Some App features can be used <strong>without creating an Account</strong>, in local mode, where data is stored on the User's device.</p>
+      <p>6.2. The full range of features (including data synchronisation between devices and, in the future, sharing a Project) may require authentication of the User, in particular using the <strong>Sign in with Apple</strong> service.</p>
+      <p>6.3. The agreement for the use of the App is concluded when the App is downloaded and launched and the Terms are accepted, and – for features requiring an Account – when the Account is created.</p>
+      <p>6.4. The User is obliged to use the App in accordance with the Terms, the law and the principles of social conduct, and to provide true data that does not infringe the rights of third parties.</p>
+      <p>6.5. The agreement for the use of the App is concluded for an indefinite period. The User may end their use of the App at any time in the manner described in section 18.</p>
     </section>
 
     <!-- ── 7 ── -->
     <section class="doc-section" id="sec-7">
-      <h2><span class="secnum">07</span>Zasady korzystania z funkcjonalności Aplikacji</h2>
-      <p>7.1. <strong>Inwestycje i etapy.</strong> Użytkownik samodzielnie tworzy Inwestycje, dodaje etapy, zadania, koszty i terminy oraz odpowiada za ich poprawność i aktualność. Dane finansowe i terminowe wprowadzane przez Użytkownika mają charakter pomocniczy i nie stanowią wyceny ani harmonogramu wiążącego.</p>
-      <p>7.2. <strong>Dokumenty, zdjęcia, albumy, linki i notatki.</strong> Użytkownik może dodawać i przechowywać materiały związane z Inwestycją. Użytkownik odpowiada za posiadanie praw do tych materiałów oraz za ich treść (sekcja 8 i 9).</p>
-      <p>7.3. <strong>Kontakty i wykonawcy.</strong> Użytkownik może gromadzić dane kontaktowe wykonawców oraz innych osób. Dodając dane osób trzecich, Użytkownik oświadcza, że jest uprawniony do ich przetwarzania w tym celu.</p>
-      <p>7.4. <strong>Share extension.</strong> Aplikacja umożliwia importowanie treści za pośrednictwem systemowego mechanizmu udostępniania. Za treści importowane do Aplikacji odpowiada Użytkownik.</p>
-      <p>7.5. <strong>Treści poradnikowe.</strong> Aplikacja może udostępniać materiały informacyjne i poradnikowe. Mają one charakter ogólny i nie uwzględniają indywidualnej sytuacji Użytkownika.</p>
-      <p>7.6. <strong>Powiadomienia push.</strong> Po wyrażeniu zgody systemowej Aplikacja może wysyłać powiadomienia push (np. dotyczące zadań, etapów lub treści). Użytkownik może w każdej chwili zmienić ustawienia powiadomień w ustawieniach urządzenia lub Aplikacji.</p>
-      <p>7.7. <strong>Synchronizacja danych.</strong> Jeżeli Użytkownik korzysta z synchronizacji opartej o iCloud/CloudKit, dane mogą być synchronizowane pomiędzy jego urządzeniami zalogowanymi do tego samego konta Apple. Zasady przechowywania danych lokalnych i synchronizowanych opisuje <a href="polityka-prywatnosci#sec-7">Polityka Prywatności</a>.</p>
+      <h2><span class="secnum">07</span>Rules for using the App's features</h2>
+      <p>7.1. <strong>Projects and stages.</strong> The User independently creates Projects, adds stages, tasks, costs and deadlines, and is responsible for their correctness and currency. Financial and scheduling data entered by the User is supplementary in nature and does not constitute a binding quote or schedule.</p>
+      <p>7.2. <strong>Documents, photos, albums, links and notes.</strong> The User may add and store materials related to a Project. The User is responsible for holding the rights to these materials and for their content (sections 8 and 9).</p>
+      <p>7.3. <strong>Contacts and contractors.</strong> The User may collect contact details of contractors and other people. By adding third-party data, the User declares that they are entitled to process it for this purpose.</p>
+      <p>7.4. <strong>Share extension.</strong> The App allows content to be imported via the system share mechanism. The User is responsible for content imported into the App.</p>
+      <p>7.5. <strong>Guide content.</strong> The App may provide informational and guide materials. These are general in nature and do not take into account the User's individual situation.</p>
+      <p>7.6. <strong>Push notifications.</strong> After system consent is given, the App may send push notifications (e.g. about tasks, stages or content). The User may change notification settings at any time in the device or App settings.</p>
+      <p>7.7. <strong>Data synchronisation.</strong> If the User uses iCloud/CloudKit-based synchronisation, data may be synchronised between their devices signed in to the same Apple account. The rules for storing local and synchronised data are described in the <a href="/privacy-policy#sec-7">Privacy Policy</a>.</p>
     </section>
 
     <!-- ── 8 ── -->
     <section class="doc-section" id="sec-8">
-      <h2><span class="secnum">08</span>Zasady dodawania Treści Użytkownika</h2>
-      <p>8.1. Aplikacja umożliwia Użytkownikowi dodawanie Treści Użytkownika, w tym zdjęć, notatek, dokumentów, plików, linków, danych kontaktowych oraz danych dotyczących wykonawców i Inwestycji.</p>
-      <p>8.2. Dodając Treści Użytkownika, Użytkownik oświadcza i gwarantuje, że:</p>
+      <h2><span class="secnum">08</span>Rules for adding User Content</h2>
+      <p>8.1. The App allows the User to add User Content, including photos, notes, documents, files, links, contact details and data concerning contractors and Projects.</p>
+      <p>8.2. By adding User Content, the User declares and warrants that:</p>
       <ul>
-        <li>posiada wszelkie prawa lub zgody niezbędne do ich wprowadzenia i wykorzystania w Aplikacji,</li>
-        <li>treści te nie naruszają przepisów prawa, praw osób trzecich (w tym praw autorskich, dóbr osobistych i prawa do prywatności) ani dobrych obyczajów,</li>
-        <li>treści te nie zawierają danych wprowadzonych bez odpowiedniej podstawy, w szczególności danych osobowych osób trzecich, do których przetwarzania Użytkownik nie jest uprawniony.</li>
+        <li>they hold all rights or consents necessary to enter and use it in the App,</li>
+        <li>the content does not infringe the law, the rights of third parties (including copyright, personal rights and the right to privacy) or good morals,</li>
+        <li>the content does not contain data entered without an appropriate legal basis, in particular personal data of third parties that the User is not entitled to process.</li>
       </ul>
 
       <div class="callout callout--warn" role="note">
@@ -941,162 +957,162 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
         </div>
         <div class="callout__body">
-          <p class="callout__title">8.3 — Treści zakazane</p>
-          <p>Niedopuszczalne jest dodawanie do Aplikacji treści wymienionych poniżej:</p>
+          <p class="callout__title">8.3 — Prohibited content</p>
+          <p>It is not permitted to add to the App any of the content listed below:</p>
         </div>
       </div>
 
       <ul class="rule-list rule-list--block">
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">bezprawnych, w tym naruszających prawa własności intelektualnej lub dobra osobiste,</span>
+          <span class="txt">unlawful content, including content infringing intellectual property rights or personal rights,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">naruszających prywatność innych osób bez odpowiedniej podstawy,</span>
+          <span class="txt">content infringing the privacy of others without an appropriate legal basis,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">o charakterze obraźliwym, dyskryminującym, nawołującym do nienawiści lub przemocy,</span>
+          <span class="txt">content that is offensive, discriminatory, or incites hatred or violence,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">zawierających złośliwe oprogramowanie lub treści zagrażające bezpieczeństwu,</span>
+          <span class="txt">content containing malware or content that threatens security,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">wprowadzających w błąd lub naruszających prawa osób trzecich w inny sposób.</span>
+          <span class="txt">misleading content or content that otherwise infringes the rights of third parties.</span>
         </li>
       </ul>
 
-      <p>8.4. Treści Użytkownika pozostają jego własnością. Usługodawca nie rości sobie do nich praw poza zakresem niezbędnym do świadczenia Usługi (np. przechowywanie, wyświetlanie i synchronizacja na potrzeby Użytkownika), zgodnie z sekcją 14.</p>
-      <p>8.5. W zakresie, w jakim Treści Użytkownika są przechowywane wyłącznie lokalnie na urządzeniu lub w prywatnej przestrzeni iCloud Użytkownika, Usługodawca co do zasady nie ma do nich dostępu i nie dokonuje ich moderacji. Jeżeli jednak Usługodawca poweźmie wiarygodną informację o bezprawnym charakterze treści przekazywanych za pośrednictwem usług Usługodawcy, może podjąć działania przewidziane przepisami prawa.</p>
+      <p>8.4. User Content remains the property of the User. The Provider claims no rights to it beyond the scope necessary to provide the Service (e.g. storage, display and synchronisation for the User), in accordance with section 14.</p>
+      <p>8.5. To the extent that User Content is stored solely locally on the device or in the User's private iCloud space, the Provider generally has no access to it and does not moderate it. However, if the Provider obtains credible information about the unlawful nature of content transmitted via the Provider's services, it may take the measures provided for by law.</p>
     </section>
 
     <!-- ── 9 ── -->
     <section class="doc-section" id="sec-9">
-      <h2><span class="secnum">09</span>Odpowiedzialność Użytkownika za Treści Użytkownika</h2>
-      <p>9.1. Użytkownik ponosi wyłączną odpowiedzialność za Treści Użytkownika, w tym za ich legalność, poprawność, kompletność i aktualność oraz za skutki ich wykorzystania.</p>
-      <p>9.2. Użytkownik odpowiada za to, aby dodawane przez niego dane osób trzecich (w tym dane wykonawców i kontaktów) były wprowadzane i wykorzystywane zgodnie z prawem, w tym przepisami o ochronie danych osobowych.</p>
-      <p>9.3. W przypadku zgłoszenia przez osobę trzecią lub uprawniony organ roszczeń związanych z Treściami Użytkownika, Użytkownik zobowiązuje się współdziałać z Usługodawcą w wyjaśnieniu sprawy w zakresie dopuszczalnym przepisami prawa. Niniejsze postanowienie nie ogranicza praw Konsumenta wynikających z bezwzględnie obowiązujących przepisów.</p>
-      <p>9.4. Użytkownik powinien we własnym zakresie dbać o kopie zapasowe szczególnie istotnych dla niego Treści Użytkownika, z uwzględnieniem zasad przechowywania i synchronizacji danych opisanych w <a href="polityka-prywatnosci#sec-7">Polityce Prywatności</a>.</p>
+      <h2><span class="secnum">09</span>User's liability for User Content</h2>
+      <p>9.1. The User bears sole liability for User Content, including for its legality, correctness, completeness and currency, and for the consequences of its use.</p>
+      <p>9.2. The User is responsible for ensuring that the third-party data they add (including contractor and contact data) is entered and used in accordance with the law, including data-protection law.</p>
+      <p>9.3. If a third party or an authorised body raises claims related to User Content, the User undertakes to cooperate with the Provider in clarifying the matter to the extent permitted by law. This provision does not limit the rights of a Consumer arising from mandatory provisions of law.</p>
+      <p>9.4. The User should make their own backups of User Content that is particularly important to them, taking into account the rules for storing and synchronising data described in the <a href="/privacy-policy#sec-7">Privacy Policy</a>.</p>
     </section>
 
     <!-- ── 10 ── -->
     <section class="doc-section" id="sec-10">
-      <h2><span class="secnum">10</span>Treści Partnerów, materiały sponsorowane i rekomendacje</h2>
-      <p>10.1. Aplikacja może prezentować Treści Partnerów, w tym materiały sponsorowane, sekcje partnerskie oraz rekomendacje (w tym rekomendacje dotyczące wykonawców oraz rekomendacje o charakterze finansowym).</p>
+      <h2><span class="secnum">10</span>Partner Content, sponsored materials and recommendations</h2>
+      <p>10.1. The App may present Partner Content, including sponsored materials, partner sections and recommendations (including contractor recommendations and recommendations of a financial nature).</p>
 
       <div class="callout callout--info" role="note">
         <div class="callout__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         </div>
         <div class="callout__body">
-          <p class="callout__title">10.2 — Charakter Treści Partnerów</p>
-          <p>Treści Partnerów oraz rekomendacje mają charakter <strong>informacyjny i marketingowy</strong> i <strong>nie stanowią indywidualnej porady prawnej, finansowej, podatkowej, technicznej ani inwestycyjnej</strong>. Nie stanowią również oferty w rozumieniu przepisów prawa, chyba że wyraźnie wskazano inaczej.</p>
+          <p class="callout__title">10.2 — Nature of Partner Content</p>
+          <p>Partner Content and recommendations are <strong>informational and marketing</strong> in nature and <strong>do not constitute individual legal, financial, tax, technical or investment advice</strong>. They also do not constitute an offer within the meaning of the law, unless expressly stated otherwise.</p>
         </div>
       </div>
 
-      <p>10.3. Decyzje dotyczące skorzystania z ofert, usług lub produktów partnerów Użytkownik podejmuje <strong>samodzielnie i na własne ryzyko</strong>. Stosunek prawny powstały w wyniku skorzystania z oferty partnera łączy Użytkownika bezpośrednio z tym partnerem.</p>
-      <p>10.4. Aplikacja może zawierać linki oraz odesłania do zewnętrznych stron i serwisów, w tym serwisów partnerów. Strony te podlegają własnym regulaminom i politykom prywatności. Usługodawca nie odpowiada za treść ani działanie stron osób trzecich.</p>
-      <p>10.5. Prezentacja Treści Partnerów nie oznacza rekomendacji w rozumieniu przepisów dotyczących doradztwa zawodowego ani potwierdzenia jakości usług danego partnera, chyba że wyraźnie wskazano inaczej.</p>
+      <p>10.3. Decisions about using a partner's offers, services or products are made by the User <strong>independently and at their own risk</strong>. Any legal relationship arising from using a partner's offer is between the User and that partner directly.</p>
+      <p>10.4. The App may contain links and references to external websites and services, including partner services. These sites are subject to their own terms and privacy policies. The Provider is not responsible for the content or operation of third-party sites.</p>
+      <p>10.5. Presenting Partner Content does not constitute a recommendation within the meaning of regulations on professional advice, nor a confirmation of the quality of a given partner's services, unless expressly stated otherwise.</p>
     </section>
 
     <!-- ── 11 ── -->
     <section class="doc-section" id="sec-11">
-      <h2><span class="secnum">11</span>Program poleceń</h2>
-      <p>11.1. Aplikacja może udostępniać Program poleceń umożliwiający Użytkownikowi polecanie Aplikacji innym osobom.</p>
-      <p>11.2. Szczegółowe zasady Programu poleceń, w tym ewentualne korzyści oraz warunki ich uzyskania, określane są w ramach Aplikacji w momencie udostępnienia danej edycji Programu poleceń. Usługodawca może w każdym czasie wprowadzić, zmienić, zawiesić lub zakończyć Program poleceń, z poszanowaniem praw nabytych Użytkowników.</p>
-      <p>11.3. Korzystanie z Programu poleceń nie może naruszać Regulaminu ani przepisów prawa, w szczególności zakazane jest stosowanie nieuczciwych praktyk, tworzenie fikcyjnych poleceń lub nadużywanie mechanizmu w celu uzyskania nienależnych korzyści.</p>
-      <p>11.4. W przypadku stwierdzenia nadużyć Usługodawca może wstrzymać lub cofnąć korzyści uzyskane z naruszeniem zasad Programu poleceń.</p>
+      <h2><span class="secnum">11</span>Referral programme</h2>
+      <p>11.1. The App may offer a Referral programme that allows the User to refer the App to other people.</p>
+      <p>11.2. The detailed rules of the Referral programme, including any benefits and the conditions for obtaining them, are set out within the App at the time a given edition of the Referral programme is made available. The Provider may at any time introduce, change, suspend or end the Referral programme, while respecting the acquired rights of Users.</p>
+      <p>11.3. Use of the Referral programme must not breach the Terms or the law; in particular, it is prohibited to use unfair practices, create fictitious referrals or abuse the mechanism to obtain undue benefits.</p>
+      <p>11.4. If abuse is found, the Provider may withhold or revoke benefits obtained in breach of the Referral programme rules.</p>
     </section>
 
     <!-- ── 12 ── -->
     <section class="doc-section" id="sec-12">
-      <h2><span class="secnum">12</span>Współdzielenie Inwestycji (funkcja przyszła)</h2>
-      <p>12.1. Usługodawca może w przyszłości udostępnić funkcję <strong>współdzielenia Inwestycji</strong> pomiędzy różnymi Użytkownikami (np. pomiędzy kontami Apple ID).</p>
-      <p>12.2. W przypadku udostępnienia takiej funkcji jej uruchomienie będzie następowało wyłącznie na skutek świadomego działania Użytkownika, który zdecyduje o udostępnieniu wybranej Inwestycji wskazanym osobom oraz o zakresie tego udostępnienia.</p>
-      <p>12.3. Udostępniając Inwestycję, Użytkownik oświadcza, że jest uprawniony do udostępnienia zawartych w niej treści oraz że udostępnienie nie narusza praw osób trzecich. Użytkownik, który uzyskał dostęp do współdzielonej Inwestycji, zobowiązany jest korzystać z niej zgodnie z Regulaminem i przepisami prawa.</p>
-      <p>12.4. Szczegółowe zasady działania funkcji współdzielenia (w tym zakres uprawnień poszczególnych Użytkowników oraz sposób cofania dostępu) zostaną określone w momencie jej udostępnienia, a w razie potrzeby – w zaktualizowanym Regulaminie i Polityce Prywatności.</p>
+      <h2><span class="secnum">12</span>Sharing a Project (future feature)</h2>
+      <p>12.1. The Provider may in the future make available a feature for <strong>sharing a Project</strong> between different Users (e.g. between Apple ID accounts).</p>
+      <p>12.2. If such a feature is made available, it will be activated only as a result of the deliberate action of the User, who decides to share a selected Project with designated people and decides on the scope of that sharing.</p>
+      <p>12.3. By sharing a Project, the User declares that they are entitled to share the content it contains and that the sharing does not infringe the rights of third parties. A User who has gained access to a shared Project is obliged to use it in accordance with the Terms and the law.</p>
+      <p>12.4. The detailed rules for how the sharing feature works (including the scope of each User's rights and how access is revoked) will be set out when it is made available and, where necessary, in an updated version of the Terms and the Privacy Policy.</p>
     </section>
 
     <!-- ── 13 ── -->
     <section class="doc-section" id="sec-13">
-      <h2><span class="secnum">13</span>Zasady dozwolonego i niedozwolonego korzystania</h2>
-      <p>13.1. Użytkownik zobowiązany jest korzystać z Aplikacji zgodnie z jej przeznaczeniem, Regulaminem oraz przepisami prawa.</p>
-      <p>13.2. Zakazane jest w szczególności:</p>
+      <h2><span class="secnum">13</span>Rules of permitted and prohibited use</h2>
+      <p>13.1. The User is obliged to use the App in accordance with its intended purpose, the Terms and the law.</p>
+      <p>13.2. In particular, it is prohibited to:</p>
 
       <ul class="rule-list rule-list--block">
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">korzystanie z Aplikacji w sposób naruszający prawa Usługodawcy lub osób trzecich,</span>
+          <span class="txt">use the App in a way that infringes the rights of the Provider or third parties,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">podejmowanie działań zakłócających działanie Aplikacji lub jej infrastruktury, w tym przeciążanie, ingerencja w kod lub obchodzenie zabezpieczeń,</span>
+          <span class="txt">take actions that disrupt the operation of the App or its infrastructure, including overloading it, interfering with the code or circumventing security measures,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">uzyskiwanie nieuprawnionego dostępu do Aplikacji, kont innych Użytkowników lub danych,</span>
+          <span class="txt">gain unauthorised access to the App, other Users' accounts or data,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">wykorzystywanie Aplikacji do działań niezgodnych z prawem, w tym do rozpowszechniania treści bezprawnych,</span>
+          <span class="txt">use the App for unlawful purposes, including to distribute unlawful content,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">automatyczne pobieranie lub kopiowanie treści (scraping) bez zgody Usługodawcy,</span>
+          <span class="txt">automatically download or copy content (scraping) without the Provider's consent,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">wykorzystywanie Aplikacji do celów komercyjnych w sposób wykraczający poza jej przeznaczenie, bez zgody Usługodawcy.</span>
+          <span class="txt">use the App for commercial purposes in a way that goes beyond its intended use, without the Provider's consent.</span>
         </li>
       </ul>
 
-      <p>13.3. W przypadku istotnego lub powtarzającego się naruszenia Regulaminu Usługodawca może – z poszanowaniem przepisów o ochronie konsumentów – wezwać Użytkownika do zaprzestania naruszeń, a w razie ich kontynuowania ograniczyć lub zakończyć świadczenie Usługi wobec danego Użytkownika.</p>
+      <p>13.3. In the event of a material or repeated breach of the Terms, the Provider may – while respecting consumer-protection law – call on the User to cease the breaches and, if they continue, limit or end the provision of the Service to that User.</p>
     </section>
 
     <!-- ── 14 ── -->
     <section class="doc-section" id="sec-14">
-      <h2><span class="secnum">14</span>Prawa własności intelektualnej</h2>
-      <p>14.1. Aplikacja, jej interfejs, kod, struktura, elementy graficzne, znaki towarowe, nazwa „homdu" oraz Treści homdu stanowią przedmiot praw własności intelektualnej Usługodawcy lub podmiotów, z którymi Usługodawca współpracuje, i podlegają ochronie prawnej.</p>
-      <p>14.2. Z chwilą rozpoczęcia korzystania z Aplikacji Usługodawca udziela Użytkownikowi niewyłącznej, nieprzenoszalnej, odwoływalnej licencji na korzystanie z Aplikacji na urządzeniach Użytkownika, wyłącznie w zakresie zgodnym z jej przeznaczeniem i niniejszym Regulaminem. Licencja nie obejmuje prawa do udzielania sublicencji.</p>
-      <p>14.3. Zakazane jest, w zakresie wykraczającym poza granice dozwolone bezwzględnie obowiązującymi przepisami prawa:</p>
+      <h2><span class="secnum">14</span>Intellectual property rights</h2>
+      <p>14.1. The App, its interface, code, structure, graphic elements, trademarks, the "homdu" name and homdu Content are subject to the intellectual property rights of the Provider or the entities with which the Provider cooperates, and are legally protected.</p>
+      <p>14.2. Upon starting to use the App, the Provider grants the User a non-exclusive, non-transferable, revocable licence to use the App on the User's devices, solely within the scope consistent with its intended purpose and these Terms. The licence does not include the right to grant sublicences.</p>
+      <p>14.3. Beyond the limits permitted by mandatory provisions of law, it is prohibited to:</p>
 
       <ul class="rule-list rule-list--block">
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">kopiowanie, modyfikowanie, rozpowszechnianie lub publiczne udostępnianie Aplikacji lub Treści homdu,</span>
+          <span class="txt">copy, modify, distribute or make publicly available the App or homdu Content,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">odsprzedaż, wynajem, użyczanie lub inne komercyjne udostępnianie Aplikacji osobom trzecim,</span>
+          <span class="txt">resell, rent, lend or otherwise commercially make the App available to third parties,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">dekompilacja, deasemblacja lub inne formy odtwarzania kodu źródłowego (reverse engineering),</span>
+          <span class="txt">decompile, disassemble or otherwise reverse-engineer the source code,</span>
         </li>
         <li>
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">usuwanie lub modyfikowanie oznaczeń praw autorskich lub znaków towarowych.</span>
+          <span class="txt">remove or modify copyright notices or trademarks.</span>
         </li>
       </ul>
 
-      <p>14.4. Treści Użytkownika pozostają własnością Użytkownika. Użytkownik udziela Usługodawcy niewyłącznej, nieodpłatnej licencji na korzystanie z Treści Użytkownika wyłącznie w zakresie i przez czas niezbędny do świadczenia Usługi na rzecz Użytkownika (w szczególności przechowywanie, wyświetlanie, przetwarzanie techniczne i synchronizacja). Licencja ta wygasa wraz z usunięciem danych treści lub zakończeniem korzystania z Aplikacji, z zastrzeżeniem technicznych okresów wynikających z kopii zapasowych i działania usług firm trzecich.</p>
+      <p>14.4. User Content remains the property of the User. The User grants the Provider a non-exclusive, royalty-free licence to use User Content solely within the scope and for the time necessary to provide the Service to the User (in particular storage, display, technical processing and synchronisation). This licence expires when the relevant content is deleted or when use of the App ends, subject to the technical periods resulting from backups and the operation of third-party services.</p>
     </section>
 
     <!-- ── 15 ── -->
     <section class="doc-section" id="sec-15">
-      <h2><span class="secnum">15</span>Odpowiedzialność i jej ograniczenia</h2>
-      <p>15.1. Usługodawca dokłada starań, aby Aplikacja działała prawidłowo i zgodnie z opisem, oraz ponosi odpowiedzialność na zasadach określonych przepisami prawa, w tym przepisami o ochronie konsumentów dotyczącymi zgodności usługi cyfrowej z umową.</p>
+      <h2><span class="secnum">15</span>Liability and its limits</h2>
+      <p>15.1. The Provider makes efforts to ensure the App works correctly and as described, and is liable under the rules set out by law, including consumer-protection provisions on the conformity of a digital service with the contract.</p>
 
       <div class="callout callout--warn" role="note">
         <div class="callout__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
         <div class="callout__body">
-          <p class="callout__title">15.2 — Brak gwarancji rezultatu</p>
-          <p>Aplikacja ma charakter narzędzia wspierającego organizację Inwestycji. Usługodawca <strong>nie gwarantuje osiągnięcia określonego rezultatu Inwestycji</strong> ani poprawności decyzji podejmowanych przez Użytkownika na podstawie danych lub materiałów zgromadzonych w Aplikacji.</p>
+          <p class="callout__title">15.2 — No guarantee of outcome</p>
+          <p>The App is a tool that supports the organisation of a Project. The Provider <strong>does not guarantee that a specific Project outcome will be achieved</strong> nor the correctness of decisions made by the User on the basis of data or materials gathered in the App.</p>
         </div>
       </div>
 
@@ -1105,127 +1121,127 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
         <div class="callout__body">
-          <p class="callout__title">15.3 — Wyłączenia odpowiedzialności</p>
-          <p>W zakresie dopuszczalnym przez prawo Usługodawca nie ponosi odpowiedzialności za:</p>
+          <p class="callout__title">15.3 — Exclusions of liability</p>
+          <p>To the extent permitted by law, the Provider is not liable for:</p>
         </div>
       </div>
 
       <ul>
-        <li>działania, zaniechania, jakość usług ani treści wykonawców, partnerów oraz innych podmiotów trzecich,</li>
-        <li>treści i działanie zewnętrznych stron internetowych oraz serwisów, do których prowadzą linki,</li>
-        <li>decyzje Użytkownika podjęte na podstawie Treści homdu, Treści Partnerów lub danych wprowadzonych przez Użytkownika,</li>
-        <li>skutki wprowadzenia przez Użytkownika nieprawidłowych, niekompletnych lub bezprawnych danych,</li>
-        <li>przerwy lub ograniczenia w dostępności usług firm trzecich (w szczególności Apple, dostawców chmury, sieci Internet), na które Usługodawca nie ma wpływu,</li>
-        <li>utratę danych wynikającą z okoliczności niezależnych od Usługodawcy, w tym z działania urządzenia Użytkownika lub usług firm trzecich.</li>
+        <li>the acts, omissions, service quality or content of contractors, partners and other third parties,</li>
+        <li>the content and operation of external websites and services to which links lead,</li>
+        <li>decisions made by the User on the basis of homdu Content, Partner Content or data entered by the User,</li>
+        <li>the consequences of the User entering incorrect, incomplete or unlawful data,</li>
+        <li>interruptions or limitations in the availability of third-party services (in particular Apple, cloud providers, the internet) over which the Provider has no control,</li>
+        <li>loss of data resulting from circumstances beyond the Provider's control, including the operation of the User's device or third-party services.</li>
       </ul>
 
-      <p>15.4. Postanowienia ograniczające odpowiedzialność nie wyłączają ani nie ograniczają odpowiedzialności Usługodawcy w zakresie, w jakim takie wyłączenie lub ograniczenie jest niedopuszczalne na podstawie bezwzględnie obowiązujących przepisów prawa, w szczególności wobec Konsumentów. W stosunku do Użytkowników niebędących Konsumentami odpowiedzialność Usługodawcy z tytułu utraconych korzyści jest wyłączona w zakresie dopuszczalnym przez prawo.</p>
+      <p>15.4. Provisions limiting liability do not exclude or limit the Provider's liability to the extent that such exclusion or limitation is impermissible under mandatory provisions of law, in particular towards Consumers. In relation to Users who are not Consumers, the Provider's liability for lost profits is excluded to the extent permitted by law.</p>
     </section>
 
     <!-- ── 16 ── -->
     <section class="doc-section" id="sec-16">
-      <h2><span class="secnum">16</span>Dostępność Usługi, aktualizacje i przerwy techniczne</h2>
-      <p>16.1. Usługodawca dąży do zapewnienia możliwie nieprzerwanej dostępności Aplikacji, jednak nie gwarantuje jej nieprzerwanego i wolnego od błędów działania, w szczególności z uwagi na zależność od usług firm trzecich i sieci Internet.</p>
-      <p>16.2. Usługodawca może dokonywać aktualizacji Aplikacji, w tym aktualizacji niezbędnych do zachowania zgodności z umową, bezpieczeństwa lub zgodności z przepisami prawa. Niektóre aktualizacje mogą być konieczne do dalszego prawidłowego korzystania z Aplikacji.</p>
-      <p>16.3. Usługodawca może wprowadzać przerwy techniczne, w szczególności w celu konserwacji, rozwoju lub zapewnienia bezpieczeństwa. W miarę możliwości przerwy planowane będą realizowane w sposób ograniczający niedogodności dla Użytkowników.</p>
-      <p>16.4. Usługodawca może modyfikować, rozwijać lub wycofywać poszczególne funkcje Aplikacji. Istotne zmiany ograniczające zakres Usługi będą komunikowane Użytkownikom w sposób adekwatny do ich charakteru, z poszanowaniem praw Konsumentów.</p>
+      <h2><span class="secnum">16</span>Service availability, updates and technical downtime</h2>
+      <p>16.1. The Provider strives to ensure the App is available as continuously as possible, but does not guarantee its uninterrupted and error-free operation, in particular due to its dependence on third-party services and the internet.</p>
+      <p>16.2. The Provider may update the App, including updates necessary to maintain conformity with the contract, security or compliance with the law. Some updates may be necessary for the App to continue working correctly.</p>
+      <p>16.3. The Provider may introduce technical downtime, in particular for maintenance, development or to ensure security. Where possible, planned downtime will be carried out in a way that limits inconvenience to Users.</p>
+      <p>16.4. The Provider may modify, develop or withdraw individual App features. Material changes limiting the scope of the Service will be communicated to Users in a manner appropriate to their nature, while respecting the rights of Consumers.</p>
     </section>
 
     <!-- ── 17 ── -->
     <section class="doc-section" id="sec-17">
-      <h2><span class="secnum">17</span>Bezpieczeństwo Konta i danych dostępowych</h2>
-      <p>17.1. Użytkownik zobowiązany jest do zachowania poufności danych umożliwiających dostęp do Aplikacji oraz do zabezpieczenia urządzenia, na którym korzysta z Aplikacji.</p>
-      <p>17.2. W zakresie, w jakim uwierzytelnienie odbywa się z wykorzystaniem usługi Sign in with Apple oraz konta Apple ID, bezpieczeństwo dostępu zależy również od zabezpieczeń konta Apple Użytkownika. Zaleca się stosowanie zabezpieczeń urządzenia (np. kodu, danych biometrycznych) oraz uwierzytelniania dwuskładnikowego konta Apple.</p>
-      <p>17.3. Użytkownik powinien niezwłocznie poinformować Usługodawcę o stwierdzonym nieuprawnionym dostępie do Konta lub naruszeniu bezpieczeństwa danych, korzystając z adresu wskazanego w sekcji 3.</p>
-      <p>17.4. Usługodawca stosuje adekwatne środki techniczne i organizacyjne służące ochronie danych, opisane szczegółowo w <a href="polityka-prywatnosci#sec-16">Polityce Prywatności</a>.</p>
+      <h2><span class="secnum">17</span>Security of the Account and access credentials</h2>
+      <p>17.1. The User is obliged to keep the data enabling access to the App confidential and to secure the device on which they use the App.</p>
+      <p>17.2. To the extent that authentication takes place using Sign in with Apple and an Apple ID account, access security also depends on the security of the User's Apple account. We recommend using device security (e.g. a passcode, biometrics) and two-factor authentication of the Apple account.</p>
+      <p>17.3. The User should promptly inform the Provider of any detected unauthorised access to the Account or breach of data security, using the address indicated in section 3.</p>
+      <p>17.4. The Provider applies adequate technical and organisational measures to protect data, described in detail in the <a href="/privacy-policy#sec-16">Privacy Policy</a>.</p>
     </section>
 
     <!-- ── 18 ── -->
     <section class="doc-section" id="sec-18">
-      <h2><span class="secnum">18</span>Usunięcie Konta i zakończenie korzystania z Aplikacji</h2>
-      <p>18.1. Użytkownik może w każdej chwili zakończyć korzystanie z Aplikacji, w szczególności poprzez:</p>
+      <h2><span class="secnum">18</span>Account deletion and ending use of the App</h2>
+      <p>18.1. The User may end their use of the App at any time, in particular by:</p>
       <ul>
-        <li>usunięcie Aplikacji z urządzenia,</li>
-        <li>usunięcie danych w ustawieniach Aplikacji,</li>
-        <li>usunięcie Konta, jeżeli zostało utworzone.</li>
+        <li>deleting the App from the device,</li>
+        <li>deleting data in the App settings,</li>
+        <li>deleting the Account, if one was created.</li>
       </ul>
-      <p>18.2. Usunięcie Aplikacji lub danych powoduje usunięcie danych lokalnych zgodnie z zasadami opisanymi w <a href="polityka-prywatnosci#sec-12">Polityce Prywatności</a>. Dane przechowywane w iCloud pozostają pod kontrolą Użytkownika i mogą zostać przez niego usunięte za pośrednictwem ustawień konta Apple.</p>
-      <p>18.3. Usługodawca może zakończyć świadczenie Usługi wobec Użytkownika z ważnych przyczyn, w szczególności w razie istotnego naruszenia Regulaminu lub przepisów prawa, po uprzednim wezwaniu do zaprzestania naruszeń, chyba że natychmiastowe działanie jest konieczne ze względu na bezpieczeństwo lub przepisy prawa. Postanowienie to nie narusza praw Konsumentów.</p>
-      <p>18.4. <strong>Prawo odstąpienia.</strong> W przypadku gdy korzystanie z Aplikacji następuje nieodpłatnie, Konsument może zaprzestać korzystania w każdym czasie bez ponoszenia kosztów. W razie wprowadzenia funkcji płatnych Konsumentowi przysługiwać będą uprawnienia wynikające z ustawy o prawach konsumenta, w tym – z zastrzeżeniem wyjątków przewidzianych ustawą – prawo odstąpienia od umowy w terminie 14 dni; szczegółowe informacje zostaną wówczas udostępnione przed zawarciem umowy odpłatnej.</p>
+      <p>18.2. Deleting the App or data results in the deletion of local data in accordance with the rules described in the <a href="/privacy-policy#sec-12">Privacy Policy</a>. Data stored in iCloud remains under the User's control and may be deleted by them via the Apple account settings.</p>
+      <p>18.3. The Provider may end the provision of the Service to a User for important reasons, in particular in the event of a material breach of the Terms or the law, after first calling on the User to cease the breaches, unless immediate action is necessary for security or legal reasons. This provision does not infringe the rights of Consumers.</p>
+      <p>18.4. <strong>Right of withdrawal.</strong> Where use of the App is free of charge, a Consumer may stop using it at any time without incurring costs. If paid features are introduced, the Consumer will have the rights arising from the Act on consumer rights, including – subject to the exceptions provided for by the Act – the right to withdraw from the contract within 14 days; detailed information will then be provided before the paid contract is concluded.</p>
     </section>
 
     <!-- ── 19 ── -->
     <section class="doc-section" id="sec-19">
-      <h2><span class="secnum">19</span>Reklamacje, kontakt i wsparcie</h2>
-      <p>19.1. Użytkownik może składać reklamacje dotyczące funkcjonowania Aplikacji oraz świadczonych Usług na adres e-mail: <strong>homdu.app@gmail.com</strong>.</p>
-      <p>19.2. Reklamacja powinna zawierać co najmniej: dane umożliwiające kontakt z Użytkownikiem, opis zastrzeżeń oraz – w miarę możliwości – informacje o urządzeniu i wersji Aplikacji.</p>
-      <p>19.3. Usługodawca rozpatruje reklamację bez zbędnej zwłoki, nie później niż w terminie 14 dni od jej otrzymania, i informuje Użytkownika o sposobie jej rozpatrzenia na podany adres kontaktowy. Jeżeli przepisy prawa przewidują inny termin, stosuje się termin wynikający z przepisów.</p>
-      <p>19.4. <strong>Pozasądowe rozwiązywanie sporów.</strong> Konsument ma możliwość skorzystania z pozasądowych sposobów rozpatrywania reklamacji i dochodzenia roszczeń, w tym z pomocy właściwych instytucji ochrony konsumentów. Informacje o platformie internetowego rozstrzygania sporów (ODR) dostępne są pod adresem prowadzonym przez Komisję Europejską. Skorzystanie z tych metod jest dobrowolne.</p>
+      <h2><span class="secnum">19</span>Complaints, contact and support</h2>
+      <p>19.1. The User may submit complaints about the operation of the App and the Services provided to the email address: <strong>homdu.app@gmail.com</strong>.</p>
+      <p>19.2. A complaint should contain at least: details enabling contact with the User, a description of the objections and – where possible – information about the device and the App version.</p>
+      <p>19.3. The Provider considers a complaint without undue delay, no later than within 14 days of receiving it, and informs the User of how it was handled at the contact address provided. If the law provides for a different deadline, the deadline resulting from the law applies.</p>
+      <p>19.4. <strong>Out-of-court dispute resolution.</strong> A Consumer may use out-of-court methods of handling complaints and pursuing claims, including the assistance of the relevant consumer-protection institutions. Information about the online dispute resolution (ODR) platform is available at the address maintained by the European Commission. Use of these methods is voluntary.</p>
 
       <div class="complaint-card">
         <div class="complaint-card__body">
-          <p class="complaint-card__role">Reklamacje i wsparcie</p>
-          <h3>Napisz do nas — odpowiadamy w 14 dni</h3>
-          <p>Wszystkie sprawy związane z funkcjonowaniem Aplikacji oraz reklamacje prosimy kierować na adres e-mail Usługodawcy.</p>
+          <p class="complaint-card__role">Complaints and support</p>
+          <h3>Write to us — we reply within 14 days</h3>
+          <p>Please direct all matters relating to the operation of the App, as well as complaints, to the Provider's email address.</p>
           <p class="complaint-card__addr"><strong>homdu.app@gmail.com</strong> · AppSoft Studio Jakub Matwiejczyk</p>
-          <span class="meta" aria-label="Platforma ODR">
+          <span class="meta" aria-label="ODR platform">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            Platforma ODR dostępna na stronach Komisji Europejskiej
+            ODR platform available on the European Commission website
           </span>
         </div>
-        <a class="complaint-card__cta" href="mailto:homdu.app@gmail.com?subject=homdu%20%E2%80%94%20reklamacja%2Fkontakt">
+        <a class="complaint-card__cta" href="mailto:homdu.app@gmail.com?subject=homdu%20%E2%80%94%20complaint%2Fcontact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Napisz do nas
+          Write to us
         </a>
       </div>
     </section>
 
     <!-- ── 20 ── -->
     <section class="doc-section" id="sec-20">
-      <h2><span class="secnum">20</span>Zmiany Regulaminu</h2>
-      <p>20.1. Usługodawca może dokonywać zmian Regulaminu z ważnych przyczyn, w szczególności w przypadku: zmiany przepisów prawa, zmiany zakresu lub sposobu świadczenia Usługi, rozwoju Aplikacji, względów bezpieczeństwa lub zmian organizacyjnych po stronie Usługodawcy.</p>
-      <p>20.2. O zmianie Regulaminu Usługodawca poinformuje w sposób adekwatny do jej charakteru, w szczególności poprzez komunikat w Aplikacji lub aktualizację dokumentu wraz ze wskazaniem daty.</p>
-      <p>20.3. Zmiana Regulaminu nie pozbawia Użytkownika praw nabytych. Jeżeli Użytkownik nie akceptuje zmian, może zakończyć korzystanie z Aplikacji w sposób opisany w sekcji 18.</p>
-      <p>20.4. Aktualna wersja Regulaminu jest każdorazowo dostępna w Aplikacji oraz na stronie internetowej powiązanej z Aplikacją.</p>
+      <h2><span class="secnum">20</span>Changes to the Terms</h2>
+      <p>20.1. The Provider may make changes to the Terms for important reasons, in particular in the event of: a change in the law, a change in the scope or manner of providing the Service, development of the App, security considerations or organisational changes on the Provider's side.</p>
+      <p>20.2. The Provider will inform of a change to the Terms in a manner appropriate to its nature, in particular through a notice in the App or an update of the document together with an indication of the date.</p>
+      <p>20.3. A change to the Terms does not deprive the User of acquired rights. If the User does not accept the changes, they may end their use of the App in the manner described in section 18.</p>
+      <p>20.4. The current version of the Terms is available at all times in the App and on the website associated with the App.</p>
     </section>
 
     <!-- ── 21 ── -->
     <section class="doc-section" id="sec-21">
-      <h2><span class="secnum">21</span>Postanowienia dotyczące App Store (Apple)</h2>
+      <h2><span class="secnum">21</span>App Store provisions (Apple)</h2>
 
       <div class="appstore-block">
         <div class="appstore-block__hd">
           <div class="appstore-block__ico" aria-hidden="true">
-            <!-- Apple glyph (informacyjnie) -->
+            <!-- Apple glyph (informational) -->
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.83c-.02-2.27 1.86-3.36 1.94-3.41-1.06-1.55-2.71-1.77-3.3-1.79-1.4-.14-2.74.83-3.45.83-.72 0-1.81-.81-2.98-.79-1.53.02-2.95.89-3.74 2.26-1.6 2.77-.41 6.87 1.14 9.12.76 1.1 1.66 2.33 2.84 2.29 1.14-.05 1.57-.74 2.95-.74 1.37 0 1.76.74 2.97.71 1.23-.02 2-1.12 2.74-2.22.87-1.27 1.22-2.5 1.24-2.56-.03-.01-2.38-.91-2.4-3.62zM14.04 5.86c.63-.77 1.06-1.83.95-2.89-.91.04-2.02.61-2.67 1.37-.58.68-1.1 1.78-.96 2.81 1.02.08 2.05-.52 2.68-1.29z"/></svg>
           </div>
           <div>
-            <p class="appstore-block__lbl">Informacja o App Store</p>
-            <p class="appstore-block__ttl">Postanowienia dotyczące dystrybucji przez Apple</p>
+            <p class="appstore-block__lbl">About the App Store</p>
+            <p class="appstore-block__ttl">Provisions regarding distribution by Apple</p>
           </div>
         </div>
         <div class="appstore-block__body">
-          <p>21.1. Aplikacja jest dystrybuowana za pośrednictwem App Store. Niniejszy Regulamin stanowi umowę pomiędzy Użytkownikiem a Usługodawcą, a <strong>nie pomiędzy Użytkownikiem a Apple</strong>. Za Aplikację oraz jej treść odpowiada Usługodawca, a nie Apple.</p>
-          <p>21.2. Licencja na korzystanie z Aplikacji jest ograniczona do niezbywalnego prawa korzystania z Aplikacji na urządzeniach marki Apple, które Użytkownik posiada lub kontroluje, zgodnie z zasadami korzystania określonymi w warunkach App Store.</p>
-          <p>21.3. Wyłącznie Usługodawca, a nie Apple, odpowiada za zapewnienie wsparcia i konserwacji Aplikacji oraz za rozpatrywanie roszczeń dotyczących Aplikacji, w tym roszczeń z tytułu odpowiedzialności za produkt, niezgodności z przepisami oraz naruszenia praw, w tym praw własności intelektualnej.</p>
-          <p>21.4. Użytkownik oświadcza, że nie znajduje się w kraju objętym embargiem oraz nie figuruje na liście podmiotów objętych ograniczeniami, w zakresie wynikającym z obowiązujących przepisów.</p>
-          <p>21.5. Apple oraz podmioty zależne Apple są beneficjentami niniejszego Regulaminu jako osoby trzecie i z chwilą akceptacji Regulaminu przez Użytkownika są uprawnione do egzekwowania jego postanowień wobec Użytkownika w zakresie dotyczącym korzystania z Aplikacji.</p>
-          <p>21.6. Korzystając z Aplikacji, Użytkownik zobowiązany jest przestrzegać również obowiązujących warunków usług firm trzecich, w tym warunków App Store.</p>
+          <p>21.1. The App is distributed via the App Store. These Terms are an agreement between the User and the Provider, and <strong>not between the User and Apple</strong>. The Provider, not Apple, is responsible for the App and its content.</p>
+          <p>21.2. The licence to use the App is limited to a non-transferable right to use the App on Apple-branded devices that the User owns or controls, in accordance with the usage rules set out in the App Store terms.</p>
+          <p>21.3. The Provider alone, and not Apple, is responsible for providing support and maintenance for the App and for handling claims relating to the App, including product-liability claims, non-compliance with regulations and infringement of rights, including intellectual property rights.</p>
+          <p>21.4. The User declares that they are not located in a country subject to an embargo and are not on any list of entities subject to restrictions, to the extent resulting from applicable regulations.</p>
+          <p>21.5. Apple and its subsidiaries are third-party beneficiaries of these Terms and, upon the User's acceptance of the Terms, are entitled to enforce their provisions against the User in respect of the use of the App.</p>
+          <p>21.6. When using the App, the User is also obliged to comply with the applicable terms of third-party services, including the App Store terms.</p>
         </div>
       </div>
     </section>
 
     <!-- ── 22 ── -->
     <section class="doc-section" id="sec-22">
-      <h2><span class="secnum">22</span>Prawo właściwe i postanowienia końcowe</h2>
-      <p>22.1. W sprawach nieuregulowanych Regulaminem zastosowanie mają przepisy prawa polskiego, w szczególności Kodeksu cywilnego, ustawy o świadczeniu usług drogą elektroniczną oraz ustawy o prawach konsumenta. Wybór prawa polskiego nie pozbawia Konsumenta ochrony wynikającej z bezwzględnie obowiązujących przepisów prawa państwa jego zwykłego pobytu.</p>
-      <p>22.2. Jeżeli którekolwiek postanowienie Regulaminu okaże się nieważne lub bezskuteczne, pozostałe postanowienia pozostają w mocy.</p>
-      <p>22.3. Ewentualne spory rozstrzygane będą przez sąd powszechny właściwy zgodnie z przepisami prawa. W przypadku Użytkowników niebędących Konsumentami sądem właściwym jest sąd właściwy miejscowo dla siedziby Usługodawcy.</p>
-      <p>22.4. Regulamin wchodzi w życie z dniem wskazanym na początku dokumentu.</p>
+      <h2><span class="secnum">22</span>Governing law and final provisions</h2>
+      <p>22.1. Matters not regulated by the Terms are governed by Polish law, in particular the Civil Code, the Act on providing services electronically and the Act on consumer rights. The choice of Polish law does not deprive a Consumer of the protection arising from mandatory provisions of the law of the country of their habitual residence.</p>
+      <p>22.2. If any provision of the Terms proves to be invalid or ineffective, the remaining provisions remain in force.</p>
+      <p>22.3. Any disputes will be resolved by the common court having jurisdiction under the law. For Users who are not Consumers, the competent court is the court having local jurisdiction over the Provider's registered office.</p>
+      <p>22.4. The Terms enter into force on the date indicated at the beginning of the document.</p>
 
       <div class="signature">
-        <strong>Usługodawca:</strong><br />
-        AppSoft Studio Jakub Matwiejczyk, ul. Aroniowa 19, 05-555 Kotorydz, NIP: 7133074219, e-mail: <a href="mailto:homdu.app@gmail.com" style="color:var(--doc-accent); border:none;">homdu.app@gmail.com</a>
+        <strong>Provider:</strong><br />
+        AppSoft Studio Jakub Matwiejczyk, ul. Aroniowa 19, 05-555 Kotorydz, Poland, Tax ID (NIP): 7133074219, email: <a href="mailto:homdu.app@gmail.com" style="color:var(--doc-accent); border:none;">homdu.app@gmail.com</a>
       </div>
     </section>
 
@@ -1236,40 +1252,41 @@
 <footer class="doc-foot">
   <div class="doc-foot__inner">
     <div>
-      <h4>Usługodawca</h4>
+      <h4>Provider</h4>
       <p><strong>AppSoft Studio Jakub Matwiejczyk</strong></p>
-      <p>ul. Aroniowa 19, 05-555 Kotorydz</p>
-      <p>NIP: 7133074219</p>
+      <p>ul. Aroniowa 19, 05-555 Kotorydz, Poland</p>
+      <p>Tax ID (NIP): 7133074219</p>
       <p style="margin-top:8px;"><a href="mailto:homdu.app@gmail.com" style="color:var(--doc-accent);">homdu.app@gmail.com</a></p>
     </div>
     <div>
-      <h4>Dokumenty</h4>
+      <h4>Documents</h4>
       <ul>
-        <li><a href="polityka-prywatnosci">Polityka Prywatności</a></li>
-        <li><a href="warunki-korzystania">Warunki korzystania</a></li>
-        <li><a href="mailto:homdu.app@gmail.com">Kontakt</a></li>
-        <li><a href="polityka-prywatnosci#sec-14">Polityka cookies</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+        <li><a href="mailto:homdu.app@gmail.com">Contact</a></li>
+        <li><a href="/privacy-policy#sec-14">Cookie policy</a></li>
+        <li><a href="#" onclick="event.preventDefault();window.homduConsent&&window.homduConsent.open();">Cookie settings</a></li>
       </ul>
     </div>
     <div>
       <h4>homdu</h4>
       <ul>
-        <li><a href="/">Strona główna</a></li>
-        <li><a href="/#funkcje">Funkcje</a></li>
-        <li><a href="/#dla-partnerow">Dla partnerów</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#funkcje">Features</a></li>
+        <li><a href="/#dla-partnerow">For partners</a></li>
       </ul>
-      <a class="appstore-badge" href="/#pobierz" aria-label="Pobierz w App Store" style="margin-top:14px;">
-        <img src="assets/appstore-badge.svg" alt="Pobierz w App Store" style="height:40px;" />
+      <a class="appstore-badge" href="/#pobierz" aria-label="Download on the App Store" data-placement="legal_footer" style="margin-top:14px;">
+        <img src="/assets/appstore-badge-en.svg" alt="Download on the App Store" style="height:40px;" />
       </a>
     </div>
   </div>
   <div class="doc-foot__btm">
-    <div>© <span id="year">2026</span> homdu · AppSoft Studio Jakub Matwiejczyk. Wszystkie prawa zastrzeżone.</div>
-    <div>homdu.pl / warunki-korzystania</div>
+    <div>© <span id="year">2026</span> homdu · AppSoft Studio Jakub Matwiejczyk. All rights reserved.</div>
+    <div>homdu.pl / terms-of-use</div>
   </div>
 </footer>
 
-<button class="to-top" id="to-top" aria-label="Wróć na górę">
+<button class="to-top" id="to-top" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
@@ -1357,6 +1374,10 @@
   }
 })();
 </script>
+
+<!-- Analytics: Meta Pixel (consent-gated) + cookie consent UI -->
+<script src="/analytics.js"></script>
+<script src="/consent-banner.js"></script>
 
 </body>
 </html>

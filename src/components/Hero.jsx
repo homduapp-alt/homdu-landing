@@ -1,14 +1,18 @@
-// Hero.jsx — Section 1
-// Benefit-driven headline, dual CTA (App Store badge + B2B), real app screenshot.
-
-import { useEffect, useRef } from "react";
+import { tr } from "../i18n.js";
+import React from "react";
 import { Icon } from "./icons.jsx";
-import { Reveal, FloatingChip, AppStoreBadge } from "./shared.jsx";
+import { Reveal, AppStoreBadge, FloatingChip } from "./shared.jsx";
+
+// Hero.jsx — Section 1
+// New: stronger benefit-driven headline, DUAL CTA (B2C + B2B), two-world line.
+// Keeps the iPhone + ambient blobs + floating chips aesthetic.
+
+const { useEffect: useEffectHero, useRef: useRefHero } = React;
 
 export function Hero() {
   // simple parallax for the floating chips
-  const wrapRef = useRef(null);
-  useEffect(() => {
+  const wrapRef = useRefHero(null);
+  useEffectHero(() => {
     const el = wrapRef.current;
     if (!el) return;
     let raf;
@@ -71,33 +75,33 @@ export function Hero() {
           <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
             <Reveal delay={100}>
               <h1 className="h-display">
-                Budowa i&nbsp;remont pod&nbsp;kontrolą.<br />
+                {tr("Budowa i\u00a0remont pod\u00a0kontrolą.", "Your build and renovation, under control.")}<br />
                 <span style={{
                   background: "var(--hdu-grad)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
                 }}>
-                  W&nbsp;końcu.
+                  {tr("W\u00a0końcu.", "At last.")}
                 </span>
               </h1>
             </Reveal>
 
             <Reveal delay={220}>
               <p className="sub" style={{ maxWidth: 560 }}>
-                Aplikacja homdu prowadzi Cię etap po&nbsp;etapie przez budowę domu
-                lub remont mieszkania. Budżet, dokumenty, zdjęcia, zadania
-                i&nbsp;kontakty — w&nbsp;jednej aplikacji, zamiast
-                w&nbsp;dziesięciu miejscach.
+                {tr(
+                  "Aplikacja homdu prowadzi Cię etap po\u00a0etapie przez budowę domu lub remont mieszkania. Budżet, dokumenty, zdjęcia, zadania i\u00a0kontakty — w\u00a0jednej aplikacji, zamiast w\u00a0dziesięciu miejscach.",
+                  "The homdu app guides you stage by stage through building a house or renovating a flat. Budget, documents, photos, tasks and contacts — in one app, instead of ten different places."
+                )}
               </p>
             </Reveal>
 
             {/* B2C primary CTA: App Store */}
             <Reveal delay={320}>
               <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-                <AppStoreBadge size={56} />
+                <AppStoreBadge size={56} placement="hero" />
                 <div style={{ fontSize: 13, color: "var(--ink-3)", lineHeight: 1.4 }}>
-                  Bezpłatnie na iPhone
+                  {tr("Bezpłatnie na iPhone", "Free on iPhone")}
                 </div>
               </div>
             </Reveal>
@@ -118,9 +122,9 @@ export function Hero() {
                   textDecoration: "none",
                 }}
               >
-                <span style={{ color: "var(--ink-3)", fontWeight: 500 }}>Jesteś producentem lub partnerem?</span>
+                <span style={{ color: "var(--ink-3)", fontWeight: 500 }}>{tr("Jesteś producentem lub partnerem?", "Are you a manufacturer or partner?")}</span>
                 <span style={{ color: "var(--hdu)", display: "inline-flex", alignItems: "center", gap: 4 }}>
-                  homdu dla partnerów
+                  {tr("homdu dla partnerów", "homdu for partners")}
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M5 12h14" />
                     <path d="M13 6l6 6-6 6" />
@@ -130,7 +134,7 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* ── Right: app screenshot + floating chips ── */}
+          {/* ── Right: iPhone + floating chips ── */}
           <div
             ref={wrapRef}
             style={{
@@ -157,7 +161,7 @@ export function Hero() {
               >
                 <img
                   src="/assets/hero-phone.webp"
-                  alt="Aplikacja homdu — ekran Dziennik z inwestycją Wymarzony Dom"
+                  alt={tr("Aplikacja homdu — ekran Dziennik z inwestycją Wymarzony Dom", "homdu app — Journal screen with the Dream Home project")}
                   width="857"
                   height="1759"
                   decoding="async"
@@ -182,8 +186,8 @@ export function Hero() {
                 <FloatingChip
                   icon={<Icon.Users />}
                   gradient="var(--stg-terracotta)"
-                  title="Zarządzajcie wspólnie budową"
-                  sub="Udostępnij inwestycję"
+                  title={tr("Zarządzajcie wspólnie budową", "Manage the build together")}
+                  sub={tr("Udostępnij inwestycję", "Share your project")}
                   style={{ top: 60, left: -40 }}
                   anim={0}
                 />
@@ -192,8 +196,8 @@ export function Hero() {
                 <FloatingChip
                   icon={<Icon.Bell />}
                   gradient="var(--stg-amber)"
-                  title="Termin za 2 dni"
-                  sub="Odbiór elektryczny"
+                  title={tr("Termin za 2 dni", "Deadline in 2 days")}
+                  sub={tr("Odbiór elektryczny", "Electrical inspection")}
                   style={{ top: 320, right: -56 }}
                   anim={1.2}
                 />
@@ -202,8 +206,8 @@ export function Hero() {
                 <FloatingChip
                   icon={<Icon.Check />}
                   gradient="var(--stg-green)"
-                  title="Etap ukończony"
-                  sub="Fundamenty · 9/9 zadań"
+                  title={tr("Etap ukończony", "Stage completed")}
+                  sub={tr("Fundamenty · 9/9 zadań", "Foundations · 9/9 tasks")}
                   style={{ bottom: 80, left: -32 }}
                   anim={2.4}
                 />
@@ -211,6 +215,7 @@ export function Hero() {
             </div>
           </div>
         </div>
+
       </div>
 
       {/* mobile fallback */}
@@ -219,6 +224,9 @@ export function Hero() {
           .hero-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
           .hero-phone-wrap { height: auto !important; padding: 24px 0; }
           .hero-chips { display: none !important; }
+          .hero-twoworlds { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .hero-twoworlds > div:first-child { padding-right: 0 !important; border-right: none !important; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+          .hero-twoworlds > div:last-child { padding-left: 0 !important; padding-top: 16px; }
         }
       `}</style>
     </section>

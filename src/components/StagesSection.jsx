@@ -1,18 +1,19 @@
-// StagesSection.jsx — Section 4
-// Stage gradients showcase + real StageDetails screenshot.
-
+import { tr } from "../i18n.js";
 import { Reveal, Checklist } from "./shared.jsx";
+
+// StagesSection.jsx — Section 4
+// Stage gradients showcase + StageDetailsView phone mock.
 
 export function StagesSection() {
   const stages = [
-    { name: "Fundamenty", gradient: "var(--stg-blue)",       status: "Ukończony", tasks: "9/9" },
-    { name: "Instalacje", gradient: "var(--stg-purple)",     status: "W trakcie",  tasks: "4/7" },
-    { name: "Tynki",      gradient: "var(--stg-amber)",      status: "Planowany",  tasks: "0/5" },
-    { name: "Elektryka",  gradient: "var(--stg-teal)",       status: "Planowany",  tasks: "0/8" },
-    { name: "Wykończenie",gradient: "var(--stg-terracotta)", status: "Planowany",  tasks: "0/12" },
-    { name: "Elewacja",   gradient: "var(--stg-rose)",       status: "Planowany",  tasks: "0/6" },
-    { name: "Ogród",      gradient: "var(--stg-green)",      status: "Planowany",  tasks: "0/4" },
-    { name: "Odbiory",    gradient: "var(--stg-slate)",      status: "Planowany",  tasks: "0/3" },
+    { name: tr("Fundamenty", "Foundations"), gradient: "var(--stg-blue)",       status: tr("Ukończony", "Completed"), tasks: "9/9" },
+    { name: tr("Instalacje", "Utilities"), gradient: "var(--stg-purple)",     status: tr("W trakcie", "In progress"),  tasks: "4/7" },
+    { name: tr("Tynki", "Plastering"),      gradient: "var(--stg-amber)",      status: tr("Planowany", "Planned"),  tasks: "0/5" },
+    { name: tr("Elektryka", "Electrics"),  gradient: "var(--stg-teal)",       status: tr("Planowany", "Planned"),  tasks: "0/8" },
+    { name: tr("Wykończenie", "Finishing"),gradient: "var(--stg-terracotta)", status: tr("Planowany", "Planned"),  tasks: "0/12" },
+    { name: tr("Elewacja", "Façade"),   gradient: "var(--stg-rose)",       status: tr("Planowany", "Planned"),  tasks: "0/6" },
+    { name: tr("Ogród", "Garden"),      gradient: "var(--stg-green)",      status: tr("Planowany", "Planned"),  tasks: "0/4" },
+    { name: tr("Odbiory", "Inspections"),    gradient: "var(--stg-slate)",      status: tr("Planowany", "Planned"),  tasks: "0/3" },
   ];
 
   return (
@@ -31,20 +32,19 @@ export function StagesSection() {
           <div>
             <Reveal delay={80}>
               <h2 className="h-section" style={{ marginTop: 20, marginBottom: 20 }}>
-                Ogarniaj.<br />Etap po etapie.
+                {tr("Ogarniaj.", "Stay on top.")}<br />{tr("Etap po etapie.", "Stage by stage.")}
               </h2>
             </Reveal>
             <Reveal delay={160}>
               <p className="sub" style={{ marginBottom: 32, maxWidth: 520 }}>
-                Gotowe szablony dla budowy domu, remontu i wykończenia deweloperskiego.
-                Nic Cię nie zaskoczy.
+                {tr("Gotowe szablony dla budowy domu, remontu i wykończenia deweloperskiego. Nic Cię nie zaskoczy.", "Ready-made templates for house builds, renovations and developer fit-outs. Nothing will catch you off guard.")}
               </p>
             </Reveal>
             <Reveal delay={240}>
               <Checklist items={[
-                { b: "Gotowe szablony", r: "etapów dla budowy, remontu i wykończenia" },
-                { b: "Zadania z terminami", r: "i powiadomieniami push na telefon" },
-                { b: "Budżet, kontakty i pliki", r: "przypisane do każdego etapu" },
+                { b: tr("Gotowe szablony", "Ready-made templates"), r: tr("etapów dla budowy, remontu i wykończenia", "of stages for builds, renovations and fit-outs") },
+                { b: tr("Zadania z terminami", "Tasks with deadlines"), r: tr("i powiadomieniami push na telefon", "and push notifications to your phone") },
+                { b: tr("Budżet, kontakty i pliki", "Budget, contacts and files"), r: tr("przypisane do każdego etapu", "assigned to each stage") },
               ]} />
             </Reveal>
 
@@ -58,12 +58,12 @@ export function StagesSection() {
                 }}
                 className="stages-tiles"
               >
-                {stages.map((s) => (
+                {stages.map((s, i) => (
                   <div className="stage-card" key={s.name} style={{ background: s.gradient, minHeight: 110 }}>
                     <span className="pill">{s.status}</span>
                     <div style={{ position: "relative", zIndex: 1 }}>
                       <h4 style={{ fontSize: 15 }}>{s.name}</h4>
-                      <div style={{ fontSize: 11, opacity: 0.85, marginTop: 2 }}>{s.tasks} zadań</div>
+                      <div style={{ fontSize: 11, opacity: 0.85, marginTop: 2 }}>{s.tasks} {tr("zadań", "tasks")}</div>
                     </div>
                   </div>
                 ))}
@@ -71,7 +71,7 @@ export function StagesSection() {
             </Reveal>
           </div>
 
-          {/* ── Right: phone screenshot ── */}
+          {/* ── Right: phone ── */}
           <Reveal delay={200}>
             <div style={{ display: "flex", justifyContent: "center", position: "relative" }}>
               {/* background gradient */}
@@ -94,7 +94,7 @@ export function StagesSection() {
               }}>
                 <img
                   src="/assets/stages-detail.webp"
-                  alt="Aplikacja homdu — szczegóły etapu Fundamenty: budżet etapu, wydatki i zadania."
+                  alt={tr("Aplikacja homdu — szczegóły etapu Fundamenty: budżet etapu, wydatki i zadania.", "homdu app — Foundations stage details: stage budget, expenses and tasks.")}
                   width="857"
                   height="1759"
                   decoding="async"
