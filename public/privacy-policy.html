@@ -856,7 +856,7 @@
 <header class="doc-header" id="doc-header">
   <div class="doc-header__inner">
     <a class="doc-brand" href="/" aria-label="homdu — home">
-      <img src="/assets/logo-homdu-icon.png" alt="" aria-hidden="true" class="doc-brand__mark" />
+      <img src="/assets/logo-homdu-icon.webp" alt="" aria-hidden="true" class="doc-brand__mark" />
       <img src="/assets/logo-homdu-wordmark.svg" alt="homdu" class="doc-brand__wm" />
     </a>
 
@@ -898,7 +898,7 @@
     <h1>homdu app Privacy Policy.</h1>
     <div class="badges">
       <span class="doc-badge"><span class="dot"></span><span class="lbl">Effective date:</span> <span class="val">24 May 2026</span></span>
-      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Last updated:</span> <span class="val">24 May 2026</span></span>
+      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Last updated:</span> <span class="val">22 June 2026</span></span>
     </div>
     <p class="lead">
       This Privacy Policy describes how the personal data of users of the <strong>homdu</strong> mobile app (the "App"), which supports planning, building and renovation, is processed. The document explains what data is collected, for what purposes, on what legal basis, with whom it may be shared, and what rights users have.
@@ -1003,6 +1003,9 @@
         <li><strong>Personal data</strong> – any information about an identified or identifiable natural person.</li>
         <li><strong>Processing</strong> – any operation performed on personal data, e.g. collection, storage, modification, sharing, deletion.</li>
         <li><strong>Project</strong> – a building or renovation project run by the User in the App, together with its assigned stages, tasks, costs, documents, photos, contacts and notes.</li>
+        <li><strong>Project Owner</strong> – a User who shares a Project with another User.</li>
+        <li><strong>Collaborator</strong> – a User who has accepted an invitation to a shared Project.</li>
+        <li><strong>Shared Project</strong> – a Project shared between Users through Apple's CloudKit / CKShare mechanisms.</li>
         <li><strong>Device</strong> – the mobile device on which the App is installed.</li>
         <li><strong>Processor</strong> – an entity processing personal data on behalf of and on the instructions of the Controller.</li>
         <li><strong>EEA</strong> – the European Economic Area.</li>
@@ -1114,15 +1117,16 @@
             <tr><td class="lp">1</td><td class="cel">Providing and ensuring the correct operation of the App and its core features (managing projects, stages, tasks, costs, documents, photos, contacts)</td><td class="podstawa">art. 6(1)(b) – necessity to provide the service (performance of the agreement for the use of the App)</td></tr>
             <tr><td class="lp">2</td><td class="cel">Authenticating and maintaining the User's account (Sign in with Apple)</td><td class="podstawa">art. 6(1)(b)</td></tr>
             <tr><td class="lp">3</td><td class="cel">Synchronising data between the User's devices (iCloud/CloudKit)</td><td class="podstawa">art. 6(1)(b) and, with respect to the iCloud configuration, the settings chosen by the User</td></tr>
-            <tr><td class="lp">4</td><td class="cel">Delivering push notifications</td><td class="podstawa">art. 6(1)(a) (system consent for notifications) and art. 6(1)(b) for notifications necessary for the operation of the service</td></tr>
-            <tr><td class="lp">5</td><td class="cel">Analytics of App usage and performance measurement</td><td class="podstawa">art. 6(1)(a) (consent)</td></tr>
-            <tr><td class="lp">6</td><td class="cel">Crash diagnostics and improving App stability</td><td class="podstawa">art. 6(1)(a) (consent to crash reporting) and art. 6(1)(f) (legitimate interest in ensuring the security and reliability of the App)</td></tr>
-            <tr><td class="lp">7</td><td class="cel">Presenting editorial and guide content as well as partner sections and recommendations</td><td class="podstawa">art. 6(1)(b) and art. 6(1)(f) (legitimate interest in delivering valuable content)</td></tr>
-            <tr><td class="lp">8</td><td class="cel">Operating the referral programme</td><td class="podstawa">art. 6(1)(b) and art. 6(1)(f) (legitimate interest in developing the App)</td></tr>
-            <tr><td class="lp">9</td><td class="cel">Handling queries and contact with the User</td><td class="podstawa">art. 6(1)(f) (legitimate interest in providing responses)</td></tr>
-            <tr><td class="lp">10</td><td class="cel">Ensuring security, preventing abuse, keeping event logs</td><td class="podstawa">art. 6(1)(f) (legitimate interest in protecting the service and its Users)</td></tr>
-            <tr><td class="lp">11</td><td class="cel">Fulfilling legal obligations (e.g. handling data-subject rights requests)</td><td class="podstawa">art. 6(1)(c)</td></tr>
-            <tr><td class="lp">12</td><td class="cel">Establishing, exercising or defending claims</td><td class="podstawa">art. 6(1)(f)</td></tr>
+            <tr><td class="lp">4</td><td class="cel">Enabling the sharing and synchronisation of a Project between Users (Project sharing via Apple CloudKit / CKShare)</td><td class="podstawa">art. 6(1)(b) – performance of the agreement for the use of the App</td></tr>
+            <tr><td class="lp">5</td><td class="cel">Delivering push notifications</td><td class="podstawa">art. 6(1)(a) (system consent for notifications) and art. 6(1)(b) for notifications necessary for the operation of the service</td></tr>
+            <tr><td class="lp">6</td><td class="cel">Analytics of App usage and performance measurement</td><td class="podstawa">art. 6(1)(a) (consent)</td></tr>
+            <tr><td class="lp">7</td><td class="cel">Crash diagnostics and improving App stability</td><td class="podstawa">art. 6(1)(a) (consent to crash reporting) and art. 6(1)(f) (legitimate interest in ensuring the security and reliability of the App)</td></tr>
+            <tr><td class="lp">8</td><td class="cel">Presenting editorial and guide content as well as partner sections and recommendations</td><td class="podstawa">art. 6(1)(b) and art. 6(1)(f) (legitimate interest in delivering valuable content)</td></tr>
+            <tr><td class="lp">9</td><td class="cel">Operating the referral programme</td><td class="podstawa">art. 6(1)(b) and art. 6(1)(f) (legitimate interest in developing the App)</td></tr>
+            <tr><td class="lp">10</td><td class="cel">Handling queries and contact with the User</td><td class="podstawa">art. 6(1)(f) (legitimate interest in providing responses)</td></tr>
+            <tr><td class="lp">11</td><td class="cel">Ensuring security, preventing abuse, keeping event logs</td><td class="podstawa">art. 6(1)(f) (legitimate interest in protecting the service and its Users)</td></tr>
+            <tr><td class="lp">12</td><td class="cel">Fulfilling legal obligations (e.g. handling data-subject rights requests)</td><td class="podstawa">art. 6(1)(c)</td></tr>
+            <tr><td class="lp">13</td><td class="cel">Establishing, exercising or defending claims</td><td class="podstawa">art. 6(1)(f)</td></tr>
           </tbody>
         </table>
       </div>
@@ -1179,9 +1183,18 @@
         <li><strong>the Controller has no technical access to content stored in the User's private CloudKit database</strong> and does not read it,</li>
         <li>the rules for processing data within iCloud are set by Apple as the provider of that service.</li>
       </ul>
-      <p>In the future, the App may enable <strong>sharing a project</strong> between different Users (e.g. between Apple ID accounts). In such a case, the data of a selected project will be shared with people designated by the User to the extent necessary for collaboration, using the sharing mechanisms offered by Apple. Such a feature will be activated deliberately by the User.</p>
+      <h3>7.3. Project sharing via iCloud / CloudKit</h3>
+      <p>The App allows a <strong>Project Owner</strong> to share a selected Project with another user through Apple's <strong>CloudKit and CKShare</strong> mechanisms.</p>
+      <p>Sharing is initiated deliberately by the Project Owner. The <strong>Collaborator</strong> must accept the invitation using an Apple account before gaining access.</p>
+      <p>Depending on the type of data and the current version of the App, a <strong>Shared Project</strong> may include project metadata, stages, tasks, expenses, budgets, events, journal entries, contacts, links, documents, attachments and other content assigned to the Project.</p>
+      <p>Each participant keeps a local working copy of the Shared Project on their device. Changes made by authorised participants may be synchronised through the shared CloudKit database.</p>
+      <p>The following personal or device-specific information is <strong>not shared</strong> as part of a Shared Project: financial profiles, financing or insurance enquiries, lead submissions, notification preferences, the selected-project preference, local storage settings and identifiers of events created in the user's personal iOS Calendar.</p>
+      <p>Some files or photo collections may remain stored only on the device on which they were added. The App may inform participants when a file is not available on their device.</p>
+      <p>The Project Owner may revoke access or delete the Shared Project. A Collaborator may leave the Shared Project or delete their local copy. After access is revoked, some data may remain temporarily in a local copy until it is removed by the user or cleaned up by the App.</p>
+      <p>The Controller does not use Shared Project content for advertising or profiling and does not routinely access or inspect content stored in users' CloudKit databases. Apple processes this data under the terms applicable to iCloud and CloudKit.</p>
+      <p><strong>The User is responsible for having a legal basis to share the content of a Project.</strong> This applies in particular to contractor data, phone numbers and email addresses, photographs of individuals, and invoices, contracts and other documents containing personal data. The User should share a Project only with people entitled to access it and should only include content they are authorised to disclose.</p>
 
-      <h3>7.3. Data sent to the backend and external services</h3>
+      <h3>7.4. Data sent to the backend and external services</h3>
       <p>Some data is sent off the device to external services or to our backend, to the extent necessary for a given feature to work, in particular:</p>
       <ul>
         <li>the push notification token and technical data necessary to deliver notifications,</li>
@@ -1236,7 +1249,10 @@
       <h3>10.5. Partners and sponsored sections</h3>
       <p>Partners presented in sponsored sections and within recommendations (including financial recommendations and contractor recommendations). This content is, as a rule, presented in a way that is not individually profiled. If the User decides to proceed to a partner's offer or contact them, the partner's further processing of their data takes place under the rules set by that partner as a separate controller.</p>
 
-      <h3>10.6. Other recipients</h3>
+      <h3>10.6. Other participants in a Shared Project</h3>
+      <p>When the Project Owner enables sharing, the content of the selected Project is made available to the Collaborator or Collaborators invited by the Owner. The scope of access depends on the App's current sharing functionality and the permissions configured through Apple CloudKit.</p>
+
+      <h3>10.7. Other recipients</h3>
       <ul>
         <li>entities providing supporting services to us (e.g. email handling, tools for communicating with Users),</li>
         <li>public authorities and authorised entities – solely to the extent required by law.</li>
@@ -1264,7 +1280,8 @@
       <p>12.3. <strong>Analytics and diagnostic data</strong> – stored for the period defined in the settings of the tools used (e.g. Firebase) and no longer than necessary for analytics purposes; until consent is withdrawn, where consent is the basis for processing.</p>
       <p>12.4. <strong>Referral programme data</strong> – stored for the period necessary to settle and operate the referral programme.</p>
       <p>12.5. <strong>Correspondence and requests</strong> – stored for the period necessary to handle the query and, where necessary, for evidentiary purposes for the limitation period of any claims.</p>
-      <p>12.6. After the retention periods expire, data is deleted or anonymised.</p>
+      <p>12.6. <strong>Shared Project data</strong> – retained in CloudKit until the Project Owner deletes the Project, ends sharing or otherwise removes the data. Revoking a Collaborator's access prevents further access through CloudKit, but a local copy may remain on the Collaborator's device until it is removed by the user or the App.</p>
+      <p>12.7. After the retention periods expire, data is deleted or anonymised.</p>
     </section>
 
     <!-- ── 13 ── -->

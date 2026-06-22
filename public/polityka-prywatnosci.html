@@ -884,7 +884,7 @@
     <h1>Polityka Prywatności aplikacji homdu.</h1>
     <div class="badges">
       <span class="doc-badge"><span class="dot"></span><span class="lbl">Data wejścia w życie:</span> <span class="val">24 maja 2026</span></span>
-      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Ostatnia aktualizacja:</span> <span class="val">24 maja 2026</span></span>
+      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Ostatnia aktualizacja:</span> <span class="val">22 czerwca 2026</span></span>
     </div>
     <p class="lead">
       Niniejsza Polityka Prywatności opisuje, w jaki sposób przetwarzane są dane osobowe użytkowników aplikacji mobilnej <strong>homdu</strong> („Aplikacja"), wspierającej planowanie, budowę i remont. Dokument wyjaśnia, jakie dane są zbierane, w jakich celach, na jakiej podstawie prawnej, komu mogą być udostępniane oraz jakie prawa przysługują użytkownikom.
@@ -989,6 +989,9 @@
         <li><strong>Dane osobowe</strong> – wszelkie informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej.</li>
         <li><strong>Przetwarzanie</strong> – każda operacja wykonywana na danych osobowych, np. zbieranie, przechowywanie, modyfikowanie, udostępnianie, usuwanie.</li>
         <li><strong>Inwestycja</strong> – projekt budowlany lub remontowy prowadzony przez Użytkownika w Aplikacji, wraz z przypisanymi do niego etapami, zadaniami, kosztami, dokumentami, zdjęciami, kontaktami i notatkami.</li>
+        <li><strong>Właściciel Inwestycji</strong> – Użytkownik, który udostępnia Inwestycję innemu Użytkownikowi.</li>
+        <li><strong>Współpracownik</strong> – Użytkownik, który zaakceptował zaproszenie do udostępnionej Inwestycji.</li>
+        <li><strong>Udostępniona Inwestycja</strong> – Inwestycja udostępniona pomiędzy Użytkownikami za pośrednictwem mechanizmów Apple CloudKit / CKShare.</li>
         <li><strong>Urządzenie</strong> – urządzenie mobilne, na którym zainstalowana jest Aplikacja.</li>
         <li><strong>Podmiot przetwarzający (procesor)</strong> – podmiot przetwarzający dane osobowe w imieniu i na polecenie Administratora.</li>
         <li><strong>EOG</strong> – Europejski Obszar Gospodarczy.</li>
@@ -1100,15 +1103,16 @@
             <tr><td class="lp">1</td><td class="cel">Udostępnienie i prawidłowe działanie Aplikacji oraz jej podstawowych funkcji (zarządzanie inwestycjami, etapami, zadaniami, kosztami, dokumentami, zdjęciami, kontaktami)</td><td class="podstawa">art. 6 ust. 1 lit. b – niezbędność do świadczenia usługi (wykonania umowy o korzystanie z Aplikacji)</td></tr>
             <tr><td class="lp">2</td><td class="cel">Uwierzytelnianie i utrzymanie konta Użytkownika (Sign in with Apple)</td><td class="podstawa">art. 6 ust. 1 lit. b</td></tr>
             <tr><td class="lp">3</td><td class="cel">Synchronizacja danych między urządzeniami Użytkownika (iCloud/CloudKit)</td><td class="podstawa">art. 6 ust. 1 lit. b oraz, w zakresie konfiguracji iCloud, ustawienia wybrane przez Użytkownika</td></tr>
-            <tr><td class="lp">4</td><td class="cel">Dostarczanie powiadomień push</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda systemowa na powiadomienia) oraz art. 6 ust. 1 lit. b w zakresie powiadomień niezbędnych do działania usługi</td></tr>
-            <tr><td class="lp">5</td><td class="cel">Analityka korzystania z Aplikacji oraz pomiar wydajności</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda)</td></tr>
-            <tr><td class="lp">6</td><td class="cel">Diagnostyka awarii i poprawa stabilności Aplikacji</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda na raportowanie awarii) oraz art. 6 ust. 1 lit. f (uzasadniony interes w zapewnieniu bezpieczeństwa i niezawodności Aplikacji)</td></tr>
-            <tr><td class="lp">7</td><td class="cel">Prezentowanie treści redakcyjnych, poradnikowych oraz sekcji partnerów i rekomendacji</td><td class="podstawa">art. 6 ust. 1 lit. b oraz art. 6 ust. 1 lit. f (uzasadniony interes w dostarczaniu wartościowych treści)</td></tr>
-            <tr><td class="lp">8</td><td class="cel">Obsługa programu poleceń</td><td class="podstawa">art. 6 ust. 1 lit. b oraz art. 6 ust. 1 lit. f (uzasadniony interes w rozwoju Aplikacji)</td></tr>
-            <tr><td class="lp">9</td><td class="cel">Obsługa zapytań i kontaktu z Użytkownikiem</td><td class="podstawa">art. 6 ust. 1 lit. f (uzasadniony interes w udzielaniu odpowiedzi)</td></tr>
-            <tr><td class="lp">10</td><td class="cel">Zapewnienie bezpieczeństwa, zapobieganie nadużyciom, prowadzenie logów zdarzeń</td><td class="podstawa">art. 6 ust. 1 lit. f (uzasadniony interes w ochronie usługi i jej Użytkowników)</td></tr>
-            <tr><td class="lp">11</td><td class="cel">Realizacja obowiązków prawnych (np. rozpatrywanie żądań z zakresu praw osób, których dane dotyczą)</td><td class="podstawa">art. 6 ust. 1 lit. c</td></tr>
-            <tr><td class="lp">12</td><td class="cel">Ustalenie, dochodzenie lub obrona roszczeń</td><td class="podstawa">art. 6 ust. 1 lit. f</td></tr>
+            <tr><td class="lp">4</td><td class="cel">Umożliwienie współdzielenia i synchronizacji Inwestycji między Użytkownikami (udostępnianie Inwestycji przez Apple CloudKit / CKShare)</td><td class="podstawa">art. 6 ust. 1 lit. b – wykonanie umowy o korzystanie z Aplikacji</td></tr>
+            <tr><td class="lp">5</td><td class="cel">Dostarczanie powiadomień push</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda systemowa na powiadomienia) oraz art. 6 ust. 1 lit. b w zakresie powiadomień niezbędnych do działania usługi</td></tr>
+            <tr><td class="lp">6</td><td class="cel">Analityka korzystania z Aplikacji oraz pomiar wydajności</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda)</td></tr>
+            <tr><td class="lp">7</td><td class="cel">Diagnostyka awarii i poprawa stabilności Aplikacji</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda na raportowanie awarii) oraz art. 6 ust. 1 lit. f (uzasadniony interes w zapewnieniu bezpieczeństwa i niezawodności Aplikacji)</td></tr>
+            <tr><td class="lp">8</td><td class="cel">Prezentowanie treści redakcyjnych, poradnikowych oraz sekcji partnerów i rekomendacji</td><td class="podstawa">art. 6 ust. 1 lit. b oraz art. 6 ust. 1 lit. f (uzasadniony interes w dostarczaniu wartościowych treści)</td></tr>
+            <tr><td class="lp">9</td><td class="cel">Obsługa programu poleceń</td><td class="podstawa">art. 6 ust. 1 lit. b oraz art. 6 ust. 1 lit. f (uzasadniony interes w rozwoju Aplikacji)</td></tr>
+            <tr><td class="lp">10</td><td class="cel">Obsługa zapytań i kontaktu z Użytkownikiem</td><td class="podstawa">art. 6 ust. 1 lit. f (uzasadniony interes w udzielaniu odpowiedzi)</td></tr>
+            <tr><td class="lp">11</td><td class="cel">Zapewnienie bezpieczeństwa, zapobieganie nadużyciom, prowadzenie logów zdarzeń</td><td class="podstawa">art. 6 ust. 1 lit. f (uzasadniony interes w ochronie usługi i jej Użytkowników)</td></tr>
+            <tr><td class="lp">12</td><td class="cel">Realizacja obowiązków prawnych (np. rozpatrywanie żądań z zakresu praw osób, których dane dotyczą)</td><td class="podstawa">art. 6 ust. 1 lit. c</td></tr>
+            <tr><td class="lp">13</td><td class="cel">Ustalenie, dochodzenie lub obrona roszczeń</td><td class="podstawa">art. 6 ust. 1 lit. f</td></tr>
           </tbody>
         </table>
       </div>
@@ -1165,9 +1169,18 @@
         <li><strong>Administrator nie ma technicznego dostępu do treści przechowywanych w prywatnej bazie CloudKit Użytkownika</strong> i nie odczytuje ich,</li>
         <li>zasady przetwarzania danych w ramach iCloud określa Apple jako dostawca tej usługi.</li>
       </ul>
-      <p>W przyszłości Aplikacja może umożliwić <strong>współdzielenie inwestycji</strong> pomiędzy różnymi Użytkownikami (np. między kontami Apple ID). W takim przypadku dane wybranej inwestycji będą udostępniane wskazanym przez Użytkownika osobom w zakresie niezbędnym do współpracy, z wykorzystaniem mechanizmów udostępniania oferowanych przez Apple. Funkcja taka będzie uruchamiana świadomie przez Użytkownika.</p>
+      <h3>7.3. Udostępnianie Inwestycji przez iCloud / CloudKit</h3>
+      <p>Aplikacja umożliwia <strong>Właścicielowi Inwestycji</strong> udostępnienie wybranej Inwestycji innemu użytkownikowi za pośrednictwem mechanizmów Apple <strong>CloudKit i CKShare</strong>.</p>
+      <p>Udostępnianie jest inicjowane świadomie przez Właściciela Inwestycji. <strong>Współpracownik</strong> musi zaakceptować zaproszenie przy użyciu konta Apple, zanim uzyska dostęp.</p>
+      <p>W zależności od rodzaju danych oraz aktualnej wersji Aplikacji <strong>Udostępniona Inwestycja</strong> może obejmować metadane inwestycji, etapy, zadania, wydatki, budżety, wydarzenia, wpisy dziennika, kontakty, linki, dokumenty, załączniki oraz inne treści przypisane do Inwestycji.</p>
+      <p>Każdy uczestnik przechowuje lokalną kopię roboczą Udostępnionej Inwestycji na swoim urządzeniu. Zmiany wprowadzane przez uprawnionych uczestników mogą być synchronizowane za pośrednictwem współdzielonej bazy CloudKit.</p>
+      <p>W ramach Udostępnionej Inwestycji <strong>nie są udostępniane</strong> następujące dane osobowe lub dane charakterystyczne dla urządzenia: profile finansowe, zapytania o finansowanie lub ubezpieczenie, zgłoszenia (leady), preferencje powiadomień, preferencja wybranej inwestycji, ustawienia pamięci lokalnej oraz identyfikatory wydarzeń utworzonych w prywatnym Kalendarzu iOS użytkownika.</p>
+      <p>Niektóre pliki lub kolekcje zdjęć mogą pozostać przechowywane wyłącznie na urządzeniu, na którym zostały dodane. Aplikacja może informować uczestników, gdy dany plik nie jest dostępny na ich urządzeniu.</p>
+      <p>Właściciel Inwestycji może cofnąć dostęp lub usunąć Udostępnioną Inwestycję. Współpracownik może opuścić Udostępnioną Inwestycję lub usunąć swoją lokalną kopię. Po cofnięciu dostępu niektóre dane mogą tymczasowo pozostać w kopii lokalnej, dopóki nie zostaną usunięte przez użytkownika lub wyczyszczone przez Aplikację.</p>
+      <p>Administrator nie wykorzystuje treści Udostępnionej Inwestycji do celów reklamowych ani profilowania i nie uzyskuje rutynowego dostępu do treści przechowywanych w bazach CloudKit użytkowników ani ich nie przegląda. Apple przetwarza te dane na zasadach mających zastosowanie do iCloud i CloudKit.</p>
+      <p><strong>Użytkownik odpowiada za posiadanie podstawy prawnej do udostępnienia treści Inwestycji.</strong> Dotyczy to w szczególności danych wykonawców, numerów telefonów i adresów e-mail, zdjęć osób oraz faktur, umów i innych dokumentów zawierających dane osobowe. Użytkownik powinien udostępniać Inwestycję wyłącznie osobom uprawnionym do dostępu oraz zamieszczać w niej wyłącznie treści, które jest uprawniony ujawnić.</p>
 
-      <h3>7.3. Dane przesyłane do backendu i usług zewnętrznych</h3>
+      <h3>7.4. Dane przesyłane do backendu i usług zewnętrznych</h3>
       <p>Niektóre dane są przesyłane poza urządzenie do usług zewnętrznych lub do naszego zaplecza (backendu), w zakresie niezbędnym do działania danej funkcji, w szczególności:</p>
       <ul>
         <li>token powiadomień push oraz dane techniczne niezbędne do dostarczania powiadomień,</li>
@@ -1222,7 +1235,10 @@
       <h3>10.5. Partnerzy i sekcje sponsorowane</h3>
       <p>Partnerzy prezentowani w sekcjach sponsorowanych oraz w ramach rekomendacji (w tym rekomendacji finansowych i rekomendacji wykonawców). Treści te są co do zasady prezentowane w sposób nieprofilowany indywidualnie. Jeżeli Użytkownik samodzielnie zdecyduje się przejść do oferty partnera lub skontaktować się z nim, dalsze przetwarzanie jego danych przez partnera odbywa się na zasadach określonych przez tego partnera jako odrębnego administratora.</p>
 
-      <h3>10.6. Pozostali odbiorcy</h3>
+      <h3>10.6. Inni uczestnicy Udostępnionej Inwestycji</h3>
+      <p>Gdy Właściciel Inwestycji włączy udostępnianie, treść wybranej Inwestycji jest udostępniana Współpracownikowi lub Współpracownikom zaproszonym przez Właściciela. Zakres dostępu zależy od aktualnej funkcjonalności udostępniania w Aplikacji oraz od uprawnień skonfigurowanych za pośrednictwem Apple CloudKit.</p>
+
+      <h3>10.7. Pozostali odbiorcy</h3>
       <ul>
         <li>podmioty świadczące na naszą rzecz usługi wspierające (np. obsługa poczty e-mail, narzędzia komunikacji z Użytkownikami),</li>
         <li>organy publiczne i uprawnione podmioty – wyłącznie w zakresie wymaganym przepisami prawa.</li>
@@ -1250,7 +1266,8 @@
       <p>12.3. <strong>Dane analityczne i diagnostyczne</strong> – przechowywane przez okres określony w ustawieniach wykorzystywanych narzędzi (np. Firebase) oraz nie dłużej niż jest to niezbędne do celów analitycznych; do czasu wycofania zgody, jeżeli stanowi ona podstawę przetwarzania.</p>
       <p>12.4. <strong>Dane programu poleceń</strong> – przechowywane przez okres niezbędny do rozliczenia i obsługi programu poleceń.</p>
       <p>12.5. <strong>Korespondencja i zgłoszenia</strong> – przechowywane przez okres niezbędny do obsługi zapytania oraz, w razie potrzeby, do celów dowodowych przez okres przedawnienia ewentualnych roszczeń.</p>
-      <p>12.6. Po upływie okresów przechowywania dane są usuwane lub poddawane anonimizacji.</p>
+      <p>12.6. <strong>Dane Udostępnionej Inwestycji</strong> – przechowywane w CloudKit do czasu, aż Właściciel Inwestycji usunie Inwestycję, zakończy udostępnianie lub w inny sposób usunie dane. Cofnięcie dostępu Współpracownikowi uniemożliwia dalszy dostęp za pośrednictwem CloudKit, jednak kopia lokalna może pozostać na urządzeniu Współpracownika do czasu jej usunięcia przez użytkownika lub przez Aplikację.</p>
+      <p>12.7. Po upływie okresów przechowywania dane są usuwane lub poddawane anonimizacji.</p>
     </section>
 
     <!-- ── 13 ── -->
