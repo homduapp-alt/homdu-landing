@@ -14,6 +14,7 @@ import { DocsPhotosSection } from "./components/DocsPhotosSection.jsx";
 import { GuidesSection } from "./components/GuidesSection.jsx";
 import { FounderB2C } from "./components/FounderB2C.jsx";
 import { SocialProof } from "./components/SocialProof.jsx";
+import { FAQSection } from "./components/FAQSection.jsx";
 import { FinalCTA } from "./components/FinalCTA.jsx";
 import { Footer } from "./components/Footer.jsx";
 
@@ -35,6 +36,7 @@ export default function App() {
         <GuidesSection />
         <FounderB2C />
         <SocialProof />
+        <FAQSection />
         <FinalCTA />
       </main>
       <Footer theme={theme} setTheme={setTheme} />

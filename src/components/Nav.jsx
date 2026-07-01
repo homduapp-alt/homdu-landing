@@ -43,21 +43,24 @@ function LangSwitch({ style }) {
   );
 }
 
-export function Nav({ variant = "b2c" }) {
+export function Nav({ variant = "b2c", linkBase = "" }) {
+  // Na podstronach (landingi/blog) kotwice (#funkcje itd.) prowadzą na stronę
+  // główną/partnerów przez linkBase; na stronie głównej linkBase="" → zwykłe #.
+  const hb = (href) => (href && href.charAt(0) === "#" ? linkBase + href : href);
   const links =
     variant === "b2b"
       ? [
-          { href: "#dlaczego", label: tr("Dlaczego homdu", "Why homdu") },
-          { href: "#formaty", label: tr("Formaty współpracy", "Partnership formats") },
-          { href: "#dla-kogo", label: tr("Dla kogo", "Who it's for") },
-          { href: "#partner-cta", label: tr("Kontakt", "Contact") },
+          { href: hb("#dlaczego"), label: tr("Dlaczego homdu", "Why homdu") },
+          { href: hb("#formaty"), label: tr("Formaty współpracy", "Partnership formats") },
+          { href: hb("#dla-kogo"), label: tr("Dla kogo", "Who it's for") },
+          { href: hb("#partner-cta"), label: tr("Kontakt", "Contact") },
           { href: "/", label: tr("Strona dla inwestorów", "For homeowners"), emphasis: true },
         ]
       : [
-          { href: "#funkcje", label: tr("Funkcje", "Features") },
-          { href: "#etapy", label: tr("Etapy", "Stages") },
-          { href: "#koszty", label: tr("Koszty", "Costs") },
-          { href: "#poradniki", label: tr("Poradniki", "Guides") },
+          { href: hb("#funkcje"), label: tr("Funkcje", "Features") },
+          { href: hb("#etapy"), label: tr("Etapy", "Stages") },
+          { href: hb("#koszty"), label: tr("Koszty", "Costs") },
+          { href: hb("#poradniki"), label: tr("Poradniki", "Guides") },
           { href: "/partnerzy", label: tr("Dla partnerów", "For partners"), emphasis: true },
         ];
 

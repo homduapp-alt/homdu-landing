@@ -6,8 +6,10 @@ import { Logo, AppStoreBadge } from "./shared.jsx";
 // Footer.jsx — shared between the B2C (investors) and B2B (partners) pages.
 // Layout is identical; columns + cross-link adapt to the audience via `variant`.
 
-export function Footer({ theme, setTheme, variant = "b2c" }) {
+export function Footer({ theme, setTheme, variant = "b2c", linkBase = "" }) {
   const isB2B = variant === "b2b";
+  // Na podstronach kotwice prowadzą na stronę główną/partnerów przez linkBase.
+  const hb = (href) => (href && href.charAt(0) === "#" && href !== "#" ? linkBase + href : href);
 
   const blurb = isB2B
     ? tr("Kontekstowy kanał dotarcia do inwestora — w momencie, w którym planuje, kupuje i wykonuje. Made with care w Polsce.", "A contextual channel for reaching the homeowner — at the moment they plan, buy and build. Made with care in Poland.")
@@ -28,10 +30,10 @@ export function Footer({ theme, setTheme, variant = "b2c" }) {
         {
           title: tr("Współpraca", "Partnership"),
           links: [
-            { label: tr("Dlaczego homdu", "Why homdu"), href: "#dlaczego" },
-            { label: tr("Formaty współpracy", "Partnership formats"), href: "#formaty" },
-            { label: tr("Dla kogo", "Who it's for"), href: "#dla-kogo" },
-            { label: tr("Kontakt", "Contact"), href: "#partner-cta" },
+            { label: tr("Dlaczego homdu", "Why homdu"), href: hb("#dlaczego") },
+            { label: tr("Formaty współpracy", "Partnership formats"), href: hb("#formaty") },
+            { label: tr("Dla kogo", "Who it's for"), href: hb("#dla-kogo") },
+            { label: tr("Kontakt", "Contact"), href: hb("#partner-cta") },
           ],
         },
         {
@@ -49,15 +51,18 @@ export function Footer({ theme, setTheme, variant = "b2c" }) {
         {
           title: tr("Aplikacja", "App"),
           links: [
-            { label: tr("Funkcje", "Features"), href: "#funkcje" },
-            { label: tr("Etapy", "Stages"), href: "#etapy" },
-            { label: tr("Koszty", "Costs"), href: "#koszty" },
-            { label: tr("Poradniki", "Guides"), href: "#poradniki" },
+            { label: tr("Funkcje", "Features"), href: hb("#funkcje") },
+            { label: tr("Etapy", "Stages"), href: hb("#etapy") },
+            { label: tr("Koszty", "Costs"), href: hb("#koszty") },
+            { label: tr("Współdzielenie inwestycji", "Sharing a project"), href: "/wspoldzielenie-inwestycji" },
           ],
         },
         {
-          title: tr("Firma", "Company"),
+          title: tr("Poradniki", "Guides"),
           links: [
+            { label: tr("Aplikacja do budowy domu", "House-build app"), href: "/aplikacja-budowa-domu" },
+            { label: tr("Aplikacja do remontu", "Renovation app"), href: "/aplikacja-remont" },
+            { label: tr("Blog", "Blog"), href: "/blog" },
             { label: tr("Kontakt", "Contact"), href: "mailto:homdu.app@gmail.com" },
           ],
         },

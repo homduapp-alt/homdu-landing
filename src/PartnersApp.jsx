@@ -5,6 +5,7 @@ import { useTheme } from "./useTheme.js";
 
 import { Nav } from "./components/Nav.jsx";
 import { B2BSection } from "./components/B2BSection.jsx";
+import { FAQSection } from "./components/FAQSection.jsx";
 import { Footer } from "./components/Footer.jsx";
 
 export default function PartnersApp() {
@@ -15,6 +16,7 @@ export default function PartnersApp() {
       <Nav variant="b2b" />
       <main>
         <B2BSection />
+        <FAQSection variant="b2b" />
       </main>
       <Footer theme={theme} setTheme={setTheme} variant="b2b" />
     </>

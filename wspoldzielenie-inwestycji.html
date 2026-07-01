@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="facebook-domain-verification" content="5zk3yc1ays9zw4pgvrkzijbr8ngd1j" />
+
+<!-- i18n core: PL/EN język, trwały + reaktywny przez reload -->
+<script>
+(function () {
+  var l;
+  try { l = localStorage.getItem('homdu-lang'); } catch (e) {}
+  if (l !== 'en' && l !== 'pl') l = 'pl';
+  window.LANG = l;
+  document.documentElement.lang = l;
+  window.tr = function (pl, en) { return window.LANG === 'en' ? en : pl; };
+  window.setLang = function (next) {
+    if (next !== 'en' && next !== 'pl') return;
+    try { localStorage.setItem('homdu-lang', next); } catch (e) {}
+    window.LANG = next;
+    window.location.reload();
+  };
+  document.title = window.tr("Współdzielenie inwestycji — homdu", "Sharing a project — homdu");
+  var setMeta = function (sel, val) { var el = document.querySelector(sel); if (el) el.setAttribute('content', val); };
+  setMeta('meta[name="description"]', window.tr("Współdziel inwestycję budowlaną lub remont z partnerem albo kierownikiem budowy. Jedna osoba prowadzi, pozostałe widzą te same etapy, koszty i dokumenty — dzięki Apple CloudKit. Bezpłatnie, w ekosystemie Apple.", "Share a building or renovation project with your partner or site manager. One person runs it, the others see the same stages, costs and documents — via Apple CloudKit. Free, in the Apple ecosystem."));
+  setMeta('meta[property="og:title"]', window.tr("Współdziel inwestycję przez Apple CloudKit — homdu", "Share your project via Apple CloudKit — homdu"));
+  setMeta('meta[property="og:description"]', window.tr("Współdziel inwestycję budowlaną lub remont z partnerem albo kierownikiem budowy. Jedna osoba prowadzi, pozostałe widzą te same etapy, koszty i dokumenty — dzięki Apple CloudKit. Bezpłatnie, w ekosystemie Apple.", "Share a building or renovation project with your partner or site manager. One person runs it, the others see the same stages, costs and documents — via Apple CloudKit. Free, in the Apple ecosystem."));
+  setMeta('meta[property="og:locale"]', window.LANG === 'en' ? 'en_US' : 'pl_PL');
+})();
+</script>
+
+<!-- Motyw: auto-ciemny nocą (Warszawa 22–5) lub zapamiętany wybór -->
+<script>
+  (function(){try{
+    var t=null,h=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Warsaw',hour:'numeric',hour12:false}).format(new Date()),10);
+    if(h>=22||h<5){t='dark';}else{var s=localStorage.getItem('homdu-theme');if(s==='light'||s==='dark')t=s;}
+    document.documentElement.setAttribute('data-theme',t||'light');
+  }catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script>
+
+<title>Współdzielenie inwestycji — homdu</title>
+<meta name="description" content="Współdziel inwestycję budowlaną lub remont z partnerem albo kierownikiem budowy. Jedna osoba prowadzi, pozostałe widzą te same etapy, koszty i dokumenty — dzięki Apple CloudKit. Bezpłatnie, w ekosystemie Apple." />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="homdu" />
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:title" content="Współdziel inwestycję przez Apple CloudKit — homdu" />
+<meta property="og:description" content="Współdziel inwestycję budowlaną lub remont z partnerem albo kierownikiem budowy. Jedna osoba prowadzi, pozostałe widzą te same etapy, koszty i dokumenty — dzięki Apple CloudKit. Bezpłatnie, w ekosystemie Apple." />
+<meta property="og:url" content="https://homdu.pl/wspoldzielenie-inwestycji" />
+<meta property="og:image" content="https://homdu.pl/assets/og-homdu.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#2E6FD4" />
+<link rel="canonical" href="https://homdu.pl/wspoldzielenie-inwestycji" />
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png" />
+<link rel="apple-touch-icon" href="/assets/favicon-180.png" />
+
+<!-- Google Analytics 4 + Consent Mode v2 (denied dopóki banner nie nada zgody) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){var g='denied';try{var c=JSON.parse(localStorage.getItem('homdu-consent'));if(c&&c.marketing)g='granted';}catch(e){}
+    gtag('consent','default',{
+      ad_storage: g, ad_user_data: g, ad_personalization: g,
+      analytics_storage: g,
+      functionality_storage:'granted', security_storage:'granted', wait_for_update:500
+    });})();
+  gtag('js', new Date());
+  gtag('config', 'G-EQ750JCPRQ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ750JCPRQ"></script>
+
+<!-- Dane strukturalne (schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://homdu.pl/wspoldzielenie-inwestycji#webpage",
+      "url": "https://homdu.pl/wspoldzielenie-inwestycji",
+      "name": "Współdzielenie inwestycji — homdu",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@id": "https://homdu.pl/#website"
+      },
+      "description": "Współdziel inwestycję budowlaną lub remont z partnerem albo kierownikiem budowy. Jedna osoba prowadzi, pozostałe widzą te same etapy, koszty i dokumenty — dzięki Apple CloudKit. Bezpłatnie, w ekosystemie Apple."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://homdu.pl/wspoldzielenie-inwestycji#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "homdu",
+          "item": "https://homdu.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Współdzielenie inwestycji",
+          "item": "https://homdu.pl/wspoldzielenie-inwestycji"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="root"></div>
+<noscript>
+  <div style="max-width:760px;margin:0 auto;padding:48px 20px;font-family:Geist,system-ui,sans-serif;line-height:1.6;color:#15171C">
+    <h1>Współdziel inwestycję z partnerem lub kierownikiem budowy</h1>
+    <p>W homdu jedna osoba prowadzi inwestycję, a pozostałe widzą te same etapy, koszty i dokumenty — dzięki synchronizacji przez Apple CloudKit. Właściciel Inwestycji zaprasza Współpracownika, np. małżonka lub kierownika budowy.</p>
+    <p><a href="https://apps.apple.com/us/app/homdu-budowa-i-remont/id6759539185">Pobierz homdu w App Store</a> · <a href="/">Strona główna homdu</a></p>
+  </div>
+</noscript>
+<script type="module" src="/src/main-wspoldzielenie.jsx"></script>
+
+<!-- Analytics: Meta Pixel (consent-gated) + GA4 mirror + banner zgody -->
+<script defer src="/analytics.js"></script>
+<script defer src="/consent-banner.js"></script>
+</body>
+</html>

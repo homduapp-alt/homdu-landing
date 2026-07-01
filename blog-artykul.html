@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="facebook-domain-verification" content="5zk3yc1ays9zw4pgvrkzijbr8ngd1j" />
+
+<!-- i18n core: PL/EN język, trwały + reaktywny przez reload -->
+<script>
+(function () {
+  var l;
+  try { l = localStorage.getItem('homdu-lang'); } catch (e) {}
+  if (l !== 'en' && l !== 'pl') l = 'pl';
+  window.LANG = l;
+  document.documentElement.lang = l;
+  window.tr = function (pl, en) { return window.LANG === 'en' ? en : pl; };
+  window.setLang = function (next) {
+    if (next !== 'en' && next !== 'pl') return;
+    try { localStorage.setItem('homdu-lang', next); } catch (e) {}
+    window.LANG = next;
+    window.location.reload();
+  };
+  document.title = window.tr("Ile kosztuje budowa domu? Etapy i budżet — homdu", "How much does building a house cost? — homdu");
+  var setMeta = function (sel, val) { var el = document.querySelector(sel); if (el) el.setAttribute('content', val); };
+  setMeta('meta[name="description"]', window.tr("Ile kosztuje budowa domu w 2026? Rozbij budowę na etapy i zaplanuj budżet, który się nie rozjedzie — od fundamentów po odbiór. Poradnik zespołu homdu.", "How much does building a house cost in 2026? Break the build into stages and plan a budget that won't spiral — from foundations to handover. A guide from the homdu team."));
+  setMeta('meta[property="og:title"]', window.tr("Ile kosztuje budowa domu? Etapy i budżet", "How much does building a house cost? Stages and budget"));
+  setMeta('meta[property="og:description"]', window.tr("Ile kosztuje budowa domu w 2026? Rozbij budowę na etapy i zaplanuj budżet, który się nie rozjedzie — od fundamentów po odbiór. Poradnik zespołu homdu.", "How much does building a house cost in 2026? Break the build into stages and plan a budget that won't spiral — from foundations to handover. A guide from the homdu team."));
+  setMeta('meta[property="og:locale"]', window.LANG === 'en' ? 'en_US' : 'pl_PL');
+})();
+</script>
+
+<!-- Motyw: auto-ciemny nocą (Warszawa 22–5) lub zapamiętany wybór -->
+<script>
+  (function(){try{
+    var t=null,h=parseInt(new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Warsaw',hour:'numeric',hour12:false}).format(new Date()),10);
+    if(h>=22||h<5){t='dark';}else{var s=localStorage.getItem('homdu-theme');if(s==='light'||s==='dark')t=s;}
+    document.documentElement.setAttribute('data-theme',t||'light');
+  }catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script>
+
+<title>Ile kosztuje budowa domu? Etapy i budżet — homdu</title>
+<meta name="description" content="Ile kosztuje budowa domu w 2026? Rozbij budowę na etapy i zaplanuj budżet, który się nie rozjedzie — od fundamentów po odbiór. Poradnik zespołu homdu." />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="homdu" />
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:title" content="Ile kosztuje budowa domu? Etapy i budżet" />
+<meta property="og:description" content="Ile kosztuje budowa domu w 2026? Rozbij budowę na etapy i zaplanuj budżet, który się nie rozjedzie — od fundamentów po odbiór. Poradnik zespołu homdu." />
+<meta property="og:url" content="https://homdu.pl/blog-artykul" />
+<meta property="og:image" content="https://homdu.pl/assets/og-homdu.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#2E6FD4" />
+<link rel="canonical" href="https://homdu.pl/blog-artykul" />
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png" />
+<link rel="apple-touch-icon" href="/assets/favicon-180.png" />
+
+<!-- Google Analytics 4 + Consent Mode v2 (denied dopóki banner nie nada zgody) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){var g='denied';try{var c=JSON.parse(localStorage.getItem('homdu-consent'));if(c&&c.marketing)g='granted';}catch(e){}
+    gtag('consent','default',{
+      ad_storage: g, ad_user_data: g, ad_personalization: g,
+      analytics_storage: g,
+      functionality_storage:'granted', security_storage:'granted', wait_for_update:500
+    });})();
+  gtag('js', new Date());
+  gtag('config', 'G-EQ750JCPRQ');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ750JCPRQ"></script>
+
+<!-- Dane strukturalne (schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://homdu.pl/blog-artykul#webpage",
+      "url": "https://homdu.pl/blog-artykul",
+      "name": "Ile kosztuje budowa domu? Etapy i budżet — homdu",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@id": "https://homdu.pl/#website"
+      },
+      "description": "Ile kosztuje budowa domu w 2026? Rozbij budowę na etapy i zaplanuj budżet, który się nie rozjedzie — od fundamentów po odbiór. Poradnik zespołu homdu."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://homdu.pl/blog-artykul#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "homdu",
+          "item": "https://homdu.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://homdu.pl/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Blog",
+          "item": "https://homdu.pl/blog-artykul"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://homdu.pl/blog-artykul#article",
+      "headline": "Ile kosztuje budowa domu? Etapy i budżet — homdu",
+      "inLanguage": "pl-PL",
+      "image": "https://homdu.pl/assets/og-homdu.png",
+      "author": {
+        "@type": "Organization",
+        "name": "homdu"
+      },
+      "publisher": {
+        "@id": "https://homdu.pl/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://homdu.pl/blog-artykul#webpage"
+      },
+      "mainEntityOfPage": "https://homdu.pl/blog-artykul"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="root"></div>
+<noscript>
+  <div style="max-width:760px;margin:0 auto;padding:48px 20px;font-family:Geist,system-ui,sans-serif;line-height:1.6;color:#15171C">
+    <h1>Ile kosztuje budowa domu? Etapy i budżet krok po kroku</h1>
+    <p>Poradnik o kosztach budowy domu — jak rozbić budowę na etapy i zaplanować budżet, który się nie rozjedzie.</p>
+    <p><a href="https://apps.apple.com/us/app/homdu-budowa-i-remont/id6759539185">Pobierz homdu w App Store</a> · <a href="/">Strona główna homdu</a></p>
+  </div>
+</noscript>
+<script type="module" src="/src/main-blog-artykul.jsx"></script>
+
+<!-- Analytics: Meta Pixel (consent-gated) + GA4 mirror + banner zgody -->
+<script defer src="/analytics.js"></script>
+<script defer src="/consent-banner.js"></script>
+</body>
+</html>
