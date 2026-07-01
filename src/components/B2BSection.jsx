@@ -155,7 +155,7 @@ export function B2BSection() {
         >
           <div>
             <Reveal delay={100}>
-              <h2 className="h-section" style={{ marginTop: 0, marginBottom: 20 }}>
+              <h1 className="h-section" style={{ marginTop: 0, marginBottom: 20 }}>
                 {tr("Twoja marka tam, gdzie\u00a0zapada", "Your brand where the")}{" "}
                 <span style={{
                   background: "var(--hdu-grad)",
@@ -165,7 +165,7 @@ export function B2BSection() {
                 }}>
                   {tr("decyzja inwestycyjna.", "investment decision is made.")}
                 </span>
-              </h2>
+              </h1>
             </Reveal>
             <Reveal delay={200}>
               <p className="sub" style={{ marginBottom: 28, maxWidth: 560 }}>

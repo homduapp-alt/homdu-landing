@@ -88,9 +88,72 @@
 <!-- Calendly (popup do umawiania rozmów partnerskich) -->
 <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<!-- Dane strukturalne (schema.org) — statyczne, widoczne dla botów SEO i AI. Bez aggregateRating (App Store nie ma jeszcze wystarczającej liczby ocen). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://homdu.pl/#organization",
+      "name": "AppSoft Studio Jakub Matwiejczyk",
+      "url": "https://homdu.pl/",
+      "logo": "https://homdu.pl/assets/logo-homdu-icon.jpeg",
+      "brand": { "@type": "Brand", "name": "homdu" },
+      "sameAs": [
+        "https://apps.apple.com/us/app/homdu-budowa-i-remont/id6759539185",
+        "https://www.instagram.com/homdu_app/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://homdu.pl/#website",
+      "url": "https://homdu.pl/",
+      "name": "homdu",
+      "inLanguage": "pl-PL",
+      "publisher": { "@id": "https://homdu.pl/#organization" }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://homdu.pl/#app",
+      "name": "homdu",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Construction and renovation management",
+      "operatingSystem": "iOS 18, iPadOS 18, macOS 15, visionOS 2",
+      "url": "https://homdu.pl/",
+      "downloadUrl": "https://apps.apple.com/us/app/homdu-budowa-i-remont/id6759539185",
+      "inLanguage": "pl-PL",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PLN" },
+      "publisher": { "@id": "https://homdu.pl/#organization" },
+      "description": "Bezpłatna aplikacja do prowadzenia budowy domu i remontu mieszkania w ekosystemie Apple — etapy, koszty i budżet, dokumenty, zdjęcia, kontakty do wykonawców oraz współdzielenie inwestycji przez Apple CloudKit."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div id="root"></div>
+<noscript>
+  <div style="max-width:760px;margin:0 auto;padding:48px 20px;font-family:Geist,system-ui,sans-serif;line-height:1.6;color:#15171C">
+    <h1>homdu — aplikacja do budowy domu i remontu mieszkania</h1>
+    <p>homdu to bezpłatna aplikacja w ekosystemie Apple (iPhone, iPad, Mac, Apple Vision; obecnie bez wersji na Androida) do prowadzenia budowy domu i remontu mieszkania w jednym miejscu — etapy, koszty i budżet, dokumenty, zdjęcia oraz kontakty do wykonawców — z możliwością współdzielenia inwestycji przez Apple CloudKit (Właściciel Inwestycji zaprasza Współpracownika).</p>
+    <h2>Co daje homdu</h2>
+    <ul>
+      <li>Prowadzenie budowy lub remontu etap po etapie.</li>
+      <li>Kontrola kosztów i budżetu inwestycji.</li>
+      <li>Dokumenty, zdjęcia postępu prac i kontakty do wykonawców w jednym miejscu.</li>
+      <li>Poradniki dopasowane do etapu.</li>
+      <li>Współdzielenie inwestycji przez Apple CloudKit — wspólne prowadzenie budowy z partnerem lub kierownikiem budowy.</li>
+    </ul>
+    <h2>Najczęstsze pytania</h2>
+    <p><strong>Czy homdu jest darmowe?</strong> Tak, aplikacja jest bezpłatna.</p>
+    <p><strong>Na jakich urządzeniach działa homdu?</strong> W ekosystemie Apple: iPhone, iPad, Mac (Apple M1+) i Apple Vision. Aplikacja nie ma obecnie wersji na Androida.</p>
+    <p><strong>Jak współdzielić inwestycję?</strong> Właściciel Inwestycji zaprasza Współpracownika przez Apple CloudKit, aby wspólnie prowadzić tę samą budowę lub remont.</p>
+    <p><a href="https://apps.apple.com/us/app/homdu-budowa-i-remont/id6759539185">Pobierz homdu w App Store</a> · <a href="/partnerzy">homdu dla partnerów (B2B)</a></p>
+  </div>
+</noscript>
 <script type="module" src="/src/main.jsx"></script>
 
 <!-- Analytics: Meta Pixel (consent-gated) + GA4 mirror + banner zgody -->

@@ -1,0 +1,28 @@
+# homdu
+
+> homdu to bezpłatna aplikacja w ekosystemie Apple (iPhone, iPad, Mac, Apple Vision; obecnie bez wersji na Androida) do prowadzenia budowy domu i remontu mieszkania w jednym miejscu — etapy, koszty i budżet, dokumenty, zdjęcia oraz kontakty do wykonawców — z możliwością współdzielenia inwestycji przez Apple CloudKit. Aplikację wydaje AppSoft Studio Jakub Matwiejczyk; jest dostępna bezpłatnie w App Store.
+
+## Czym jest homdu
+
+homdu porządkuje całą inwestycję budowlaną lub remontową w jednym narzędziu: prowadzi użytkownika etapami, pozwala kontrolować koszty i budżet, przechowuje dokumenty oraz zdjęcia postępu prac, zbiera kontakty do wykonawców i udostępnia poradniki dopasowane do etapu. Zamiast rozproszenia danych po e-mailach, arkuszach i wiadomościach, użytkownik ma jedno spójne miejsce.
+
+Wyróżnikiem homdu jest współdzielenie inwestycji oparte na Apple CloudKit: Właściciel Inwestycji zaprasza Współpracownika (np. małżonka lub kierownika budowy), aby wspólnie prowadzili tę samą budowę lub remont, z dostępem do tych samych etapów, kosztów i dokumentów.
+
+## Najważniejsze fakty (cytowalne)
+
+- Cena: bezpłatna.
+- Platformy: ekosystem Apple — iPhone (iOS 18+), iPad (iPadOS 18+), Mac (macOS 15 / Apple M1+), Apple Vision (visionOS 2+). Aplikacja nie ma obecnie wersji na Androida.
+- Zakres: etapy inwestycji, kontrola kosztów i budżetu, dokumenty, zdjęcia, kontakty do wykonawców, poradniki dopasowane do etapu.
+- Wyróżnik: współdzielenie inwestycji przez Apple CloudKit (Właściciel Inwestycji zaprasza Współpracownika).
+- Dla firm (B2B): homdu.pl/partnerzy — kanał dotarcia do inwestora budowlanego/remontowego dla producentów materiałów, banków, ubezpieczycieli i sieci handlowych (partner etapu, rekomendacje finansowe, poradniki eksperckie, sekcje sponsorowane).
+- Wydawca: AppSoft Studio Jakub Matwiejczyk.
+
+## Linki
+
+- Strona główna (B2C): https://homdu.pl/
+- Dla partnerów (B2B): https://homdu.pl/partnerzy
+- Pobierz w App Store: https://apps.apple.com/us/app/homdu-budowa-i-remont/id6759539185
+- Polityka prywatności: https://homdu.pl/polityka-prywatnosci
+- Warunki korzystania: https://homdu.pl/warunki-korzystania
+- Privacy Policy (EN): https://homdu.pl/privacy-policy
+- Terms of Use (EN): https://homdu.pl/terms-of-use

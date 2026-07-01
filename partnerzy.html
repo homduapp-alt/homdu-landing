@@ -88,9 +88,69 @@
 <!-- Calendly (popup do umawiania rozmów partnerskich) -->
 <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<!-- Dane strukturalne (schema.org) — statyczne, widoczne dla botów SEO i AI. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://homdu.pl/#organization",
+      "name": "AppSoft Studio Jakub Matwiejczyk",
+      "url": "https://homdu.pl/",
+      "logo": "https://homdu.pl/assets/logo-homdu-icon.jpeg",
+      "brand": { "@type": "Brand", "name": "homdu" },
+      "sameAs": [
+        "https://apps.apple.com/us/app/homdu-budowa-i-remont/id6759539185",
+        "https://www.instagram.com/homdu_app/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://homdu.pl/#website",
+      "url": "https://homdu.pl/",
+      "name": "homdu",
+      "inLanguage": "pl-PL",
+      "publisher": { "@id": "https://homdu.pl/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://homdu.pl/partnerzy#webpage",
+      "url": "https://homdu.pl/partnerzy",
+      "name": "homdu dla partnerów",
+      "inLanguage": "pl-PL",
+      "isPartOf": { "@id": "https://homdu.pl/#website" },
+      "about": { "@id": "https://homdu.pl/#organization" },
+      "description": "Kanał dotarcia do inwestora budowlanego i remontowego dla producentów materiałów, banków, ubezpieczycieli i sieci handlowych — partner etapu, rekomendacje finansowe, poradniki eksperckie i sekcje sponsorowane."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div id="root"></div>
+<noscript>
+  <div style="max-width:760px;margin:0 auto;padding:48px 20px;font-family:Geist,system-ui,sans-serif;line-height:1.6;color:#15171C">
+    <h1>homdu dla partnerów — nowy kanał dotarcia do inwestora budowlanego i remontowego</h1>
+    <p>homdu to bezpłatna aplikacja do prowadzenia budowy domu i remontu mieszkania, z której korzystają inwestorzy indywidualni i osoby remontujące. Strona dla partnerów to kanał dotarcia do tego inwestora w momencie, w którym planuje, kupuje i realizuje inwestycję.</p>
+    <h2>Dla kogo</h2>
+    <ul>
+      <li>Producenci materiałów budowlanych i wykończeniowych.</li>
+      <li>Banki i instytucje finansowe (kredyty, finansowanie budowy i remontu).</li>
+      <li>Ubezpieczyciele.</li>
+      <li>Sieci handlowe i retail budowlany.</li>
+    </ul>
+    <h2>Formaty współpracy</h2>
+    <ul>
+      <li>Partner etapu — obecność marki na właściwym etapie inwestycji.</li>
+      <li>Rekomendacje finansowe.</li>
+      <li>Poradniki eksperckie.</li>
+      <li>Sekcje sponsorowane.</li>
+    </ul>
+    <p><a href="/">homdu dla inwestorów</a> · <a href="https://apps.apple.com/us/app/homdu-budowa-i-remont/id6759539185">Pobierz homdu w App Store</a></p>
+  </div>
+</noscript>
 <script type="module" src="/src/main-partners.jsx"></script>
 
 <!-- Analytics: Meta Pixel (consent-gated) + GA4 mirror + banner zgody -->
