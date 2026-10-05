@@ -57,8 +57,8 @@ export function BuildLanding() {
     {
       q: tr("Czy aplikacja do budowy domu jest darmowa?", "Is the house-build app free?"),
       a: <p style={{ margin: 0 }}>{tr(
-        "Czy aplikacja do budowy domu jest darmowa? Tak — homdu pobierzesz i poprowadzisz w niej budowę bez opłat. Działa na iPhone, iPad, Mac i Apple Vision; nie ma wersji na Androida.",
-        "Is the house-build app free? Yes — you download homdu and run your build at no cost. It works on iPhone, iPad, Mac and Apple Vision; there is no Android version."
+        "Czy aplikacja do budowy domu jest darmowa? Tak — homdu pobierzesz i poprowadzisz w niej budowę bez opłat. Działa na iPhonie i iPadzie; nie ma wersji na Androida.",
+        "Is the house-build app free? Yes — you download homdu and run your build at no cost. It works on iPhone and iPad; there is no Android version."
       )}</p>,
     },
     {

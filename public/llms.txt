@@ -1,17 +1,17 @@
 # homdu
 
-> homdu to bezpłatna aplikacja w ekosystemie Apple (iPhone, iPad, Mac, Apple Vision; obecnie bez wersji na Androida) do prowadzenia budowy domu i remontu mieszkania w jednym miejscu — etapy, koszty i budżet, dokumenty, zdjęcia oraz kontakty do wykonawców — z możliwością współdzielenia inwestycji przez Apple CloudKit. Aplikację wydaje AppSoft Studio Jakub Matwiejczyk; jest dostępna bezpłatnie w App Store.
+> homdu to bezpłatna aplikacja na iPhone'a i iPada (obecnie bez wersji na Androida) do prowadzenia budowy domu i remontu mieszkania w jednym miejscu — etapy, koszty i budżet, dokumenty, zdjęcia oraz kontakty do wykonawców — z możliwością współdzielenia inwestycji przez Apple CloudKit. Aplikację wydaje AppSoft Studio Jakub Matwiejczyk; jest dostępna bezpłatnie w App Store.
 
 ## Czym jest homdu
 
 homdu porządkuje całą inwestycję budowlaną lub remontową w jednym narzędziu: prowadzi użytkownika etapami, pozwala kontrolować koszty i budżet, przechowuje dokumenty oraz zdjęcia postępu prac, zbiera kontakty do wykonawców i udostępnia poradniki dopasowane do etapu. Zamiast rozproszenia danych po e-mailach, arkuszach i wiadomościach, użytkownik ma jedno spójne miejsce.
 
-Wyróżnikiem homdu jest współdzielenie inwestycji oparte na Apple CloudKit: Właściciel Inwestycji zaprasza Współpracownika (np. małżonka lub kierownika budowy), aby wspólnie prowadzili tę samą budowę lub remont, z dostępem do tych samych etapów, kosztów i dokumentów.
+Wyróżnikiem homdu jest współdzielenie inwestycji oparte na Apple CloudKit: Właściciel Inwestycji zaprasza Współpracownika (np. małżonka lub kierownika budowy) w systemowym arkuszu udostępniania Apple i wybiera uprawnienia — podgląd albo edycja. Współdzielone są dane inwestycji, etapy, zadania, wydatki, budżety, kontakty, wpisy dziennika, linki, albumy i wydarzenia. Pliki z zakładki Dokumenty oraz zdjęcia wpisów dziennika nie są współdzielone ani synchronizowane — zostają na urządzeniu. Aplikacja nie pokazuje, kto dodał wpis lub wydatek, i nie wysyła powiadomień o zmianach we wspólnej inwestycji. Udostępnienie wymaga zalogowania w aplikacji kontem Apple i aktywnego konta iCloud; do przyjęcia zaproszenia potrzebne jest konto iCloud, a do bieżącej synchronizacji zmian — zalogowanie w aplikacji.
 
 ## Najważniejsze fakty (cytowalne)
 
 - Cena: bezpłatna.
-- Platformy: ekosystem Apple — iPhone (iOS 18+), iPad (iPadOS 18+), Mac (macOS 15 / Apple M1+), Apple Vision (visionOS 2+). Aplikacja nie ma obecnie wersji na Androida.
+- Platformy: iPhone (iOS 18+) i iPad (iPadOS 18+). Aplikacja nie ma obecnie wersji na Androida ani wersji przeglądarkowej.
 - Zakres: etapy inwestycji, kontrola kosztów i budżetu, dokumenty, zdjęcia, kontakty do wykonawców, poradniki dopasowane do etapu.
 - Wyróżnik: współdzielenie inwestycji przez Apple CloudKit (Właściciel Inwestycji zaprasza Współpracownika).
 - Dla firm (B2B): homdu.pl/partnerzy — kanał dotarcia do inwestora budowlanego/remontowego dla producentów materiałów, banków, ubezpieczycieli i sieci handlowych (partner etapu, rekomendacje finansowe, poradniki eksperckie, sekcje sponsorowane).

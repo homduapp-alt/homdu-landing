@@ -16,8 +16,8 @@ function SharingRoleFlow() {
       grad: "var(--stg-blue)",
       role: tr("Właściciel Inwestycji", "Project Owner"),
       desc: tr(
-        "Zakłada inwestycję w homdu — etapy, budżet, dokumenty i zdjęcia.",
-        "Creates the project in homdu — stages, budget, documents and photos."
+        "Loguje się kontem Apple i zakłada inwestycję w homdu — etapy, zadania, budżet i kontakty.",
+        "Signs in with Apple and creates the project in homdu — stages, tasks, budget and contacts."
       ),
     },
     {
@@ -34,8 +34,8 @@ function SharingRoleFlow() {
       grad: "var(--stg-green)",
       role: tr("Współpracownik", "Collaborator"),
       desc: tr(
-        "Dołącza i widzi tę samą inwestycję na swoim iPhonie, iPadzie lub Macu.",
-        "Joins and sees the same project on their own iPhone, iPad or Mac."
+        "Przyjmuje zaproszenie na swoim iPhonie lub iPadzie (potrzebne konto iCloud) i widzi wspólną inwestycję. Do bieżącej synchronizacji zmian loguje się w homdu kontem Apple.",
+        "Accepts the invitation on their own iPhone or iPad (an iCloud account is required) and sees the shared project. To keep changes in sync, they sign in to homdu with their Apple account."
       ),
     },
   ];
@@ -70,8 +70,8 @@ export function SharingLanding() {
       grad: "var(--stg-rose)",
       title: tr("Małżeństwo budujące dom", "A couple building a house"),
       desc: tr(
-        "Oboje na bieżąco widzą budżet, etapy i decyzje — koniec z „a mówiłeś, że zapłaciłeś za okna”. Każde z Was pracuje na swoim urządzeniu Apple.",
-        "Both partners see the budget, stages and decisions in real time — no more “I thought you paid for the windows”. Each of you works from your own Apple device."
+        "Oboje widzą ten sam budżet, etapy i wydatki, synchronizowane przez iCloud — koniec z „a mówiłeś, że zapłaciłeś za okna”. Każde z Was pracuje na swoim urządzeniu Apple.",
+        "Both partners see the same budget, stages and expenses, kept in sync through iCloud — no more “I thought you paid for the windows”. Each of you works from your own Apple device."
       ),
     },
     {
@@ -79,8 +79,8 @@ export function SharingLanding() {
       grad: "var(--stg-teal)",
       title: tr("Inwestor i kierownik budowy", "Homeowner and site manager"),
       desc: tr(
-        "Kierownik budowy dopisuje postępy i zdjęcia z placu, a Ty widzisz je od razu — bez telefonów i rozproszonych wiadomości. Nadajesz dostęp tylko do jednej inwestycji.",
-        "The site manager logs progress and site photos, and you see them instantly — without phone calls and scattered messages. You grant access to a single project only."
+        "Kierownik budowy z prawem edycji dopisuje wpisy, zadania i wydatki, a Ty widzisz je u siebie po synchronizacji — bez telefonów i rozproszonych wiadomości. Nadajesz dostęp tylko do jednej inwestycji.",
+        "A site manager with edit access adds entries, tasks and expenses, and you see them on your device once they sync — without phone calls and scattered messages. You grant access to a single project only."
       ),
     },
   ];
@@ -89,8 +89,8 @@ export function SharingLanding() {
     {
       q: tr("Czy Współpracownik potrzebuje urządzenia Apple?", "Does the Collaborator need an Apple device?"),
       a: <p style={{ margin: 0 }}>{tr(
-        "Czy Współpracownik potrzebuje Apple? Tak — współdzielenie działa przez Apple CloudKit, więc obie osoby korzystają z homdu na iPhonie, iPadzie lub Macu. Nie ma wersji na Androida ani w przeglądarce.",
-        "Does the Collaborator need Apple? Yes — sharing works through Apple CloudKit, so both people use homdu on an iPhone, iPad or Mac. There is no Android or browser version."
+        "Czy Współpracownik potrzebuje Apple? Tak — współdzielenie działa przez Apple CloudKit, więc obie osoby korzystają z homdu na iPhonie lub iPadzie i mają konto iCloud. Żeby udostępniać inwestycję i synchronizować zmiany, trzeba też zalogować się w homdu kontem Apple. Nie ma wersji na Androida ani w przeglądarce.",
+        "Does the Collaborator need Apple? Yes — sharing works through Apple CloudKit, so both people use homdu on an iPhone or iPad and have an iCloud account. To share a project and keep changes in sync, you also need to sign in to homdu with your Apple account. There is no Android or browser version."
       )}</p>,
     },
     {
@@ -134,8 +134,8 @@ export function SharingLanding() {
               <Reveal delay={160}>
                 <p className="sub" style={{ margin: "24px 0 0", maxWidth: 560 }}>
                   {tr(
-                    "Budowa i remont to sport zespołowy. W homdu jedna osoba prowadzi inwestycję, a pozostałe widzą te same etapy, koszty i dokumenty — dzięki synchronizacji przez Apple CloudKit.",
-                    "Building and renovating is a team sport. In homdu one person runs the project and the others see the same stages, costs and documents — thanks to Apple CloudKit sync."
+                    "Budowa i remont to sport zespołowy. W homdu jedna osoba prowadzi inwestycję, a zaproszone osoby widzą te same etapy, zadania, koszty i kontakty — dzięki synchronizacji przez Apple CloudKit.",
+                    "Building and renovating is a team sport. In homdu one person runs the project and the people they invite see the same stages, tasks, costs and contacts — thanks to Apple CloudKit sync."
                   )}
                 </p>
               </Reveal>
@@ -181,8 +181,8 @@ export function SharingLanding() {
             eyebrow={tr("Jak to działa", "How it works")}
             title={tr("Jak działa współdzielenie inwestycji?", "How does project sharing work?")}
             sub={tr(
-              "Jak działa współdzielenie inwestycji? Właściciel Inwestycji zakłada projekt i zaprasza Współpracownika, np. małżonka lub kierownika budowy. Dane synchronizują się przez Apple CloudKit, więc obie osoby pracują na tych samych etapach, kosztach i dokumentach — każde na swoim urządzeniu Apple, na bieżąco.",
-              "How does project sharing work? The Project Owner creates the project and invites a Collaborator, e.g. a spouse or site manager. Data syncs through Apple CloudKit, so both people work on the same stages, costs and documents — each on their own Apple device, in real time."
+              "Jak działa współdzielenie inwestycji? Właściciel Inwestycji zakłada projekt i zaprasza Współpracownika, np. małżonka lub kierownika budowy — z prawem podglądu albo edycji. Dane synchronizują się przez iCloud (Apple CloudKit), więc obie osoby widzą te same etapy, zadania, koszty i kontakty — każda na swoim urządzeniu, po synchronizacji. Pliki z zakładki Dokumenty i zdjęcia wpisów dziennika zostają na urządzeniu osoby, która je dodała.",
+              "How does project sharing work? The Project Owner creates the project and invites a Collaborator, e.g. a spouse or site manager — with view-only or edit access. Data syncs through iCloud (Apple CloudKit), so both people see the same stages, tasks, costs and contacts — each on their own device, once it has synced. Files in the Documents tab and journal entry photos stay on the device of the person who added them."
             )}
             align="center"
             maxWidth={820} />

@@ -196,7 +196,7 @@ export function Hero() {
                 <FloatingChip
                   icon={<Icon.Bell />}
                   gradient="var(--stg-amber)"
-                  title={tr("Termin za 2 dni", "Deadline in 2 days")}
+                  title={tr("Termin zadania dziś", "Task due today")}
                   sub={tr("Odbiór elektryczny", "Electrical inspection")}
                   style={{ top: 320, right: -56 }}
                   anim={1.2}

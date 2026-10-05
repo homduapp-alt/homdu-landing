@@ -94,8 +94,8 @@ export function FAQSection({ variant = "b2c" }) {
       a: (
         <p style={{ margin: 0 }}>
           {tr(
-            "Na jakich urządzeniach działa homdu? homdu działa w ekosystemie Apple — na iPhone, iPad, Mac oraz Apple Vision, z synchronizacją między Twoimi urządzeniami. Obecnie nie ma wersji na Androida ani wersji przeglądarkowej, więc do korzystania potrzebujesz urządzenia Apple z aktualnym systemem.",
-            "Which devices does homdu run on? homdu runs across the Apple ecosystem — iPhone, iPad, Mac and Apple Vision, syncing between your own devices. There is currently no Android version and no web version, so you need an Apple device on a current OS to use it."
+            "Na jakich urządzeniach działa homdu? homdu działa na iPhonie i iPadzie z systemem iOS lub iPadOS 18 albo nowszym. Po zalogowaniu kontem Apple i przy włączonym iCloud dane inwestycji — etapy, zadania, koszty, kontakty i wpisy dziennika — synchronizują się między Twoimi urządzeniami; pliki z zakładki Dokumenty i zdjęcia wpisów dziennika zostają na urządzeniu, na którym je dodano. Obecnie nie ma wersji na Androida ani wersji przeglądarkowej.",
+            "Which devices does homdu run on? homdu runs on iPhone and iPad with iOS or iPadOS 18 or later. Once you sign in with your Apple account and have iCloud turned on, your project data — stages, tasks, costs, contacts and journal entries — syncs between your own devices; files from the Documents tab and journal entry photos stay on the device where they were added. There is currently no Android version and no web version."
           )}
         </p>
       ),
@@ -105,8 +105,8 @@ export function FAQSection({ variant = "b2c" }) {
       a: (
         <p style={{ margin: 0 }}>
           {tr(
-            "Jak współdzielić inwestycję? Jako Właściciel Inwestycji zapraszasz Współpracownika (np. małżonka lub kierownika budowy), a dane synchronizują się przez Apple CloudKit. Obie osoby widzą te same etapy, koszty i dokumenty na swoich urządzeniach Apple. Więcej opisujemy na stronie ",
-            "How do I share a project? As the Project Owner you invite a Collaborator (e.g. your spouse or site manager) and the data syncs via Apple CloudKit. Both people see the same stages, costs and documents on their Apple devices. We explain more on the "
+            "Jak współdzielić inwestycję? Jako Właściciel Inwestycji zapraszasz Współpracownika (np. małżonka lub kierownika budowy) w arkuszu udostępniania Apple i wybierasz podgląd albo edycję; dane synchronizują się przez Apple CloudKit. Obie osoby widzą te same etapy, zadania, koszty, kontakty i wpisy dziennika na iPhonie lub iPadzie. Obie potrzebują konta iCloud; do udostępniania i bieżącej synchronizacji trzeba też zalogować się w homdu kontem Apple. Pliki z zakładki Dokumenty i zdjęcia wpisów dziennika nie są udostępniane — zostają na urządzeniu, na którym je dodano. Więcej opisujemy na stronie ",
+            "How do I share a project? As the Project Owner you invite a Collaborator (e.g. your spouse or site manager) from Apple's share sheet and choose view-only or edit access; the data syncs via Apple CloudKit. Both people see the same stages, tasks, costs, contacts and journal entries on their iPhone or iPad. Both need an iCloud account; to share and to keep changes in sync you also sign in to homdu with your Apple account. Files from the Documents tab and journal entry photos are not shared — they stay on the device where they were added. We explain more on the "
           )}
           <FAQLink href="/wspoldzielenie-inwestycji">
             {tr("współdzielenie inwestycji", "sharing a project")}

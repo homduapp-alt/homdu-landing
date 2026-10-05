@@ -9,7 +9,7 @@ export function HowItWorks() {
     {
       n: "01",
       title: tr("Stwórz inwestycję", "Create your project"),
-      desc: tr("Wybierz typ — budowa, remont lub wykończenie. Odpowiedz na 5 prostych pytań.", "Choose the type — build, renovation or fit-out. Answer 5 simple questions."),
+      desc: tr("Zaloguj się kontem Apple, wybierz typ — budowa, remont lub wykończenie — i odpowiedz na kilka prostych pytań.", "Sign in with your Apple account, choose the type — build, renovation or fit-out — and answer a few simple questions."),
       img: "/assets/how-step-1.webp",
       alt: tr("Konfiguracja inwestycji — wybór typu (Budowa domu / Remont / Wykończenie deweloperskie).", "Project setup — choosing the type (House build / Renovation / Developer fit-out)."),
       gradient: "var(--stg-blue)",

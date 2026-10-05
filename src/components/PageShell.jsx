@@ -27,11 +27,11 @@ export function PageShell({ children, navVariant = "b2c", linkBase }) {
 
 // ── Małe klocki współdzielone przez nowe strony ────────────────────────────
 
-// Platform / free trust row — "Bezpłatna · iPhone, iPad, Mac, Apple Vision · bez Androida"
+// Platform / free trust row — "Bezpłatna · iPhone, iPad · bez Androida"
 export function PlatformRow({ style, center = false }) {
   const items = [
     { icon: <Icon.Sparkle />, label: tr("Bezpłatna", "Free") },
-    { icon: <Icon.Phone />, label: tr("iPhone · iPad · Mac · Apple Vision", "iPhone · iPad · Mac · Apple Vision") },
+    { icon: <Icon.Phone />, label: tr("iPhone · iPad", "iPhone · iPad") },
     { icon: <Icon.X />, label: tr("Bez wersji na Androida", "No Android version") },
   ];
   return (

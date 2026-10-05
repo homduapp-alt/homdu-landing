@@ -64,8 +64,8 @@ export function RenovationLanding() {
     {
       q: tr("Czy aplikacja do remontu jest darmowa?", "Is the renovation app free?"),
       a: <p style={{ margin: 0 }}>{tr(
-        "Czy aplikacja do remontu jest darmowa? Tak — pobierzesz homdu i poprowadzisz remont bezpłatnie. Działa na iPhone, iPad, Mac i Apple Vision; obecnie nie ma wersji na Androida.",
-        "Is the renovation app free? Yes — you download homdu and run your renovation at no cost. It works on iPhone, iPad, Mac and Apple Vision; there is currently no Android version."
+        "Czy aplikacja do remontu jest darmowa? Tak — pobierzesz homdu i poprowadzisz remont bezpłatnie. Działa na iPhonie i iPadzie; obecnie nie ma wersji na Androida.",
+        "Is the renovation app free? Yes — you download homdu and run your renovation at no cost. It works on iPhone and iPad; there is currently no Android version."
       )}</p>,
     },
     {

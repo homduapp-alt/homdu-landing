@@ -27,7 +27,7 @@ export function GuidesSection() {
             </Reveal>
             <Reveal delay={160}>
               <p className="sub" style={{ marginBottom: 32, maxWidth: 520 }}>
-                {tr("Baza artykułów, wideo i shorts automatycznie filtrowana do Twojego aktualnego etapu prac. Wiedza dokładnie wtedy, gdy jej potrzebujesz — a nie chaos z Googla i grup na Facebooku.", "A library of articles, videos and shorts, automatically filtered to your current stage of work. Knowledge exactly when you need it — not chaos from Google and Facebook groups.")}
+                {tr("Baza artykułów w zakładce Poradniki, a w szczegółach etapów — sekcja „Poradniki etapu” z treściami dobranymi do danego etapu. Wiedza dokładnie wtedy, gdy jej potrzebujesz — a nie chaos z Googla i grup na Facebooku.", "A library of articles in the Guides tab, plus a ‘Stage guides’ section in stage details with content picked for that stage — currently available only when the app language is set to Polish. Knowledge exactly when you need it — not chaos from Google and Facebook groups.")}
               </p>
             </Reveal>
 
@@ -71,8 +71,8 @@ export function GuidesSection() {
 
             <Reveal delay={320}>
               <Checklist items={[
-                { b: tr("Sekcja „Dla Ciebie”", "A ‘For You’ section"), r: tr("z treściami dopasowanymi do Twojego etapu", "with content matched to your stage") },
-                { b: tr("Shorts feed", "Shorts feed"), r: tr("krótkie wideo w stylu TikTok — od ekspertów branży", "short TikTok-style videos — from industry experts") },
+                { b: tr("Sekcja „Dla Ciebie”", "A ‘For You’ section"), r: tr("z najnowszymi poradnikami", "with the latest guides") },
+                { b: tr("Wyszukiwarka i „Zapisane”", "Search and bookmarks"), r: tr("znajdź temat i wróć do poradnika później", "find a topic and come back to a guide later") },
                 { b: tr("Pełna baza artykułów", "A full article library"), r: tr("od fundamentów po odbiory budowlane", "from foundations to final inspections") },
               ]} />
             </Reveal>
@@ -125,11 +125,11 @@ export function GuidesSection() {
                 }}
               >
                 <span className="float-chip__icon" style={{ background: "var(--stg-amber)" }}>
-                  <Icon.PlayCircle />
+                  <Icon.Book />
                 </span>
                 <div>
-                  <div>{tr("Dla Ciebie — Instalacje", "For You — Utilities")}</div>
-                  <div className="sub-line">{tr("8 artykułów · 3 wideo", "8 articles · 3 videos")}</div>
+                  <div>{tr("Poradniki etapu — Instalacje", "Stage guides — Utilities")}</div>
+                  <div className="sub-line">{tr("Artykuły dobrane do etapu", "Articles picked for the stage")}</div>
                 </div>
               </div>
             </div>

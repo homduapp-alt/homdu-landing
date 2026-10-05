@@ -64,48 +64,48 @@ export function B2BSection() {
       icon: <Icon.Trophy />,
       g: "var(--stg-blue)",
       title: tr("Główny partner etapu", "Lead stage partner"),
-      desc: tr("Twoja marka jako oficjalny partner wybranego etapu — logo, opis, rekomendowane produkty. Maksymalna widoczność w realnym kontekście.", "Your brand as the official partner of a chosen stage — logo, description, recommended products. Maximum visibility in a real context."),
-      bullets: [tr("Logo i CTA w nagłówku etapu", "Logo and CTA in the stage header"), tr("Lista rekomendowanych produktów", "List of recommended products"), tr("Karta partnera z opisem", "Partner card with a description")],
+      desc: tr("Twoja marka jako główny partner wybranego etapu — karta z logo i podpisem na górze etapu, z przejściem do Twojej strony lub poradnika. Maksymalna widoczność w realnym kontekście.", "Your brand as the lead partner of a chosen stage — a card with your logo and label at the top of the stage, linking to your site or a guide. Maximum visibility in a real context."),
+      bullets: [tr("Karta partnera z logo na górze etapu", "Partner card with logo at the top of the stage"), tr("Kolory marki w nagłówku etapu", "Brand colours in the stage header"), tr("Link do strony lub poradnika", "Link to your site or a guide")],
     },
     {
       tag: tr("Skala", "Scale"),
       icon: <Icon.Store />,
       g: "var(--stg-teal)",
       title: tr("Producenci w etapie", "Manufacturers in a stage"),
-      desc: tr("Obecność wielu marek w katalogu etapu. Idealne dla producentów materiałów, narzędzi i wyposażenia.", "A presence for multiple brands in the stage catalogue. Ideal for manufacturers of materials, tools and equipment."),
-      bullets: [tr("Karta producenta w katalogu", "Manufacturer card in the catalogue"), tr("Linki do kart produktów", "Links to product pages"), tr("Filtry per kategoria", "Filters per category")],
+      desc: tr("Logo Twojej marki w pasku „Inni producenci etapu” — obok innych marek, z przejściem do Twojej strony lub poradnika. Idealne dla producentów materiałów, narzędzi i wyposażenia.", "Your brand's logo in the stage's partner strip (“Inni producenci etapu”) — alongside other brands, linking to your site or a guide. Ideal for manufacturers of materials, tools and equipment."),
+      bullets: [tr("Logo i podpis marki w pasku etapu", "Brand logo and label in the stage strip"), tr("Link do strony lub poradnika", "Link to your site or a guide"), tr("Kilka marek w jednym etapie", "Several brands in one stage")],
     },
     {
       tag: tr("Content", "Content"),
       icon: <Icon.Book />,
       g: "var(--stg-amber)",
       title: tr("Poradniki i treści eksperckie", "Guides and expert content"),
-      desc: tr("Artykuły, wideo i shorts pod marką eksperta — czytane wtedy, kiedy są potrzebne. Bez bannerów, z merytoryką.", "Articles, videos and shorts under an expert's brand — read exactly when they're needed. No banners, all substance."),
-      bullets: [tr("Artykuły z brandingiem", "Branded articles"), tr("Wideo i shorts feed", "Video and shorts feed"), tr("Pozycja eksperta w kategorii", "Expert positioning in a category")],
+      desc: tr("Artykuły pod marką eksperta — czytane wtedy, kiedy są potrzebne. Bez bannerów, z merytoryką.", "Articles under an expert's brand — read exactly when they're needed. No banners, all substance."),
+      bullets: [tr("Artykuły z brandingiem", "Branded articles"), tr("Karty poradników przy etapie", "Guide cards alongside a stage"), tr("Pozycja eksperta w kategorii", "Expert positioning in a category")],
     },
     {
       tag: tr("Finanse", "Finance"),
       icon: <Icon.Bank />,
       g: "var(--stg-purple)",
       title: tr("Rekomendacje finansowe i ubezpieczeniowe", "Financial and insurance recommendations"),
-      desc: tr("Oferty kredytowe, leasingowe i ubezpieczeniowe podane w momencie planowania budżetu inwestycji. Konwersja bliżej decyzji.", "Loan, leasing and insurance offers shown at the moment the project budget is being planned. Conversion closer to the decision."),
-      bullets: [tr("Kalkulator kredytu i raty", "Loan and instalment calculator"), tr("Status ubezpieczenia inwestycji", "Project insurance status"), tr("Lead z kontekstem inwestycji", "Lead with project context")],
+      desc: tr("Sponsorowane rekomendacje ofert kredytowych, leasingowych i ubezpieczeniowych w module finansów — tam, gdzie inwestor planuje budżet inwestycji. Bliżej decyzji.", "Sponsored recommendations for loan, leasing and insurance offers in the finance module — where the homeowner plans the project budget. Closer to the decision."),
+      bullets: [tr("Karta oferty z logo, opisem i przyciskiem", "Offer card with logo, description and button"), tr("Link prowadzi na stronę partnera", "Link opens the partner's site"), tr("Obok kalkulatora zapotrzebowania na finansowanie", "Next to the financing-need calculator")],
     },
     {
       tag: tr("Timing", "Timing"),
       icon: <Icon.Megaphone />,
       g: "var(--stg-rose)",
       title: tr("Obecność w momencie decyzji", "Presence at the moment of decision"),
-      desc: tr("Niestandardowe formaty: powiadomienia push w odpowiednim etapie, eksperci podpinani do checklist, sponsorowane checklisty zakupowe.", "Custom formats: push notifications at the right stage, experts linked to checklists, sponsored shopping checklists."),
-      bullets: [tr("Sponsorowane checklisty zakupowe", "Sponsored shopping checklists"), tr("Push w kontekście etapu", "Push in the context of a stage"), tr("Eksperci podpięci do zadań", "Experts linked to tasks")],
+      desc: tr("Niestandardowe formaty ustalane indywidualnie: sponsorowane checklisty i poradniki ekspertów w zakładce Poradniki oraz w karuzeli poradników przy etapie, którego dotyczą.", "Custom formats agreed individually: sponsored checklists and expert guides in the Guides tab and in the guides carousel of the stage they relate to."),
+      bullets: [tr("Sponsorowane checklisty w poradnikach", "Sponsored checklists in the guides"), tr("Poradniki ekspertów przy etapie", "Expert guides alongside a stage"), tr("Format ustalany indywidualnie", "Format agreed individually")],
     },
     {
-      tag: tr("Fast track", "Fast track"),
+      tag: tr("W przygotowaniu", "In preparation"),
       icon: <Icon.Bolt />,
       g: "var(--stg-green)",
-      title: tr("Hot leady", "Hot leads"),
-      desc: tr("Dostajesz gotowe pliki i informacje potrzebne do przygotowania wyceny. Kontaktuj się z inwestorami w ramach ścieżki fast track.", "You get ready-made files and the information needed to prepare a quote. Reach homeowners through the fast-track path."),
-      bullets: [tr("Komplet plików do wyceny", "A complete file set for a quote"), tr("Dane kontaktowe inwestora", "Homeowner contact details"), tr("Priorytetowa ścieżka fast track", "Priority fast-track path")],
+      title: tr("Zapytania od inwestorów", "Homeowner enquiries"),
+      desc: tr("Format w przygotowaniu — niedostępny w obecnej wersji aplikacji. Wersja 2.0 nie przekazuje partnerom danych kontaktowych ani plików inwestorów; zapytanie do partnera będzie mógł wysłać wyłącznie sam inwestor, za wyraźną zgodą.", "A format in preparation — not available in the current app version. Version 2.0 does not pass homeowners' contact details or files to partners; an enquiry will only ever be sent by the homeowner themselves, with explicit consent."),
+      bullets: [tr("Niedostępne w wersji 2.0", "Not available in version 2.0"), tr("Zapytanie wysyła sam inwestor", "Enquiry sent by the homeowner"), tr("Wyłącznie za wyraźną zgodą", "Only with explicit consent")],
     },
   ];
 
@@ -230,8 +230,8 @@ export function B2BSection() {
                   <Icon.ChartLine />
                 </span>
                 <div>
-                  <div>{tr("Lead z kontekstem", "Lead with context")}</div>
-                  <div className="sub-line">{tr("Etap · Budżet · Lokalizacja", "Stage · Budget · Location")}</div>
+                  <div>{tr("Kontekst etapu", "Stage context")}</div>
+                  <div className="sub-line">{tr("Treści dopasowane do etapu inwestycji", "Content matched to the project stage")}</div>
                 </div>
               </div>
             </div>

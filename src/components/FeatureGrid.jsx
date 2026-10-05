@@ -47,13 +47,13 @@ export function FeatureGrid() {
       icon: <Icon.Book />,
       gradient: "var(--stg-amber)",
       title: tr("Poradniki", "Guides"),
-      desc: tr("Artykuły i wideo dopasowane do Twojego aktualnego etapu prac — nie chaos z dziesięciu zakładek przeglądarki.", "Articles and videos matched to your current stage of work — not chaos across ten browser tabs."),
+      desc: tr("Baza artykułów w zakładce Poradniki i sekcja „Poradniki etapu” w szczegółach etapu — nie chaos z dziesięciu zakładek przeglądarki.", "A library of articles plus stage guides in stage details — not chaos across ten browser tabs. Currently available only when the app language is set to Polish."),
     },
     {
       icon: <Icon.Bank />,
       gradient: "var(--stg-slate)",
       title: tr("Finanse i&nbsp;rekomendacje", "Finance &amp; recommendations"),
-      desc: tr("Kalkulator finansowania, oferty kredytowe i ubezpieczeniowe partnerów — w odpowiednim etapie.", "A financing calculator, partner loan and insurance offers — at the right stage."),
+      desc: tr("Prognoza kosztu końcowego i kalkulator finansowania. W polskiej wersji językowej także propozycje finansowania dobrane do budżetu i wydatków.", "A final-cost forecast and a financing calculator. Financing suggestions are currently shown only when the app language is set to Polish."),
     },
   ];
 
