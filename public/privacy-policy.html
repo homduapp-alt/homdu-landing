@@ -838,6 +838,69 @@
   }
   @media (max-width: 720px) { .doc-foot__btm { padding: 24px 20px 0; } }
 
+  /* ── v2.0: tabele danych i podsumowanie zmian (scripts/legal-md-to-html.mjs) ── */
+  .data-table { table-layout: fixed; font-size: 13.5px; }
+  .data-table thead th { padding: 12px; font-size: 11px; }
+  .data-table tbody td { padding: 12px; overflow-wrap: break-word; }
+  .data-table td.dt-main { color: var(--ink); }
+  .data-table.cols-5 th:nth-child(1) { width: 30%; }
+  .data-table.cols-5 th:nth-child(2) { width: 15%; }
+  .data-table.cols-5 th:nth-child(3) { width: 16%; }
+  .data-table.cols-5 th:nth-child(4) { width: 21%; }
+  .data-table.cols-5 th:nth-child(5) { width: 18%; }
+  .data-table.cols-3 th:nth-child(1) { width: 22%; }
+  .data-table.cols-3 th:nth-child(2) { width: 38%; }
+  .data-table.cols-2 th:nth-child(1) { width: 38%; }
+  @media (max-width: 1180px) {
+    .data-table.cols-5, .data-table.cols-5 thead, .data-table.cols-5 tbody, .data-table.cols-5 tr, .data-table.cols-5 td, .data-table.cols-5 th { display: block; }
+    .data-table.cols-5 thead { display: none; }
+    .data-table.cols-5 { border: none; padding: 0; background: transparent; }
+    .data-table.cols-5 tbody tr {
+      background: var(--doc-card);
+      border: 1px solid var(--doc-rule);
+      border-radius: var(--r-md);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .data-table.cols-5 tbody td { padding: 0; border: none; margin-bottom: 12px; font-size: 14.5px; }
+    .data-table.cols-5 tbody td:last-child { margin-bottom: 0; }
+    .data-table.cols-5 tbody td::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-3); margin-bottom: 3px;
+    }
+    .data-table.cols-5 tbody tr:hover td { background: transparent; }
+  }
+  @media (max-width: 720px) {
+    .data-table, .data-table thead, .data-table tbody, .data-table tr, .data-table td, .data-table th { display: block; }
+    .data-table thead { display: none; }
+    .data-table { border: none; padding: 0; background: transparent; }
+    .data-table tbody tr {
+      background: var(--doc-card);
+      border: 1px solid var(--doc-rule);
+      border-radius: var(--r-md);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .data-table tbody td { padding: 0; border: none; margin-bottom: 12px; font-size: 14.5px; }
+    .data-table tbody td:last-child { margin-bottom: 0; }
+    .data-table tbody td::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-3); margin-bottom: 3px;
+    }
+    .data-table tbody tr:hover td { background: transparent; }
+  }
+  .doc-content code { font-size: 0.92em; padding: 1px 5px; border-radius: 4px; background: var(--doc-accent-tint); }
+  .doc-changes ol { padding-left: 22px; }
+  .doc-changes li { margin: 8px 0; }
+  .doc-hero .lead.doc-version { font-size: 15px; color: var(--ink-3); margin-top: 14px; }
+  .doc-hero .lead.doc-version a { color: var(--doc-accent); border-bottom: 1px solid var(--doc-accent-soft); }
+  /* ── /v2.0 ── */
 </style>
 <!-- Google Analytics 4 + Consent Mode v2 -->
 <script>
@@ -897,14 +960,14 @@
     </nav>
     <h1>homdu app Privacy Policy.</h1>
     <div class="badges">
-      <span class="doc-badge"><span class="dot"></span><span class="lbl">Effective date:</span> <span class="val">24 May 2026</span></span>
-      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Last updated:</span> <span class="val">22 June 2026</span></span>
+      <span class="doc-badge"><span class="dot"></span><span class="lbl">Effective date:</span> <span class="val">5 October 2026</span></span>
+      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Last updated:</span> <span class="val">6 October 2026</span></span>
     </div>
     <p class="lead">
-      This Privacy Policy describes how the personal data of users of the <strong>homdu</strong> mobile app (the "App"), which supports planning, building and renovation, is processed. The document explains what data is collected, for what purposes, on what legal basis, with whom it may be shared, and what rights users have.
+      This Privacy Policy describes how the personal data of users of the <strong>homdu</strong> app (the "App") — a building and renovation journal — is processed. It explains what data is processed, for what purpose, on what legal basis, where it is located, who receives it and what rights users have.
     </p>
-    <p class="lead" style="margin-top:14px;">
-      Please read this Policy carefully before you start using the App. Using App features that involve the processing of personal data means you have read the rules described in this document.
+    <p class="lead doc-version">
+      <strong>Version:</strong> 2.0 — applies to the homdu App version 2.0 and later. <strong>Replaces:</strong> the Privacy Policy of 22 June 2026, which applied to versions 1.x of the App — <a href="/privacy-policy-2026-06-22">previous version</a>.
     </p>
   </div>
 </section>
@@ -916,26 +979,27 @@
   <aside class="toc" aria-label="Table of contents">
     <p class="toc__title">Contents</p>
     <ul class="toc__list" id="toc-list">
+      <li><a href="#sec-0"><span class="num">•</span><span>Summary of changes in version 2.0</span></a></li>
       <li><a href="#sec-1"><span class="num">1.</span><span>Data controller</span></a></li>
       <li><a href="#sec-2"><span class="num">2.</span><span>Definitions</span></a></li>
-      <li><a href="#sec-3"><span class="num">3.</span><span>General processing principles</span></a></li>
-      <li><a href="#sec-4"><span class="num">4.</span><span>Categories of data processed</span></a></li>
+      <li><a href="#sec-3"><span class="num">3.</span><span>General principles and the four areas where data is stored</span></a></li>
+      <li><a href="#sec-4"><span class="num">4.</span><span>What data we process — tables by category</span></a></li>
       <li><a href="#sec-5"><span class="num">5.</span><span>Sources of data</span></a></li>
-      <li><a href="#sec-6"><span class="num">6.</span><span>Purposes and legal bases</span></a></li>
-      <li><a href="#sec-7"><span class="num">7.</span><span>Local data, iCloud and external services</span></a></li>
-      <li><a href="#sec-8"><span class="num">8.</span><span>User account and authentication</span></a></li>
-      <li><a href="#sec-9"><span class="num">9.</span><span>Analytics, telemetry, diagnostics and consent</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>Purposes and legal bases of processing</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Where the data is located</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Account and Account deletion</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>Consents: analytics and marketing</span></a></li>
       <li><a href="#sec-10"><span class="num">10.</span><span>Data recipients</span></a></li>
-      <li><a href="#sec-11"><span class="num">11.</span><span>Transfers outside the EEA</span></a></li>
+      <li><a href="#sec-11"><span class="num">11.</span><span>Transfers of data outside the EEA</span></a></li>
       <li><a href="#sec-12"><span class="num">12.</span><span>Data retention period</span></a></li>
-      <li><a href="#sec-13"><span class="num">13.</span><span>Profiling and automated decisions</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Profiling and automated decision-making</span></a></li>
       <li><a href="#sec-14"><span class="num">14.</span><span>Cookies and similar technologies</span></a></li>
-      <li><a href="#sec-15"><span class="num">15.</span><span>iOS feature integrations</span></a></li>
+      <li><a href="#sec-15"><span class="num">15.</span><span>iOS permissions and system features</span></a></li>
       <li><a href="#sec-16"><span class="num">16.</span><span>Data security</span></a></li>
       <li><a href="#sec-17"><span class="num">17.</span><span>User rights</span></a></li>
       <li><a href="#sec-18"><span class="num">18.</span><span>Children's data</span></a></li>
-      <li><a href="#sec-19"><span class="num">19.</span><span>Changes to the Policy</span></a></li>
-      <li><a href="#sec-20"><span class="num">20.</span><span>Contact</span></a></li>
+      <li><a href="#sec-19"><span class="num">19.</span><span>Changes to the Privacy Policy</span></a></li>
+      <li><a href="#sec-20"><span class="num">20.</span><span>Privacy contact</span></a></li>
     </ul>
   </aside>
 
@@ -943,36 +1007,53 @@
   <details class="toc-mobile">
     <summary>Contents — 20 sections</summary>
     <ul class="toc__list">
+      <li><a href="#sec-0"><span class="num">•</span><span>Summary of changes in version 2.0</span></a></li>
       <li><a href="#sec-1"><span class="num">1.</span><span>Data controller</span></a></li>
       <li><a href="#sec-2"><span class="num">2.</span><span>Definitions</span></a></li>
-      <li><a href="#sec-3"><span class="num">3.</span><span>General principles</span></a></li>
-      <li><a href="#sec-4"><span class="num">4.</span><span>Categories of data</span></a></li>
+      <li><a href="#sec-3"><span class="num">3.</span><span>General principles and the four areas where data is stored</span></a></li>
+      <li><a href="#sec-4"><span class="num">4.</span><span>What data we process — tables by category</span></a></li>
       <li><a href="#sec-5"><span class="num">5.</span><span>Sources of data</span></a></li>
-      <li><a href="#sec-6"><span class="num">6.</span><span>Purposes and legal bases</span></a></li>
-      <li><a href="#sec-7"><span class="num">7.</span><span>Local / iCloud / services</span></a></li>
-      <li><a href="#sec-8"><span class="num">8.</span><span>Account and authentication</span></a></li>
-      <li><a href="#sec-9"><span class="num">9.</span><span>Analytics and consent</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>Purposes and legal bases of processing</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Where the data is located</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Account and Account deletion</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>Consents: analytics and marketing</span></a></li>
       <li><a href="#sec-10"><span class="num">10.</span><span>Data recipients</span></a></li>
-      <li><a href="#sec-11"><span class="num">11.</span><span>Transfers outside the EEA</span></a></li>
-      <li><a href="#sec-12"><span class="num">12.</span><span>Retention period</span></a></li>
-      <li><a href="#sec-13"><span class="num">13.</span><span>Profiling</span></a></li>
-      <li><a href="#sec-14"><span class="num">14.</span><span>Cookies</span></a></li>
-      <li><a href="#sec-15"><span class="num">15.</span><span>iOS integrations</span></a></li>
-      <li><a href="#sec-16"><span class="num">16.</span><span>Security</span></a></li>
+      <li><a href="#sec-11"><span class="num">11.</span><span>Transfers of data outside the EEA</span></a></li>
+      <li><a href="#sec-12"><span class="num">12.</span><span>Data retention period</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Profiling and automated decision-making</span></a></li>
+      <li><a href="#sec-14"><span class="num">14.</span><span>Cookies and similar technologies</span></a></li>
+      <li><a href="#sec-15"><span class="num">15.</span><span>iOS permissions and system features</span></a></li>
+      <li><a href="#sec-16"><span class="num">16.</span><span>Data security</span></a></li>
       <li><a href="#sec-17"><span class="num">17.</span><span>User rights</span></a></li>
       <li><a href="#sec-18"><span class="num">18.</span><span>Children's data</span></a></li>
-      <li><a href="#sec-19"><span class="num">19.</span><span>Changes</span></a></li>
-      <li><a href="#sec-20"><span class="num">20.</span><span>Contact</span></a></li>
+      <li><a href="#sec-19"><span class="num">19.</span><span>Changes to the Privacy Policy</span></a></li>
+      <li><a href="#sec-20"><span class="num">20.</span><span>Privacy contact</span></a></li>
     </ul>
   </details>
 
   <main class="doc-content">
 
+    <!-- ── zmiany ── -->
+    <section class="doc-section doc-changes" id="sec-0">
+      <h2>Summary of changes in version 2.0</h2>
+      <p>Compared with the previous version:</p>
+      <ol>
+        <li><strong>Project sharing</strong> — we describe what data invited people see, how permissions work and how sharing ends (sections <a href="#sec-4-2">4.2</a> and <a href="#sec-7-3">7.3</a>).</li>
+        <li><strong>Files in iCloud</strong> — expense attachments, covers, backgrounds and album photos now go to iCloud as well (sections <a href="#sec-4-1">4.1</a> and <a href="#sec-7-2">7.2</a>).</li>
+        <li><strong>Demo mode</strong> — the sample Project's data is stored on the device; the App does not send it to iCloud or to any server (sections <a href="#sec-4-7">4.7</a> and <a href="#sec-7-1">7.1</a>).</li>
+        <li><strong>Two separate consent categories</strong> — "Analytics and diagnostics" (Firebase Analytics and Crashlytics) and "Marketing" (Meta), with a description of the identifiers involved, including the IDFA (section <a href="#sec-9">9</a>).</li>
+        <li><strong>Account</strong> — signing in with "Sign in with Apple" is required to create your own Projects and to synchronise (section <a href="#sec-8">8</a>).</li>
+        <li><strong>Notifications</strong> — we describe the registration of the device on our backend, which takes place when the App is launched, also without an Account (sections <a href="#sec-4-5">4.5</a> and <a href="#sec-7-4">7.4</a>).</li>
+        <li><strong>Account deletion</strong> — we describe what the "Delete account" feature deletes, what it does not delete and how to complete the deletion (section <a href="#sec-8">8</a>).</li>
+        <li><strong>Document layout</strong> — we added "what data / why / legal basis / recipient / how long" tables and a clear split between the device, iCloud, our backend and third parties (sections <a href="#sec-3">3</a> and <a href="#sec-4">4</a>).</li>
+        <li><strong>Legal bases and retention periods</strong> — registering the device and sending notifications from our backend now rely on legitimate interest, and service messages on the contract (previously: system permission for notifications, and the contract); crash reports rely on consent only (previously: consent and legitimate interest); content and the referral programme rely on the contract (previously: the contract and legitimate interest). The device record and referral programme data are kept with no automatic time limit, until deleted at your request (sections <a href="#sec-4-5">4.5</a>, <a href="#sec-4-8">4.8</a>, <a href="#sec-6">6</a>, <a href="#sec-12">12</a> and <a href="#sec-17">17</a>).</li>
+      </ol>
+    </section>
+
     <!-- ── 1 ── -->
     <section class="doc-section" id="sec-1">
       <h2><span class="secnum">01</span>Data controller</h2>
-      <p>The controller of personal data within the meaning of Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 (the <strong>"GDPR"</strong>) is:</p>
-
+      <p>The controller of personal data within the meaning of Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 (the "GDPR") is:</p>
       <div class="admin-card">
         <div class="admin-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/><path d="M10 10h.01M14 10h.01M10 13h.01M14 13h.01"/></svg>
@@ -987,420 +1068,486 @@
           </dl>
         </div>
       </div>
-
-      <p>(the <strong>"Controller"</strong>, <strong>"we"</strong>).</p>
-      <p>For all matters relating to the processing of personal data and the exercise of rights under the GDPR, you can contact the Controller at the email address indicated above.</p>
-      <p>The Controller has not appointed a data protection officer. Contact functions in the area of data protection are performed directly by the Controller.</p>
+      <p>(the "Controller", "we").</p>
+      <p>The Controller has not appointed a data protection officer. For matters concerning personal data and the exercise of rights under the GDPR, please use the email address above.</p>
+      <p>The Controller is responsible for data that reaches it or the processors acting on its behalf (sections <a href="#sec-7-4">7.4</a> and <a href="#sec-10">10</a>). For events passed to Meta after the "Marketing" consent, the roles of the Controller and Meta are described in section <a href="#sec-9-6">9.6</a>. Content that the User keeps on their own device and in iCloud is not accessible to the Controller (sections <a href="#sec-7-1">7.1</a>–<a href="#sec-7-3">7.3</a>).</p>
     </section>
 
     <!-- ── 2 ── -->
     <section class="doc-section" id="sec-2">
       <h2><span class="secnum">02</span>Definitions</h2>
-      <p>For the purposes of this Policy, the following meanings are adopted:</p>
       <ul>
-        <li><strong>App</strong> – the homdu mobile app for iOS devices (and, in the future, for other mobile platforms).</li>
-        <li><strong>User</strong> – a natural person using the App.</li>
-        <li><strong>Personal data</strong> – any information about an identified or identifiable natural person.</li>
-        <li><strong>Processing</strong> – any operation performed on personal data, e.g. collection, storage, modification, sharing, deletion.</li>
-        <li><strong>Project</strong> – a building or renovation project run by the User in the App, together with its assigned stages, tasks, costs, documents, photos, contacts and notes.</li>
-        <li><strong>Project Owner</strong> – a User who shares a Project with another User.</li>
-        <li><strong>Collaborator</strong> – a User who has accepted an invitation to a shared Project.</li>
-        <li><strong>Shared Project</strong> – a Project shared between Users through Apple's CloudKit / CKShare mechanisms.</li>
-        <li><strong>Device</strong> – the mobile device on which the App is installed.</li>
-        <li><strong>Processor</strong> – an entity processing personal data on behalf of and on the instructions of the Controller.</li>
+        <li><strong>App</strong> – the homdu app for iPhone and iPad, made available on the App Store.</li>
+        <li><strong>User</strong> ("you") – a natural person using the App.</li>
+        <li><strong>Account</strong> – the User's account in the App, created by signing in with "Sign in with Apple".</li>
+        <li><strong>Personal data</strong> – information about an identified or identifiable natural person.</li>
+        <li><strong>Project</strong> – a building or renovation project run in the App, together with the content assigned to it.</li>
+        <li><strong>Project Owner</strong> – the User who created a Project and may share it with other people.</li>
+        <li><strong>Collaborator</strong> – a person who has accepted an invitation to a Shared Project (a share participant).</li>
+        <li><strong>Shared Project</strong> – a Project shared with Collaborators through Apple's CloudKit service.</li>
+        <li><strong>Demo mode</strong> – using the sample Project generated in the App; it is available without an Account, and a signed-in User can switch the sample Project on in the App's Settings.</li>
+        <li><strong>iCloud / CloudKit</strong> – Apple services for storing and synchronising data in the User's Apple account.</li>
+        <li><strong>Backend</strong> – the Controller's <code>homdu-api</code> service: code running with the hosting provider Vercel and a Google Cloud Firestore database.</li>
+        <li><strong>Device</strong> – the device on which the App is installed.</li>
+        <li><strong>IDFA</strong> – the advertising identifier of an Apple device.</li>
+        <li><strong>IDFV</strong> – the identifier for vendor: an identifier assigned to the Device for the apps of a single publisher.</li>
+        <li><strong>ATT</strong> – the iOS system prompt asking for permission to track (App Tracking Transparency).</li>
+        <li><strong>Processor</strong> – an entity processing data on behalf of and on the instructions of the Controller.</li>
         <li><strong>EEA</strong> – the European Economic Area.</li>
       </ul>
     </section>
 
     <!-- ── 3 ── -->
     <section class="doc-section" id="sec-3">
-      <h2><span class="secnum">03</span>General processing principles</h2>
-      <p>3.1. We process personal data in accordance with the GDPR, the Polish Act of 10 May 2018 on the protection of personal data and other applicable laws.</p>
-      <p>3.2. We apply the principle of <strong>data minimisation</strong> – we collect only the data necessary to achieve specific, clearly defined purposes.</p>
-      <p>3.3. An important feature of the App is that a significant part of the User's data (e.g. project content, photos, notes, documents) is stored <strong>locally on the device</strong> and – if the User uses synchronisation – in the <strong>User's private iCloud space</strong>. In many cases the Controller has no technical access to this content. Details are described in section 7.</p>
-      <p>3.4. Some App features (e.g. analytics, telemetry, certain personalisations) work <strong>only after the User gives consent</strong> and can be turned off at any time.</p>
+      <h2><span class="secnum">03</span>General principles and the four areas where data is stored</h2>
+      <p id="sec-3-1">3.1. We process data in accordance with the GDPR, the Polish Act of 10 May 2018 on the protection of personal data and other applicable laws.</p>
+      <p id="sec-3-2">3.2. We apply data minimisation: we process only the data needed for specified purposes.</p>
+      <p id="sec-3-3">3.3. Data related to the App is located in four areas. This split is used throughout the document.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-3">
+          <thead>
+            <tr><th>Area</th><th>What it holds</th><th>Who has access</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Area"><strong>A. Your Device</strong></td><td data-label="What it holds">Project content, document files, Demo mode data, finance form data, App settings and saved consents, the keychain</td><td data-label="Who has access">You (for device backups, see section <a href="#sec-7-1">7.1</a>)</td></tr>
+            <tr><td class="dt-main" data-label="Area"><strong>B. iCloud (Apple)</strong></td><td data-label="What it holds">synchronised content and files of your Projects; Shared Project data — in the iCloud of its Project Owner (yours, if you are the one sharing)</td><td data-label="Who has access">You and the Collaborators invited by the Project Owner; Apple as the service provider. <strong>The Controller has no access to this data.</strong></td></tr>
+            <tr><td class="dt-main" data-label="Area"><strong>C. Our Backend</strong></td><td data-label="What it holds">the Device record for notifications, referral programme data, technical request data</td><td data-label="Who has access">The Controller and its processors (Vercel, Google). In the referral programme, the referrer's identifier also reaches, in the Backend's response, the Device of the person who used the referrer's code (section <a href="#sec-4-8">4.8</a>). The notification token is also processed by Google (Firebase Cloud Messaging) and Apple (APNs) to deliver notifications — this does not depend on the consents described in section <a href="#sec-9">9</a>.</td></tr>
+            <tr><td class="dt-main" data-label="Area"><strong>D. Third parties for analytics and marketing — after consent is given</strong></td><td data-label="What it holds">analytics events and crash reports (Google), conversion events (Meta)</td><td data-label="Who has access">Google, Meta</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The following fall outside these areas: email correspondence with the Controller (section <a href="#sec-4-8">4.8</a>), fetching images from Sanity's servers (section <a href="#sec-10-5">10.5</a>) and the configuration connection of the Meta SDK (section <a href="#sec-9-3">9.3</a>).</p>
+      <p id="sec-3-4">3.4. Collection of analytics events, crash reports and marketing events is switched on only after a consent is saved (including a consent saved in version 1.x — section <a href="#sec-9-1">9.1</a>); consent can be withdrawn at any time (section <a href="#sec-9">9</a>).</p>
     </section>
 
     <!-- ── 4 ── -->
     <section class="doc-section" id="sec-4">
-      <h2><span class="secnum">04</span>Categories of data processed</h2>
-      <p>Below we present the categories of data that may be processed in connection with using the App. For each category we indicate its nature:</p>
+      <h2><span class="secnum">04</span>What data we process — tables by category</h2>
 
-      <div class="chip-legend" aria-label="Legend">
-        <div class="chip-legend__row"><span class="chip chip--w">R</span><span><strong>Required</strong> – necessary to provide a given feature or service.</span></div>
-        <div class="chip-legend__row"><span class="chip chip--o">O</span><span><strong>Optional</strong> – provided voluntarily by the User.</span></div>
-        <div class="chip-legend__row"><span class="chip chip--z">C</span><span><strong>With consent</strong> – processed only on the basis of the User's consent.</span></div>
-        <div class="chip-legend__row"><span class="chip chip--s">S</span><span><strong>iOS system</strong> – dependent on the iOS system permissions granted by the User.</span></div>
+      <h3 id="sec-4-1">4.1. iCloud synchronisation (area B)</h3>
+      <p>Applies to signed-in Users with iCloud enabled.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>What data</th><th>Why</th><th>Legal basis</th><th>Recipient / where it goes</th><th>How long</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="What data">Project content: Project details (name, address, plot and property details entered in the App, budget), journal entries, stages, tasks, expenses, budgets, contacts (including ratings and notes about contractors), descriptions of stage files (name and type), links, albums, events</td><td data-label="Why">synchronisation between your devices</td><td data-label="Legal basis">Art. 6(1)(b) GDPR (performance of the agreement for the use of the App)</td><td data-label="Recipient / where it goes">the User's private iCloud database, operated by Apple. The Controller has no access.</td><td data-label="How long">until you delete the content or the Project, subject to the caveat described in section <a href="#sec-7-2">7.2</a>; Account deletion — see section <a href="#sec-8">8</a></td></tr>
+            <tr><td class="dt-main" data-label="What data">Files: expense attachments (including receipt photos); Project and stage covers; stage backgrounds; stage album photos. Text recognised from receipts on the Device (OCR) may be saved together with the attachment.</td><td data-label="Why">as above</td><td data-label="Legal basis">as above</td><td data-label="Recipient / where it goes">as above</td><td data-label="How long">as above</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The App does not send files from the "Documents" tab or journal entry photos to iCloud — they are stored on the Device (for device backups, see section <a href="#sec-7-1">7.1</a>). The App sends album photos to iCloud only on specific events — in particular at the first sign-in and when sharing of a Project is created or ended; photos added to an album later may remain on the Device only. If you used version 1.x, document descriptions saved by that version may remain in your iCloud.</p>
+
+      <h3 id="sec-4-2">4.2. Project sharing (area B)</h3>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>What data</th><th>Why</th><th>Legal basis</th><th>Recipient / where it goes</th><th>How long</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="What data">Content of the Shared Project: Project details (name, address, plot and property details entered in the App), journal entries, stages, tasks, expenses, budgets (including the Project budget), contacts (including ratings and notes about contractors), descriptions of stage files (name and type), links, albums, events</td><td data-label="Why">running the Project jointly with the people chosen by the Project Owner</td><td data-label="Legal basis">Art. 6(1)(b) GDPR</td><td data-label="Recipient / where it goes">Collaborators invited by the Project Owner; Apple (iCloud). The data stays in the Project Owner's private iCloud database. The Controller has no access.</td><td data-label="How long">in the Project Owner's iCloud — until the Project Owner deletes the content or the Project, subject to the caveats described in sections <a href="#sec-7-2">7.2</a> and <a href="#sec-7-3">7.3</a>; ending the share does not by itself delete this data; local copies — see section <a href="#sec-7-3">7.3</a></td></tr>
+            <tr><td class="dt-main" data-label="What data">Files of the Shared Project: expense attachments, covers and backgrounds, album photos — some of them are saved as originals, together with photo metadata</td><td data-label="Why">as above</td><td data-label="Legal basis">as above</td><td data-label="Recipient / where it goes">as above</td><td data-label="How long">as above</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The App does not record who added an expense or an entry. The list of share participants is kept and displayed by Apple in the system share sheet (section <a href="#sec-7-3">7.3</a>).</p>
+
+      <h3 id="sec-4-3">4.3. Analytics and diagnostics — after the "Analytics" consent (area D)</h3>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>What data</th><th>Why</th><th>Legal basis</th><th>Recipient / where it goes</th><th>How long</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="What data">App usage events (e.g. opening a screen, adding an expense) with categories and value ranges; App installation identifier; identifier for vendor (IDFV); Device and system data (e.g. model, system version, App version, language); technical connection data, including the IP address processed by the provider. <strong>The IDFA advertising identifier</strong> — only if you allowed tracking in the ATT prompt.</td><td data-label="Why">measuring use of the App and improving it</td><td data-label="Legal basis">Art. 6(1)(a) GDPR (consent)</td><td data-label="Recipient / where it goes">Google Ireland Limited / Google LLC — the Firebase Analytics service</td><td data-label="How long">2 months; aggregated statistical reports may be kept longer</td></tr>
+            <tr><td class="dt-main" data-label="What data">Crash and error reports (including synchronisation errors): stack trace and App state, technical details of the error, installation identifier, Device and system data</td><td data-label="Why">detecting and fixing errors</td><td data-label="Legal basis">Art. 6(1)(a) GDPR (consent)</td><td data-label="Recipient / where it goes">Google Ireland Limited / Google LLC — the Firebase Crashlytics service</td><td data-label="How long">90 days</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Analytics events do not contain Project names, the content of notes, contact data or exact amounts. Individual events may contain a simplified form of the name of a stage you created (lower case, without Polish diacritics) or a technical description of an error. Events about financial suggestions contain the title of the suggestion displayed or opened (section <a href="#sec-13-2">13.2</a>).</p>
+
+      <h3 id="sec-4-4">4.4. Marketing — after the "Marketing" consent (area D)</h3>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>What data</th><th>Why</th><th>Legal basis</th><th>Recipient / where it goes</th><th>How long</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="What data">Conversion events: installation and launch of the App and selected events — signing in, completing onboarding, adding an event (with its kind), completing a stage, opening a guide (with its content type) or bookmarking it, searching guides (number of results), rating a contractor (the rating value), responding positively to the prompt to rate the App, marking a contractor as hired, saving the finance form (type of enquiry and amount range), opening partner content; an installation identifier assigned by the Meta SDK (random, stored on the Device; it allows the same installation of the App to be recognised across events); data about the Device and the App (e.g. model, system and App version, language, time zone, carrier, screen size); tracking permission status</td><td data-label="Why">measuring the effectiveness of the App's advertising in Meta's services; on Meta's side also the purposes set out in section <a href="#sec-9-6">9.6</a></td><td data-label="Legal basis">Art. 6(1)(a) GDPR (consent)</td><td data-label="Recipient / where it goes">Meta Platforms Ireland Limited</td><td data-label="How long">according to Meta's retention rules</td></tr>
+            <tr><td class="dt-main" data-label="What data">The IDFA advertising identifier — <strong>only when both</strong> the "Marketing" consent <strong>and</strong> the consent in the ATT prompt have been given</td><td data-label="Why">attributing installations and events to advertising</td><td data-label="Legal basis">Art. 6(1)(a) GDPR (consent)</td><td data-label="Recipient / where it goes">Meta Platforms Ireland Limited</td><td data-label="How long">as above</td></tr>
+          </tbody>
+        </table>
       </div>
 
-      <h3>4.1. Account and authentication data</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--w">R</span></span><span>User identifier linked to the <strong>Sign in with Apple</strong> service (e.g. a persistent, anonymous identifier assigned by Apple) <em style="color:var(--ink-3)">— if the User uses sign-in</em>.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>email address – only if the User decides to share it when signing in with Apple (Apple allows the email address to be hidden via the "Hide My Email" feature).</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>first name or display name, if provided.</span></li>
-      </ul>
+      <h3 id="sec-4-5">4.5. Notifications (area C)</h3>
+      <p>The App registers the Device for notifications at every launch — also without an Account and regardless of the consents described in section <a href="#sec-9">9</a> and of whether you allowed notifications to be displayed.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>What data</th><th>Why</th><th>Legal basis</th><th>Recipient / where it goes</th><th>How long</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="What data">Device record: notification token (Firebase Cloud Messaging / Apple Push Notification service — APNs); Apple user identifier — if you are signed in; App and system version; App language; time zone; notification category settings; registration status and dates</td><td data-label="Why">enabling notifications to be sent from the Backend: messages encouraging you to return to the App, and service messages</td><td data-label="Legal basis">Art. 6(1)(f) GDPR — the Controller's legitimate interest in keeping in touch with Users of the App; for service messages — Art. 6(1)(b) GDPR</td><td data-label="Recipient / where it goes">our Backend: a Google Cloud Firestore database (located in Europe), code hosted on Vercel; Google (Firebase Cloud Messaging) — which receives the token and the Firebase installation identifier directly from the App — and Apple (APNs) as delivery providers</td><td data-label="How long">on the Backend — no automatic time limit, until deleted at your request (section <a href="#sec-8-6">8.6</a>); signing out and "Delete account" mark the record as inactive but do not delete it; at Google — under Firebase's rules: until the installation identifier is deleted, and then up to 180 days</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Task deadline reminders, budget alerts and inactivity reminders are created on the Device and do not pass through the Backend. Apple delivers information about changes in synchronised data to the App as silent iCloud notifications.</p>
+      <p>Displaying a notification requires your permission in iOS. You can switch off the categories of notifications sent from the Backend in the App: Settings → "Notifications" → "Notification settings". The switches are shown only if you have allowed notifications in iOS. The "System notifications" category (service messages) cannot be switched off. Switching a category off does not delete the Device record from the Backend.</p>
 
-      <h3>4.2. Project data (content created by the User)</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>names and descriptions of projects, stages and tasks.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>cost, budget, deadline and status data.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>links, text notes and other content added by the User.</span></li>
-      </ul>
+      <h3 id="sec-4-6">4.6. Account — "Sign in with Apple" (areas A and C)</h3>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>What data</th><th>Why</th><th>Legal basis</th><th>Recipient / where it goes</th><th>How long</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="What data">User identifier assigned by Apple</td><td data-label="Why">signing in; creating your own Projects and synchronising them</td><td data-label="Legal basis">Art. 6(1)(b) GDPR; for storage in the Device record and in the referral programme — the purposes and legal bases given in sections <a href="#sec-4-5">4.5</a> and <a href="#sec-4-8">4.8</a></td><td data-label="Recipient / where it goes">the keychain and App settings on the Device; Apple as the sign-in provider; our Backend — in the Device record (section <a href="#sec-4-5">4.5</a>) and in the referral programme (section <a href="#sec-4-8">4.8</a>)</td><td data-label="How long">on the Device — until you sign out or the Account is deleted, with the exception described in section <a href="#sec-8-5">8.5</a>; on the Backend — as in sections <a href="#sec-4-5">4.5</a> and <a href="#sec-4-8">4.8</a></td></tr>
+            <tr><td class="dt-main" data-label="What data">Name and email address — only if Apple passes them at the first sign-in (the address may be a relay address of the "Hide My Email" feature)</td><td data-label="Why">display in the App's Settings</td><td data-label="Legal basis">Art. 6(1)(b) GDPR</td><td data-label="Recipient / where it goes">the Device keychain; this data is not sent off the Device</td><td data-label="How long">until you sign out or the Account is deleted</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-      <h3>4.3. Contact and contractor data</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>contact details of contractors, suppliers or other people that the User adds to the App themselves (e.g. name, phone number, email address, company name, notes).</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span><span class="chip chip--s">S</span></span><span>contact data imported from the iOS system address book, if the User grants the relevant system permission.</span></li>
-      </ul>
+      <h3 id="sec-4-7">4.7. Demo mode (area A)</h3>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>What data</th><th>Why</th><th>Legal basis</th><th>Recipient / where it goes</th><th>How long</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="What data">The sample Project generated in the App and the changes you make to it</td><td data-label="Why">getting to know the App without an Account</td><td data-label="Legal basis">not applicable — the App stores this data on the Device and it does not reach the Controller</td><td data-label="Recipient / where it goes">no recipients. The App does not send this data to iCloud or to any server (for device backups, see section <a href="#sec-7-1">7.1</a>).</td><td data-label="How long">until the sample Project is deleted (manually or when you create your own Project), the Account is deleted or the App is removed from the Device</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Using the App without an Account does not require you to provide personal data. Even without an Account, however, the App makes the connections described in sections <a href="#sec-4-5">4.5</a> (registering the Device for notifications), 4.8 (content, referral programme), 9.3 (the configuration connection of the Meta SDK) and 10.5 (images from Sanity's servers) and — after consents are saved — in sections <a href="#sec-4-3">4.3</a> and <a href="#sec-4-4">4.4</a>.</p>
 
-      <h3>4.4. Photos, documents and files</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--o">O</span><span class="chip chip--s">S</span></span><span>photos and albums added to projects.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>notes and descriptions assigned to photos.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>documents and files attached by the User.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span><span class="chip chip--s">S</span></span><span>file metadata (e.g. date and, in some cases, location data saved in photos by the device), where the User adds such files themselves.</span></li>
-      </ul>
+      <h3 id="sec-4-8">4.8. Content, search and referral programme (area C), and contact with the Controller</h3>
+      <p>Content from the Backend and the referral programme work only when the App language is Polish.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>What data</th><th>Why</th><th>Legal basis</th><th>Recipient / where it goes</th><th>How long</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="What data">Technical data of requests sent to the Backend when content is fetched (e.g. IP address, date and time, App version and language, the key of the stage the content is fetched for — for a stage outside the App's template, in particular one you created, this is the stage's name in simplified form)</td><td data-label="Why">delivering the content; security and diagnostics of the service</td><td data-label="Legal basis">Art. 6(1)(b) GDPR; for logs — Art. 6(1)(f) GDPR (the Controller's legitimate interest in protecting the service and its Users)</td><td data-label="Recipient / where it goes">our Backend (Vercel)</td><td data-label="How long">runtime logs at the hosting provider — currently up to 1 hour; we do not keep our own log archive</td></tr>
+            <tr><td class="dt-main" data-label="What data">The phrase typed into the guide search — without a user identifier</td><td data-label="Why">finding content</td><td data-label="Legal basis">Art. 6(1)(b) GDPR</td><td data-label="Recipient / where it goes">our Backend (Vercel), which passes the phrase to the Sanity content system</td><td data-label="How long">the Backend does not store the phrase in its database; the phrase is part of the request address, so it may appear in the hosting provider's logs (currently up to 1 hour) and in the short-lived response cache</td></tr>
+            <tr><td class="dt-main" data-label="What data">Referral programme: an identifier — the Apple user identifier or, for a person without an Account, the identifier for vendor (IDFV); referral code; information about who referred whom and when; counters, level and badges. A profile is created automatically: for a signed-in person — after signing in and when the App is launched; for a person without an Account — when the App displays the programme card in the Journal or the sheet for entering a referral code.</td><td data-label="Why">operating the referral programme</td><td data-label="Legal basis">Art. 6(1)(b) GDPR (participation in the programme)</td><td data-label="Recipient / where it goes">our Backend: a Google Cloud Firestore database (located in Europe); identifiers and codes are also written to runtime logs; the Backend's response to code activation contains the referrer's identifier and reaches the Device of the person who used that code — the App does not read or display it</td><td data-label="How long">no automatic time limit, until deleted at your request (section <a href="#sec-8-6">8.6</a>)</td></tr>
+            <tr><td class="dt-main" data-label="What data">Contact with the Controller: email address and message content</td><td data-label="Why">replying; handling requests</td><td data-label="Legal basis">Art. 6(1)(f) GDPR (the Controller's legitimate interest in replying to a person who has contacted it); for GDPR requests — Art. 6(1)(c) GDPR</td><td data-label="Recipient / where it goes">the Controller; the email provider</td><td data-label="How long">for as long as the matter is handled, and then for the limitation period of any claims</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-      <h3>4.5. Technical and diagnostic data</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--w">R</span></span><span>device model, operating system version, App version, language and regional settings.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--z">C</span></span><span>data on crashes, errors and App stability (diagnostic reports) – within the scope of crash reporting in the Crashlytics service.</span></li>
-      </ul>
-
-      <h3>4.6. Analytics and telemetry data</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--z">C</span></span><span>events relating to App usage (e.g. opening a screen, using a feature), analytics identifiers assigned by analytics tools, approximate information about how the App is used.</span></li>
-      </ul>
-
-      <h3>4.7. In-app activity data</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--w">R</span><span class="chip chip--z">C</span></span><span>information about the status and progress of projects, recently used features and interface preferences – to the extent necessary for the App to work and, where covered by consent, for analytics.</span></li>
-      </ul>
-
-      <h3>4.8. Notification-related data</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--z">C</span><span class="chip chip--s">S</span></span><span>the push notification token assigned to the device (an identifier enabling notification delivery) – depending on system consent for notifications.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>information about subscription to selected notification categories.</span></li>
-      </ul>
-
-      <h3>4.9. Referral programme data</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>the referrer's identifier and information about the referred User to the extent necessary for the referral programme to work (e.g. the fact that a referral code was used).</span></li>
-      </ul>
-
-      <h3>4.10. Data provided via contact forms</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>the content of the message and the contact details provided by the User when contacting the Controller (e.g. by email).</span></li>
-      </ul>
+      <h3 id="sec-4-9">4.9. Financial data and the adviser contact form (area A)</h3>
+      <p>Available only when the App language is Polish.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>What data</th><th>Why</th><th>Legal basis</th><th>Recipient / where it goes</th><th>How long</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="What data">Form: first name, last name, phone, email address, project type, financing amount, type of enquiry, ticked consents. Financial profile: own contribution, financing needed, preferences, notes.</td><td data-label="Why">saving your financial needs in the App</td><td data-label="Legal basis">not applicable — the App stores this data on the Device and it does not reach the Controller</td><td data-label="Recipient / where it goes">no recipients. In version 2.0 the App does not send this data to us, to partners or to iCloud (for device backups, see section <a href="#sec-7-1">7.1</a>). After consents are saved, only the information that the form was saved reaches Google and Meta: the type of enquiry and the amount range (sections <a href="#sec-4-3">4.3</a> and <a href="#sec-4-4">4.4</a>).</td><td data-label="How long">until the Project it relates to is deleted, the Account is deleted or the App is removed from the Device; a saved form cannot be separately viewed or deleted in the App</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <!-- ── 5 ── -->
     <section class="doc-section" id="sec-5">
       <h2><span class="secnum">05</span>Sources of data</h2>
-      <p>We obtain personal data:</p>
-      <p>5.1. <strong>directly from the User</strong> – when the User creates projects, adds content, contacts, photos, documents, uses the referral programme or contacts us;</p>
-      <p>5.2. <strong>from the User's device and operating system</strong> – within the scope of technical and diagnostic data and system permissions (e.g. access to photos, contacts, calendar, notifications) that the User grants themselves in the iOS settings;</p>
-      <p>5.3. <strong>from the service providers we use</strong> – e.g. the User identifier provided by the Sign in with Apple service, analytics and diagnostic data generated by Apple and Google/Firebase tools, within the scope described in this Policy.</p>
+      <p id="sec-5-1">5.1. <strong>From you</strong> — when you create Projects, add content and files, sign in or write to us.</p>
+      <p id="sec-5-2">5.2. <strong>From your Device and system</strong> — technical data, Device identifiers and data available after you grant system permissions (section <a href="#sec-15">15</a>).</p>
+      <p id="sec-5-3">5.3. <strong>From Apple</strong> — the user identifier and, if Apple passes them, the name and email address at sign-in.</p>
+      <p id="sec-5-4">5.4. <strong>From other Users</strong> — if a Project Owner invites you to a share, or someone saves your contact details in their Project (e.g. as a contractor). Such data is located on that person's Device and in their iCloud and, once the Project is shared, is also visible to its Collaborators; the Controller has no access to it.</p>
+      <p id="sec-5-5">5.5. <strong>From the referral programme</strong> — when another person uses your referral code, we record that referral on the Backend, linked to your profile, and update your counters (section <a href="#sec-4-8">4.8</a>).</p>
     </section>
 
     <!-- ── 6 ── -->
     <section class="doc-section" id="sec-6">
       <h2><span class="secnum">06</span>Purposes and legal bases of processing</h2>
-      <p>We process personal data for the following purposes and on the following legal bases:</p>
-
       <div class="rodo-table-wrap">
-        <table class="rodo-table" aria-label="Purposes and legal bases of processing">
+        <table class="rodo-table">
           <thead>
-            <tr><th style="width:60px;">No.</th><th>Purpose of processing</th><th>Legal basis (GDPR)</th></tr>
+            <tr><th style="width:60px;">No.</th><th>Purpose</th><th>Legal basis (GDPR)</th></tr>
           </thead>
           <tbody>
-            <tr><td class="lp">1</td><td class="cel">Providing and ensuring the correct operation of the App and its core features (managing projects, stages, tasks, costs, documents, photos, contacts)</td><td class="podstawa">art. 6(1)(b) – necessity to provide the service (performance of the agreement for the use of the App)</td></tr>
-            <tr><td class="lp">2</td><td class="cel">Authenticating and maintaining the User's account (Sign in with Apple)</td><td class="podstawa">art. 6(1)(b)</td></tr>
-            <tr><td class="lp">3</td><td class="cel">Synchronising data between the User's devices (iCloud/CloudKit)</td><td class="podstawa">art. 6(1)(b) and, with respect to the iCloud configuration, the settings chosen by the User</td></tr>
-            <tr><td class="lp">4</td><td class="cel">Enabling the sharing and synchronisation of a Project between Users (Project sharing via Apple CloudKit / CKShare)</td><td class="podstawa">art. 6(1)(b) – performance of the agreement for the use of the App</td></tr>
-            <tr><td class="lp">5</td><td class="cel">Delivering push notifications</td><td class="podstawa">art. 6(1)(a) (system consent for notifications) and art. 6(1)(b) for notifications necessary for the operation of the service</td></tr>
-            <tr><td class="lp">6</td><td class="cel">Analytics of App usage and performance measurement</td><td class="podstawa">art. 6(1)(a) (consent)</td></tr>
-            <tr><td class="lp">7</td><td class="cel">Crash diagnostics and improving App stability</td><td class="podstawa">art. 6(1)(a) (consent to crash reporting) and art. 6(1)(f) (legitimate interest in ensuring the security and reliability of the App)</td></tr>
-            <tr><td class="lp">8</td><td class="cel">Presenting editorial and guide content as well as partner sections and recommendations</td><td class="podstawa">art. 6(1)(b) and art. 6(1)(f) (legitimate interest in delivering valuable content)</td></tr>
-            <tr><td class="lp">9</td><td class="cel">Operating the referral programme</td><td class="podstawa">art. 6(1)(b) and art. 6(1)(f) (legitimate interest in developing the App)</td></tr>
-            <tr><td class="lp">10</td><td class="cel">Handling queries and contact with the User</td><td class="podstawa">art. 6(1)(f) (legitimate interest in providing responses)</td></tr>
-            <tr><td class="lp">11</td><td class="cel">Ensuring security, preventing abuse, keeping event logs</td><td class="podstawa">art. 6(1)(f) (legitimate interest in protecting the service and its Users)</td></tr>
-            <tr><td class="lp">12</td><td class="cel">Fulfilling legal obligations (e.g. handling data-subject rights requests)</td><td class="podstawa">art. 6(1)(c)</td></tr>
-            <tr><td class="lp">13</td><td class="cel">Establishing, exercising or defending claims</td><td class="podstawa">art. 6(1)(f)</td></tr>
+            <tr><td class="lp">1</td><td class="cel">Providing the App and its features</td><td class="podstawa">Art. 6(1)(b)</td></tr>
+            <tr><td class="lp">2</td><td class="cel">Signing in and maintaining the Account</td><td class="podstawa">Art. 6(1)(b)</td></tr>
+            <tr><td class="lp">3</td><td class="cel">Synchronising content and files in iCloud</td><td class="podstawa">Art. 6(1)(b)</td></tr>
+            <tr><td class="lp">4</td><td class="cel">Project sharing</td><td class="podstawa">Art. 6(1)(b)</td></tr>
+            <tr><td class="lp">5</td><td class="cel">Registering the Device and sending notifications from the Backend</td><td class="podstawa">Art. 6(1)(f) — the Controller's legitimate interest in keeping in touch with Users of the App; for service messages — Art. 6(1)(b)</td></tr>
+            <tr><td class="lp">6</td><td class="cel">Analytics of App usage (Firebase Analytics)</td><td class="podstawa">Art. 6(1)(a)</td></tr>
+            <tr><td class="lp">7</td><td class="cel">Crash and error reports (Firebase Crashlytics)</td><td class="podstawa">Art. 6(1)(a)</td></tr>
+            <tr><td class="lp">8</td><td class="cel">Measuring advertising effectiveness (Meta)</td><td class="podstawa">Art. 6(1)(a)</td></tr>
+            <tr><td class="lp">9</td><td class="cel">Delivering content and search</td><td class="podstawa">Art. 6(1)(b)</td></tr>
+            <tr><td class="lp">10</td><td class="cel">Referral programme</td><td class="podstawa">Art. 6(1)(b)</td></tr>
+            <tr><td class="lp">11</td><td class="cel">Contact and replying to enquiries</td><td class="podstawa">Art. 6(1)(f) — the Controller's legitimate interest in replying to a person who has contacted it</td></tr>
+            <tr><td class="lp">12</td><td class="cel">Service security and technical logs</td><td class="podstawa">Art. 6(1)(f) — the Controller's legitimate interest in protecting the service and its Users (security, preventing abuse)</td></tr>
+            <tr><td class="lp">13</td><td class="cel">Legal obligations, including handling GDPR requests</td><td class="podstawa">Art. 6(1)(c)</td></tr>
+            <tr><td class="lp">14</td><td class="cel">Establishing, exercising or defending claims</td><td class="podstawa">Art. 6(1)(f) — the Controller's legitimate interest in establishing, exercising or defending claims</td></tr>
+            <tr><td class="lp">15</td><td class="cel">The Meta SDK fetching its configuration when the App is launched (section <a href="#sec-9-3">9.3</a>)</td><td class="podstawa">Art. 6(1)(f) — the Controller's legitimate interest in the correct operation of an SDK integrated with the App</td></tr>
           </tbody>
         </table>
       </div>
-
-      <p>To the extent that processing is based on consent (art. 6(1)(a) GDPR), consent is voluntary and may be withdrawn at any time. Withdrawal of consent does not affect the lawfulness of processing carried out before its withdrawal.</p>
+      <p>Consent can be withdrawn at any time; this does not affect the lawfulness of processing carried out before the withdrawal. You have the right to object to processing based on legitimate interest (section <a href="#sec-17">17</a>).</p>
+      <p>Providing the data you enter in the App or pass on when signing in is voluntary. Signing in is a condition for creating your own Projects and for synchronisation. The data described in sections <a href="#sec-4-5">4.5</a> and <a href="#sec-4-8">4.8</a> (the Device record, technical request data, the referral programme profile) and the connections described in sections <a href="#sec-9-3">9.3</a> and <a href="#sec-10-5">10.5</a> do not depend on you providing any data — the App processes them automatically while it is in use, to the extent described in those sections. Switching on the "Analytics" and "Marketing" categories is not a condition for using the App; the App only requires you to save a choice on the consent screen.</p>
     </section>
 
     <!-- ── 7 ── -->
     <section class="doc-section" id="sec-7">
-      <h2><span class="secnum">07</span>Local data, iCloud synchronisation and data sent to external services</h2>
-      <p>For transparency, we explain where the User's data is actually located.</p>
+      <h2><span class="secnum">07</span>Where the data is located</h2>
 
-      <div class="storage-grid" role="list">
-        <div class="storage-card" role="listitem">
-          <div class="storage-card__icon t-local" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
-          </div>
-          <span class="storage-card__tag">Tier 1</span>
-          <h4>On the device</h4>
-          <p>Projects, photos, notes and documents stored locally in the app's storage and in the Keychain. This data is <strong>not transferred to the Controller</strong>.</p>
-        </div>
-        <div class="storage-card" role="listitem">
-          <div class="storage-card__icon t-icloud" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10a5 5 0 0 0-9.6-1.6A4 4 0 1 0 7 16h11a4 4 0 0 0 0-8h0"/></svg>
-          </div>
-          <span class="storage-card__tag">Tier 2</span>
-          <h4>iCloud / CloudKit</h4>
-          <p>The User's private iCloud space, accessible only on their Apple ID accounts. <strong>The Controller has no technical access</strong> to this content.</p>
-        </div>
-        <div class="storage-card" role="listitem">
-          <div class="storage-card__icon t-backend" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg>
-          </div>
-          <span class="storage-card__tag">Tier 3</span>
-          <h4>Backend and services</h4>
-          <p>Push tokens, analytics after consent, CMS content, correspondence. Limited to what is necessary for a given feature to work.</p>
-        </div>
-      </div>
+      <h3 id="sec-7-1">7.1. On your Device (area A)</h3>
+      <p>Project content, document files, journal entry photos and the data from section <a href="#sec-4-9">4.9</a> are saved in the App's storage on the Device. App settings and the saved consent choice are saved in the standard system mechanisms. The Apple user identifier and — if Apple passed them — the name and email address are saved in the Device keychain; this entry is not carried over to other devices.</p>
+      <p><strong>Demo mode.</strong> The sample Project is generated in the App and stored locally. The App does not send its data to iCloud or to any server.</p>
+      <p>Data stored only on the Device does not reach the Controller.</p>
+      <p><strong>Device backup.</strong> App data saved on the Device may be included in the Device backup made by iOS (in iCloud or on a computer), if you use one — the App does not exclude it from that backup. This also applies to data described in this Policy as stored on the Device (Demo mode, files from the "Documents" tab, journal entry photos, the data from section <a href="#sec-4-9">4.9</a>). You manage the backup in iOS settings; a backup made earlier may contain this data even after you use "Delete account" or remove the App. The Controller has no access to backups.</p>
 
-      <h3>7.1. Data stored locally on the device</h3>
-      <p>Most content created by the User (projects, stages, tasks, costs, notes, photos, documents, contacts) is first stored <strong>locally on the User's device</strong>, in the app's data area. To store local data and settings, the App uses standard iOS mechanisms, including:</p>
+      <h3 id="sec-7-2">7.2. In your iCloud — synchronisation (area B)</h3>
+      <p>After you sign in, the App saves the data listed in section <a href="#sec-4-1">4.1</a> in the private iCloud database in your Apple account. If you had your own Projects on the Device before signing in, they are sent to that database at the first sign-in.</p>
+      <p>Text from receipt photos is recognised on the Device (OCR).</p>
+      <p><strong>Deleting content.</strong> Deleting a Project, a stage or an expense in the App does not always delete all related data and files from iCloud — for example, the tasks, expenses and contacts of a deleted stage, or the attachment file of a deleted expense, may remain in iCloud. How to delete the remaining App data from iCloud is described in section <a href="#sec-8-6">8.6</a>.</p>
+      <p>This data is stored and processed by Apple under the terms of the iCloud service. <strong>The Controller as a company has no access to it</strong> and cannot read, change or delete it at your request — you manage it in the App and in your Apple account settings.</p>
+
+      <h3 id="sec-7-3">7.3. Project sharing (area B)</h3>
+      <p><strong>Invitation.</strong> The Project Owner invites other people in Apple's system share sheet — with a link, through the Messages app or by another route chosen there. The recipient is selected in Apple's interface; the App does not process the invited person's data and the Controller does not receive it. The invitation contains the Project name. Only invited people have access.</p>
+      <p><strong>Accepting an invitation.</strong> Accepting an invitation requires an iCloud account on the device. Ongoing synchronisation of changes requires signing in to the App.</p>
+      <p><strong>What invited people see.</strong> Collaborators receive the Shared Project data listed in section <a href="#sec-4-2">4.2</a>. This includes third-party data that the Project Owner entered in the Project — in particular contractors' contacts with phone numbers, email addresses, ratings and notes.</p>
+      <p><strong>Participants.</strong> The list of participants is kept and displayed by Apple in the system share sheet. Apple may record with data in iCloud a technical identifier of the account of the person who created or changed it; the App does not read it and does not show who added an expense or an entry.</p>
+      <p><strong>Permissions.</strong> The Collaborator's permission level (view or edit) is set by the Project Owner in Apple's system sheet. The App applies these settings.</p>
+      <p><strong>Ending.</strong> A Collaborator can leave the share. The Project Owner can end it. The Shared Project's data stays in the Project Owner's private iCloud database. Deleting a Shared Project by the Project Owner does not end the share and does not delete all of its data from the Project Owner's iCloud — the remaining data may still be accessible to Collaborators; the Project Owner should end the share before deleting a Shared Project.</p>
+      <p><strong>Local copies.</strong> After a share is left or ended, a copy of the data may remain on the Collaborator's Device until it is removed by the App or by the Collaborator. The Controller cannot remove such copies remotely.</p>
+      <p><strong>A Collaborator's entries.</strong> Expenses, entries and files added by a Collaborator become part of the Project Owner's Project and stay in the Owner's iCloud — also after the Collaborator leaves the share.</p>
+      <p><strong>The roles of Apple and the Controller.</strong> Shared data is stored and processed by Apple within iCloud and is visible to the people chosen by the Project Owner. The Controller has no access to it. The events described in sections <a href="#sec-4-3">4.3</a> and <a href="#sec-4-4">4.4</a> (e.g. rating a contractor, with the rating value) are generated on your Device also when you work in a Shared Project and, after consents are saved, go to Google and Meta for the purposes described in those sections. Apart from these events, the Controller does not use shared data for advertising or profiling.</p>
+      <p><strong>The Project Owner's responsibility.</strong> The Project Owner decides who the Project is shared with and is responsible for that choice. The Owner should share it only with people to whom they are allowed to disclose the information it contains — in particular contractors' contact details and ratings, photos of people, and receipts and other expense attachments containing personal data.</p>
+
+      <h3 id="sec-7-4">7.4. On our Backend (area C)</h3>
+      <p>The following reaches the Backend:</p>
       <ul>
-        <li>app memory and files (local database, files, local cache and working copies of data),</li>
-        <li><code style="font-family:var(--font-mono); font-size:14px; padding:1px 6px; background:var(--doc-paper-2); border-radius:4px;">AppStorage</code> / <code style="font-family:var(--font-mono); font-size:14px; padding:1px 6px; background:var(--doc-paper-2); border-radius:4px;">UserDefaults</code> mechanisms (App settings and preferences),</li>
-        <li><strong>Keychain</strong> (secure storage of sensitive technical data, e.g. tokens and authentication identifiers).</li>
+        <li>the Device record for notifications — when the App is launched, also without an Account (section <a href="#sec-4-5">4.5</a>);</li>
+        <li>referral programme data — when the App language is Polish (section <a href="#sec-4-8">4.8</a>);</li>
+        <li>technical request data and guide search phrases (section <a href="#sec-4-8">4.8</a>).</li>
       </ul>
-      <p>Data stored solely locally is not transferred to the Controller.</p>
+      <p>Files, data from the finance form, and the name and email address from Apple sign-in are not sent to the Backend. From Project content, only the key of the stage for which the App fetches guides and partner content reaches the Backend (section <a href="#sec-4-8">4.8</a>): for stages from the App's template this is a fixed template key, and for other stages — in particular those you created yourself — the stage's name in simplified form (lower case, without Polish diacritics, underscores instead of spaces).</p>
+      <p>The Backend code runs with the hosting provider Vercel. Device records and referral programme data are saved in a Google Cloud Firestore database located in Europe. The notification token is also processed by Google (Firebase Cloud Messaging) and Apple (APNs) to the extent needed to deliver a notification; this does not depend on the consents described in section <a href="#sec-9">9</a>.</p>
+      <p>Guide content and partner content come from the Sanity content management system. The App fetches text through the Backend; images (banners, partner logos, covers) — directly from Sanity's servers (section <a href="#sec-10-5">10.5</a>).</p>
 
-      <h3>7.2. Synchronisation via iCloud / CloudKit</h3>
-      <p>If the User uses synchronisation based on <strong>iCloud / CloudKit</strong>, their data may be synchronised between their devices signed in to the same Apple account. In this model:</p>
-      <ul>
-        <li>data is stored in the <strong>User's private iCloud space</strong>, managed by Apple,</li>
-        <li>access to this data is, as a rule, available only to the User within their Apple account,</li>
-        <li><strong>the Controller has no technical access to content stored in the User's private CloudKit database</strong> and does not read it,</li>
-        <li>the rules for processing data within iCloud are set by Apple as the provider of that service.</li>
-      </ul>
-      <h3>7.3. Project sharing via iCloud / CloudKit</h3>
-      <p>The App allows a <strong>Project Owner</strong> to share a selected Project with another user through Apple's <strong>CloudKit and CKShare</strong> mechanisms.</p>
-      <p>Sharing is initiated deliberately by the Project Owner. The <strong>Collaborator</strong> must accept the invitation using an Apple account before gaining access.</p>
-      <p>Depending on the type of data and the current version of the App, a <strong>Shared Project</strong> may include project metadata, stages, tasks, expenses, budgets, events, journal entries, contacts, links, documents, attachments and other content assigned to the Project.</p>
-      <p>Each participant keeps a local working copy of the Shared Project on their device. Changes made by authorised participants may be synchronised through the shared CloudKit database.</p>
-      <p>The following personal or device-specific information is <strong>not shared</strong> as part of a Shared Project: financial profiles, financing or insurance enquiries, lead submissions, notification preferences, the selected-project preference, local storage settings and identifiers of events created in the user's personal iOS Calendar.</p>
-      <p>Some files or photo collections may remain stored only on the device on which they were added. The App may inform participants when a file is not available on their device.</p>
-      <p>The Project Owner may revoke access or delete the Shared Project. A Collaborator may leave the Shared Project or delete their local copy. After access is revoked, some data may remain temporarily in a local copy until it is removed by the user or cleaned up by the App.</p>
-      <p>The Controller does not use Shared Project content for advertising or profiling and does not routinely access or inspect content stored in users' CloudKit databases. Apple processes this data under the terms applicable to iCloud and CloudKit.</p>
-      <p><strong>The User is responsible for having a legal basis to share the content of a Project.</strong> This applies in particular to contractor data, phone numbers and email addresses, photographs of individuals, and invoices, contracts and other documents containing personal data. The User should share a Project only with people entitled to access it and should only include content they are authorised to disclose.</p>
-
-      <h3>7.4. Data sent to the backend and external services</h3>
-      <p>Some data is sent off the device to external services or to our backend, to the extent necessary for a given feature to work, in particular:</p>
-      <ul>
-        <li>the push notification token and technical data necessary to deliver notifications,</li>
-        <li>analytics and diagnostic data (only after consent is given – see section 9),</li>
-        <li>editorial, guide and partner-section content fetched from the content management system (CMS),</li>
-        <li>data provided when contacting the Controller.</li>
-      </ul>
-      <p>The App's backend and supporting services may be hosted with cloud infrastructure providers (see section 10). We limit the scope of data sent to the backend to what is necessary to perform a given feature.</p>
+      <h3 id="sec-7-5">7.5. With third parties for analytics and marketing — after consent is given (area D)</h3>
+      <p>After the "Analytics" consent is saved, the data described in section <a href="#sec-4-3">4.3</a> goes to Google. After the "Marketing" consent is saved, the data described in section <a href="#sec-4-4">4.4</a> goes to Meta. Section <a href="#sec-9">9</a> contains the details. This does not apply to notification delivery (section <a href="#sec-4-5">4.5</a>) or to the configuration connection of the Meta SDK (section <a href="#sec-9-3">9.3</a>).</p>
     </section>
 
     <!-- ── 8 ── -->
     <section class="doc-section" id="sec-8">
-      <h2><span class="secnum">08</span>User account and authentication</h2>
-      <p>8.1. Signing in and authentication in the App may take place using the <strong>Sign in with Apple</strong> service. Within this service, Apple provides us with a persistent User identifier and, optionally – if the User consents – an email address (the User may use the "Hide My Email" feature, which results in a relay address being provided instead of the real address).</p>
-      <p>8.2. With respect to the Sign in with Apple feature, <strong>Apple Inc. acts as an independent controller</strong> of the data processed within its own services and as the provider of the authentication mechanism. The rules for Apple's processing of data are set out in Apple's privacy policy.</p>
-      <p>8.3. Authentication data (e.g. session tokens) is stored securely, including using the iOS Keychain mechanism.</p>
-      <p>8.4. Some App features may be available without creating an account, in local mode. The range of features available without signing in may be limited (e.g. no synchronisation or sharing).</p>
+      <h2><span class="secnum">08</span>Account and Account deletion</h2>
+      <p id="sec-8-1">8.1. Signing in takes place through <strong>"Sign in with Apple"</strong>. It is required to create your own Projects and to synchronise. Without an Account you can use Demo mode.</p>
+      <p id="sec-8-2">8.2. In the Device keychain we store the Apple user identifier and — if Apple passes them at the first sign-in — the name and email address. You can use Apple's "Hide My Email" feature; the App then receives a relay address from Apple.</p>
+      <p id="sec-8-3">8.3. For the sign-in service, Apple acts as a separate data controller. The processing rules are set out in Apple's privacy policy.</p>
+      <p id="sec-8-4">8.4. <strong>What the "Delete account" feature does.</strong> The feature is available in the App's Settings under the name "Delete account and all data". Using it:</p>
+      <ul>
+        <li>marks the Device record on the Backend as inactive;</li>
+        <li>deletes from your private iCloud database the Project content saved by the App: Projects, journal entries, stages, tasks, expenses, stage budgets, contacts, file descriptions, links, albums, events, the document descriptions saved by earlier versions, and expense attachments saved in the older format (by earlier versions or at the first sign-in) together with the text recognised from them (OCR);</li>
+        <li>deletes App data saved on the Device, including Demo mode data and the data from section <a href="#sec-4-9">4.9</a>;</li>
+        <li>deletes the keychain entries, signs you out and deletes the saved consent choice.</li>
+      </ul>
+      <p id="sec-8-5">8.5. <strong>What the "Delete account" feature does not delete.</strong></p>
+      <ul>
+        <li><strong>In iCloud:</strong> files sent by the App in the current format (expense attachments, covers, backgrounds, album photos) and the Project budget; Shared Project data — the feature does not end shares you own or leave shares in which you are a Collaborator.</li>
+        <li><strong>On the Device:</strong> files from the "Documents" tab, journal entry photos and some technical settings, including the saved referral programme profile with its identifier. This data disappears when the App is removed from the Device.</li>
+        <li><strong>On the Backend:</strong> the Device record (it remains as inactive, with the token and identifier) and referral programme data. At the next launch of the App the Device may be registered again, without a user identifier.</li>
+        <li><strong>At Apple:</strong> the link between the App and your Apple account in "Sign in with Apple".</li>
+        <li><strong>At Google and Meta:</strong> data passed earlier on the basis of consents; the feature switches off further collection but does not change the identifiers assigned by the SDKs.</li>
+      </ul>
+      <p>If deletion is interrupted (e.g. no connection or iCloud unavailable), some data in iCloud may already be deleted while the data on the Device and the Account remain; the feature then has to be run again.</p>
+      <p id="sec-8-6">8.6. <strong>How to complete the deletion.</strong></p>
+      <ul>
+        <li><strong>Data in iCloud:</strong> before deleting the Account, end the shares you own and leave those in which you are a Collaborator. You can delete the remaining App data in the iCloud settings on the device (manage account storage → homdu → delete data).</li>
+        <li><strong>Data on the Device:</strong> remove the App from the Device.</li>
+        <li><strong>Data on the Backend:</strong> write to <strong><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></strong>. The Device record and referral programme data do not contain a name or email address, so to find them we need additional information (Art. 11 GDPR): the referral code shown on the referral programme screen (available when the App language is Polish) or the beginning of the Apple user identifier, if the App's Settings show it in the Account row. If you intend to remove the App, note this information down first. We will delete the data found on that basis without undue delay, and no later than 30 days after receiving the request, except for data we must keep under the law or to establish, exercise or defend claims. A Device record that is not linked to a user identifier (in particular when you use the App without an Account) cannot be attributed by us to a specific person — we will tell you so in our reply. As long as the App remains installed, it may register the Device again and recreate the referral programme profile.</li>
+        <li><strong>Apple sign-in:</strong> you can remove the link between the App and your Apple account in your Apple account settings, in the part relating to "Sign in with Apple".</li>
+        <li><strong>Data at Google and Meta:</strong> we do not attribute events to the Account and the App does not show the identifiers assigned by the SDKs, so without additional information we cannot single out a specific person's data at Google or Meta (Art. 11 GDPR). We will carry out an erasure request (section <a href="#sec-17-3">17.3</a>) to the extent the information you provide allows that data to be found; otherwise we will tell you so in our reply. Analytics data and crash reports in Google's services expire within the periods given in section <a href="#sec-12">12</a>. Data passed to Meta is kept and deleted under Meta's rules; to the extent Meta acts as a separate controller, you can also send your request to Meta.</li>
+      </ul>
+      <p id="sec-8-7">8.7. <strong>Shared data.</strong> Deleting the Account does not delete copies of Shared Project data:</p>
+      <ul>
+        <li>if you are the Project Owner — copies of the data may remain on Collaborators' Devices until they are removed;</li>
+        <li>if you are a Collaborator — entries and files added to someone else's Project stay in that Project Owner's iCloud; to remove them, delete them before leaving the share or contact the Project Owner.</li>
+      </ul>
+      <p id="sec-8-8">8.8. <strong>Signing out</strong> ends synchronisation, deletes the keychain entries and marks the Device record on the Backend as inactive. Data on the Device and in iCloud remains.</p>
+      <p id="sec-8-9">8.9. If you cannot use the feature in the App, write to <strong><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></strong>.</p>
     </section>
 
     <!-- ── 9 ── -->
     <section class="doc-section" id="sec-9">
-      <h2><span class="secnum">09</span>Analytics, telemetry, diagnostics and consent</h2>
-      <p>9.1. The App may use analytics and diagnostic tools provided by <strong>Google (Firebase)</strong>, in particular:</p>
+      <h2><span class="secnum">09</span>Consents: analytics and marketing</h2>
+      <p id="sec-9-1">9.1. <strong>Consent screen.</strong> At first launch — and once after updating from version 1.x — the App shows a screen with two categories: "Analytics and diagnostics" and "Marketing". You can switch each category on or off, and you confirm the choice with the "Save choice" button. Continuing to use the App requires saving a choice; you can also save the choice with both categories switched off. If you update the App from version 1.x, then until you save a new choice the App applies the consent settings saved in version 1.x: if an analytics consent was saved, collection of analytics events and crash reports works from the first launch of version 2.0, and if a marketing consent was saved — so does the passing of events to Meta (without the IDFA). You can change the choice at any time: Settings → "Consent &amp; privacy" → "Cookie settings". The "Personalization" category shown there does not start any processing in version 2.0. The choice is saved on the Device and does not reach our Backend. Information that settings were saved in the "Cookie settings" sheet (the state of the switches) may be passed to Google as an analytics event under the "Analytics" category (section <a href="#sec-4-3">4.3</a>).</p>
+      <p id="sec-9-2">9.2. <strong>The "Analytics" consent.</strong> Once it is saved, the App switches on collection in Google services:</p>
       <ul>
-        <li><strong>Firebase Analytics</strong> (and, where applicable, GA4-compliant event measurement) – analytics of App usage,</li>
-        <li><strong>Firebase Crashlytics</strong> – crash reporting and diagnostics,</li>
-        <li><strong>Firebase Cloud Messaging (FCM)</strong> – delivery of push notifications.</li>
+        <li><strong>Firebase Analytics</strong> — App usage events, installation identifier, identifier for vendor (IDFV), Device and system data; if you allowed tracking in the ATT prompt — also the IDFA;</li>
+        <li><strong>Firebase Crashlytics</strong> — crash and error reports.</li>
       </ul>
-      <p>9.2. <strong>Analytics and telemetry work only after the User gives consent</strong>. The App has a consent screen on which the User can grant or refuse consent for individual processing categories (e.g. analytics, crash reporting, personalisation). Consent settings can be changed at any time in the App settings.</p>
-      <p>9.3. Until consent is given, we do not collect analytics data nor – within the scope covered by consent – diagnostic data in a way that links it to a specific User beyond what is necessary for the App to work.</p>
-      <p>9.4. Analytics data is aggregated and statistical in nature and serves to improve the quality and usability of the App. We do not use it for automated decision-making producing legal effects concerning the User (see section 13).</p>
-      <p>9.5. With respect to Firebase services, <strong>Google Ireland Limited / Google LLC acts, as a rule, as a processor</strong> on our instructions, on the basis of a concluded data processing agreement and the Firebase/Google data processing terms. The detailed rules for Google's processing of data are described in Google's privacy policy.</p>
+      <p>We do not attribute events to your Account or user identifier. Google signals (linking data with Google accounts) is switched off.</p>
+      <p id="sec-9-3">9.3. <strong>The "Marketing" consent.</strong> Once it is saved, the App passes conversion events to Meta through the Meta SDK (Facebook SDK): installation and launch of the App, and selected product events. Our purpose is to measure the effectiveness of the App's advertising. Meta also uses these events for the purposes set out in section <a href="#sec-9-6">9.6</a>. Events reach Meta from the App only; our Backend does not pass data to Meta.</p>
+      <p><strong>The IDFA is passed to Meta only when both of the following apply:</strong></p>
+      <ol>
+        <li>you saved the "Marketing" consent in the App, <strong>and</strong></li>
+        <li>you allowed tracking in the iOS system prompt (ATT).</li>
+      </ol>
+      <p>The ATT prompt appears only after a choice is saved with the "Marketing" category switched on. Withdrawing either of these consents stops the IDFA from being passed to Meta. Withdrawing the "Marketing" consent stops events from being passed to Meta.</p>
+      <p><strong>Configuration connection.</strong> Regardless of consent, the Meta SDK fetches its configuration from Meta's servers when the App is launched. Meta then receives the Device's IP address, the App identifier, and the system and SDK version. We do not pass conversion events or the IDFA before a consent is saved.</p>
+      <p id="sec-9-4">9.4. <strong>How to withdraw consent.</strong></p>
+      <ul>
+        <li>"Analytics" and "Marketing" — Settings → "Consent &amp; privacy" → "Cookie settings";</li>
+        <li>permission to track (ATT) — in iOS system settings: Settings → Privacy &amp; Security → Tracking.</li>
+      </ul>
+      <p>Withdrawing consent does not affect the lawfulness of processing carried out before the withdrawal. After you withdraw a consent, the App switches off collection in that category; the identifiers assigned by the SDKs are not changed in the process. For data passed earlier, you can ask for it to be erased (section <a href="#sec-17-3">17.3</a>) as described in section <a href="#sec-8-6">8.6</a>: we do not attribute events to the Account, so without additional information we cannot single out a specific person's data. Analytics data and crash reports in Google's services expire within the periods given in section <a href="#sec-12">12</a>; data passed to Meta is kept and deleted under Meta's rules. To the extent Meta processes the data as a separate controller, you can also send the request to Meta.</p>
+      <p id="sec-9-5">9.5. <strong>Legal basis.</strong> The legal basis for processing in both categories is consent (Art. 6(1)(a) GDPR). The consent also covers access to information stored on the Device and storing identifiers on it to the extent these services need (Article 399 of the Polish Electronic Communications Law).</p>
+      <p id="sec-9-6">9.6. <strong>Recipients and their roles.</strong></p>
+      <ul>
+        <li><strong>Google Ireland Limited / Google LLC</strong> — the provider of Firebase services; it processes data on our behalf as a processor, under Google's data processing terms.</li>
+        <li><strong>Meta Platforms Ireland Limited</strong> — the recipient of conversion events. For measuring advertising effectiveness and campaign reporting, Meta processes the events on our behalf as a processor. For collecting the events in the App and passing them to Meta so that Meta can use them to improve ad targeting and delivery, to personalise features and content (including ads) and to secure and develop its products, the Controller and Meta act as joint controllers. Further processing of the data in Meta's services takes place under the rules set by Meta as a separate controller, in accordance with its privacy policy.</li>
+      </ul>
+      <p>Transfers of data outside the EEA are described in section <a href="#sec-11">11</a>.</p>
+      <p id="sec-9-7">9.7. <strong>The App's privacy manifest.</strong> In the App's privacy manifest we declare that:</p>
+      <ul>
+        <li>the App uses tracking within the meaning of Apple's rules, in connection with the Meta integration, and we name Meta's tracking domain;</li>
+        <li>the collected data types are: device identifier — for third-party advertising and analytics purposes, marked as linked to the user and used for tracking; product interaction — for analytics purposes, not linked to the user; crash data and other diagnostic data — for app functionality purposes, not linked to the user.</li>
+      </ul>
+      <p id="sec-9-8">9.8. Until a consent is saved — in version 2.0 or earlier in version 1.x (section <a href="#sec-9-1">9.1</a>) — the App does not switch on collection of analytics events or crash reports, or the passing of conversion events. The following work regardless of consents: registering the Device for notifications (section <a href="#sec-4-5">4.5</a>) and the configuration connection of the Meta SDK (section <a href="#sec-9-3">9.3</a>).</p>
     </section>
 
     <!-- ── 10 ── -->
     <section class="doc-section" id="sec-10">
-      <h2><span class="secnum">10</span>Data recipients and categories of recipients</h2>
-      <p>Depending on the features used, data may be shared with the following categories of recipients:</p>
-
-      <h3>10.1. Apple service providers</h3>
-      <p><strong>Apple Inc. / Apple Distribution International Ltd.</strong> – in relation to the Sign in with Apple, iCloud/CloudKit, App Store distribution and system notification services. With respect to its own services, Apple acts as an independent controller and, where applicable, as a service provider processing data for the purpose of providing them.</p>
-
-      <h3>10.2. Google / Firebase service providers</h3>
-      <p><strong>Google Ireland Limited / Google LLC</strong> – in relation to Firebase Analytics, Crashlytics and Firebase Cloud Messaging, acting as a rule as a processor on our instructions.</p>
-
-      <h3>10.3. Infrastructure and hosting providers</h3>
-      <p>Providers of cloud infrastructure and hosting for the App's backend and supporting services. To the extent necessary to provide the services, we may use providers such as hosting and cloud platforms (e.g. services like Vercel, cloud-computing providers and the Firebase/Google Cloud infrastructure). These providers act as processors on the basis of concluded data processing agreements.</p>
-
-      <h3>10.4. Content management system (CMS) provider</h3>
-      <p><strong>Sanity</strong> – the provider of the content management system used to publish editorial and guide content as well as partner and recommendation sections. Content delivered to Users is, as a rule, editorial in nature; to the extent that personal data is processed within the CMS, the provider acts as a processor.</p>
-
-      <h3>10.5. Partners and sponsored sections</h3>
-      <p>Partners presented in sponsored sections and within recommendations (including financial recommendations and contractor recommendations). This content is, as a rule, presented in a way that is not individually profiled. If the User decides to proceed to a partner's offer or contact them, the partner's further processing of their data takes place under the rules set by that partner as a separate controller.</p>
-
-      <h3>10.6. Other participants in a Shared Project</h3>
-      <p>When the Project Owner enables sharing, the content of the selected Project is made available to the Collaborator or Collaborators invited by the Owner. The scope of access depends on the App's current sharing functionality and the permissions configured through Apple CloudKit.</p>
-
-      <h3>10.7. Other recipients</h3>
-      <ul>
-        <li>entities providing supporting services to us (e.g. email handling, tools for communicating with Users),</li>
-        <li>public authorities and authorised entities – solely to the extent required by law.</li>
-      </ul>
-      <p>With each entity processing data on our behalf we conclude a data processing agreement meeting the requirements of art. 28 GDPR.</p>
+      <h2><span class="secnum">10</span>Data recipients</h2>
+      <p id="sec-10-1">10.1. <strong>Apple</strong> (Apple Distribution International Ltd. / Apple Inc.) — "Sign in with Apple", iCloud/CloudKit, notification delivery (APNs), distribution of the App on the App Store. For sign-in, notification delivery and distribution of the App on the App Store, Apple acts as a separate controller. Data that the App stores in the User's iCloud through CloudKit is stored and processed by Apple as the provider of the iCloud service, including under the terms of Apple's agreement with app developers; the Controller has no technical access to that data.</p>
+      <p id="sec-10-2">10.2. <strong>Google</strong> (Google Ireland Limited / Google LLC) — Firebase Analytics and Firebase Crashlytics after the "Analytics" consent; Firebase Cloud Messaging for notification delivery; Google Cloud Firestore as the Backend database. Processor.</p>
+      <p id="sec-10-3">10.3. <strong>Meta</strong> (Meta Platforms Ireland Limited) — conversion events after the "Marketing" consent, and the SDK's configuration connection (sections <a href="#sec-9-3">9.3</a> and <a href="#sec-9-6">9.6</a>).</p>
+      <p id="sec-10-4">10.4. <strong>Vercel</strong> — the hosting provider with which the Backend code runs. Processor.</p>
+      <p id="sec-10-5">10.5. <strong>Sanity</strong> — the provider of the content management system the guide content and partner content come from. The App fetches text through our Backend, which also passes search phrases to Sanity. The App fetches images (banners, partner logos, covers) directly from Sanity's servers; the provider then processes the IP address and technical request data. Processor.</p>
+      <p id="sec-10-6">10.6. <strong>Collaborators</strong> — for a Shared Project, according to the Project Owner's decision (section <a href="#sec-7-3">7.3</a>).</p>
+      <p id="sec-10-7">10.7. <strong>Partners</strong> — the App shows partner content and offers. When you open a partner's link, you go to the partner's site; the App does not attach data identifying you to the link. Further processing of your data takes place under that partner's rules as a separate controller.</p>
+      <p id="sec-10-8">10.8. <strong>Other recipients</strong> — the provider of the email service used for contact, and public authorities, only to the extent required by law.</p>
+      <p>With entities processing data on our behalf we conclude data processing agreements compliant with Art. 28 GDPR.</p>
+      <p>We require the parties with which the App shares User data — including analytics providers, advertising networks and SDK providers (Google, Meta) — to protect that data to a standard at least equal to that described in this Policy and required by the App Store rules.</p>
     </section>
 
     <!-- ── 11 ── -->
     <section class="doc-section" id="sec-11">
-      <h2><span class="secnum">11</span>Transfers of data outside the European Economic Area (EEA)</h2>
-      <p>11.1. Some of our providers (in particular Apple and Google) are based in, or process data, outside the EEA, including in the United States. This means that data may be transferred outside the EEA.</p>
-      <p>11.2. Transfers of data outside the EEA take place only with the appropriate safeguards required by the GDPR, in particular:</p>
+      <h2><span class="secnum">11</span>Transfers of data outside the EEA</h2>
+      <p id="sec-11-1">11.1. Apple, Google, Meta, Vercel and Sanity may process data outside the EEA, in particular in the United States. The Backend database is located in Europe.</p>
+      <p id="sec-11-2">11.2. Transfers take place on the basis of:</p>
       <ul>
-        <li>on the basis of a <strong>European Commission adequacy decision</strong> (e.g. with respect to entities participating in the <strong>EU-U.S. Data Privacy Framework</strong>), or</li>
-        <li>on the basis of <strong>standard contractual clauses</strong> approved by the European Commission, supplemented where necessary with additional protective measures.</li>
+        <li>a <strong>European Commission adequacy decision</strong> (Art. 45 GDPR; Implementing Decision (EU) 2023/1795 of 10 July 2023) — for recipients participating in the EU–U.S. Data Privacy Framework (DPF), or</li>
+        <li><strong>standard contractual clauses (SCCs)</strong> adopted by the European Commission (Art. 46(2)(c) GDPR; Implementing Decision (EU) 2021/914) — in all other cases.</li>
       </ul>
-      <p>11.3. The User has the right to obtain information about the safeguards applied and, where appropriate, a copy of those safeguards by contacting the Controller.</p>
+      <p id="sec-11-3">11.3. You can ask us for information about the safeguards applied and for a copy of them.</p>
     </section>
 
     <!-- ── 12 ── -->
     <section class="doc-section" id="sec-12">
       <h2><span class="secnum">12</span>Data retention period</h2>
-      <p>12.1. <strong>Local data and data synchronised via iCloud</strong> – stored for as long as the User uses the App and does not delete the data themselves. Deleting the App or deleting data in its settings results in the deletion of local data; data in iCloud remains under the User's control and may be deleted by them via the Apple account settings.</p>
-      <p>12.2. <strong>Account and authentication data</strong> – stored for the period of account use; after the account is deleted it is removed or anonymised, except for data we must retain on the basis of the law or for establishing, exercising or defending claims.</p>
-      <p>12.3. <strong>Analytics and diagnostic data</strong> – stored for the period defined in the settings of the tools used (e.g. Firebase) and no longer than necessary for analytics purposes; until consent is withdrawn, where consent is the basis for processing.</p>
-      <p>12.4. <strong>Referral programme data</strong> – stored for the period necessary to settle and operate the referral programme.</p>
-      <p>12.5. <strong>Correspondence and requests</strong> – stored for the period necessary to handle the query and, where necessary, for evidentiary purposes for the limitation period of any claims.</p>
-      <p>12.6. <strong>Shared Project data</strong> – retained in CloudKit until the Project Owner deletes the Project, ends sharing or otherwise removes the data. Revoking a Collaborator's access prevents further access through CloudKit, but a local copy may remain on the Collaborator's device until it is removed by the user or the App.</p>
-      <p>12.7. After the retention periods expire, data is deleted or anonymised.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-2">
+          <thead>
+            <tr><th>Data</th><th>Retention period</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Data">Data on the Device, including Demo mode data and the data from section <a href="#sec-4-9">4.9</a></td><td data-label="Retention period">until you delete the data or the App (data from section <a href="#sec-4-9">4.9</a> — until the Project it relates to or the Account is deleted, or the App is removed); scope of the "Delete account" feature — section <a href="#sec-8">8</a>; for device backups, see section <a href="#sec-7-1">7.1</a></td></tr>
+            <tr><td class="dt-main" data-label="Data">Data in your iCloud</td><td data-label="Retention period">until you delete it (deleting content — section <a href="#sec-7-2">7.2</a>); under the terms of the iCloud service; scope of the "Delete account" feature — section <a href="#sec-8">8</a></td></tr>
+            <tr><td class="dt-main" data-label="Data">Shared Project data</td><td data-label="Retention period">in the Project Owner's iCloud — until the Project Owner deletes the content or the Project, subject to the caveats described in sections <a href="#sec-7-2">7.2</a> and <a href="#sec-7-3">7.3</a>; ending the share does not by itself delete this data; local copies — see section <a href="#sec-7-3">7.3</a></td></tr>
+            <tr><td class="dt-main" data-label="Data">Account data in the keychain</td><td data-label="Retention period">until you sign out or the Account is deleted</td></tr>
+            <tr><td class="dt-main" data-label="Data">Device record on the Backend</td><td data-label="Retention period">no automatic time limit — until deleted at your request (section <a href="#sec-8-6">8.6</a>)</td></tr>
+            <tr><td class="dt-main" data-label="Data">Notification token and Firebase installation identifier at Google (Firebase Cloud Messaging)</td><td data-label="Retention period">under Firebase's rules: until the installation identifier is deleted, and then up to 180 days</td></tr>
+            <tr><td class="dt-main" data-label="Data">Referral programme data</td><td data-label="Retention period">no automatic time limit — until deleted at your request (section <a href="#sec-8-6">8.6</a>)</td></tr>
+            <tr><td class="dt-main" data-label="Data">Backend runtime logs</td><td data-label="Retention period">at the hosting provider — currently up to 1 hour</td></tr>
+            <tr><td class="dt-main" data-label="Data">Guide search phrases</td><td data-label="Retention period">the Backend does not store them in its database; they may appear in the hosting provider's logs (currently up to 1 hour) and in the short-lived response cache</td></tr>
+            <tr><td class="dt-main" data-label="Data">Analytics data (Firebase Analytics)</td><td data-label="Retention period">2 months; aggregated statistical reports may be kept longer</td></tr>
+            <tr><td class="dt-main" data-label="Data">Crash and error reports (Firebase Crashlytics)</td><td data-label="Retention period">90 days</td></tr>
+            <tr><td class="dt-main" data-label="Data">Events passed to Meta</td><td data-label="Retention period">according to Meta's retention rules</td></tr>
+            <tr><td class="dt-main" data-label="Data">Technical data of connections made by the App directly to Meta (the SDK's configuration connection, section <a href="#sec-9-3">9.3</a>) and to Sanity (fetching images, section <a href="#sec-10-5">10.5</a>)</td><td data-label="Retention period">it does not reach the Backend; at the provider — according to the provider's retention rules</td></tr>
+            <tr><td class="dt-main" data-label="Data">Correspondence</td><td data-label="Retention period">for as long as the matter is handled, and then for the limitation period of any claims</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>After these periods, data held by us or by our processors is deleted or permanently stripped of the features that allow a person to be identified. You manage data on the Device and in iCloud yourself (sections <a href="#sec-7-2">7.2</a>, <a href="#sec-7-3">7.3</a> and <a href="#sec-8">8</a>); data passed to Meta is kept and deleted under Meta's rules.</p>
     </section>
 
     <!-- ── 13 ── -->
     <section class="doc-section" id="sec-13">
       <h2><span class="secnum">13</span>Profiling and automated decision-making</h2>
-      <p>13.1. We do not make decisions concerning Users based <strong>solely</strong> on automated processing, including profiling, that would produce legal effects or similarly significantly affect the User.</p>
-      <p>13.2. Analytics data is used for statistical purposes and to improve the operation of the App. Partner content and recommendations are presented, as a rule, contextually, without individual profiling, unless the User gives separate consent.</p>
+      <p id="sec-13-1">13.1. We do not make decisions based solely on automated processing, including profiling, that would produce legal effects concerning the User or similarly significantly affect them.</p>
+      <p id="sec-13-2">13.2. Analytics data is used for statistical purposes and to improve the App. The App selects financial suggestions on the Device on the basis of Project data; this data does not leave the Device for that purpose. After the "Analytics" consent, however, Google receives information about which suggestion was displayed or opened (its title); this indirectly indicates the situation that triggered it — e.g. a budget overrun. Guides and partner content shown for a stage are selected by the Backend on the basis of the stage key (section <a href="#sec-4-8">4.8</a>).</p>
+      <p id="sec-13-3">13.3. Events passed to Meta after the "Marketing" consent are used to measure advertising effectiveness. Meta also uses them to improve ad targeting and delivery and to personalise content and ads in its services (section <a href="#sec-9-6">9.6</a>), under the rules described in its privacy policy.</p>
     </section>
 
     <!-- ── 14 ── -->
     <section class="doc-section" id="sec-14">
       <h2><span class="secnum">14</span>Cookies and similar technologies</h2>
-      <p>14.1. The mobile App itself does not use cookies in the browser sense; instead it uses the local storage mechanisms described in section 7 and – within the scope covered by consent – analytics technical identifiers.</p>
-      <p>14.2. Websites associated with the App (e.g. the information site, landing page, contact forms, admin panels or CMS) may use cookies and similar technologies, including cookies necessary for the site to work and – after consent is given – analytics cookies. Detailed information about the cookies used on the websites is provided within those websites.</p>
-      <p>14.3. By opening external links in the App (e.g. in the <code style="font-family:var(--font-mono); font-size:14px; padding:1px 6px; background:var(--doc-paper-2); border-radius:4px;">SFSafariViewController</code> component), the User goes to third-party sites that may use their own cookies and their own privacy policies. We are not responsible for the processing of data by these entities.</p>
+      <p id="sec-14-1">14.1. The App does not use cookies in the browser sense. The consent settings in the App are called "Cookie settings" — this refers to the identifiers and data that the SDKs described in section <a href="#sec-9">9</a> store and read on the Device.</p>
+      <p id="sec-14-2">14.2. Websites associated with the App apply their own cookie settings and their own consent mechanism; information about this is available on those sites.</p>
+      <p id="sec-14-3">14.3. External links opened from the App lead to third-party sites that apply their own privacy rules.</p>
     </section>
 
     <!-- ── 15 ── -->
     <section class="doc-section" id="sec-15">
-      <h2><span class="secnum">15</span>Integrations with iOS system features</h2>
-      <p>The App may use iOS system features only after the User grants the relevant system permissions. These permissions can be changed at any time in the iOS system settings. This applies in particular to:</p>
+      <h2><span class="secnum">15</span>iOS permissions and system features</h2>
+      <p>The App uses system features after you grant permissions, which you can change in iOS settings:</p>
       <ul>
-        <li><strong>Photos (PhotosPicker / photo library access)</strong> – to add photos to projects and albums; it is possible to select individual photos without sharing the entire library;</li>
-        <li><strong>Contacts</strong> – to add contractor or contact data, if the User decides to import it;</li>
-        <li><strong>Share Sheet / Share Extension</strong> – to share content into and from the App;</li>
-        <li><strong>Notifications</strong> – to deliver push notifications, after system consent is given;</li>
-        <li><strong>iOS Calendar</strong> – where a given feature is available, the App may locally store identifiers of events created by the User in order to link them to tasks or project stages; this takes place after the relevant system permission is granted;</li>
-        <li><strong>Browsing external links (SFSafariViewController)</strong> – to open websites indicated in the App.</li>
+        <li><strong>Camera</strong> — scanning documents, invoices and receipts in the system scanner.</li>
+        <li><strong>Photos</strong> — adding photos to stage albums, expense attachments, covers and backgrounds. The App saves some photos as originals, together with metadata saved by the device, e.g. date or location; such files may go to iCloud and to Collaborators (sections <a href="#sec-4-1">4.1</a> and <a href="#sec-4-2">4.2</a>).</li>
+        <li><strong>Text recognition (OCR)</strong> — performed on the Device.</li>
+        <li><strong>Calendar</strong> — adding events to the iOS calendar at your request. The identifier of the created event stays on the Device.</li>
+        <li><strong>Contacts</strong> — saving a contractor's card to the address book in a system window. The App does not read your contacts.</li>
+        <li><strong>Share sheet and share extension</strong> — sending invitations to a Shared Project, and receiving links, images and files from other apps. Received content goes to the App's storage on the Device.</li>
+        <li><strong>Notifications</strong> — displaying notifications.</li>
+        <li><strong>Tracking (ATT)</strong> — as described in sections <a href="#sec-9-2">9.2</a> and <a href="#sec-9-3">9.3</a>.</li>
       </ul>
-      <p>Data obtained via system features is used solely to perform the feature for which the User granted the permission.</p>
+      <p>The App does not use location services. Data obtained through permissions is used for the feature the permission relates to.</p>
     </section>
 
     <!-- ── 16 ── -->
     <section class="doc-section" id="sec-16">
       <h2><span class="secnum">16</span>Data security</h2>
-      <p>We apply adequate technical and organisational measures to protect personal data against unauthorised access, loss, destruction or unauthorised modification, including in particular:</p>
-      <p>16.1. <strong>Transmission encryption</strong> – the App's communication with external services and the backend takes place using encrypted connections (HTTPS/TLS).</p>
-      <p>16.2. <strong>Secure storage of sensitive data</strong> – sensitive technical data (e.g. authentication tokens) is stored in the iOS Keychain mechanism.</p>
-      <p>16.3. <strong>Access restriction</strong> – access to data processed on the backend side and to administrative tools is restricted to authorised persons, in line with the need-to-know principle.</p>
-      <p>16.4. <strong>Use of trusted providers</strong> – we work with reputable cloud infrastructure and service providers (Apple, Google/Firebase and hosting providers) that apply their own, market-recognised security measures.</p>
-      <p>16.5. <strong>Event logging and monitoring</strong> – to the extent necessary to ensure security, we keep event logs and monitor the operation of services in order to detect irregularities and abuse.</p>
-      <p>16.6. <strong>Backups</strong> – where appropriate, we use backup mechanisms aimed at ensuring the continuity and integrity of data processed on the service infrastructure side.</p>
-      <p>At the same time, we note that no method of transmitting or storing data is fully immune to risks. We make efforts to ensure that the security measures applied correspond to the current state of technical knowledge and the nature of the data processed.</p>
+      <p id="sec-16-1">16.1. Communication between the App and the Backend and external services uses encrypted connections (HTTPS/TLS).</p>
+      <p id="sec-16-2">16.2. We store the Apple user identifier, name and email address in the Device keychain, without carrying them over to other devices.</p>
+      <p id="sec-16-3">16.3. Only authorised persons have administrative access to the Backend database and the notification sending tools.</p>
+      <p id="sec-16-4">16.4. The security of data in iCloud is provided by Apple under the terms of that service; it also depends on how your Apple account and Device are secured.</p>
+      <p id="sec-16-5">16.5. No method of transmitting or storing data is free of risk. We choose measures appropriate to the nature of the data processed.</p>
     </section>
 
     <!-- ── 17 ── -->
     <section class="doc-section" id="sec-17">
       <h2><span class="secnum">17</span>User rights</h2>
-      <p>In connection with the processing of personal data, the User has the following rights:</p>
-
-      <ul class="rights-grid">
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
-          <div class="rbody"><p class="rttl">Right of access to data</p><span class="rart">art. 15 GDPR</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg></span>
-          <div class="rbody"><p class="rttl">Right to rectification</p><span class="rart">art. 16 GDPR</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14H7L5 6"/><path d="M10 11v6M14 11v6"/></svg></span>
-          <div class="rbody"><p class="rttl">Right to erasure</p><span class="rart">art. 17 GDPR — "right to be forgotten"</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="4" height="18"/><rect x="14" y="3" width="4" height="18"/></svg></span>
-          <div class="rbody"><p class="rttl">Right to restrict processing</p><span class="rart">art. 18 GDPR</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></span>
-          <div class="rbody"><p class="rttl">Right to data portability</p><span class="rart">art. 20 GDPR</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></span>
-          <div class="rbody"><p class="rttl">Right to object</p><span class="rart">art. 21 GDPR</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><polyline points="3 4 3 12 11 12"/></svg></span>
-          <div class="rbody"><p class="rttl">Right to withdraw consent</p><span class="rart">at any time</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></span>
-          <div class="rbody"><p class="rttl">Right to lodge a complaint with the PUODO</p><span class="rart">ul. Moniuszki 1A, 00-014 Warsaw</span></div>
-        </li>
-      </ul>
-
-      <p>17.1. <strong>Right of access</strong> to data and to obtain a copy of it (art. 15 GDPR).</p>
-      <p>17.2. <strong>Right to rectification</strong> of incorrect or incomplete data (art. 16 GDPR).</p>
-      <p>17.3. <strong>Right to erasure</strong> of data ("right to be forgotten"), in the cases provided for by law (art. 17 GDPR).</p>
-      <p>17.4. <strong>Right to restrict processing</strong> (art. 18 GDPR).</p>
-      <p>17.5. <strong>Right to data portability</strong> – with respect to data processed on the basis of consent or a contract by automated means (art. 20 GDPR).</p>
-      <p>17.6. <strong>Right to object</strong> to processing based on the Controller's legitimate interest (art. 21 GDPR).</p>
-      <p>17.7. <strong>Right to withdraw consent</strong> at any time, without affecting the lawfulness of processing carried out before its withdrawal (applies to data processed on the basis of consent, e.g. analytics).</p>
-      <p>17.8. <strong>Right to lodge a complaint</strong> with a supervisory authority – in Poland this is the <strong>President of the Personal Data Protection Office (PUODO)</strong>, ul. Moniuszki 1A, 00-014 Warsaw.</p>
-
-      <p>To exercise the above rights, please contact the Controller at <a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a>. We may ask for information allowing us to identify the person making the request. We respond to a request without undue delay, no later than within one month of receiving it, with the possibility of an extension in the cases provided for by law.</p>
-      <p>The User can exercise some rights themselves – e.g. by deleting local data in the App, managing data in iCloud via the Apple account settings, changing analytics consent settings or revoking system permissions in the iOS settings.</p>
+      <p>You have the following rights:</p>
+      <p id="sec-17-1">17.1. the <strong>right of access</strong> to your data and to obtain a copy of it (Art. 15 GDPR);</p>
+      <p id="sec-17-2">17.2. the <strong>right to rectification</strong> (Art. 16 GDPR);</p>
+      <p id="sec-17-3">17.3. the <strong>right to erasure</strong> (Art. 17 GDPR);</p>
+      <p id="sec-17-4">17.4. the <strong>right to restriction of processing</strong> (Art. 18 GDPR);</p>
+      <p id="sec-17-5">17.5. the <strong>right to data portability</strong> for data processed by automated means on the basis of consent or a contract (Art. 20 GDPR);</p>
+      <p id="sec-17-6">17.6. the <strong>right to object</strong> to processing based on legitimate interest (Art. 21 GDPR) — see the separate notice below;</p>
+      <p id="sec-17-7">17.7. the <strong>right to withdraw consent</strong> at any time, without affecting the lawfulness of earlier processing;</p>
+      <p id="sec-17-8">17.8. the <strong>right to lodge a complaint</strong> with a supervisory authority — in Poland: the President of the Personal Data Protection Office (PUODO), ul. Moniuszki 1A, 00-014 Warsaw.</p>
+      <p><strong>Right to object — separate notice.</strong> You may at any time object, on grounds relating to your particular situation, to the processing of your data based on legitimate interest (Art. 6(1)(f) GDPR), that is: registering the Device and sending notifications from the Backend, handling correspondence, Backend technical logs, the Meta SDK fetching its configuration, and establishing, exercising or defending claims. To the extent your data is processed for direct marketing purposes — this applies to messages encouraging you to return to the App (section <a href="#sec-4-5">4.5</a>) — you may object at any time, without giving any reason; once you object, we will no longer process your data for that purpose (Art. 21(2) and (3) GDPR). Send your objection to <strong><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></strong>. In version 2.0, registering the Device and the Meta SDK fetching its configuration cannot be switched off in the App — they take place when it is launched. Once we uphold your objection we will delete the Device record we are able to find (section <a href="#sec-8-6">8.6</a>), but an installed App may register the Device again; permanently ending this processing requires removing the App from the Device. You can switch off the Backend notification categories other than "System notifications" yourself as described in section <a href="#sec-4-5">4.5</a>.</p>
+      <p>To exercise your rights, write to <strong><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></strong>. We may ask for information needed to confirm your identity. We reply without undue delay, and no later than one month after receiving the request; in the cases provided for in the GDPR this period may be extended.</p>
+      <p><strong>Data in iCloud and on the Device.</strong> We have no access to data in areas A and B, so you exercise the rights relating to that data yourself: in the App (editing and deleting content, ending or leaving a share, "Delete account") and in your Apple account settings. Exception: if your data is held in another User's Project — as entries or files you added as a Collaborator (section <a href="#sec-8-7">8.7</a>) or as contact details saved by that person (section <a href="#sec-5-4">5.4</a>) — ask that Project's Owner to change or delete it; the Controller has no access to it.</p>
     </section>
 
     <!-- ── 18 ── -->
     <section class="doc-section" id="sec-18">
       <h2><span class="secnum">18</span>Children's data</h2>
-      <p>18.1. The App is <strong>not directed at children</strong> and is not intended for persons under 16 years of age.</p>
-      <p>18.2. We do not knowingly collect children's personal data. If we become aware that the data of a person below the required age has been provided to us without an appropriate basis, we will take steps to delete it.</p>
-      <p>18.3. If a parent or legal guardian determines that a child has provided us with personal data, please contact us at <a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a>.</p>
+      <p id="sec-18-1">18.1. The App is not directed at persons under 16 years of age.</p>
+      <p id="sec-18-2">18.2. We do not knowingly collect children's personal data. If we learn that such data has been passed to us without the required basis, we will delete it.</p>
+      <p id="sec-18-3">18.3. A parent or legal guardian who believes that a child has passed data to us can write to <strong><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></strong>.</p>
     </section>
 
     <!-- ── 19 ── -->
     <section class="doc-section" id="sec-19">
       <h2><span class="secnum">19</span>Changes to the Privacy Policy</h2>
-      <p>19.1. This Policy may be updated from time to time, in particular in connection with the development of the App, changes in the technologies used or changes in the law.</p>
-      <p>19.2. We will inform of material changes in a manner appropriate to their nature, e.g. through a notice in the App or an update of the document together with a change of the date.</p>
-      <p>19.3. The current version of the Policy is available at all times in the App and on the website associated with the App. The date of the last update is indicated at the beginning of the document.</p>
+      <p id="sec-19-1">19.1. The Policy may be changed, in particular when the App's features, the technologies used or the law change.</p>
+      <p id="sec-19-2">19.2. We inform about material changes in a manner appropriate to their nature, e.g. through a notice in the App. If a change requires a new consent, we will ask for it.</p>
+      <p id="sec-19-3">19.3. The current version is available in the App and on the App's website. The effective date and the last-updated date are given at the beginning of the document.</p>
     </section>
 
     <!-- ── 20 ── -->
     <section class="doc-section" id="sec-20">
       <h2><span class="secnum">20</span>Privacy contact</h2>
-      <p>For all matters relating to the protection of personal data and this Policy, please contact us:</p>
-
       <div class="contact-card">
         <div class="contact-card__body">
           <p class="contact-card__role">Privacy contact</p>

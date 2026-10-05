@@ -838,6 +838,69 @@
   }
   @media (max-width: 720px) { .doc-foot__btm { padding: 24px 20px 0; } }
 
+  /* ── v2.0: tabele danych i podsumowanie zmian (scripts/legal-md-to-html.mjs) ── */
+  .data-table { table-layout: fixed; font-size: 13.5px; }
+  .data-table thead th { padding: 12px; font-size: 11px; }
+  .data-table tbody td { padding: 12px; overflow-wrap: break-word; }
+  .data-table td.dt-main { color: var(--ink); }
+  .data-table.cols-5 th:nth-child(1) { width: 30%; }
+  .data-table.cols-5 th:nth-child(2) { width: 15%; }
+  .data-table.cols-5 th:nth-child(3) { width: 16%; }
+  .data-table.cols-5 th:nth-child(4) { width: 21%; }
+  .data-table.cols-5 th:nth-child(5) { width: 18%; }
+  .data-table.cols-3 th:nth-child(1) { width: 22%; }
+  .data-table.cols-3 th:nth-child(2) { width: 38%; }
+  .data-table.cols-2 th:nth-child(1) { width: 38%; }
+  @media (max-width: 1180px) {
+    .data-table.cols-5, .data-table.cols-5 thead, .data-table.cols-5 tbody, .data-table.cols-5 tr, .data-table.cols-5 td, .data-table.cols-5 th { display: block; }
+    .data-table.cols-5 thead { display: none; }
+    .data-table.cols-5 { border: none; padding: 0; background: transparent; }
+    .data-table.cols-5 tbody tr {
+      background: var(--doc-card);
+      border: 1px solid var(--doc-rule);
+      border-radius: var(--r-md);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .data-table.cols-5 tbody td { padding: 0; border: none; margin-bottom: 12px; font-size: 14.5px; }
+    .data-table.cols-5 tbody td:last-child { margin-bottom: 0; }
+    .data-table.cols-5 tbody td::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-3); margin-bottom: 3px;
+    }
+    .data-table.cols-5 tbody tr:hover td { background: transparent; }
+  }
+  @media (max-width: 720px) {
+    .data-table, .data-table thead, .data-table tbody, .data-table tr, .data-table td, .data-table th { display: block; }
+    .data-table thead { display: none; }
+    .data-table { border: none; padding: 0; background: transparent; }
+    .data-table tbody tr {
+      background: var(--doc-card);
+      border: 1px solid var(--doc-rule);
+      border-radius: var(--r-md);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .data-table tbody td { padding: 0; border: none; margin-bottom: 12px; font-size: 14.5px; }
+    .data-table tbody td:last-child { margin-bottom: 0; }
+    .data-table tbody td::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-3); margin-bottom: 3px;
+    }
+    .data-table tbody tr:hover td { background: transparent; }
+  }
+  .doc-content code { font-size: 0.92em; padding: 1px 5px; border-radius: 4px; background: var(--doc-accent-tint); }
+  .doc-changes ol { padding-left: 22px; }
+  .doc-changes li { margin: 8px 0; }
+  .doc-hero .lead.doc-version { font-size: 15px; color: var(--ink-3); margin-top: 14px; }
+  .doc-hero .lead.doc-version a { color: var(--doc-accent); border-bottom: 1px solid var(--doc-accent-soft); }
+  /* ── /v2.0 ── */
 </style>
 </head>
 <body>
@@ -883,14 +946,14 @@
     </nav>
     <h1>Polityka Prywatności aplikacji homdu.</h1>
     <div class="badges">
-      <span class="doc-badge"><span class="dot"></span><span class="lbl">Data wejścia w życie:</span> <span class="val">24 maja 2026</span></span>
-      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Ostatnia aktualizacja:</span> <span class="val">22 czerwca 2026</span></span>
+      <span class="doc-badge"><span class="dot"></span><span class="lbl">Data wejścia w życie:</span> <span class="val">5 października 2026</span></span>
+      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Ostatnia aktualizacja:</span> <span class="val">6 października 2026</span></span>
     </div>
     <p class="lead">
-      Niniejsza Polityka Prywatności opisuje, w jaki sposób przetwarzane są dane osobowe użytkowników aplikacji mobilnej <strong>homdu</strong> („Aplikacja"), wspierającej planowanie, budowę i remont. Dokument wyjaśnia, jakie dane są zbierane, w jakich celach, na jakiej podstawie prawnej, komu mogą być udostępniane oraz jakie prawa przysługują użytkownikom.
+      Niniejsza Polityka Prywatności opisuje, jak przetwarzane są dane osobowe użytkowników aplikacji <strong>homdu</strong> („Aplikacja") — dziennika budowy i remontu. Wyjaśnia, jakie dane są przetwarzane, w jakim celu, na jakiej podstawie prawnej, gdzie się znajdują, kto je otrzymuje i jakie prawa przysługują użytkownikom.
     </p>
-    <p class="lead" style="margin-top:14px;">
-      Prosimy o uważne zapoznanie się z treścią Polityki przed rozpoczęciem korzystania z Aplikacji. Korzystanie z Aplikacji w zakresie funkcji wiążących się z przetwarzaniem danych osobowych oznacza, że użytkownik zapoznał się z zasadami opisanymi w tym dokumencie.
+    <p class="lead doc-version">
+      <strong>Wersja:</strong> 2.0 — dotyczy Aplikacji homdu w wersji 2.0 i nowszych. <strong>Zastępuje:</strong> Politykę Prywatności z 22 czerwca 2026 r., stosowaną do wersji 1.x Aplikacji — <a href="polityka-prywatnosci-2026-06-22">poprzednia wersja</a>.
     </p>
   </div>
 </section>
@@ -902,26 +965,27 @@
   <aside class="toc" aria-label="Spis treści">
     <p class="toc__title">Spis treści</p>
     <ul class="toc__list" id="toc-list">
+      <li><a href="#sec-0"><span class="num">•</span><span>Podsumowanie zmian w wersji 2.0</span></a></li>
       <li><a href="#sec-1"><span class="num">1.</span><span>Administrator danych osobowych</span></a></li>
       <li><a href="#sec-2"><span class="num">2.</span><span>Definicje</span></a></li>
-      <li><a href="#sec-3"><span class="num">3.</span><span>Ogólne zasady przetwarzania danych</span></a></li>
-      <li><a href="#sec-4"><span class="num">4.</span><span>Kategorie przetwarzanych danych</span></a></li>
-      <li><a href="#sec-5"><span class="num">5.</span><span>Źródła pozyskiwania danych</span></a></li>
-      <li><a href="#sec-6"><span class="num">6.</span><span>Cele i podstawy prawne</span></a></li>
-      <li><a href="#sec-7"><span class="num">7.</span><span>Dane lokalne, iCloud i usługi zewnętrzne</span></a></li>
-      <li><a href="#sec-8"><span class="num">8.</span><span>Konto użytkownika i uwierzytelnianie</span></a></li>
-      <li><a href="#sec-9"><span class="num">9.</span><span>Analityka, telemetria, diagnostyka i zgody</span></a></li>
+      <li><a href="#sec-3"><span class="num">3.</span><span>Ogólne zasady i cztery obszary przechowywania danych</span></a></li>
+      <li><a href="#sec-4"><span class="num">4.</span><span>Jakie dane przetwarzamy — tabele według kategorii</span></a></li>
+      <li><a href="#sec-5"><span class="num">5.</span><span>Źródła danych</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>Cele i podstawy prawne przetwarzania</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Gdzie znajdują się dane</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Konto i usunięcie Konta</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>Zgody: analityka i marketing</span></a></li>
       <li><a href="#sec-10"><span class="num">10.</span><span>Odbiorcy danych</span></a></li>
       <li><a href="#sec-11"><span class="num">11.</span><span>Przekazywanie danych poza EOG</span></a></li>
       <li><a href="#sec-12"><span class="num">12.</span><span>Okres przechowywania danych</span></a></li>
-      <li><a href="#sec-13"><span class="num">13.</span><span>Profilowanie i decyzje automatyczne</span></a></li>
-      <li><a href="#sec-14"><span class="num">14.</span><span>Pliki cookies i technologie podobne</span></a></li>
-      <li><a href="#sec-15"><span class="num">15.</span><span>Integracje z funkcjami iOS</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Profilowanie i automatyczne podejmowanie decyzji</span></a></li>
+      <li><a href="#sec-14"><span class="num">14.</span><span>Pliki cookies i podobne technologie</span></a></li>
+      <li><a href="#sec-15"><span class="num">15.</span><span>Uprawnienia i funkcje systemu iOS</span></a></li>
       <li><a href="#sec-16"><span class="num">16.</span><span>Bezpieczeństwo danych</span></a></li>
       <li><a href="#sec-17"><span class="num">17.</span><span>Prawa Użytkownika</span></a></li>
       <li><a href="#sec-18"><span class="num">18.</span><span>Dane dzieci</span></a></li>
-      <li><a href="#sec-19"><span class="num">19.</span><span>Zmiany Polityki</span></a></li>
-      <li><a href="#sec-20"><span class="num">20.</span><span>Kontakt</span></a></li>
+      <li><a href="#sec-19"><span class="num">19.</span><span>Zmiany Polityki Prywatności</span></a></li>
+      <li><a href="#sec-20"><span class="num">20.</span><span>Kontakt w sprawach prywatności</span></a></li>
     </ul>
   </aside>
 
@@ -929,36 +993,53 @@
   <details class="toc-mobile">
     <summary>Spis treści — 20 sekcji</summary>
     <ul class="toc__list">
+      <li><a href="#sec-0"><span class="num">•</span><span>Podsumowanie zmian w wersji 2.0</span></a></li>
       <li><a href="#sec-1"><span class="num">1.</span><span>Administrator danych osobowych</span></a></li>
       <li><a href="#sec-2"><span class="num">2.</span><span>Definicje</span></a></li>
-      <li><a href="#sec-3"><span class="num">3.</span><span>Ogólne zasady przetwarzania</span></a></li>
-      <li><a href="#sec-4"><span class="num">4.</span><span>Kategorie danych</span></a></li>
-      <li><a href="#sec-5"><span class="num">5.</span><span>Źródła pozyskiwania</span></a></li>
-      <li><a href="#sec-6"><span class="num">6.</span><span>Cele i podstawy prawne</span></a></li>
-      <li><a href="#sec-7"><span class="num">7.</span><span>Dane lokalne / iCloud / usługi</span></a></li>
-      <li><a href="#sec-8"><span class="num">8.</span><span>Konto i uwierzytelnianie</span></a></li>
-      <li><a href="#sec-9"><span class="num">9.</span><span>Analityka i zgody</span></a></li>
+      <li><a href="#sec-3"><span class="num">3.</span><span>Ogólne zasady i cztery obszary przechowywania danych</span></a></li>
+      <li><a href="#sec-4"><span class="num">4.</span><span>Jakie dane przetwarzamy — tabele według kategorii</span></a></li>
+      <li><a href="#sec-5"><span class="num">5.</span><span>Źródła danych</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>Cele i podstawy prawne przetwarzania</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Gdzie znajdują się dane</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Konto i usunięcie Konta</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>Zgody: analityka i marketing</span></a></li>
       <li><a href="#sec-10"><span class="num">10.</span><span>Odbiorcy danych</span></a></li>
-      <li><a href="#sec-11"><span class="num">11.</span><span>Przekazywanie poza EOG</span></a></li>
-      <li><a href="#sec-12"><span class="num">12.</span><span>Okres przechowywania</span></a></li>
-      <li><a href="#sec-13"><span class="num">13.</span><span>Profilowanie</span></a></li>
-      <li><a href="#sec-14"><span class="num">14.</span><span>Cookies</span></a></li>
-      <li><a href="#sec-15"><span class="num">15.</span><span>Integracje iOS</span></a></li>
-      <li><a href="#sec-16"><span class="num">16.</span><span>Bezpieczeństwo</span></a></li>
+      <li><a href="#sec-11"><span class="num">11.</span><span>Przekazywanie danych poza EOG</span></a></li>
+      <li><a href="#sec-12"><span class="num">12.</span><span>Okres przechowywania danych</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Profilowanie i automatyczne podejmowanie decyzji</span></a></li>
+      <li><a href="#sec-14"><span class="num">14.</span><span>Pliki cookies i podobne technologie</span></a></li>
+      <li><a href="#sec-15"><span class="num">15.</span><span>Uprawnienia i funkcje systemu iOS</span></a></li>
+      <li><a href="#sec-16"><span class="num">16.</span><span>Bezpieczeństwo danych</span></a></li>
       <li><a href="#sec-17"><span class="num">17.</span><span>Prawa Użytkownika</span></a></li>
       <li><a href="#sec-18"><span class="num">18.</span><span>Dane dzieci</span></a></li>
-      <li><a href="#sec-19"><span class="num">19.</span><span>Zmiany</span></a></li>
-      <li><a href="#sec-20"><span class="num">20.</span><span>Kontakt</span></a></li>
+      <li><a href="#sec-19"><span class="num">19.</span><span>Zmiany Polityki Prywatności</span></a></li>
+      <li><a href="#sec-20"><span class="num">20.</span><span>Kontakt w sprawach prywatności</span></a></li>
     </ul>
   </details>
 
   <main class="doc-content">
 
+    <!-- ── zmiany ── -->
+    <section class="doc-section doc-changes" id="sec-0">
+      <h2>Podsumowanie zmian w wersji 2.0</h2>
+      <p>W porównaniu z poprzednią wersją:</p>
+      <ol>
+        <li><strong>Współdzielenie Inwestycji</strong> — opisaliśmy, jakie dane widzą zaproszone osoby, jak działają uprawnienia i jak zakończyć udostępnienie (sekcje <a href="#sec-4-2">4.2</a> i <a href="#sec-7-3">7.3</a>).</li>
+        <li><strong>Pliki w iCloud</strong> — do iCloud trafiają także załączniki do wydatków, okładki, tła i zdjęcia albumów (sekcje <a href="#sec-4-1">4.1</a> i <a href="#sec-7-2">7.2</a>).</li>
+        <li><strong>Tryb demo</strong> — dane przykładowej Inwestycji są przechowywane na urządzeniu; Aplikacja nie wysyła ich do iCloud ani na serwer (sekcje <a href="#sec-4-7">4.7</a> i <a href="#sec-7-1">7.1</a>).</li>
+        <li><strong>Dwie odrębne kategorie zgód</strong> — „Analityka i diagnostyka" (Firebase Analytics i Crashlytics) oraz „Marketing" (Meta), wraz z opisem identyfikatorów, w tym IDFA (sekcja <a href="#sec-9">9</a>).</li>
+        <li><strong>Konto</strong> — logowanie funkcją „Zaloguj się, używając konta Apple" jest wymagane do tworzenia własnych Inwestycji i do synchronizacji (sekcja <a href="#sec-8">8</a>).</li>
+        <li><strong>Powiadomienia</strong> — opisaliśmy rejestrację urządzenia na naszym backendzie, która następuje przy uruchomieniu Aplikacji, także bez Konta (sekcje <a href="#sec-4-5">4.5</a> i <a href="#sec-7-4">7.4</a>).</li>
+        <li><strong>Usuwanie Konta</strong> — opisaliśmy, co funkcja „Usuń konto" usuwa, czego nie usuwa i jak dokończyć usunięcie (sekcja <a href="#sec-8">8</a>).</li>
+        <li><strong>Układ dokumentu</strong> — dodaliśmy tabele „jakie dane / po co / podstawa / odbiorca / jak długo" oraz wyraźny podział: urządzenie, iCloud, nasz backend, podmioty trzecie (sekcje <a href="#sec-3">3</a> i <a href="#sec-4">4</a>).</li>
+        <li><strong>Podstawy prawne i okresy przechowywania</strong> — rejestrację urządzenia i wysyłanie powiadomień z naszego backendu opieramy na uzasadnionym interesie, a komunikaty usługowe na umowie (poprzednio: zgoda systemowa na powiadomienia oraz umowa); raporty awarii — wyłącznie na zgodzie (poprzednio: zgoda i uzasadniony interes); treści i program poleceń — na umowie (poprzednio: umowa i uzasadniony interes). Rekord urządzenia i dane programu poleceń przechowujemy bez automatycznego terminu, do usunięcia na Twoje żądanie (sekcje <a href="#sec-4-5">4.5</a>, <a href="#sec-4-8">4.8</a>, <a href="#sec-6">6</a>, <a href="#sec-12">12</a> i <a href="#sec-17">17</a>).</li>
+      </ol>
+    </section>
+
     <!-- ── 1 ── -->
     <section class="doc-section" id="sec-1">
       <h2><span class="secnum">01</span>Administrator danych osobowych</h2>
-      <p>Administratorem danych osobowych w rozumieniu Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (dalej <strong>„RODO"</strong>) jest:</p>
-
+      <p>Administratorem danych osobowych w rozumieniu Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. („RODO") jest:</p>
       <div class="admin-card">
         <div class="admin-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/><path d="M10 10h.01M14 10h.01M10 13h.01M14 13h.01"/></svg>
@@ -973,420 +1054,486 @@
           </dl>
         </div>
       </div>
-
-      <p>(dalej <strong>„Administrator"</strong>, <strong>„my"</strong>).</p>
-      <p>We wszystkich sprawach związanych z przetwarzaniem danych osobowych oraz realizacją praw przysługujących na podstawie RODO można kontaktować się z Administratorem pod wskazanym wyżej adresem e-mail.</p>
-      <p>Administrator nie powołał inspektora ochrony danych. Funkcje kontaktowe w zakresie ochrony danych pełni bezpośrednio Administrator.</p>
+      <p>(dalej „Administrator", „my").</p>
+      <p>Administrator nie powołał inspektora ochrony danych. W sprawach dotyczących danych osobowych i realizacji praw z RODO prosimy o kontakt pod wskazanym adresem e-mail.</p>
+      <p>Administrator odpowiada za dane, które trafiają do niego lub do podmiotów przetwarzających działających na jego zlecenie (sekcje <a href="#sec-7-4">7.4</a> i <a href="#sec-10">10</a>). W zakresie zdarzeń przekazywanych do Meta po zgodzie „Marketing" role Administratora i Meta opisuje sekcja <a href="#sec-9-6">9.6</a>. Treści, które Użytkownik przechowuje na swoim urządzeniu i w iCloud, nie są dostępne dla Administratora (sekcje <a href="#sec-7-1">7.1</a>–<a href="#sec-7-3">7.3</a>).</p>
     </section>
 
     <!-- ── 2 ── -->
     <section class="doc-section" id="sec-2">
       <h2><span class="secnum">02</span>Definicje</h2>
-      <p>Na potrzeby niniejszej Polityki przyjmuje się następujące znaczenie pojęć:</p>
       <ul>
-        <li><strong>Aplikacja</strong> – aplikacja mobilna homdu przeznaczona na urządzenia z systemem iOS (oraz, w przyszłości, na inne platformy mobilne).</li>
-        <li><strong>Użytkownik</strong> – osoba fizyczna korzystająca z Aplikacji.</li>
-        <li><strong>Dane osobowe</strong> – wszelkie informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej.</li>
-        <li><strong>Przetwarzanie</strong> – każda operacja wykonywana na danych osobowych, np. zbieranie, przechowywanie, modyfikowanie, udostępnianie, usuwanie.</li>
-        <li><strong>Inwestycja</strong> – projekt budowlany lub remontowy prowadzony przez Użytkownika w Aplikacji, wraz z przypisanymi do niego etapami, zadaniami, kosztami, dokumentami, zdjęciami, kontaktami i notatkami.</li>
-        <li><strong>Właściciel Inwestycji</strong> – Użytkownik, który udostępnia Inwestycję innemu Użytkownikowi.</li>
-        <li><strong>Współpracownik</strong> – Użytkownik, który zaakceptował zaproszenie do udostępnionej Inwestycji.</li>
-        <li><strong>Udostępniona Inwestycja</strong> – Inwestycja udostępniona pomiędzy Użytkownikami za pośrednictwem mechanizmów Apple CloudKit / CKShare.</li>
-        <li><strong>Urządzenie</strong> – urządzenie mobilne, na którym zainstalowana jest Aplikacja.</li>
-        <li><strong>Podmiot przetwarzający (procesor)</strong> – podmiot przetwarzający dane osobowe w imieniu i na polecenie Administratora.</li>
+        <li><strong>Aplikacja</strong> – aplikacja homdu dla iPhone'a i iPada, udostępniana w App Store.</li>
+        <li><strong>Użytkownik</strong> („Ty") – osoba fizyczna korzystająca z Aplikacji.</li>
+        <li><strong>Konto</strong> – konto Użytkownika w Aplikacji utworzone przez logowanie funkcją „Zaloguj się, używając konta Apple".</li>
+        <li><strong>Dane osobowe</strong> – informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej.</li>
+        <li><strong>Inwestycja</strong> – projekt budowlany lub remontowy prowadzony w Aplikacji wraz z przypisanymi do niego treściami.</li>
+        <li><strong>Właściciel Inwestycji</strong> – Użytkownik, który utworzył Inwestycję i może ją udostępnić innym osobom.</li>
+        <li><strong>Współpracownik</strong> – osoba, która przyjęła zaproszenie do Udostępnionej Inwestycji (uczestnik udostępnienia).</li>
+        <li><strong>Udostępniona Inwestycja</strong> – Inwestycja udostępniona Współpracownikom za pośrednictwem usługi CloudKit firmy Apple.</li>
+        <li><strong>Tryb demo</strong> – korzystanie z przykładowej Inwestycji wygenerowanej w Aplikacji; jest dostępny bez Konta, a zalogowany Użytkownik może włączyć przykładową Inwestycję w Ustawieniach Aplikacji.</li>
+        <li><strong>iCloud / CloudKit</strong> – usługi Apple służące do przechowywania i synchronizacji danych na koncie Apple Użytkownika.</li>
+        <li><strong>Backend</strong> – usługa <code>homdu-api</code> Administratora: kod działający u dostawcy hostingu Vercel i baza danych Google Cloud Firestore.</li>
+        <li><strong>Urządzenie</strong> – urządzenie, na którym zainstalowano Aplikację.</li>
+        <li><strong>IDFA</strong> – identyfikator reklamowy urządzenia Apple.</li>
+        <li><strong>IDFV</strong> – identyfikator dostawcy: identyfikator przypisany Urządzeniu dla aplikacji jednego wydawcy.</li>
+        <li><strong>ATT</strong> – systemowe okno iOS z pytaniem o zgodę na śledzenie (App Tracking Transparency).</li>
+        <li><strong>Podmiot przetwarzający</strong> – podmiot przetwarzający dane w imieniu i na polecenie Administratora.</li>
         <li><strong>EOG</strong> – Europejski Obszar Gospodarczy.</li>
       </ul>
     </section>
 
     <!-- ── 3 ── -->
     <section class="doc-section" id="sec-3">
-      <h2><span class="secnum">03</span>Ogólne zasady przetwarzania danych</h2>
-      <p>3.1. Przetwarzamy dane osobowe zgodnie z RODO, ustawą z dnia 10 maja 2018 r. o ochronie danych osobowych oraz innymi obowiązującymi przepisami prawa.</p>
-      <p>3.2. Stosujemy zasadę <strong>minimalizacji danych</strong> – zbieramy wyłącznie dane niezbędne do realizacji konkretnych, jasno określonych celów.</p>
-      <p>3.3. Istotną cechą Aplikacji jest to, że znaczna część danych Użytkownika (np. treść inwestycji, zdjęcia, notatki, dokumenty) jest przechowywana <strong>lokalnie na urządzeniu</strong> oraz – jeżeli Użytkownik korzysta z synchronizacji – w <strong>prywatnej przestrzeni iCloud Użytkownika</strong>. W wielu przypadkach Administrator nie ma technicznego dostępu do tych treści. Szczegóły opisano w sekcji 7.</p>
-      <p>3.4. Część funkcji Aplikacji (np. analityka, telemetria, niektóre personalizacje) działa <strong>wyłącznie po wyrażeniu zgody</strong> przez Użytkownika i może zostać w każdej chwili wyłączona.</p>
+      <h2><span class="secnum">03</span>Ogólne zasady i cztery obszary przechowywania danych</h2>
+      <p id="sec-3-1">3.1. Przetwarzamy dane zgodnie z RODO, ustawą z dnia 10 maja 2018 r. o ochronie danych osobowych i innymi właściwymi przepisami.</p>
+      <p id="sec-3-2">3.2. Stosujemy zasadę minimalizacji: przetwarzamy tylko dane potrzebne do określonych celów.</p>
+      <p id="sec-3-3">3.3. Dane związane z Aplikacją znajdują się w czterech obszarach. Ten podział jest stosowany w całym dokumencie.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-3">
+          <thead>
+            <tr><th>Obszar</th><th>Co się w nim znajduje</th><th>Kto ma dostęp</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Obszar"><strong>A. Twoje Urządzenie</strong></td><td data-label="Co się w nim znajduje">treści Inwestycji, pliki dokumentów, dane Trybu demo, dane formularza finansowego, ustawienia Aplikacji i zapisane zgody, pęk kluczy</td><td data-label="Kto ma dostęp">Ty (o kopii zapasowej Urządzenia — sekcja <a href="#sec-7-1">7.1</a>)</td></tr>
+            <tr><td class="dt-main" data-label="Obszar"><strong>B. iCloud (Apple)</strong></td><td data-label="Co się w nim znajduje">zsynchronizowane treści i pliki Twoich Inwestycji; dane Udostępnionych Inwestycji — w iCloud ich Właściciela (Twoim, jeżeli to Ty udostępniasz)</td><td data-label="Kto ma dostęp">Ty oraz Współpracownicy, których zaprosił Właściciel Inwestycji; Apple jako dostawca usługi. <strong>Administrator nie ma dostępu do tych danych.</strong></td></tr>
+            <tr><td class="dt-main" data-label="Obszar"><strong>C. Nasz Backend</strong></td><td data-label="Co się w nim znajduje">rekord Urządzenia do powiadomień, dane programu poleceń, dane techniczne żądań</td><td data-label="Kto ma dostęp">Administrator i jego podmioty przetwarzające (Vercel, Google). W programie poleceń identyfikator osoby polecającej trafia też, w odpowiedzi Backendu, na Urządzenie osoby, która wykorzystała jej kod (sekcja <a href="#sec-4-8">4.8</a>). Token powiadomień przetwarzają także Google (Firebase Cloud Messaging) i Apple (APNs) w celu doręczenia powiadomień — nie zależy to od zgód opisanych w sekcji <a href="#sec-9">9</a>.</td></tr>
+            <tr><td class="dt-main" data-label="Obszar"><strong>D. Podmioty trzecie w zakresie analityki i marketingu — po wyrażeniu zgody</strong></td><td data-label="Co się w nim znajduje">zdarzenia analityczne i raporty awarii (Google), zdarzenia konwersji (Meta)</td><td data-label="Kto ma dostęp">Google, Meta</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Poza tymi obszarami pozostają: korespondencja e-mail z Administratorem (sekcja <a href="#sec-4-8">4.8</a>), pobieranie obrazów z serwerów Sanity (sekcja <a href="#sec-10-5">10.5</a>) oraz połączenie konfiguracyjne pakietu SDK Meta (sekcja <a href="#sec-9-3">9.3</a>).</p>
+      <p id="sec-3-4">3.4. Zbieranie zdarzeń analitycznych, raportów awarii i zdarzeń marketingowych jest włączane tylko po zapisaniu zgody (także zgody zapisanej w wersji 1.x — sekcja <a href="#sec-9-1">9.1</a>); zgodę można cofnąć w dowolnym momencie (sekcja <a href="#sec-9">9</a>).</p>
     </section>
 
     <!-- ── 4 ── -->
     <section class="doc-section" id="sec-4">
-      <h2><span class="secnum">04</span>Kategorie przetwarzanych danych</h2>
-      <p>Poniżej przedstawiamy kategorie danych, które mogą być przetwarzane w związku z korzystaniem z Aplikacji. Przy każdej kategorii oznaczamy jej charakter:</p>
+      <h2><span class="secnum">04</span>Jakie dane przetwarzamy — tabele według kategorii</h2>
 
-      <div class="chip-legend" aria-label="Legenda oznaczeń">
-        <div class="chip-legend__row"><span class="chip chip--w">W</span><span><strong>Wymagane</strong> – niezbędne do świadczenia danej funkcji lub usługi.</span></div>
-        <div class="chip-legend__row"><span class="chip chip--o">O</span><span><strong>Opcjonalne</strong> – podawane dobrowolnie przez Użytkownika.</span></div>
-        <div class="chip-legend__row"><span class="chip chip--z">Z</span><span><strong>Za zgodą</strong> – przetwarzane wyłącznie na podstawie zgody Użytkownika.</span></div>
-        <div class="chip-legend__row"><span class="chip chip--s">S</span><span><strong>Systemowe iOS</strong> – zależne od uprawnień systemowych iOS udzielonych przez Użytkownika.</span></div>
+      <h3 id="sec-4-1">4.1. Synchronizacja w iCloud (obszar B)</h3>
+      <p>Dotyczy zalogowanych Użytkowników z włączonym iCloud.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>Jakie dane</th><th>Po co</th><th>Podstawa prawna</th><th>Odbiorca / gdzie trafiają</th><th>Jak długo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Jakie dane">Treści Inwestycji: dane Inwestycji (nazwa, adres, dane działki i nieruchomości wpisane w Aplikacji, budżet), wpisy dziennika, etapy, zadania, wydatki, budżety, kontakty (w tym oceny i notatki o wykonawcach), opisy plików etapów (nazwa i typ), linki, albumy, wydarzenia</td><td data-label="Po co">synchronizacja między Twoimi urządzeniami</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. b RODO (wykonanie umowy o korzystanie z Aplikacji)</td><td data-label="Odbiorca / gdzie trafiają">prywatna baza iCloud Użytkownika, prowadzona przez Apple. Administrator nie ma dostępu.</td><td data-label="Jak długo">do usunięcia przez Ciebie treści lub Inwestycji, z zastrzeżeniem opisanym w sekcji <a href="#sec-7-2">7.2</a>; usunięcie Konta — patrz sekcja <a href="#sec-8">8</a></td></tr>
+            <tr><td class="dt-main" data-label="Jakie dane">Pliki: załączniki do wydatków (w tym zdjęcia paragonów); okładki Inwestycji i etapów; tła etapów; zdjęcia albumów etapów. Tekst rozpoznany z paragonów na Urządzeniu (OCR) może być zapisany razem z załącznikiem.</td><td data-label="Po co">jak wyżej</td><td data-label="Podstawa prawna">jak wyżej</td><td data-label="Odbiorca / gdzie trafiają">jak wyżej</td><td data-label="Jak długo">jak wyżej</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Plików z zakładki „Dokumenty" oraz zdjęć wpisów dziennika Aplikacja nie wysyła do iCloud — są przechowywane na Urządzeniu (o kopii zapasowej Urządzenia — sekcja <a href="#sec-7-1">7.1</a>). Zdjęcia albumów Aplikacja wysyła do iCloud tylko przy określonych zdarzeniach — w szczególności przy pierwszym logowaniu oraz przy utworzeniu albo zakończeniu udostępnienia Inwestycji; zdjęcia dodane do albumu później mogą pozostać wyłącznie na Urządzeniu. Jeżeli korzystałeś z wersji 1.x, w Twoim iCloud mogą pozostawać opisy dokumentów zapisane przez tę wersję.</p>
+
+      <h3 id="sec-4-2">4.2. Współdzielenie Inwestycji (obszar B)</h3>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>Jakie dane</th><th>Po co</th><th>Podstawa prawna</th><th>Odbiorca / gdzie trafiają</th><th>Jak długo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Jakie dane">Treści Udostępnionej Inwestycji: dane Inwestycji (nazwa, adres, dane działki i nieruchomości wpisane w Aplikacji), wpisy dziennika, etapy, zadania, wydatki, budżety (w tym budżet Inwestycji), kontakty (w tym oceny i notatki o wykonawcach), opisy plików etapów (nazwa i typ), linki, albumy, wydarzenia</td><td data-label="Po co">wspólne prowadzenie Inwestycji przez osoby wskazane przez Właściciela</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. b RODO</td><td data-label="Odbiorca / gdzie trafiają">Współpracownicy zaproszeni przez Właściciela; Apple (iCloud). Dane pozostają w prywatnej bazie iCloud Właściciela. Administrator nie ma dostępu.</td><td data-label="Jak długo">w iCloud Właściciela — do usunięcia przez Właściciela treści lub Inwestycji, z zastrzeżeniami opisanymi w sekcjach <a href="#sec-7-2">7.2</a> i <a href="#sec-7-3">7.3</a>; samo zakończenie udostępnienia nie usuwa tych danych; kopie lokalne — patrz sekcja <a href="#sec-7-3">7.3</a></td></tr>
+            <tr><td class="dt-main" data-label="Jakie dane">Pliki Udostępnionej Inwestycji: załączniki do wydatków, okładki i tła, zdjęcia albumów — część z nich jest zapisywana w oryginale, razem z metadanymi zdjęć</td><td data-label="Po co">jak wyżej</td><td data-label="Podstawa prawna">jak wyżej</td><td data-label="Odbiorca / gdzie trafiają">jak wyżej</td><td data-label="Jak długo">jak wyżej</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Aplikacja nie zapisuje przy wydatkach ani wpisach informacji o tym, kto je dodał. Listę uczestników udostępnienia prowadzi i wyświetla Apple w systemowym arkuszu udostępniania (sekcja <a href="#sec-7-3">7.3</a>).</p>
+
+      <h3 id="sec-4-3">4.3. Analityka i diagnostyka — po zgodzie „Analityka" (obszar D)</h3>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>Jakie dane</th><th>Po co</th><th>Podstawa prawna</th><th>Odbiorca / gdzie trafiają</th><th>Jak długo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Jakie dane">Zdarzenia użycia Aplikacji (np. otwarcie ekranu, dodanie wydatku) wraz z kategoriami i przedziałami wartości; identyfikator instalacji Aplikacji; identyfikator dostawcy (IDFV); dane o Urządzeniu i systemie (np. model, wersja systemu, wersja Aplikacji, język); dane techniczne połączenia, w tym adres IP przetwarzany przez dostawcę. <strong>Identyfikator reklamowy IDFA</strong> — tylko jeżeli zezwoliłeś na śledzenie w oknie ATT.</td><td data-label="Po co">pomiar korzystania z Aplikacji i jej ulepszanie</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. a RODO (zgoda)</td><td data-label="Odbiorca / gdzie trafiają">Google Ireland Limited / Google LLC — usługa Firebase Analytics</td><td data-label="Jak długo">2 miesiące; zagregowane raporty statystyczne mogą być przechowywane dłużej</td></tr>
+            <tr><td class="dt-main" data-label="Jakie dane">Raporty awarii i błędów (w tym błędów synchronizacji): ślad stosu i stan Aplikacji, szczegóły techniczne błędu, identyfikator instalacji, dane o Urządzeniu i systemie</td><td data-label="Po co">wykrywanie i usuwanie błędów</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. a RODO (zgoda)</td><td data-label="Odbiorca / gdzie trafiają">Google Ireland Limited / Google LLC — usługa Firebase Crashlytics</td><td data-label="Jak długo">90 dni</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Zdarzenia analityczne nie zawierają nazw Inwestycji, treści notatek, danych kontaktów ani dokładnych kwot. W pojedynczych zdarzeniach może znaleźć się uproszczony zapis nazwy etapu utworzonego przez Ciebie (małe litery, bez polskich znaków) albo techniczny opis błędu. Zdarzenia dotyczące propozycji finansowych zawierają tytuł wyświetlonej lub otwartej propozycji (sekcja <a href="#sec-13-2">13.2</a>).</p>
+
+      <h3 id="sec-4-4">4.4. Marketing — po zgodzie „Marketing" (obszar D)</h3>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>Jakie dane</th><th>Po co</th><th>Podstawa prawna</th><th>Odbiorca / gdzie trafiają</th><th>Jak długo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Jakie dane">Zdarzenia konwersji: instalacja i uruchomienie Aplikacji oraz wybrane zdarzenia — zalogowanie, ukończenie wprowadzenia, dodanie wydarzenia (z jego rodzajem), zakończenie etapu, otwarcie poradnika (z rodzajem treści) lub jego zapisanie, wyszukiwanie poradników (liczba wyników), ocena wykonawcy (wartość oceny), pozytywna odpowiedź na prośbę o ocenę Aplikacji, oznaczenie wykonawcy jako zatrudnionego, zapisanie formularza finansowego (rodzaj zapytania i przedział kwoty), otwarcie treści partnera; identyfikator instalacji nadany przez pakiet SDK Meta (losowy, zapisany na Urządzeniu; pozwala rozpoznać tę samą instalację Aplikacji przy kolejnych zdarzeniach); dane o Urządzeniu i Aplikacji (np. model, wersja systemu i Aplikacji, język, strefa czasowa, operator, rozmiar ekranu); status zgody na śledzenie</td><td data-label="Po co">mierzenie skuteczności reklam Aplikacji w usługach Meta; po stronie Meta także cele wskazane w sekcji <a href="#sec-9-6">9.6</a></td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. a RODO (zgoda)</td><td data-label="Odbiorca / gdzie trafiają">Meta Platforms Ireland Limited</td><td data-label="Jak długo">zgodnie z zasadami przechowywania Meta</td></tr>
+            <tr><td class="dt-main" data-label="Jakie dane">Identyfikator reklamowy IDFA — <strong>wyłącznie gdy łącznie</strong> wyrażono zgodę „Marketing" <strong>oraz</strong> zgodę w oknie ATT</td><td data-label="Po co">przypisanie instalacji i zdarzeń do reklam</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. a RODO (zgoda)</td><td data-label="Odbiorca / gdzie trafiają">Meta Platforms Ireland Limited</td><td data-label="Jak długo">jak wyżej</td></tr>
+          </tbody>
+        </table>
       </div>
 
-      <h3>4.1. Dane konta i uwierzytelniania</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--w">W</span></span><span>identyfikator Użytkownika powiązany z usługą <strong>Sign in with Apple</strong> (np. stały, anonimowy identyfikator nadawany przez Apple) <em style="color:var(--ink-3)">— jeżeli Użytkownik korzysta z logowania</em>.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>adres e-mail – wyłącznie jeżeli Użytkownik zdecyduje się go udostępnić podczas logowania przez Apple (Apple umożliwia ukrycie adresu e-mail poprzez funkcję „Ukryj mój e-mail").</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>imię lub nazwa wyświetlana, jeżeli zostanie podana.</span></li>
-      </ul>
+      <h3 id="sec-4-5">4.5. Powiadomienia (obszar C)</h3>
+      <p>Aplikacja rejestruje Urządzenie do powiadomień przy każdym uruchomieniu — także bez Konta i niezależnie od zgód opisanych w sekcji <a href="#sec-9">9</a> oraz od tego, czy zezwoliłeś na wyświetlanie powiadomień.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>Jakie dane</th><th>Po co</th><th>Podstawa prawna</th><th>Odbiorca / gdzie trafiają</th><th>Jak długo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Jakie dane">Rekord Urządzenia: token powiadomień (Firebase Cloud Messaging / usługa powiadomień Apple — APNs); identyfikator użytkownika Apple — jeżeli jesteś zalogowany; wersja Aplikacji i systemu; język Aplikacji; strefa czasowa; ustawienia kategorii powiadomień; status i daty rejestracji</td><td data-label="Po co">umożliwienie wysyłania powiadomień z Backendu: komunikatów zachęcających do powrotu do Aplikacji oraz komunikatów usługowych</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. f RODO — uzasadniony interes Administratora w utrzymaniu kontaktu z Użytkownikami Aplikacji; dla komunikatów usługowych — art. 6 ust. 1 lit. b RODO</td><td data-label="Odbiorca / gdzie trafiają">nasz Backend: baza Google Cloud Firestore (lokalizacja w Europie), kod u dostawcy Vercel; Google (Firebase Cloud Messaging) — otrzymuje token i identyfikator instalacji Firebase bezpośrednio z Aplikacji — oraz Apple (APNs) jako dostawcy doręczenia</td><td data-label="Jak długo">na Backendzie — bez automatycznego terminu, do usunięcia na Twoje żądanie (sekcja <a href="#sec-8-6">8.6</a>); wylogowanie i „Usuń konto" oznaczają rekord jako nieaktywny, ale go nie usuwają; u Google — zgodnie z zasadami Firebase: do usunięcia identyfikatora instalacji, a następnie do 180 dni</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Przypomnienia o terminach zadań, alerty budżetu i przypomnienia o braku aktywności są tworzone na Urządzeniu i nie przechodzą przez Backend. Informacje o zmianach w zsynchronizowanych danych Apple dostarcza Aplikacji jako ciche powiadomienia iCloud.</p>
+      <p>Wyświetlenie powiadomienia wymaga Twojego zezwolenia w systemie iOS. Kategorie powiadomień wysyłanych z Backendu możesz wyłączyć w Aplikacji: Ustawienia → „Powiadomienia" → „Ustawienia powiadomień". Przełączniki są widoczne tylko wtedy, gdy zezwoliłeś na powiadomienia w systemie iOS. Kategorii „Powiadomienia systemowe" (komunikaty usługowe) nie można wyłączyć. Wyłączenie kategorii nie usuwa rekordu Urządzenia z Backendu.</p>
 
-      <h3>4.2. Dane inwestycji (treści tworzone przez Użytkownika)</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>nazwy i opisy inwestycji, etapów oraz zadań.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>dane kosztów, budżetów, terminów i statusów.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>linki, notatki tekstowe oraz inne treści dodawane przez Użytkownika.</span></li>
-      </ul>
+      <h3 id="sec-4-6">4.6. Konto — „Zaloguj się, używając konta Apple" (obszary A i C)</h3>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>Jakie dane</th><th>Po co</th><th>Podstawa prawna</th><th>Odbiorca / gdzie trafiają</th><th>Jak długo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Jakie dane">Identyfikator użytkownika nadany przez Apple</td><td data-label="Po co">logowanie; tworzenie własnych Inwestycji i ich synchronizacja</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. b RODO; dla zapisu w rekordzie Urządzenia i w programie poleceń — cele i podstawy wskazane w sekcjach <a href="#sec-4-5">4.5</a> i <a href="#sec-4-8">4.8</a></td><td data-label="Odbiorca / gdzie trafiają">pęk kluczy i ustawienia Aplikacji na Urządzeniu; Apple jako dostawca logowania; nasz Backend — w rekordzie Urządzenia (sekcja <a href="#sec-4-5">4.5</a>) i w programie poleceń (sekcja <a href="#sec-4-8">4.8</a>)</td><td data-label="Jak długo">na Urządzeniu — do wylogowania lub usunięcia Konta, z wyjątkiem opisanym w sekcji <a href="#sec-8-5">8.5</a>; na Backendzie — jak w sekcjach <a href="#sec-4-5">4.5</a> i <a href="#sec-4-8">4.8</a></td></tr>
+            <tr><td class="dt-main" data-label="Jakie dane">Imię i nazwisko oraz adres e-mail — tylko jeżeli Apple przekaże je przy pierwszym logowaniu (adres może być adresem przekierowującym funkcji „Ukryj mój adres email")</td><td data-label="Po co">wyświetlenie w Ustawieniach Aplikacji</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. b RODO</td><td data-label="Odbiorca / gdzie trafiają">pęk kluczy Urządzenia; dane te nie są wysyłane poza Urządzenie</td><td data-label="Jak długo">do wylogowania lub usunięcia Konta</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-      <h3>4.3. Dane kontaktów i wykonawców</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>dane kontaktowe wykonawców, dostawców lub innych osób, które Użytkownik samodzielnie dodaje do Aplikacji (np. imię i nazwisko, numer telefonu, adres e-mail, nazwa firmy, notatki).</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span><span class="chip chip--s">S</span></span><span>dane kontaktów importowane z systemowej książki kontaktów iOS, jeżeli Użytkownik wyrazi na to zgodę systemową.</span></li>
-      </ul>
+      <h3 id="sec-4-7">4.7. Tryb demo (obszar A)</h3>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>Jakie dane</th><th>Po co</th><th>Podstawa prawna</th><th>Odbiorca / gdzie trafiają</th><th>Jak długo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Jakie dane">Przykładowa Inwestycja wygenerowana w Aplikacji i zmiany, które w niej wprowadzisz</td><td data-label="Po co">zapoznanie się z Aplikacją bez Konta</td><td data-label="Podstawa prawna">nie dotyczy — Aplikacja przechowuje te dane na Urządzeniu i nie trafiają one do Administratora</td><td data-label="Odbiorca / gdzie trafiają">brak odbiorców. Aplikacja nie wysyła tych danych do iCloud ani na żaden serwer (o kopii zapasowej Urządzenia — sekcja <a href="#sec-7-1">7.1</a>).</td><td data-label="Jak długo">do usunięcia przykładowej Inwestycji (ręcznie albo przy utworzeniu własnej Inwestycji), usunięcia Konta albo Aplikacji z Urządzenia</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Korzystanie z Aplikacji bez Konta nie wymaga podania danych osobowych. Także bez Konta Aplikacja wykonuje jednak połączenia opisane w sekcjach <a href="#sec-4-5">4.5</a> (rejestracja Urządzenia do powiadomień), 4.8 (treści, program poleceń), 9.3 (połączenie konfiguracyjne pakietu SDK Meta) i 10.5 (obrazy z serwerów Sanity), a po zapisaniu zgód — w sekcjach <a href="#sec-4-3">4.3</a> i <a href="#sec-4-4">4.4</a>.</p>
 
-      <h3>4.4. Zdjęcia, dokumenty i pliki</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--o">O</span><span class="chip chip--s">S</span></span><span>zdjęcia i albumy dodawane do inwestycji.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>notatki i opisy przypisane do zdjęć.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>dokumenty i pliki załączane przez Użytkownika.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span><span class="chip chip--s">S</span></span><span>metadane plików (np. data, w niektórych przypadkach dane lokalizacyjne zapisane w zdjęciach przez urządzenie), o ile Użytkownik samodzielnie doda takie pliki.</span></li>
-      </ul>
+      <h3 id="sec-4-8">4.8. Treści, wyszukiwanie i program poleceń (obszar C) oraz kontakt z Administratorem</h3>
+      <p>Treści z Backendu i program poleceń działają tylko wtedy, gdy językiem Aplikacji jest polski.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>Jakie dane</th><th>Po co</th><th>Podstawa prawna</th><th>Odbiorca / gdzie trafiają</th><th>Jak długo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Jakie dane">Dane techniczne żądań kierowanych do Backendu przy pobieraniu treści (np. adres IP, data i godzina, wersja i język Aplikacji, klucz etapu, dla którego pobierane są treści — dla etapu spoza szablonu Aplikacji, w szczególności utworzonego przez Ciebie, jest nim nazwa etapu w uproszczonym zapisie)</td><td data-label="Po co">dostarczenie treści; bezpieczeństwo i diagnostyka usługi</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. b RODO; w zakresie logów — art. 6 ust. 1 lit. f RODO (uzasadniony interes Administratora w ochronie usługi i jej Użytkowników)</td><td data-label="Odbiorca / gdzie trafiają">nasz Backend (Vercel)</td><td data-label="Jak długo">logi wykonania u dostawcy hostingu — obecnie do 1 godziny; nie prowadzimy własnego archiwum logów</td></tr>
+            <tr><td class="dt-main" data-label="Jakie dane">Fraza wpisana w wyszukiwarce poradników — bez identyfikatora użytkownika</td><td data-label="Po co">wyszukanie treści</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. b RODO</td><td data-label="Odbiorca / gdzie trafiają">nasz Backend (Vercel), który przekazuje frazę do systemu treści Sanity</td><td data-label="Jak długo">Backend nie zapisuje frazy w bazie danych; fraza jest częścią adresu żądania, dlatego może znaleźć się w logach dostawcy hostingu (obecnie do 1 godziny) i w krótkotrwałej pamięci podręcznej odpowiedzi</td></tr>
+            <tr><td class="dt-main" data-label="Jakie dane">Program poleceń: identyfikator — użytkownika Apple, a u osoby bez Konta identyfikator dostawcy (IDFV); kod polecający; informacja, kto kogo polecił i kiedy; liczniki, poziom i odznaki. Profil powstaje automatycznie: u osoby zalogowanej — po zalogowaniu i przy uruchomieniu Aplikacji; u osoby bez Konta — gdy Aplikacja wyświetli kartę programu w Dzienniku albo arkusz wpisania kodu polecającego.</td><td data-label="Po co">obsługa programu poleceń</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. b RODO (udział w programie)</td><td data-label="Odbiorca / gdzie trafiają">nasz Backend: baza Google Cloud Firestore (lokalizacja w Europie); identyfikatory i kody są też zapisywane w logach wykonania; odpowiedź Backendu na aktywację kodu zawiera identyfikator osoby polecającej i trafia na Urządzenie osoby, która wykorzystała ten kod — Aplikacja go nie odczytuje ani nie wyświetla</td><td data-label="Jak długo">bez automatycznego terminu, do usunięcia na Twoje żądanie (sekcja <a href="#sec-8-6">8.6</a>)</td></tr>
+            <tr><td class="dt-main" data-label="Jakie dane">Kontakt z Administratorem: adres e-mail i treść wiadomości</td><td data-label="Po co">udzielenie odpowiedzi; obsługa żądań</td><td data-label="Podstawa prawna">art. 6 ust. 1 lit. f RODO (uzasadniony interes Administratora w udzieleniu odpowiedzi osobie, która się z nim skontaktowała); dla żądań z RODO — art. 6 ust. 1 lit. c RODO</td><td data-label="Odbiorca / gdzie trafiają">Administrator; dostawca poczty elektronicznej</td><td data-label="Jak długo">przez czas obsługi sprawy, a następnie przez okres przedawnienia ewentualnych roszczeń</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-      <h3>4.5. Dane techniczne i diagnostyczne</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--w">W</span></span><span>model urządzenia, wersja systemu operacyjnego, wersja Aplikacji, ustawienia językowe i regionalne.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--z">Z</span></span><span>dane o awariach, błędach i stabilności Aplikacji (raporty diagnostyczne) – w zakresie raportowania awarii w usłudze Crashlytics.</span></li>
-      </ul>
-
-      <h3>4.6. Dane analityczne i telemetryczne</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--z">Z</span></span><span>zdarzenia dotyczące korzystania z Aplikacji (np. otwarcie ekranu, użycie funkcji), identyfikatory analityczne nadawane przez narzędzia analityczne, przybliżone informacje o sposobie korzystania z Aplikacji.</span></li>
-      </ul>
-
-      <h3>4.7. Dane o aktywności w Aplikacji</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--w">W</span><span class="chip chip--z">Z</span></span><span>informacje o stanie i postępie inwestycji, ostatnio używanych funkcjach oraz preferencjach interfejsu – w zakresie niezbędnym do działania Aplikacji oraz, w części objętej zgodą, do analityki.</span></li>
-      </ul>
-
-      <h3>4.8. Dane związane z powiadomieniami</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--z">Z</span><span class="chip chip--s">S</span></span><span>token powiadomień push przypisany do urządzenia (identyfikator umożliwiający dostarczenie powiadomienia) – zależnie od zgody systemowej na powiadomienia.</span></li>
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>informacje o subskrypcji wybranych kategorii powiadomień.</span></li>
-      </ul>
-
-      <h3>4.9. Dane programu poleceń</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>identyfikator polecającego oraz informacja o poleconym Użytkowniku w zakresie niezbędnym do działania programu poleceń (np. fakt skorzystania z kodu polecającego).</span></li>
-      </ul>
-
-      <h3>4.10. Dane przekazywane w ramach formularzy kontaktowych</h3>
-      <ul class="data-list">
-        <li><span class="chips-inline"><span class="chip chip--o">O</span></span><span>treść wiadomości oraz dane kontaktowe podane przez Użytkownika podczas kontaktu z Administratorem (np. drogą e-mail).</span></li>
-      </ul>
+      <h3 id="sec-4-9">4.9. Dane finansowe i formularz kontaktu z doradcą (obszar A)</h3>
+      <p>Dostępne tylko wtedy, gdy językiem Aplikacji jest polski.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-5">
+          <thead>
+            <tr><th>Jakie dane</th><th>Po co</th><th>Podstawa prawna</th><th>Odbiorca / gdzie trafiają</th><th>Jak długo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Jakie dane">Formularz: imię, nazwisko, telefon, adres e-mail, typ inwestycji, kwota finansowania, rodzaj zapytania, zaznaczone zgody. Profil finansowy: wkład własny, potrzebne finansowanie, preferencje, notatki.</td><td data-label="Po co">zapisanie Twoich potrzeb finansowych w Aplikacji</td><td data-label="Podstawa prawna">nie dotyczy — Aplikacja przechowuje te dane na Urządzeniu i nie trafiają one do Administratora</td><td data-label="Odbiorca / gdzie trafiają">brak odbiorców. W wersji 2.0 Aplikacja nie wysyła tych danych do nas, do partnerów ani do iCloud (o kopii zapasowej Urządzenia — sekcja <a href="#sec-7-1">7.1</a>). Po zapisaniu zgód do Google i Meta trafia wyłącznie informacja o zapisaniu formularza: rodzaj zapytania i przedział kwoty (sekcje <a href="#sec-4-3">4.3</a> i <a href="#sec-4-4">4.4</a>).</td><td data-label="Jak długo">do usunięcia Inwestycji, której dotyczą, usunięcia Konta albo Aplikacji z Urządzenia; zapisanego formularza nie można w Aplikacji osobno wyświetlić ani usunąć</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <!-- ── 5 ── -->
     <section class="doc-section" id="sec-5">
-      <h2><span class="secnum">05</span>Źródła pozyskiwania danych</h2>
-      <p>Dane osobowe pozyskujemy:</p>
-      <p>5.1. <strong>bezpośrednio od Użytkownika</strong> – gdy Użytkownik tworzy inwestycje, dodaje treści, kontakty, zdjęcia, dokumenty, korzysta z programu poleceń lub kontaktuje się z nami;</p>
-      <p>5.2. <strong>z urządzenia Użytkownika i systemu operacyjnego</strong> – w zakresie danych technicznych, diagnostycznych i uprawnień systemowych (np. dostęp do zdjęć, kontaktów, kalendarza, powiadomień), które Użytkownik samodzielnie przyznaje w ustawieniach iOS;</p>
-      <p>5.3. <strong>od dostawców usług, z których korzystamy</strong> – np. identyfikator Użytkownika przekazywany przez usługę Sign in with Apple, dane analityczne i diagnostyczne generowane przez narzędzia Apple oraz Google/Firebase, w zakresie opisanym w niniejszej Polityce.</p>
+      <h2><span class="secnum">05</span>Źródła danych</h2>
+      <p id="sec-5-1">5.1. <strong>Od Ciebie</strong> — gdy tworzysz Inwestycje, dodajesz treści i pliki, logujesz się lub piszesz do nas.</p>
+      <p id="sec-5-2">5.2. <strong>Z Twojego Urządzenia i systemu</strong> — dane techniczne, identyfikatory Urządzenia oraz dane dostępne po udzieleniu uprawnień systemowych (sekcja <a href="#sec-15">15</a>).</p>
+      <p id="sec-5-3">5.3. <strong>Od Apple</strong> — identyfikator użytkownika oraz, jeśli Apple je przekaże, imię i nazwisko i adres e-mail przy logowaniu.</p>
+      <p id="sec-5-4">5.4. <strong>Od innych Użytkowników</strong> — jeżeli Właściciel Inwestycji zaprosi Cię do udostępnienia albo ktoś zapisze Twoje dane kontaktowe w swojej Inwestycji (np. jako wykonawcy). Takie dane znajdują się na Urządzeniu i w iCloud tej osoby, a po udostępnieniu Inwestycji są widoczne także dla jej Współpracowników; Administrator nie ma do nich dostępu.</p>
+      <p id="sec-5-5">5.5. <strong>Z programu poleceń</strong> — gdy inna osoba użyje Twojego kodu polecającego, zapisujemy na Backendzie informację o tym poleceniu powiązaną z Twoim profilem i aktualizujemy Twoje liczniki (sekcja <a href="#sec-4-8">4.8</a>).</p>
     </section>
 
     <!-- ── 6 ── -->
     <section class="doc-section" id="sec-6">
       <h2><span class="secnum">06</span>Cele i podstawy prawne przetwarzania</h2>
-      <p>Dane osobowe przetwarzamy w następujących celach i na następujących podstawach prawnych:</p>
-
       <div class="rodo-table-wrap">
-        <table class="rodo-table" aria-label="Cele i podstawy prawne przetwarzania">
+        <table class="rodo-table">
           <thead>
-            <tr><th style="width:60px;">Lp.</th><th>Cel przetwarzania</th><th>Podstawa prawna (RODO)</th></tr>
+            <tr><th style="width:60px;">Lp.</th><th>Cel</th><th>Podstawa prawna (RODO)</th></tr>
           </thead>
           <tbody>
-            <tr><td class="lp">1</td><td class="cel">Udostępnienie i prawidłowe działanie Aplikacji oraz jej podstawowych funkcji (zarządzanie inwestycjami, etapami, zadaniami, kosztami, dokumentami, zdjęciami, kontaktami)</td><td class="podstawa">art. 6 ust. 1 lit. b – niezbędność do świadczenia usługi (wykonania umowy o korzystanie z Aplikacji)</td></tr>
-            <tr><td class="lp">2</td><td class="cel">Uwierzytelnianie i utrzymanie konta Użytkownika (Sign in with Apple)</td><td class="podstawa">art. 6 ust. 1 lit. b</td></tr>
-            <tr><td class="lp">3</td><td class="cel">Synchronizacja danych między urządzeniami Użytkownika (iCloud/CloudKit)</td><td class="podstawa">art. 6 ust. 1 lit. b oraz, w zakresie konfiguracji iCloud, ustawienia wybrane przez Użytkownika</td></tr>
-            <tr><td class="lp">4</td><td class="cel">Umożliwienie współdzielenia i synchronizacji Inwestycji między Użytkownikami (udostępnianie Inwestycji przez Apple CloudKit / CKShare)</td><td class="podstawa">art. 6 ust. 1 lit. b – wykonanie umowy o korzystanie z Aplikacji</td></tr>
-            <tr><td class="lp">5</td><td class="cel">Dostarczanie powiadomień push</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda systemowa na powiadomienia) oraz art. 6 ust. 1 lit. b w zakresie powiadomień niezbędnych do działania usługi</td></tr>
-            <tr><td class="lp">6</td><td class="cel">Analityka korzystania z Aplikacji oraz pomiar wydajności</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda)</td></tr>
-            <tr><td class="lp">7</td><td class="cel">Diagnostyka awarii i poprawa stabilności Aplikacji</td><td class="podstawa">art. 6 ust. 1 lit. a (zgoda na raportowanie awarii) oraz art. 6 ust. 1 lit. f (uzasadniony interes w zapewnieniu bezpieczeństwa i niezawodności Aplikacji)</td></tr>
-            <tr><td class="lp">8</td><td class="cel">Prezentowanie treści redakcyjnych, poradnikowych oraz sekcji partnerów i rekomendacji</td><td class="podstawa">art. 6 ust. 1 lit. b oraz art. 6 ust. 1 lit. f (uzasadniony interes w dostarczaniu wartościowych treści)</td></tr>
-            <tr><td class="lp">9</td><td class="cel">Obsługa programu poleceń</td><td class="podstawa">art. 6 ust. 1 lit. b oraz art. 6 ust. 1 lit. f (uzasadniony interes w rozwoju Aplikacji)</td></tr>
-            <tr><td class="lp">10</td><td class="cel">Obsługa zapytań i kontaktu z Użytkownikiem</td><td class="podstawa">art. 6 ust. 1 lit. f (uzasadniony interes w udzielaniu odpowiedzi)</td></tr>
-            <tr><td class="lp">11</td><td class="cel">Zapewnienie bezpieczeństwa, zapobieganie nadużyciom, prowadzenie logów zdarzeń</td><td class="podstawa">art. 6 ust. 1 lit. f (uzasadniony interes w ochronie usługi i jej Użytkowników)</td></tr>
-            <tr><td class="lp">12</td><td class="cel">Realizacja obowiązków prawnych (np. rozpatrywanie żądań z zakresu praw osób, których dane dotyczą)</td><td class="podstawa">art. 6 ust. 1 lit. c</td></tr>
-            <tr><td class="lp">13</td><td class="cel">Ustalenie, dochodzenie lub obrona roszczeń</td><td class="podstawa">art. 6 ust. 1 lit. f</td></tr>
+            <tr><td class="lp">1</td><td class="cel">Udostępnienie Aplikacji i jej funkcji</td><td class="podstawa">art. 6 ust. 1 lit. b</td></tr>
+            <tr><td class="lp">2</td><td class="cel">Logowanie i utrzymanie Konta</td><td class="podstawa">art. 6 ust. 1 lit. b</td></tr>
+            <tr><td class="lp">3</td><td class="cel">Synchronizacja treści i plików w iCloud</td><td class="podstawa">art. 6 ust. 1 lit. b</td></tr>
+            <tr><td class="lp">4</td><td class="cel">Współdzielenie Inwestycji</td><td class="podstawa">art. 6 ust. 1 lit. b</td></tr>
+            <tr><td class="lp">5</td><td class="cel">Rejestracja Urządzenia i wysyłanie powiadomień z Backendu</td><td class="podstawa">art. 6 ust. 1 lit. f — uzasadniony interes Administratora w utrzymaniu kontaktu z Użytkownikami Aplikacji; dla komunikatów usługowych — art. 6 ust. 1 lit. b</td></tr>
+            <tr><td class="lp">6</td><td class="cel">Analityka korzystania z Aplikacji (Firebase Analytics)</td><td class="podstawa">art. 6 ust. 1 lit. a</td></tr>
+            <tr><td class="lp">7</td><td class="cel">Raporty awarii i błędów (Firebase Crashlytics)</td><td class="podstawa">art. 6 ust. 1 lit. a</td></tr>
+            <tr><td class="lp">8</td><td class="cel">Mierzenie skuteczności reklam (Meta)</td><td class="podstawa">art. 6 ust. 1 lit. a</td></tr>
+            <tr><td class="lp">9</td><td class="cel">Dostarczanie treści i wyszukiwanie</td><td class="podstawa">art. 6 ust. 1 lit. b</td></tr>
+            <tr><td class="lp">10</td><td class="cel">Program poleceń</td><td class="podstawa">art. 6 ust. 1 lit. b</td></tr>
+            <tr><td class="lp">11</td><td class="cel">Kontakt i odpowiedzi na zapytania</td><td class="podstawa">art. 6 ust. 1 lit. f — uzasadniony interes Administratora w udzieleniu odpowiedzi osobie, która się z nim skontaktowała</td></tr>
+            <tr><td class="lp">12</td><td class="cel">Bezpieczeństwo usługi i logi techniczne</td><td class="podstawa">art. 6 ust. 1 lit. f — uzasadniony interes Administratora w ochronie usługi i jej Użytkowników (bezpieczeństwo, zapobieganie nadużyciom)</td></tr>
+            <tr><td class="lp">13</td><td class="cel">Obowiązki prawne, w tym obsługa żądań z RODO</td><td class="podstawa">art. 6 ust. 1 lit. c</td></tr>
+            <tr><td class="lp">14</td><td class="cel">Ustalenie, dochodzenie lub obrona roszczeń</td><td class="podstawa">art. 6 ust. 1 lit. f — uzasadniony interes Administratora w ustaleniu, dochodzeniu lub obronie roszczeń</td></tr>
+            <tr><td class="lp">15</td><td class="cel">Pobranie konfiguracji przez pakiet SDK Meta przy uruchomieniu Aplikacji (sekcja <a href="#sec-9-3">9.3</a>)</td><td class="podstawa">art. 6 ust. 1 lit. f — uzasadniony interes Administratora w poprawnym działaniu pakietu zintegrowanego z Aplikacją</td></tr>
           </tbody>
         </table>
       </div>
-
-      <p>W zakresie, w jakim przetwarzanie odbywa się na podstawie zgody (art. 6 ust. 1 lit. a RODO), zgoda jest dobrowolna i może zostać w każdej chwili wycofana. Wycofanie zgody nie wpływa na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem.</p>
+      <p>Zgodę można cofnąć w dowolnym momencie; nie wpływa to na zgodność z prawem przetwarzania sprzed cofnięcia. Wobec przetwarzania opartego na uzasadnionym interesie przysługuje prawo sprzeciwu (sekcja <a href="#sec-17">17</a>).</p>
+      <p>Podanie danych, które sam wpisujesz w Aplikacji lub przekazujesz przy logowaniu, jest dobrowolne. Logowanie jest warunkiem tworzenia własnych Inwestycji i synchronizacji. Dane opisane w sekcjach <a href="#sec-4-5">4.5</a> i <a href="#sec-4-8">4.8</a> (rekord Urządzenia, dane techniczne żądań, profil programu poleceń) oraz połączenia opisane w sekcjach <a href="#sec-9-3">9.3</a> i <a href="#sec-10-5">10.5</a> nie zależą od podania przez Ciebie danych — Aplikacja przetwarza je automatycznie w trakcie korzystania z niej, w zakresie opisanym w tych sekcjach. Włączenie kategorii „Analityka" i „Marketing" nie jest warunkiem korzystania z Aplikacji; Aplikacja wymaga jedynie zapisania wyboru na ekranie zgód.</p>
     </section>
 
     <!-- ── 7 ── -->
     <section class="doc-section" id="sec-7">
-      <h2><span class="secnum">07</span>Dane lokalne, synchronizacja iCloud oraz dane przesyłane do usług zewnętrznych</h2>
-      <p>Aby zapewnić przejrzystość, wyjaśniamy, gdzie faktycznie znajdują się dane Użytkownika.</p>
+      <h2><span class="secnum">07</span>Gdzie znajdują się dane</h2>
 
-      <div class="storage-grid" role="list">
-        <div class="storage-card" role="listitem">
-          <div class="storage-card__icon t-local" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
-          </div>
-          <span class="storage-card__tag">Warstwa 1</span>
-          <h4>Na urządzeniu</h4>
-          <p>Inwestycje, zdjęcia, notatki i dokumenty przechowywane lokalnie w pamięci aplikacji oraz w Keychain. Dane te <strong>nie są przekazywane Administratorowi</strong>.</p>
-        </div>
-        <div class="storage-card" role="listitem">
-          <div class="storage-card__icon t-icloud" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10a5 5 0 0 0-9.6-1.6A4 4 0 1 0 7 16h11a4 4 0 0 0 0-8h0"/></svg>
-          </div>
-          <span class="storage-card__tag">Warstwa 2</span>
-          <h4>iCloud / CloudKit</h4>
-          <p>Prywatna przestrzeń iCloud Użytkownika, dostępna wyłącznie na jego kontach Apple ID. <strong>Administrator nie ma technicznego dostępu</strong> do tych treści.</p>
-        </div>
-        <div class="storage-card" role="listitem">
-          <div class="storage-card__icon t-backend" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg>
-          </div>
-          <span class="storage-card__tag">Warstwa 3</span>
-          <h4>Backend i usługi</h4>
-          <p>Tokeny push, analityka po zgodzie, treści z CMS, korespondencja. Zakres ograniczony do tego, co jest niezbędne do działania danej funkcji.</p>
-        </div>
-      </div>
+      <h3 id="sec-7-1">7.1. Na Twoim Urządzeniu (obszar A)</h3>
+      <p>Treści Inwestycji, pliki dokumentów, zdjęcia wpisów dziennika oraz dane z sekcji <a href="#sec-4-9">4.9</a> są zapisywane w pamięci Aplikacji na Urządzeniu. Ustawienia Aplikacji i zapisany wybór zgód są zapisywane w standardowych mechanizmach systemu. Identyfikator użytkownika Apple oraz — jeśli Apple je przekazało — imię i nazwisko i adres e-mail są zapisywane w pęku kluczy Urządzenia; wpis ten nie jest przenoszony na inne urządzenia.</p>
+      <p><strong>Tryb demo.</strong> Przykładowa Inwestycja jest generowana w Aplikacji i przechowywana lokalnie. Aplikacja nie wysyła jej danych do iCloud ani na żaden serwer.</p>
+      <p>Dane przechowywane wyłącznie na Urządzeniu nie trafiają do Administratora.</p>
+      <p><strong>Kopia zapasowa Urządzenia.</strong> Dane Aplikacji zapisane na Urządzeniu mogą wchodzić w skład kopii zapasowej Urządzenia tworzonej przez system iOS (w iCloud albo na komputerze), jeżeli z niej korzystasz — Aplikacja nie wyłącza ich z tej kopii. Dotyczy to także danych opisanych w tej Polityce jako przechowywane na Urządzeniu (Tryb demo, pliki z zakładki „Dokumenty", zdjęcia wpisów dziennika, dane z sekcji <a href="#sec-4-9">4.9</a>). Kopią zapasową zarządzasz w ustawieniach iOS; kopia utworzona wcześniej może zawierać te dane także po użyciu funkcji „Usuń konto" lub usunięciu Aplikacji. Administrator nie ma dostępu do kopii zapasowych.</p>
 
-      <h3>7.1. Dane przechowywane lokalnie na urządzeniu</h3>
-      <p>Większość treści tworzonych przez Użytkownika (inwestycje, etapy, zadania, koszty, notatki, zdjęcia, dokumenty, kontakty) jest w pierwszej kolejności przechowywana <strong>lokalnie na urządzeniu</strong> Użytkownika, w obszarze danych aplikacji. Do przechowywania danych lokalnych oraz ustawień Aplikacja wykorzystuje standardowe mechanizmy systemu iOS, w tym:</p>
+      <h3 id="sec-7-2">7.2. W Twoim iCloud — synchronizacja (obszar B)</h3>
+      <p>Po zalogowaniu Aplikacja zapisuje dane wymienione w sekcji <a href="#sec-4-1">4.1</a> w prywatnej bazie iCloud na Twoim koncie Apple. Jeżeli przed zalogowaniem miałeś na Urządzeniu własne Inwestycje, przy pierwszym logowaniu są one wysyłane do tej bazy.</p>
+      <p>Tekst ze zdjęć paragonów jest rozpoznawany na Urządzeniu (OCR).</p>
+      <p><strong>Usuwanie treści.</strong> Usunięcie Inwestycji, etapu lub wydatku w Aplikacji nie zawsze usuwa z iCloud wszystkie powiązane z nimi dane i pliki — w iCloud mogą pozostać np. zadania, wydatki i kontakty usuniętego etapu albo plik załącznika usuniętego wydatku. Sposób usunięcia pozostałych danych Aplikacji z iCloud opisuje sekcja <a href="#sec-8-6">8.6</a>.</p>
+      <p>Dane te przechowuje i przetwarza Apple na zasadach usługi iCloud. <strong>Administrator jako firma nie ma do nich dostępu</strong> i nie może ich odczytać, zmienić ani usunąć na Twoją prośbę — zarządzasz nimi w Aplikacji i w ustawieniach konta Apple.</p>
+
+      <h3 id="sec-7-3">7.3. Współdzielenie Inwestycji (obszar B)</h3>
+      <p><strong>Zaproszenie.</strong> Właściciel Inwestycji zaprasza inne osoby w systemowym arkuszu udostępniania Apple — łączem, przez aplikację Wiadomości lub inną wybraną tam drogą. Adresata wskazuje w interfejsie Apple; Aplikacja nie przetwarza danych osoby zapraszanej, a Administrator ich nie otrzymuje. Zaproszenie zawiera nazwę Inwestycji. Dostęp mają tylko zaproszone osoby.</p>
+      <p><strong>Przyjęcie zaproszenia.</strong> Do przyjęcia zaproszenia potrzebne jest konto iCloud na urządzeniu. Bieżąca synchronizacja zmian wymaga zalogowania w Aplikacji.</p>
+      <p><strong>Co widzą zaproszeni.</strong> Współpracownicy otrzymują dane Udostępnionej Inwestycji wymienione w sekcji <a href="#sec-4-2">4.2</a>. Obejmuje to dane osób trzecich, które Właściciel wpisał w Inwestycji — w szczególności kontakty wykonawców z numerami telefonów, adresami e-mail, ocenami i notatkami.</p>
+      <p><strong>Uczestnicy.</strong> Listę uczestników prowadzi i wyświetla Apple w systemowym arkuszu udostępniania. Apple może zapisywać przy danych w iCloud techniczny identyfikator konta osoby, która je utworzyła lub zmieniła; Aplikacja go nie odczytuje i nie pokazuje, kto dodał wydatek lub wpis.</p>
+      <p><strong>Uprawnienia.</strong> Zakres uprawnień Współpracownika (podgląd albo edycja) ustawia Właściciel w systemowym arkuszu Apple. Aplikacja stosuje te ustawienia.</p>
+      <p><strong>Zakończenie.</strong> Współpracownik może opuścić udostępnienie. Właściciel może je zakończyć. Dane Udostępnionej Inwestycji pozostają w prywatnej bazie iCloud Właściciela. Usunięcie Udostępnionej Inwestycji przez Właściciela nie kończy udostępnienia i nie usuwa wszystkich jej danych z iCloud Właściciela — pozostałe dane mogą być nadal dostępne dla Współpracowników; przed usunięciem Udostępnionej Inwestycji Właściciel powinien zakończyć udostępnianie.</p>
+      <p><strong>Kopie lokalne.</strong> Po opuszczeniu lub zakończeniu udostępnienia kopia danych może pozostać na Urządzeniu Współpracownika do czasu jej usunięcia przez Aplikację lub przez Współpracownika. Administrator nie ma możliwości zdalnego usunięcia takich kopii.</p>
+      <p><strong>Wpisy Współpracownika.</strong> Wydatki, wpisy i pliki dodane przez Współpracownika stają się częścią Inwestycji Właściciela i pozostają w jego iCloud — także po opuszczeniu udostępnienia przez Współpracownika.</p>
+      <p><strong>Rola Apple i Administratora.</strong> Dane współdzielone są przechowywane i przetwarzane przez Apple w ramach iCloud oraz widoczne dla osób wskazanych przez Właściciela. Administrator nie ma do nich dostępu. Zdarzenia opisane w sekcjach <a href="#sec-4-3">4.3</a> i <a href="#sec-4-4">4.4</a> (np. wystawienie oceny wykonawcy wraz z jej wartością) powstają na Twoim Urządzeniu także wtedy, gdy pracujesz w Udostępnionej Inwestycji, i po zapisaniu zgód trafiają do Google i Meta w celach opisanych w tych sekcjach. Poza tymi zdarzeniami Administrator nie wykorzystuje danych współdzielonych do celów reklamowych ani do profilowania.</p>
+      <p><strong>Odpowiedzialność Właściciela.</strong> Właściciel decyduje, komu udostępnia Inwestycję, i odpowiada za ten wybór. Powinien udostępniać ją tylko osobom, którym wolno mu ujawnić zawarte w niej informacje — w szczególności dane kontaktowe i oceny wykonawców, zdjęcia osób oraz paragony i inne załączniki do wydatków zawierające dane osobowe.</p>
+
+      <h3 id="sec-7-4">7.4. Na naszym Backendzie (obszar C)</h3>
+      <p>Na Backend trafiają:</p>
       <ul>
-        <li>pamięć i pliki aplikacji (lokalna baza danych, pliki, lokalny cache i kopie robocze danych),</li>
-        <li>mechanizmy <code style="font-family:var(--font-mono); font-size:14px; padding:1px 6px; background:var(--doc-paper-2); border-radius:4px;">AppStorage</code> / <code style="font-family:var(--font-mono); font-size:14px; padding:1px 6px; background:var(--doc-paper-2); border-radius:4px;">UserDefaults</code> (ustawienia i preferencje Aplikacji),</li>
-        <li><strong>Keychain</strong> (bezpieczne przechowywanie wrażliwych danych technicznych, np. tokenów i identyfikatorów uwierzytelniających).</li>
+        <li>rekord Urządzenia do powiadomień — przy uruchomieniu Aplikacji, także bez Konta (sekcja <a href="#sec-4-5">4.5</a>);</li>
+        <li>dane programu poleceń — gdy językiem Aplikacji jest polski (sekcja <a href="#sec-4-8">4.8</a>);</li>
+        <li>dane techniczne żądań oraz frazy wyszukiwania poradników (sekcja <a href="#sec-4-8">4.8</a>).</li>
       </ul>
-      <p>Dane przechowywane wyłącznie lokalnie nie są przekazywane Administratorowi.</p>
+      <p>Pliki, dane z formularza finansowego, imię i nazwisko oraz adres e-mail z logowania Apple nie są wysyłane na Backend. Z treści Inwestycji na Backend trafia wyłącznie klucz etapu, dla którego Aplikacja pobiera poradniki i treści partnerów (sekcja <a href="#sec-4-8">4.8</a>): dla etapów z szablonu Aplikacji jest to stały klucz szablonu, a dla pozostałych etapów — w szczególności utworzonych przez Ciebie — nazwa etapu w uproszczonym zapisie (małe litery, bez polskich znaków, podkreślenia zamiast spacji).</p>
+      <p>Kod Backendu działa u dostawcy hostingu Vercel. Rekordy Urządzeń i dane programu poleceń są zapisywane w bazie Google Cloud Firestore w lokalizacji europejskiej. Token powiadomień jest też przetwarzany przez Google (Firebase Cloud Messaging) i Apple (APNs) w zakresie potrzebnym do doręczenia powiadomienia; nie zależy to od zgód opisanych w sekcji <a href="#sec-9">9</a>.</p>
+      <p>Treści poradników i treści partnerów pochodzą z systemu zarządzania treścią Sanity. Teksty Aplikacja pobiera za pośrednictwem Backendu; obrazy (banery, logotypy partnerów, okładki) — bezpośrednio z serwerów Sanity (sekcja <a href="#sec-10-5">10.5</a>).</p>
 
-      <h3>7.2. Synchronizacja przez iCloud / CloudKit</h3>
-      <p>Jeżeli Użytkownik korzysta z synchronizacji opartej o <strong>iCloud / CloudKit</strong>, jego dane mogą być synchronizowane między jego urządzeniami zalogowanymi do tego samego konta Apple. W tym modelu:</p>
-      <ul>
-        <li>dane są przechowywane w <strong>prywatnej przestrzeni iCloud Użytkownika</strong>, zarządzanej przez Apple,</li>
-        <li>dostęp do tych danych ma co do zasady wyłącznie Użytkownik w ramach swojego konta Apple,</li>
-        <li><strong>Administrator nie ma technicznego dostępu do treści przechowywanych w prywatnej bazie CloudKit Użytkownika</strong> i nie odczytuje ich,</li>
-        <li>zasady przetwarzania danych w ramach iCloud określa Apple jako dostawca tej usługi.</li>
-      </ul>
-      <h3>7.3. Udostępnianie Inwestycji przez iCloud / CloudKit</h3>
-      <p>Aplikacja umożliwia <strong>Właścicielowi Inwestycji</strong> udostępnienie wybranej Inwestycji innemu użytkownikowi za pośrednictwem mechanizmów Apple <strong>CloudKit i CKShare</strong>.</p>
-      <p>Udostępnianie jest inicjowane świadomie przez Właściciela Inwestycji. <strong>Współpracownik</strong> musi zaakceptować zaproszenie przy użyciu konta Apple, zanim uzyska dostęp.</p>
-      <p>W zależności od rodzaju danych oraz aktualnej wersji Aplikacji <strong>Udostępniona Inwestycja</strong> może obejmować metadane inwestycji, etapy, zadania, wydatki, budżety, wydarzenia, wpisy dziennika, kontakty, linki, dokumenty, załączniki oraz inne treści przypisane do Inwestycji.</p>
-      <p>Każdy uczestnik przechowuje lokalną kopię roboczą Udostępnionej Inwestycji na swoim urządzeniu. Zmiany wprowadzane przez uprawnionych uczestników mogą być synchronizowane za pośrednictwem współdzielonej bazy CloudKit.</p>
-      <p>W ramach Udostępnionej Inwestycji <strong>nie są udostępniane</strong> następujące dane osobowe lub dane charakterystyczne dla urządzenia: profile finansowe, zapytania o finansowanie lub ubezpieczenie, zgłoszenia (leady), preferencje powiadomień, preferencja wybranej inwestycji, ustawienia pamięci lokalnej oraz identyfikatory wydarzeń utworzonych w prywatnym Kalendarzu iOS użytkownika.</p>
-      <p>Niektóre pliki lub kolekcje zdjęć mogą pozostać przechowywane wyłącznie na urządzeniu, na którym zostały dodane. Aplikacja może informować uczestników, gdy dany plik nie jest dostępny na ich urządzeniu.</p>
-      <p>Właściciel Inwestycji może cofnąć dostęp lub usunąć Udostępnioną Inwestycję. Współpracownik może opuścić Udostępnioną Inwestycję lub usunąć swoją lokalną kopię. Po cofnięciu dostępu niektóre dane mogą tymczasowo pozostać w kopii lokalnej, dopóki nie zostaną usunięte przez użytkownika lub wyczyszczone przez Aplikację.</p>
-      <p>Administrator nie wykorzystuje treści Udostępnionej Inwestycji do celów reklamowych ani profilowania i nie uzyskuje rutynowego dostępu do treści przechowywanych w bazach CloudKit użytkowników ani ich nie przegląda. Apple przetwarza te dane na zasadach mających zastosowanie do iCloud i CloudKit.</p>
-      <p><strong>Użytkownik odpowiada za posiadanie podstawy prawnej do udostępnienia treści Inwestycji.</strong> Dotyczy to w szczególności danych wykonawców, numerów telefonów i adresów e-mail, zdjęć osób oraz faktur, umów i innych dokumentów zawierających dane osobowe. Użytkownik powinien udostępniać Inwestycję wyłącznie osobom uprawnionym do dostępu oraz zamieszczać w niej wyłącznie treści, które jest uprawniony ujawnić.</p>
-
-      <h3>7.4. Dane przesyłane do backendu i usług zewnętrznych</h3>
-      <p>Niektóre dane są przesyłane poza urządzenie do usług zewnętrznych lub do naszego zaplecza (backendu), w zakresie niezbędnym do działania danej funkcji, w szczególności:</p>
-      <ul>
-        <li>token powiadomień push oraz dane techniczne niezbędne do dostarczania powiadomień,</li>
-        <li>dane analityczne i diagnostyczne (wyłącznie po wyrażeniu zgody – patrz sekcja 9),</li>
-        <li>treści redakcyjne, poradnikowe i sekcje partnerów pobierane z systemu zarządzania treścią (CMS),</li>
-        <li>dane przekazywane w ramach kontaktu z Administratorem.</li>
-      </ul>
-      <p>Backend oraz usługi pomocnicze Aplikacji mogą być hostowane u dostawców infrastruktury chmurowej (patrz sekcja 10). Zakres danych przesyłanych do backendu ograniczamy do tego, co jest konieczne do realizacji danej funkcji.</p>
+      <h3 id="sec-7-5">7.5. U podmiotów trzecich w zakresie analityki i marketingu — po wyrażeniu zgody (obszar D)</h3>
+      <p>Po zapisaniu zgody „Analityka" dane opisane w sekcji <a href="#sec-4-3">4.3</a> trafiają do Google. Po zapisaniu zgody „Marketing" dane opisane w sekcji <a href="#sec-4-4">4.4</a> trafiają do Meta. Szczegóły zawiera sekcja <a href="#sec-9">9</a>. Nie dotyczy to doręczania powiadomień (sekcja <a href="#sec-4-5">4.5</a>) ani połączenia konfiguracyjnego pakietu SDK Meta (sekcja <a href="#sec-9-3">9.3</a>).</p>
     </section>
 
     <!-- ── 8 ── -->
     <section class="doc-section" id="sec-8">
-      <h2><span class="secnum">08</span>Konto użytkownika i uwierzytelnianie</h2>
-      <p>8.1. Logowanie i uwierzytelnianie w Aplikacji może odbywać się z wykorzystaniem usługi <strong>Sign in with Apple</strong>. W ramach tej usługi Apple przekazuje nam stały identyfikator Użytkownika, a opcjonalnie – jeżeli Użytkownik wyrazi na to zgodę – adres e-mail (Użytkownik może skorzystać z funkcji „Ukryj mój e-mail", co powoduje przekazanie adresu przekierowującego zamiast rzeczywistego adresu).</p>
-      <p>8.2. W zakresie funkcji Sign in with Apple <strong>Apple Inc. działa jako niezależny administrator</strong> danych przetwarzanych w ramach własnych usług oraz jako dostawca mechanizmu uwierzytelniania. Zasady przetwarzania danych przez Apple określa polityka prywatności Apple.</p>
-      <p>8.3. Dane uwierzytelniające (np. tokeny sesji) przechowywane są w bezpieczny sposób, m.in. z wykorzystaniem mechanizmu Keychain systemu iOS.</p>
-      <p>8.4. Korzystanie z części funkcji Aplikacji może być możliwe bez zakładania konta, w trybie lokalnym. Zakres dostępnych funkcji bez logowania może być ograniczony (np. brak synchronizacji lub współdzielenia).</p>
+      <h2><span class="secnum">08</span>Konto i usunięcie Konta</h2>
+      <p id="sec-8-1">8.1. Logowanie odbywa się przez funkcję <strong>„Zaloguj się, używając konta Apple" (Sign in with Apple)</strong>. Jest wymagane do tworzenia własnych Inwestycji i do synchronizacji. Bez Konta można korzystać z Trybu demo.</p>
+      <p id="sec-8-2">8.2. W pęku kluczy Urządzenia przechowujemy identyfikator użytkownika Apple oraz — jeśli Apple przekaże je przy pierwszym logowaniu — imię i nazwisko i adres e-mail. Możesz użyć funkcji Apple „Ukryj mój adres email"; wtedy Aplikacja otrzymuje od Apple adres przekierowujący.</p>
+      <p id="sec-8-3">8.3. W zakresie usługi logowania Apple działa jako odrębny administrator danych. Zasady przetwarzania określa polityka prywatności Apple.</p>
+      <p id="sec-8-4">8.4. <strong>Co robi funkcja „Usuń konto".</strong> Funkcja jest dostępna w Ustawieniach Aplikacji pod nazwą „Usuń konto i wszystkie dane". Jej użycie:</p>
+      <ul>
+        <li>oznacza rekord Urządzenia na Backendzie jako nieaktywny;</li>
+        <li>usuwa z Twojej prywatnej bazy iCloud treści Inwestycji zapisane przez Aplikację: Inwestycje, wpisy dziennika, etapy, zadania, wydatki, budżety etapów, kontakty, opisy plików, linki, albumy, wydarzenia, opisy dokumentów zapisane przez wcześniejsze wersje oraz załączniki do wydatków zapisane w starszym formacie (przez wcześniejsze wersje albo przy pierwszym logowaniu) wraz z rozpoznanym z nich tekstem (OCR);</li>
+        <li>usuwa dane Aplikacji zapisane na Urządzeniu, w tym dane Trybu demo i dane z sekcji <a href="#sec-4-9">4.9</a>;</li>
+        <li>usuwa wpisy w pęku kluczy, wylogowuje Cię i usuwa zapisany wybór zgód.</li>
+      </ul>
+      <p id="sec-8-5">8.5. <strong>Czego funkcja „Usuń konto" nie usuwa.</strong></p>
+      <ul>
+        <li><strong>W iCloud:</strong> plików wysłanych przez Aplikację w obecnym formacie (załączniki do wydatków, okładki, tła, zdjęcia albumów) oraz budżetu Inwestycji; danych Udostępnionych Inwestycji — funkcja nie kończy udostępnień, których jesteś Właścicielem, ani nie opuszcza udostępnień, w których jesteś Współpracownikiem.</li>
+        <li><strong>Na Urządzeniu:</strong> plików z zakładki „Dokumenty", zdjęć wpisów dziennika oraz części ustawień technicznych, w tym zapisanego profilu programu poleceń z identyfikatorem. Dane te znikają po usunięciu Aplikacji z Urządzenia.</li>
+        <li><strong>Na Backendzie:</strong> rekordu Urządzenia (pozostaje jako nieaktywny, z tokenem i identyfikatorem) oraz danych programu poleceń. Przy kolejnym uruchomieniu Aplikacji Urządzenie może zostać zarejestrowane ponownie, bez identyfikatora użytkownika.</li>
+        <li><strong>U Apple:</strong> powiązania Aplikacji z Twoim kontem Apple w funkcji „Zaloguj się, używając konta Apple".</li>
+        <li><strong>U Google i Meta:</strong> danych przekazanych wcześniej na podstawie zgód; funkcja wyłącza dalsze zbieranie, ale nie zmienia identyfikatorów nadanych przez pakiety SDK.</li>
+      </ul>
+      <p>Jeżeli usuwanie zostanie przerwane (np. brak połączenia albo niedostępny iCloud), część danych w iCloud może być już usunięta, a dane na Urządzeniu i Konto pozostają; funkcję trzeba wtedy uruchomić ponownie.</p>
+      <p id="sec-8-6">8.6. <strong>Jak dokończyć usunięcie.</strong></p>
+      <ul>
+        <li><strong>Dane w iCloud:</strong> przed usunięciem Konta zakończ udostępnienia, których jesteś Właścicielem, i opuść te, w których jesteś Współpracownikiem. Pozostałe dane Aplikacji usuniesz w ustawieniach iCloud na urządzeniu (zarządzanie pamięcią konta → homdu → usunięcie danych).</li>
+        <li><strong>Dane na Urządzeniu:</strong> usuń Aplikację z Urządzenia.</li>
+        <li><strong>Dane na Backendzie:</strong> napisz na adres <strong><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></strong>. Rekord Urządzenia i dane programu poleceń nie zawierają imienia, nazwiska ani adresu e-mail, dlatego do ich odnalezienia potrzebujemy dodatkowej informacji (art. 11 RODO): kodu polecającego widocznego na ekranie programu poleceń (dostępnym, gdy językiem Aplikacji jest polski) albo początku identyfikatora użytkownika Apple, jeżeli Ustawienia Aplikacji pokazują go w wierszu Konta. Jeżeli zamierzasz usunąć Aplikację, zapisz tę informację wcześniej. Dane odnalezione na tej podstawie usuniemy bez zbędnej zwłoki, nie później niż w terminie 30 dni od otrzymania żądania, z wyjątkiem danych, które musimy zachować na podstawie przepisów prawa lub w celu ustalenia, dochodzenia bądź obrony roszczeń. Rekordu Urządzenia, który nie jest powiązany z identyfikatorem użytkownika (w szczególności gdy korzystasz z Aplikacji bez Konta), nie potrafimy przypisać do konkretnej osoby — poinformujemy Cię o tym w odpowiedzi. Dopóki Aplikacja pozostaje zainstalowana, może ponownie zarejestrować Urządzenie i odtworzyć profil programu poleceń.</li>
+        <li><strong>Logowanie Apple:</strong> powiązanie Aplikacji z kontem Apple usuniesz w ustawieniach konta Apple, w części dotyczącej funkcji „Zaloguj się, używając konta Apple".</li>
+        <li><strong>Dane u Google i Meta:</strong> zdarzeń nie przypisujemy do Konta, a Aplikacja nie pokazuje identyfikatorów nadanych przez pakiety SDK, dlatego bez dodatkowych informacji nie potrafimy wskazać u Google ani w Meta danych konkretnej osoby (art. 11 RODO). Żądanie usunięcia (sekcja <a href="#sec-17-3">17.3</a>) wykonamy w zakresie, w jakim podane przez Ciebie informacje pozwolą te dane odnaleźć; w przeciwnym razie poinformujemy Cię o tym w odpowiedzi. Dane analityczne i raporty awarii w usługach Google wygasają w okresach wskazanych w sekcji <a href="#sec-12">12</a>. Dane przekazane do Meta są przechowywane i usuwane na zasadach Meta; w zakresie, w jakim Meta działa jako odrębny administrator, żądanie możesz skierować także do Meta.</li>
+      </ul>
+      <p id="sec-8-7">8.7. <strong>Dane udostępnione.</strong> Usunięcie Konta nie usuwa kopii danych Udostępnionych Inwestycji:</p>
+      <ul>
+        <li>jeżeli jesteś Właścicielem — kopie danych mogą pozostać na Urządzeniach Współpracowników do czasu ich usunięcia;</li>
+        <li>jeżeli jesteś Współpracownikiem — wpisy i pliki dodane do cudzej Inwestycji pozostają w iCloud jej Właściciela; aby je usunąć, usuń je przed opuszczeniem udostępnienia albo zwróć się do Właściciela.</li>
+      </ul>
+      <p id="sec-8-8">8.8. <strong>Wylogowanie</strong> kończy synchronizację, usuwa wpisy w pęku kluczy i oznacza rekord Urządzenia na Backendzie jako nieaktywny. Dane na Urządzeniu i w iCloud pozostają.</p>
+      <p id="sec-8-9">8.9. Jeżeli nie możesz skorzystać z funkcji w Aplikacji, napisz na adres <strong><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></strong>.</p>
     </section>
 
     <!-- ── 9 ── -->
     <section class="doc-section" id="sec-9">
-      <h2><span class="secnum">09</span>Analityka, telemetria, diagnostyka i zgody</h2>
-      <p>9.1. Aplikacja może korzystać z narzędzi analitycznych i diagnostycznych dostarczanych przez <strong>Google (Firebase)</strong>, w szczególności:</p>
+      <h2><span class="secnum">09</span>Zgody: analityka i marketing</h2>
+      <p id="sec-9-1">9.1. <strong>Ekran zgód.</strong> Przy pierwszym uruchomieniu — oraz jednorazowo po aktualizacji z wersji 1.x — Aplikacja wyświetla ekran z dwiema kategoriami: „Analityka i diagnostyka" oraz „Marketing". Każdą kategorię możesz włączyć albo wyłączyć, a wybór zatwierdzasz przyciskiem „Zapisz wybór". Dalsze korzystanie z Aplikacji wymaga zapisania wyboru; wybór można zapisać także z obiema kategoriami wyłączonymi. Jeżeli aktualizujesz Aplikację z wersji 1.x, do chwili zapisania nowego wyboru Aplikacja stosuje ustawienia zgód zapisane w wersji 1.x: jeżeli zapisana była zgoda na analitykę, zbieranie zdarzeń analitycznych i raportów awarii działa od pierwszego uruchomienia wersji 2.0, a jeżeli zapisana była zgoda marketingowa — także przekazywanie zdarzeń do Meta (bez IDFA). Wybór zmienisz w dowolnym momencie: Ustawienia → „Zgody i prywatność" → „Ustawienia cookies". Widoczna tam kategoria „Personalizacja" nie uruchamia w wersji 2.0 żadnego przetwarzania. Wybór jest zapisywany na Urządzeniu i nie trafia na nasz Backend. Informacja o zapisaniu ustawień w arkuszu „Ustawienia cookies" (stan przełączników) może zostać przekazana do Google jako zdarzenie analityczne w ramach kategorii „Analityka" (sekcja <a href="#sec-4-3">4.3</a>).</p>
+      <p id="sec-9-2">9.2. <strong>Zgoda „Analityka".</strong> Po jej zapisaniu Aplikacja włącza zbieranie w usługach Google:</p>
       <ul>
-        <li><strong>Firebase Analytics</strong> (oraz, w odpowiednim zakresie, pomiar zdarzeń zgodny z GA4) – analityka korzystania z Aplikacji,</li>
-        <li><strong>Firebase Crashlytics</strong> – raportowanie i diagnostyka awarii,</li>
-        <li><strong>Firebase Cloud Messaging (FCM)</strong> – dostarczanie powiadomień push.</li>
+        <li><strong>Firebase Analytics</strong> — zdarzenia użycia Aplikacji, identyfikator instalacji, identyfikator dostawcy (IDFV), dane o Urządzeniu i systemie; jeżeli zezwoliłeś na śledzenie w oknie ATT — także IDFA;</li>
+        <li><strong>Firebase Crashlytics</strong> — raporty awarii i błędów.</li>
       </ul>
-      <p>9.2. <strong>Analityka i telemetria działają wyłącznie po wyrażeniu zgody</strong> przez Użytkownika. W Aplikacji dostępny jest ekran zgód, na którym Użytkownik może wyrazić lub odmówić zgody na poszczególne kategorie przetwarzania (np. analityka, raportowanie awarii, personalizacja). Ustawienia zgód można w każdej chwili zmienić w ustawieniach Aplikacji.</p>
-      <p>9.3. Do czasu wyrażenia zgody nie zbieramy danych analitycznych ani – w zakresie objętym zgodą – danych diagnostycznych w sposób umożliwiający ich powiązanie z konkretnym Użytkownikiem ponad to, co jest niezbędne do działania Aplikacji.</p>
-      <p>9.4. Dane analityczne mają charakter zagregowany i statystyczny oraz służą poprawie jakości i użyteczności Aplikacji. Nie wykorzystujemy ich do automatycznego podejmowania decyzji wywołujących skutki prawne wobec Użytkownika (patrz sekcja 13).</p>
-      <p>9.5. W zakresie usług Firebase <strong>Google Ireland Limited / Google LLC działa co do zasady jako podmiot przetwarzający</strong> na nasze polecenie, na podstawie zawartej umowy powierzenia oraz warunków przetwarzania danych Firebase/Google. Szczegółowe zasady przetwarzania danych przez Google opisuje polityka prywatności Google.</p>
+      <p>Nie przypisujemy zdarzeń do Twojego Konta ani identyfikatora użytkownika. Funkcja sygnałów Google (łączenie danych z kontami Google) jest wyłączona.</p>
+      <p id="sec-9-3">9.3. <strong>Zgoda „Marketing".</strong> Po jej zapisaniu Aplikacja przekazuje do Meta, za pomocą pakietu SDK Meta (Facebook SDK), zdarzenia konwersji: instalację i uruchomienie Aplikacji oraz wybrane zdarzenia produktowe. Naszym celem jest mierzenie skuteczności reklam Aplikacji. Meta wykorzystuje te zdarzenia także do celów wskazanych w sekcji <a href="#sec-9-6">9.6</a>. Zdarzenia trafiają do Meta wyłącznie z Aplikacji; nasz Backend nie przekazuje danych do Meta.</p>
+      <p><strong>IDFA jest przekazywany do Meta wyłącznie wtedy, gdy łącznie:</strong></p>
+      <ol>
+        <li>zapisałeś zgodę „Marketing" w Aplikacji <strong>oraz</strong></li>
+        <li>zezwoliłeś na śledzenie w systemowym oknie iOS (ATT).</li>
+      </ol>
+      <p>Okno ATT pojawia się tylko po zapisaniu wyboru z włączoną kategorią „Marketing". Cofnięcie którejkolwiek z tych zgód wyłącza przekazywanie IDFA do Meta. Cofnięcie zgody „Marketing" wyłącza przekazywanie zdarzeń do Meta.</p>
+      <p><strong>Połączenie konfiguracyjne.</strong> Niezależnie od zgody pakiet SDK Meta przy uruchomieniu Aplikacji pobiera z serwerów Meta swoją konfigurację. Meta otrzymuje wtedy adres IP Urządzenia, identyfikator Aplikacji oraz wersję systemu i pakietu SDK. Zdarzeń konwersji ani IDFA przed zapisaniem zgody nie przekazujemy.</p>
+      <p id="sec-9-4">9.4. <strong>Jak cofnąć zgodę.</strong></p>
+      <ul>
+        <li>„Analityka" i „Marketing" — Ustawienia → „Zgody i prywatność" → „Ustawienia cookies";</li>
+        <li>zgoda na śledzenie (ATT) — w ustawieniach systemu iOS: Ustawienia → Prywatność i ochrona → Śledzenie.</li>
+      </ul>
+      <p>Cofnięcie zgody nie wpływa na zgodność z prawem przetwarzania, którego dokonano przed jej cofnięciem. Po cofnięciu zgody Aplikacja wyłącza zbieranie w danej kategorii; identyfikatory nadane przez pakiety SDK nie są przy tym zmieniane. W odniesieniu do danych przekazanych wcześniej możesz zażądać ich usunięcia (sekcja <a href="#sec-17-3">17.3</a>) na zasadach opisanych w sekcji <a href="#sec-8-6">8.6</a>: zdarzeń nie przypisujemy do Konta, więc bez dodatkowych informacji nie potrafimy wskazać danych konkretnej osoby. Dane analityczne i raporty awarii w usługach Google wygasają w okresach wskazanych w sekcji <a href="#sec-12">12</a>; dane przekazane do Meta są przechowywane i usuwane na zasadach Meta. W zakresie, w jakim Meta przetwarza dane jako odrębny administrator, żądanie możesz skierować także do Meta.</p>
+      <p id="sec-9-5">9.5. <strong>Podstawa prawna.</strong> Podstawą przetwarzania w obu kategoriach jest zgoda (art. 6 ust. 1 lit. a RODO). Zgoda obejmuje także dostęp do informacji zapisanych na Urządzeniu i zapisywanie na nim identyfikatorów w zakresie potrzebnym tym usługom (art. 399 ustawy Prawo komunikacji elektronicznej).</p>
+      <p id="sec-9-6">9.6. <strong>Odbiorcy i ich role.</strong></p>
+      <ul>
+        <li><strong>Google Ireland Limited / Google LLC</strong> — dostawca usług Firebase; przetwarza dane na nasze zlecenie jako podmiot przetwarzający, na podstawie warunków przetwarzania danych Google.</li>
+        <li><strong>Meta Platforms Ireland Limited</strong> — odbiorca zdarzeń konwersji. W zakresie pomiaru skuteczności reklam i raportów kampanii Meta przetwarza zdarzenia w naszym imieniu jako podmiot przetwarzający. W zakresie zebrania zdarzeń w Aplikacji i ich przekazania do Meta po to, aby Meta wykorzystała je do ulepszania doboru i emisji reklam, personalizacji funkcji i treści (w tym reklam) oraz do zapewniania bezpieczeństwa i rozwoju swoich produktów, Administrator i Meta działają jako współadministratorzy. Dalsze przetwarzanie danych w usługach Meta odbywa się na zasadach określonych przez Meta jako odrębnego administratora, zgodnie z jej polityką prywatności.</li>
+      </ul>
+      <p>Przekazywanie danych poza EOG opisuje sekcja <a href="#sec-11">11</a>.</p>
+      <p id="sec-9-7">9.7. <strong>Manifest prywatności Aplikacji.</strong> W manifeście prywatności Aplikacji deklarujemy, że:</p>
+      <ul>
+        <li>Aplikacja korzysta ze śledzenia w rozumieniu zasad Apple, w związku z integracją Meta, i wskazujemy domenę śledzącą Meta;</li>
+        <li>zbierane typy danych to: identyfikator urządzenia — w celach reklamy podmiotów trzecich i analityki, oznaczony jako powiązany z użytkownikiem i używany do śledzenia; interakcje w produkcie — w celach analitycznych, niepowiązane z użytkownikiem; dane o awariach oraz inne dane diagnostyczne — w celu zapewnienia działania Aplikacji, niepowiązane z użytkownikiem.</li>
+      </ul>
+      <p id="sec-9-8">9.8. Do czasu zapisania zgody — w wersji 2.0 albo wcześniej w wersji 1.x (sekcja <a href="#sec-9-1">9.1</a>) — Aplikacja nie włącza zbierania zdarzeń analitycznych, raportów awarii ani przekazywania zdarzeń konwersji. Niezależnie od zgód działają: rejestracja Urządzenia do powiadomień (sekcja <a href="#sec-4-5">4.5</a>) i połączenie konfiguracyjne pakietu SDK Meta (sekcja <a href="#sec-9-3">9.3</a>).</p>
     </section>
 
     <!-- ── 10 ── -->
     <section class="doc-section" id="sec-10">
-      <h2><span class="secnum">10</span>Odbiorcy danych i kategorie odbiorców</h2>
-      <p>W zależności od wykorzystywanych funkcji dane mogą być udostępniane następującym kategoriom odbiorców:</p>
-
-      <h3>10.1. Dostawcy usług Apple</h3>
-      <p><strong>Apple Inc. / Apple Distribution International Ltd.</strong> – w zakresie usług Sign in with Apple, iCloud/CloudKit, dystrybucji Aplikacji przez App Store oraz powiadomień systemowych. W odniesieniu do własnych usług Apple działa jako niezależny administrator oraz, w odpowiednim zakresie, jako dostawca usług przetwarzający dane na potrzeby ich świadczenia.</p>
-
-      <h3>10.2. Dostawcy usług Google / Firebase</h3>
-      <p><strong>Google Ireland Limited / Google LLC</strong> – w zakresie Firebase Analytics, Crashlytics oraz Firebase Cloud Messaging, działający co do zasady jako podmiot przetwarzający na nasze polecenie.</p>
-
-      <h3>10.3. Dostawcy infrastruktury i hostingu</h3>
-      <p>Dostawcy infrastruktury chmurowej oraz hostingu backendu i usług pomocniczych Aplikacji. W zakresie niezbędnym do świadczenia usług możemy korzystać z dostawców takich jak platformy hostingowe i chmurowe (np. usługi typu Vercel, dostawcy chmury obliczeniowej oraz infrastruktura Firebase/Google Cloud). Dostawcy ci działają jako podmioty przetwarzające na podstawie zawartych umów powierzenia.</p>
-
-      <h3>10.4. Dostawca systemu zarządzania treścią (CMS)</h3>
-      <p><strong>Sanity</strong> – dostawca systemu zarządzania treścią wykorzystywanego do publikowania treści redakcyjnych, poradnikowych oraz sekcji partnerów i rekomendacji. Treści dostarczane Użytkownikom mają co do zasady charakter redakcyjny; w zakresie, w jakim w ramach CMS przetwarzane są dane osobowe, dostawca działa jako podmiot przetwarzający.</p>
-
-      <h3>10.5. Partnerzy i sekcje sponsorowane</h3>
-      <p>Partnerzy prezentowani w sekcjach sponsorowanych oraz w ramach rekomendacji (w tym rekomendacji finansowych i rekomendacji wykonawców). Treści te są co do zasady prezentowane w sposób nieprofilowany indywidualnie. Jeżeli Użytkownik samodzielnie zdecyduje się przejść do oferty partnera lub skontaktować się z nim, dalsze przetwarzanie jego danych przez partnera odbywa się na zasadach określonych przez tego partnera jako odrębnego administratora.</p>
-
-      <h3>10.6. Inni uczestnicy Udostępnionej Inwestycji</h3>
-      <p>Gdy Właściciel Inwestycji włączy udostępnianie, treść wybranej Inwestycji jest udostępniana Współpracownikowi lub Współpracownikom zaproszonym przez Właściciela. Zakres dostępu zależy od aktualnej funkcjonalności udostępniania w Aplikacji oraz od uprawnień skonfigurowanych za pośrednictwem Apple CloudKit.</p>
-
-      <h3>10.7. Pozostali odbiorcy</h3>
-      <ul>
-        <li>podmioty świadczące na naszą rzecz usługi wspierające (np. obsługa poczty e-mail, narzędzia komunikacji z Użytkownikami),</li>
-        <li>organy publiczne i uprawnione podmioty – wyłącznie w zakresie wymaganym przepisami prawa.</li>
-      </ul>
-      <p>Z każdym podmiotem przetwarzającym dane w naszym imieniu zawieramy umowę powierzenia przetwarzania danych osobowych spełniającą wymogi art. 28 RODO.</p>
+      <h2><span class="secnum">10</span>Odbiorcy danych</h2>
+      <p id="sec-10-1">10.1. <strong>Apple</strong> (Apple Distribution International Ltd. / Apple Inc.) — logowanie „Zaloguj się, używając konta Apple", iCloud/CloudKit, doręczanie powiadomień (APNs), dystrybucja Aplikacji w App Store. W zakresie logowania, doręczania powiadomień i dystrybucji Aplikacji w App Store Apple działa jako odrębny administrator. Dane, które Aplikacja zapisuje w iCloud Użytkownika za pośrednictwem CloudKit, Apple przechowuje i przetwarza jako dostawca usługi iCloud, w tym na podstawie warunków umowy Apple z twórcami aplikacji; Administrator nie ma technicznego dostępu do tych danych.</p>
+      <p id="sec-10-2">10.2. <strong>Google</strong> (Google Ireland Limited / Google LLC) — Firebase Analytics i Firebase Crashlytics po zgodzie „Analityka"; Firebase Cloud Messaging przy doręczaniu powiadomień; Google Cloud Firestore jako baza danych Backendu. Podmiot przetwarzający.</p>
+      <p id="sec-10-3">10.3. <strong>Meta</strong> (Meta Platforms Ireland Limited) — zdarzenia konwersji po zgodzie „Marketing" oraz połączenie konfiguracyjne pakietu SDK (sekcje <a href="#sec-9-3">9.3</a> i <a href="#sec-9-6">9.6</a>).</p>
+      <p id="sec-10-4">10.4. <strong>Vercel</strong> — dostawca hostingu, u którego działa kod Backendu. Podmiot przetwarzający.</p>
+      <p id="sec-10-5">10.5. <strong>Sanity</strong> — dostawca systemu zarządzania treścią, z którego pochodzą treści poradników i treści partnerów. Teksty Aplikacja pobiera za pośrednictwem naszego Backendu, który przekazuje do Sanity także frazy wyszukiwania. Obrazy (banery, logotypy partnerów, okładki) Aplikacja pobiera bezpośrednio z serwerów Sanity; dostawca przetwarza wtedy adres IP i dane techniczne żądania. Podmiot przetwarzający.</p>
+      <p id="sec-10-6">10.6. <strong>Współpracownicy</strong> — w zakresie Udostępnionej Inwestycji, zgodnie z decyzją Właściciela (sekcja <a href="#sec-7-3">7.3</a>).</p>
+      <p id="sec-10-7">10.7. <strong>Partnerzy</strong> — Aplikacja pokazuje treści i oferty partnerów. Otwierając link partnera, przechodzisz do jego serwisu; Aplikacja nie dołącza do linku danych identyfikujących Ciebie. Dalsze przetwarzanie Twoich danych odbywa się na zasadach tego partnera jako odrębnego administratora.</p>
+      <p id="sec-10-8">10.8. <strong>Pozostali odbiorcy</strong> — dostawca poczty elektronicznej używanej do kontaktu oraz organy publiczne, wyłącznie w zakresie wymaganym przepisami.</p>
+      <p>Z podmiotami przetwarzającymi dane w naszym imieniu zawieramy umowy powierzenia zgodne z art. 28 RODO.</p>
+      <p>Wymagamy, aby podmioty, którym Aplikacja przekazuje dane Użytkowników — w tym dostawcy narzędzi analitycznych, sieci reklamowe i dostawcy pakietów SDK (Google, Meta) — zapewniały ochronę tych danych co najmniej równoważną opisanej w tej Polityce i wymaganej przez zasady App Store.</p>
     </section>
 
     <!-- ── 11 ── -->
     <section class="doc-section" id="sec-11">
-      <h2><span class="secnum">11</span>Przekazywanie danych poza Europejski Obszar Gospodarczy (EOG)</h2>
-      <p>11.1. Niektórzy z naszych dostawców (w szczególności Apple oraz Google) mają siedzibę lub przetwarzają dane poza EOG, w tym w Stanach Zjednoczonych. Oznacza to, że dane mogą być przekazywane poza EOG.</p>
-      <p>11.2. Przekazywanie danych poza EOG odbywa się wyłącznie przy zastosowaniu odpowiednich zabezpieczeń wymaganych przez RODO, w szczególności:</p>
+      <h2><span class="secnum">11</span>Przekazywanie danych poza EOG</h2>
+      <p id="sec-11-1">11.1. Apple, Google, Meta, Vercel i Sanity mogą przetwarzać dane poza EOG, w szczególności w Stanach Zjednoczonych. Baza danych Backendu znajduje się w lokalizacji europejskiej.</p>
+      <p id="sec-11-2">11.2. Przekazanie odbywa się na podstawie:</p>
       <ul>
-        <li>na podstawie <strong>decyzji Komisji Europejskiej stwierdzającej odpowiedni stopień ochrony</strong> (np. w odniesieniu do podmiotów uczestniczących w programie <strong>EU-U.S. Data Privacy Framework</strong>), lub</li>
-        <li>na podstawie <strong>standardowych klauzul umownych</strong> (Standard Contractual Clauses) zatwierdzonych przez Komisję Europejską, uzupełnionych w razie potrzeby o dodatkowe środki ochrony.</li>
+        <li><strong>decyzji Komisji Europejskiej stwierdzającej odpowiedni stopień ochrony</strong> (art. 45 RODO; decyzja wykonawcza (UE) 2023/1795 z 10 lipca 2023 r.) — dla odbiorców uczestniczących w programie EU–U.S. Data Privacy Framework (DPF), albo</li>
+        <li><strong>standardowych klauzul umownych (SCC)</strong> przyjętych przez Komisję Europejską (art. 46 ust. 2 lit. c RODO; decyzja wykonawcza (UE) 2021/914) — w pozostałym zakresie.</li>
       </ul>
-      <p>11.3. Użytkownik ma prawo uzyskać informację o stosowanych zabezpieczeniach oraz, w odpowiednim zakresie, kopię tych zabezpieczeń, kontaktując się z Administratorem.</p>
+      <p id="sec-11-3">11.3. Możesz zwrócić się do nas o informację o zastosowanych zabezpieczeniach i o kopię tych zabezpieczeń.</p>
     </section>
 
     <!-- ── 12 ── -->
     <section class="doc-section" id="sec-12">
       <h2><span class="secnum">12</span>Okres przechowywania danych</h2>
-      <p>12.1. <strong>Dane lokalne i synchronizowane przez iCloud</strong> – przechowywane są tak długo, jak długo Użytkownik korzysta z Aplikacji i nie usunie danych samodzielnie. Usunięcie Aplikacji lub usunięcie danych w jej ustawieniach powoduje usunięcie danych lokalnych; dane w iCloud pozostają pod kontrolą Użytkownika i mogą zostać przez niego usunięte za pośrednictwem ustawień konta Apple.</p>
-      <p>12.2. <strong>Dane konta i uwierzytelniania</strong> – przechowywane przez okres korzystania z konta; po usunięciu konta są usuwane lub anonimizowane, z wyjątkiem danych, które musimy zachować na podstawie przepisów prawa lub w celu ustalenia, dochodzenia bądź obrony roszczeń.</p>
-      <p>12.3. <strong>Dane analityczne i diagnostyczne</strong> – przechowywane przez okres określony w ustawieniach wykorzystywanych narzędzi (np. Firebase) oraz nie dłużej niż jest to niezbędne do celów analitycznych; do czasu wycofania zgody, jeżeli stanowi ona podstawę przetwarzania.</p>
-      <p>12.4. <strong>Dane programu poleceń</strong> – przechowywane przez okres niezbędny do rozliczenia i obsługi programu poleceń.</p>
-      <p>12.5. <strong>Korespondencja i zgłoszenia</strong> – przechowywane przez okres niezbędny do obsługi zapytania oraz, w razie potrzeby, do celów dowodowych przez okres przedawnienia ewentualnych roszczeń.</p>
-      <p>12.6. <strong>Dane Udostępnionej Inwestycji</strong> – przechowywane w CloudKit do czasu, aż Właściciel Inwestycji usunie Inwestycję, zakończy udostępnianie lub w inny sposób usunie dane. Cofnięcie dostępu Współpracownikowi uniemożliwia dalszy dostęp za pośrednictwem CloudKit, jednak kopia lokalna może pozostać na urządzeniu Współpracownika do czasu jej usunięcia przez użytkownika lub przez Aplikację.</p>
-      <p>12.7. Po upływie okresów przechowywania dane są usuwane lub poddawane anonimizacji.</p>
+      <div class="rodo-table-wrap">
+        <table class="rodo-table data-table cols-2">
+          <thead>
+            <tr><th>Dane</th><th>Okres przechowywania</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dt-main" data-label="Dane">Dane na Urządzeniu, w tym dane Trybu demo i dane z sekcji <a href="#sec-4-9">4.9</a></td><td data-label="Okres przechowywania">do usunięcia przez Ciebie danych lub Aplikacji (dane z sekcji <a href="#sec-4-9">4.9</a> — do usunięcia Inwestycji, której dotyczą, Konta albo Aplikacji); zakres działania funkcji „Usuń konto" — sekcja <a href="#sec-8">8</a>; o kopii zapasowej Urządzenia — sekcja <a href="#sec-7-1">7.1</a></td></tr>
+            <tr><td class="dt-main" data-label="Dane">Dane w Twoim iCloud</td><td data-label="Okres przechowywania">do usunięcia przez Ciebie (usuwanie treści — sekcja <a href="#sec-7-2">7.2</a>); na zasadach usługi iCloud; zakres działania funkcji „Usuń konto" — sekcja <a href="#sec-8">8</a></td></tr>
+            <tr><td class="dt-main" data-label="Dane">Dane Udostępnionej Inwestycji</td><td data-label="Okres przechowywania">w iCloud Właściciela — do usunięcia przez Właściciela treści lub Inwestycji, z zastrzeżeniami opisanymi w sekcjach <a href="#sec-7-2">7.2</a> i <a href="#sec-7-3">7.3</a>; samo zakończenie udostępnienia nie usuwa tych danych; kopie lokalne — patrz sekcja <a href="#sec-7-3">7.3</a></td></tr>
+            <tr><td class="dt-main" data-label="Dane">Dane Konta w pęku kluczy</td><td data-label="Okres przechowywania">do wylogowania lub usunięcia Konta</td></tr>
+            <tr><td class="dt-main" data-label="Dane">Rekord Urządzenia na Backendzie</td><td data-label="Okres przechowywania">bez automatycznego terminu — do usunięcia na Twoje żądanie (sekcja <a href="#sec-8-6">8.6</a>)</td></tr>
+            <tr><td class="dt-main" data-label="Dane">Token powiadomień i identyfikator instalacji Firebase u Google (Firebase Cloud Messaging)</td><td data-label="Okres przechowywania">zgodnie z zasadami Firebase: do usunięcia identyfikatora instalacji, a następnie do 180 dni</td></tr>
+            <tr><td class="dt-main" data-label="Dane">Dane programu poleceń</td><td data-label="Okres przechowywania">bez automatycznego terminu — do usunięcia na Twoje żądanie (sekcja <a href="#sec-8-6">8.6</a>)</td></tr>
+            <tr><td class="dt-main" data-label="Dane">Logi wykonania Backendu</td><td data-label="Okres przechowywania">u dostawcy hostingu — obecnie do 1 godziny</td></tr>
+            <tr><td class="dt-main" data-label="Dane">Frazy wyszukiwania poradników</td><td data-label="Okres przechowywania">Backend nie zapisuje ich w bazie danych; mogą znaleźć się w logach dostawcy hostingu (obecnie do 1 godziny) i w krótkotrwałej pamięci podręcznej odpowiedzi</td></tr>
+            <tr><td class="dt-main" data-label="Dane">Dane analityczne (Firebase Analytics)</td><td data-label="Okres przechowywania">2 miesiące; zagregowane raporty statystyczne mogą być przechowywane dłużej</td></tr>
+            <tr><td class="dt-main" data-label="Dane">Raporty awarii i błędów (Firebase Crashlytics)</td><td data-label="Okres przechowywania">90 dni</td></tr>
+            <tr><td class="dt-main" data-label="Dane">Zdarzenia przekazane do Meta</td><td data-label="Okres przechowywania">zgodnie z zasadami przechowywania Meta</td></tr>
+            <tr><td class="dt-main" data-label="Dane">Dane techniczne połączeń kierowanych z Aplikacji bezpośrednio do Meta (połączenie konfiguracyjne pakietu SDK, sekcja <a href="#sec-9-3">9.3</a>) i do Sanity (pobieranie obrazów, sekcja <a href="#sec-10-5">10.5</a>)</td><td data-label="Okres przechowywania">nie trafiają na Backend; u dostawcy — zgodnie z jego zasadami przechowywania</td></tr>
+            <tr><td class="dt-main" data-label="Dane">Korespondencja</td><td data-label="Okres przechowywania">przez czas obsługi sprawy, a następnie przez okres przedawnienia ewentualnych roszczeń</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Po upływie tych okresów dane, którymi dysponujemy my lub nasze podmioty przetwarzające, są usuwane albo trwale pozbawiane cech pozwalających na identyfikację osoby. Danymi na Urządzeniu i w iCloud zarządzasz samodzielnie (sekcje <a href="#sec-7-2">7.2</a>, <a href="#sec-7-3">7.3</a> i <a href="#sec-8">8</a>); dane przekazane do Meta są przechowywane i usuwane na zasadach Meta.</p>
     </section>
 
     <!-- ── 13 ── -->
     <section class="doc-section" id="sec-13">
       <h2><span class="secnum">13</span>Profilowanie i automatyczne podejmowanie decyzji</h2>
-      <p>13.1. Nie podejmujemy wobec Użytkowników decyzji opierających się <strong>wyłącznie</strong> na zautomatyzowanym przetwarzaniu, w tym profilowaniu, które wywoływałyby skutki prawne lub w podobny sposób istotnie wpływały na Użytkownika.</p>
-      <p>13.2. Dane analityczne wykorzystywane są do celów statystycznych oraz poprawy działania Aplikacji. Treści partnerów i rekomendacje prezentowane są co do zasady w sposób kontekstowy, bez indywidualnego profilowania, chyba że Użytkownik wyrazi na to odrębną zgodę.</p>
+      <p id="sec-13-1">13.1. Nie podejmujemy decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, w tym profilowaniu, które wywoływałyby wobec Użytkownika skutki prawne lub w podobny sposób istotnie na niego wpływały.</p>
+      <p id="sec-13-2">13.2. Dane analityczne służą celom statystycznym i ulepszaniu Aplikacji. Propozycje finansowe Aplikacja dobiera na Urządzeniu na podstawie danych Inwestycji; dane te nie opuszczają w tym celu Urządzenia. Po zgodzie „Analityka" do Google trafia jednak informacja o tym, która propozycja została wyświetlona lub otwarta (jej tytuł); pośrednio wskazuje ona sytuację, która tę propozycję wywołała — np. przekroczenie budżetu. Poradniki i treści partnerów wyświetlane przy etapie dobiera Backend na podstawie klucza etapu (sekcja <a href="#sec-4-8">4.8</a>).</p>
+      <p id="sec-13-3">13.3. Zdarzenia przekazane do Meta po zgodzie „Marketing" służą mierzeniu skuteczności reklam. Meta wykorzystuje je także do ulepszania doboru i emisji reklam oraz do personalizacji treści i reklam w swoich usługach (sekcja <a href="#sec-9-6">9.6</a>), na zasadach opisanych w swojej polityce prywatności.</p>
     </section>
 
     <!-- ── 14 ── -->
     <section class="doc-section" id="sec-14">
-      <h2><span class="secnum">14</span>Pliki cookies i technologie podobne</h2>
-      <p>14.1. Sama Aplikacja mobilna nie wykorzystuje plików cookies w rozumieniu przeglądarkowym; korzysta natomiast z lokalnych mechanizmów przechowywania danych opisanych w sekcji 7 oraz – w zakresie objętym zgodą – z analitycznych identyfikatorów technicznych.</p>
-      <p>14.2. Strony internetowe powiązane z Aplikacją (np. strona informacyjna, landing page, formularze kontaktowe, panele administracyjne lub CMS) mogą wykorzystywać pliki cookies oraz technologie podobne, w tym cookies niezbędne do działania serwisu oraz – po wyrażeniu zgody – cookies analityczne. Szczegółowe informacje na temat cookies wykorzystywanych w serwisach internetowych są udostępniane w ramach tych serwisów.</p>
-      <p>14.3. Otwierając linki zewnętrzne w Aplikacji (np. w komponencie <code style="font-family:var(--font-mono); font-size:14px; padding:1px 6px; background:var(--doc-paper-2); border-radius:4px;">SFSafariViewController</code>), Użytkownik przechodzi do stron osób trzecich, które mogą stosować własne pliki cookies i własne polityki prywatności. Nie odpowiadamy za przetwarzanie danych przez te podmioty.</p>
+      <h2><span class="secnum">14</span>Pliki cookies i podobne technologie</h2>
+      <p id="sec-14-1">14.1. Aplikacja nie używa plików cookies w rozumieniu przeglądarkowym. Ustawienia zgód są w Aplikacji nazwane „Ustawienia cookies" — chodzi o identyfikatory i dane, które pakiety SDK opisane w sekcji <a href="#sec-9">9</a> zapisują i odczytują na Urządzeniu.</p>
+      <p id="sec-14-2">14.2. Strony internetowe powiązane z Aplikacją stosują własne ustawienia plików cookies i własny mechanizm zgód; informacje na ten temat są dostępne w tych serwisach.</p>
+      <p id="sec-14-3">14.3. Linki zewnętrzne otwierane z Aplikacji prowadzą do serwisów osób trzecich, które stosują własne zasady prywatności.</p>
     </section>
 
     <!-- ── 15 ── -->
     <section class="doc-section" id="sec-15">
-      <h2><span class="secnum">15</span>Integracje z funkcjami systemowymi iOS</h2>
-      <p>Aplikacja może korzystać z funkcji systemowych iOS wyłącznie po udzieleniu przez Użytkownika stosownych uprawnień systemowych. Uprawnienia te można w każdej chwili zmienić w ustawieniach systemu iOS. Dotyczy to w szczególności:</p>
+      <h2><span class="secnum">15</span>Uprawnienia i funkcje systemu iOS</h2>
+      <p>Aplikacja korzysta z funkcji systemu po udzieleniu uprawnień, które możesz zmienić w ustawieniach iOS:</p>
       <ul>
-        <li><strong>Zdjęcia (PhotosPicker / dostęp do biblioteki zdjęć)</strong> – w celu dodawania zdjęć do inwestycji i albumów; możliwy jest wybór pojedynczych zdjęć bez udostępniania całej biblioteki;</li>
-        <li><strong>Kontakty</strong> – w celu dodawania danych wykonawców lub kontaktów, jeżeli Użytkownik zdecyduje się je zaimportować;</li>
-        <li><strong>Share Sheet / Share Extension</strong> – w celu udostępniania treści do Aplikacji oraz z Aplikacji;</li>
-        <li><strong>Powiadomienia</strong> – w celu dostarczania powiadomień push, po wyrażeniu zgody systemowej;</li>
-        <li><strong>Kalendarz iOS</strong> – jeżeli dana funkcja jest dostępna, Aplikacja może zapisywać lokalnie identyfikatory wydarzeń utworzonych przez Użytkownika, aby powiązać je z zadaniami lub etapami inwestycji; odbywa się to po udzieleniu odpowiedniego uprawnienia systemowego;</li>
-        <li><strong>Przeglądanie linków zewnętrznych (SFSafariViewController)</strong> – w celu otwierania stron internetowych wskazanych w Aplikacji.</li>
+        <li><strong>Aparat</strong> — skanowanie dokumentów, faktur i paragonów w systemowym skanerze.</li>
+        <li><strong>Zdjęcia</strong> — dodawanie zdjęć do albumów etapów, załączników do wydatków, okładek i teł. Część zdjęć Aplikacja zapisuje w oryginale, razem z metadanymi zapisanymi przez urządzenie, np. datą lub lokalizacją; takie pliki mogą trafić do iCloud i do Współpracowników (sekcje <a href="#sec-4-1">4.1</a> i <a href="#sec-4-2">4.2</a>).</li>
+        <li><strong>Rozpoznawanie tekstu (OCR)</strong> — wykonywane na Urządzeniu.</li>
+        <li><strong>Kalendarz</strong> — dodawanie wydarzeń do kalendarza iOS na Twoje polecenie. Identyfikator utworzonego wydarzenia pozostaje na Urządzeniu.</li>
+        <li><strong>Kontakty</strong> — zapisanie wizytówki wykonawcy w książce adresowej w systemowym oknie. Aplikacja nie odczytuje Twoich kontaktów.</li>
+        <li><strong>Arkusz i rozszerzenie udostępniania</strong> — wysyłanie zaproszeń do Udostępnionej Inwestycji oraz przyjmowanie linków, obrazów i plików z innych aplikacji. Przyjęte treści trafiają do pamięci Aplikacji na Urządzeniu.</li>
+        <li><strong>Powiadomienia</strong> — wyświetlanie powiadomień.</li>
+        <li><strong>Śledzenie (ATT)</strong> — zgodnie z sekcjami <a href="#sec-9-2">9.2</a> i <a href="#sec-9-3">9.3</a>.</li>
       </ul>
-      <p>Dane uzyskiwane za pośrednictwem funkcji systemowych są wykorzystywane wyłącznie w celu realizacji funkcji, dla której Użytkownik udzielił uprawnienia.</p>
+      <p>Aplikacja nie korzysta z usług lokalizacji. Dane uzyskane dzięki uprawnieniom są wykorzystywane do funkcji, której dotyczy uprawnienie.</p>
     </section>
 
     <!-- ── 16 ── -->
     <section class="doc-section" id="sec-16">
       <h2><span class="secnum">16</span>Bezpieczeństwo danych</h2>
-      <p>Stosujemy adekwatne środki techniczne i organizacyjne mające na celu ochronę danych osobowych przed nieuprawnionym dostępem, utratą, zniszczeniem lub nieuprawnioną modyfikacją, w tym w szczególności:</p>
-      <p>16.1. <strong>Szyfrowanie transmisji</strong> – komunikacja Aplikacji z usługami zewnętrznymi i backendem odbywa się z wykorzystaniem szyfrowanych połączeń (HTTPS/TLS).</p>
-      <p>16.2. <strong>Bezpieczne przechowywanie danych wrażliwych</strong> – wrażliwe dane techniczne (np. tokeny uwierzytelniające) przechowywane są w mechanizmie Keychain systemu iOS.</p>
-      <p>16.3. <strong>Ograniczenie dostępu</strong> – dostęp do danych przetwarzanych po stronie backendu oraz do narzędzi administracyjnych jest ograniczony do osób upoważnionych, zgodnie z zasadą wiedzy koniecznej.</p>
-      <p>16.4. <strong>Korzystanie ze sprawdzonych dostawców</strong> – współpracujemy z renomowanymi dostawcami infrastruktury chmurowej i usług (Apple, Google/Firebase oraz dostawcy hostingu), którzy stosują własne, uznane na rynku środki bezpieczeństwa.</p>
-      <p>16.5. <strong>Logowanie zdarzeń i monitorowanie</strong> – w zakresie niezbędnym do zapewnienia bezpieczeństwa prowadzimy logi zdarzeń oraz monitorujemy działanie usług w celu wykrywania nieprawidłowości i nadużyć.</p>
-      <p>16.6. <strong>Kopie zapasowe</strong> – w odpowiednim zakresie stosujemy mechanizmy tworzenia kopii zapasowych zmierzające do zapewnienia ciągłości i integralności danych przetwarzanych po stronie infrastruktury usługowej.</p>
-      <p>Jednocześnie informujemy, że żadna metoda transmisji ani przechowywania danych nie jest w pełni odporna na ryzyka. Dokładamy starań, aby stosowane zabezpieczenia odpowiadały aktualnemu stanowi wiedzy technicznej oraz charakterowi przetwarzanych danych.</p>
+      <p id="sec-16-1">16.1. Komunikacja Aplikacji z Backendem i usługami zewnętrznymi odbywa się połączeniami szyfrowanymi (HTTPS/TLS).</p>
+      <p id="sec-16-2">16.2. Identyfikator użytkownika Apple, imię i nazwisko oraz adres e-mail przechowujemy w pęku kluczy Urządzenia, bez przenoszenia na inne urządzenia.</p>
+      <p id="sec-16-3">16.3. Dostęp administracyjny do bazy danych Backendu i narzędzi wysyłki powiadomień mają wyłącznie osoby upoważnione.</p>
+      <p id="sec-16-4">16.4. Bezpieczeństwo danych w iCloud zapewnia Apple na zasadach tej usługi; zależy ono także od zabezpieczenia Twojego konta Apple i Urządzenia.</p>
+      <p id="sec-16-5">16.5. Żadna metoda przesyłania ani przechowywania danych nie jest wolna od ryzyka. Dobieramy środki odpowiednie do charakteru przetwarzanych danych.</p>
     </section>
 
     <!-- ── 17 ── -->
     <section class="doc-section" id="sec-17">
       <h2><span class="secnum">17</span>Prawa Użytkownika</h2>
-      <p>W związku z przetwarzaniem danych osobowych Użytkownikowi przysługują następujące prawa:</p>
-
-      <ul class="rights-grid">
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
-          <div class="rbody"><p class="rttl">Prawo dostępu do danych</p><span class="rart">art. 15 RODO</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg></span>
-          <div class="rbody"><p class="rttl">Prawo do sprostowania</p><span class="rart">art. 16 RODO</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14H7L5 6"/><path d="M10 11v6M14 11v6"/></svg></span>
-          <div class="rbody"><p class="rttl">Prawo do usunięcia danych</p><span class="rart">art. 17 RODO — „prawo do bycia zapomnianym"</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="4" height="18"/><rect x="14" y="3" width="4" height="18"/></svg></span>
-          <div class="rbody"><p class="rttl">Prawo do ograniczenia przetwarzania</p><span class="rart">art. 18 RODO</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></span>
-          <div class="rbody"><p class="rttl">Prawo do przenoszenia danych</p><span class="rart">art. 20 RODO</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></span>
-          <div class="rbody"><p class="rttl">Prawo do sprzeciwu</p><span class="rart">art. 21 RODO</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><polyline points="3 4 3 12 11 12"/></svg></span>
-          <div class="rbody"><p class="rttl">Prawo do wycofania zgody</p><span class="rart">w dowolnym momencie</span></div>
-        </li>
-        <li>
-          <span class="rico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></span>
-          <div class="rbody"><p class="rttl">Prawo do skargi do PUODO</p><span class="rart">ul. Moniuszki 1A, 00-014 Warszawa</span></div>
-        </li>
-      </ul>
-
-      <p>17.1. <strong>Prawo dostępu</strong> do danych oraz uzyskania ich kopii (art. 15 RODO).</p>
-      <p>17.2. <strong>Prawo do sprostowania</strong> danych nieprawidłowych lub niekompletnych (art. 16 RODO).</p>
-      <p>17.3. <strong>Prawo do usunięcia</strong> danych („prawo do bycia zapomnianym"), w przypadkach przewidzianych przepisami (art. 17 RODO).</p>
-      <p>17.4. <strong>Prawo do ograniczenia przetwarzania</strong> (art. 18 RODO).</p>
-      <p>17.5. <strong>Prawo do przenoszenia danych</strong> – w zakresie danych przetwarzanych na podstawie zgody lub umowy w sposób zautomatyzowany (art. 20 RODO).</p>
-      <p>17.6. <strong>Prawo do sprzeciwu</strong> wobec przetwarzania opartego na uzasadnionym interesie Administratora (art. 21 RODO).</p>
-      <p>17.7. <strong>Prawo do wycofania zgody</strong> w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem (dotyczy danych przetwarzanych na podstawie zgody, np. analityki).</p>
-      <p>17.8. <strong>Prawo do wniesienia skargi</strong> do organu nadzorczego – w Polsce jest nim <strong>Prezes Urzędu Ochrony Danych Osobowych (PUODO)</strong>, ul. Moniuszki 1A, 00-014 Warszawa.</p>
-
-      <p>W celu realizacji powyższych praw należy skontaktować się z Administratorem pod adresem <a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a>. Możemy poprosić o informacje pozwalające zidentyfikować osobę składającą żądanie. Na żądanie odpowiadamy bez zbędnej zwłoki, nie później niż w terminie miesiąca od jego otrzymania, z możliwością przedłużenia w przypadkach przewidzianych przepisami.</p>
-      <p>Część praw Użytkownik może zrealizować samodzielnie – np. usuwając dane lokalne w Aplikacji, zarządzając danymi w iCloud poprzez ustawienia konta Apple, zmieniając ustawienia zgód analitycznych lub cofając uprawnienia systemowe w ustawieniach iOS.</p>
+      <p>Przysługują Ci następujące prawa:</p>
+      <p id="sec-17-1">17.1. <strong>prawo dostępu</strong> do danych i uzyskania ich kopii (art. 15 RODO);</p>
+      <p id="sec-17-2">17.2. <strong>prawo do sprostowania</strong> danych (art. 16 RODO);</p>
+      <p id="sec-17-3">17.3. <strong>prawo do usunięcia</strong> danych (art. 17 RODO);</p>
+      <p id="sec-17-4">17.4. <strong>prawo do ograniczenia przetwarzania</strong> (art. 18 RODO);</p>
+      <p id="sec-17-5">17.5. <strong>prawo do przenoszenia danych</strong> przetwarzanych na podstawie zgody lub umowy w sposób zautomatyzowany (art. 20 RODO);</p>
+      <p id="sec-17-6">17.6. <strong>prawo sprzeciwu</strong> wobec przetwarzania opartego na uzasadnionym interesie (art. 21 RODO) — zob. odrębną informację poniżej;</p>
+      <p id="sec-17-7">17.7. <strong>prawo do cofnięcia zgody</strong> w dowolnym momencie, bez wpływu na zgodność z prawem wcześniejszego przetwarzania;</p>
+      <p id="sec-17-8">17.8. <strong>prawo do wniesienia skargi</strong> do organu nadzorczego — w Polsce: Prezes Urzędu Ochrony Danych Osobowych (PUODO), ul. Moniuszki 1A, 00-014 Warszawa.</p>
+      <p><strong>Prawo sprzeciwu — informacja odrębna.</strong> W dowolnym momencie możesz — z przyczyn związanych z Twoją szczególną sytuacją — wnieść sprzeciw wobec przetwarzania Twoich danych opartego na uzasadnionym interesie (art. 6 ust. 1 lit. f RODO), czyli: rejestracji Urządzenia i wysyłania powiadomień z Backendu, obsługi korespondencji, logów technicznych Backendu, pobierania konfiguracji przez pakiet SDK Meta oraz ustalenia, dochodzenia lub obrony roszczeń. W zakresie, w jakim Twoje dane są przetwarzane na potrzeby marketingu bezpośredniego — dotyczy to komunikatów zachęcających do powrotu do Aplikacji (sekcja <a href="#sec-4-5">4.5</a>) — możesz wnieść sprzeciw w dowolnym momencie, bez podawania przyczyny; po wniesieniu takiego sprzeciwu nie będziemy już przetwarzać Twoich danych w tym celu (art. 21 ust. 2 i 3 RODO). Sprzeciw wyślij na adres <strong><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></strong>. W wersji 2.0 rejestracji Urządzenia ani pobierania konfiguracji przez pakiet SDK Meta nie można wyłączyć w Aplikacji — następują przy jej uruchomieniu. Po uwzględnieniu sprzeciwu usuniemy rekord Urządzenia, który uda się odnaleźć (sekcja <a href="#sec-8-6">8.6</a>), jednak zainstalowana Aplikacja może zarejestrować Urządzenie ponownie; trwałe zakończenie tego przetwarzania wymaga usunięcia Aplikacji z Urządzenia. Kategorie powiadomień z Backendu inne niż „Powiadomienia systemowe" możesz wyłączyć samodzielnie w sposób opisany w sekcji <a href="#sec-4-5">4.5</a>.</p>
+      <p>Aby skorzystać z praw, napisz na adres <strong><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></strong>. Możemy poprosić o informacje potrzebne do potwierdzenia Twojej tożsamości. Odpowiadamy bez zbędnej zwłoki, nie później niż w ciągu miesiąca od otrzymania żądania; w przypadkach przewidzianych w RODO termin ten może zostać przedłużony.</p>
+      <p><strong>Dane w iCloud i na Urządzeniu.</strong> Nie mamy dostępu do danych w obszarach A i B, dlatego prawa dotyczące tych danych realizujesz samodzielnie: w Aplikacji (edycja i usuwanie treści, zakończenie lub opuszczenie udostępnienia, „Usuń konto") oraz w ustawieniach konta Apple. Wyjątek: jeżeli Twoje dane znajdują się w Inwestycji innego Użytkownika — jako wpisy lub pliki dodane przez Ciebie jako Współpracownika (sekcja <a href="#sec-8-7">8.7</a>) albo jako dane kontaktowe zapisane przez tę osobę (sekcja <a href="#sec-5-4">5.4</a>) — o ich zmianę lub usunięcie zwróć się do Właściciela tej Inwestycji; Administrator nie ma do nich dostępu.</p>
     </section>
 
     <!-- ── 18 ── -->
     <section class="doc-section" id="sec-18">
       <h2><span class="secnum">18</span>Dane dzieci</h2>
-      <p>18.1. Aplikacja <strong>nie jest kierowana do dzieci</strong> i nie jest przeznaczona dla osób, które nie ukończyły 16 lat.</p>
-      <p>18.2. Świadomie nie zbieramy danych osobowych dzieci. Jeżeli poweźmiemy informację, że dane osoby poniżej wymaganego wieku zostały nam przekazane bez odpowiedniej podstawy, podejmiemy działania zmierzające do ich usunięcia.</p>
-      <p>18.3. Jeżeli rodzic lub opiekun prawny stwierdzi, że dziecko przekazało nam dane osobowe, prosimy o kontakt pod adresem <a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a>.</p>
+      <p id="sec-18-1">18.1. Aplikacja nie jest kierowana do osób, które nie ukończyły 16 lat.</p>
+      <p id="sec-18-2">18.2. Nie zbieramy świadomie danych osobowych dzieci. Jeżeli dowiemy się, że takie dane zostały nam przekazane bez wymaganej podstawy, usuniemy je.</p>
+      <p id="sec-18-3">18.3. Rodzic lub opiekun prawny, który uzna, że dziecko przekazało nam dane, może napisać na adres <strong><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></strong>.</p>
     </section>
 
     <!-- ── 19 ── -->
     <section class="doc-section" id="sec-19">
       <h2><span class="secnum">19</span>Zmiany Polityki Prywatności</h2>
-      <p>19.1. Niniejsza Polityka może być okresowo aktualizowana, w szczególności w związku z rozwojem Aplikacji, zmianami w wykorzystywanych technologiach lub zmianami przepisów prawa.</p>
-      <p>19.2. O istotnych zmianach będziemy informować w sposób adekwatny do ich charakteru, np. poprzez komunikat w Aplikacji lub aktualizację dokumentu wraz ze zmianą daty.</p>
-      <p>19.3. Aktualna wersja Polityki jest każdorazowo dostępna w Aplikacji oraz na stronie internetowej powiązanej z Aplikacją. Data ostatniej aktualizacji wskazana jest na początku dokumentu.</p>
+      <p id="sec-19-1">19.1. Polityka może być zmieniana, w szczególności przy zmianach funkcji Aplikacji, stosowanych technologii lub przepisów.</p>
+      <p id="sec-19-2">19.2. O istotnych zmianach informujemy w sposób odpowiedni do ich charakteru, np. komunikatem w Aplikacji. Jeżeli zmiana wymaga nowej zgody, poprosimy o nią.</p>
+      <p id="sec-19-3">19.3. Aktualna wersja jest dostępna w Aplikacji i na stronie internetowej Aplikacji. Daty wejścia w życie i ostatniej aktualizacji znajdują się na początku dokumentu.</p>
     </section>
 
     <!-- ── 20 ── -->
     <section class="doc-section" id="sec-20">
       <h2><span class="secnum">20</span>Kontakt w sprawach prywatności</h2>
-      <p>We wszystkich sprawach dotyczących ochrony danych osobowych i niniejszej Polityki prosimy o kontakt:</p>
-
       <div class="contact-card">
         <div class="contact-card__body">
           <p class="contact-card__role">Kontakt w sprawach prywatności</p>

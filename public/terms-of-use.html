@@ -685,6 +685,69 @@
   }
   [data-theme="dark"] .signature { background: var(--bg-soft); color: var(--ink-2); }
   .signature strong { color: var(--ink); }
+  /* ── v2.0: tabele danych i podsumowanie zmian (scripts/legal-md-to-html.mjs) ── */
+  .data-table { table-layout: fixed; font-size: 13.5px; }
+  .data-table thead th { padding: 12px; font-size: 11px; }
+  .data-table tbody td { padding: 12px; overflow-wrap: break-word; }
+  .data-table td.dt-main { color: var(--ink); }
+  .data-table.cols-5 th:nth-child(1) { width: 30%; }
+  .data-table.cols-5 th:nth-child(2) { width: 15%; }
+  .data-table.cols-5 th:nth-child(3) { width: 16%; }
+  .data-table.cols-5 th:nth-child(4) { width: 21%; }
+  .data-table.cols-5 th:nth-child(5) { width: 18%; }
+  .data-table.cols-3 th:nth-child(1) { width: 22%; }
+  .data-table.cols-3 th:nth-child(2) { width: 38%; }
+  .data-table.cols-2 th:nth-child(1) { width: 38%; }
+  @media (max-width: 1180px) {
+    .data-table.cols-5, .data-table.cols-5 thead, .data-table.cols-5 tbody, .data-table.cols-5 tr, .data-table.cols-5 td, .data-table.cols-5 th { display: block; }
+    .data-table.cols-5 thead { display: none; }
+    .data-table.cols-5 { border: none; padding: 0; background: transparent; }
+    .data-table.cols-5 tbody tr {
+      background: var(--doc-card);
+      border: 1px solid var(--doc-rule);
+      border-radius: var(--r-md);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .data-table.cols-5 tbody td { padding: 0; border: none; margin-bottom: 12px; font-size: 14.5px; }
+    .data-table.cols-5 tbody td:last-child { margin-bottom: 0; }
+    .data-table.cols-5 tbody td::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-3); margin-bottom: 3px;
+    }
+    .data-table.cols-5 tbody tr:hover td { background: transparent; }
+  }
+  @media (max-width: 720px) {
+    .data-table, .data-table thead, .data-table tbody, .data-table tr, .data-table td, .data-table th { display: block; }
+    .data-table thead { display: none; }
+    .data-table { border: none; padding: 0; background: transparent; }
+    .data-table tbody tr {
+      background: var(--doc-card);
+      border: 1px solid var(--doc-rule);
+      border-radius: var(--r-md);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .data-table tbody td { padding: 0; border: none; margin-bottom: 12px; font-size: 14.5px; }
+    .data-table tbody td:last-child { margin-bottom: 0; }
+    .data-table tbody td::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-3); margin-bottom: 3px;
+    }
+    .data-table tbody tr:hover td { background: transparent; }
+  }
+  .doc-content code { font-size: 0.92em; padding: 1px 5px; border-radius: 4px; background: var(--doc-accent-tint); }
+  .doc-changes ol { padding-left: 22px; }
+  .doc-changes li { margin: 8px 0; }
+  .doc-hero .lead.doc-version { font-size: 15px; color: var(--ink-3); margin-top: 14px; }
+  .doc-hero .lead.doc-version a { color: var(--doc-accent); border-bottom: 1px solid var(--doc-accent-soft); }
+  /* ── /v2.0 ── */
 </style>
 <!-- Google Analytics 4 + Consent Mode v2 -->
 <script>
@@ -744,14 +807,17 @@
     </nav>
     <h1>Terms of use of the homdu app.</h1>
     <div class="badges">
-      <span class="doc-badge"><span class="dot"></span><span class="lbl">Effective date:</span> <span class="val">24 May 2026</span></span>
-      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Last updated:</span> <span class="val">22 June 2026</span></span>
+      <span class="doc-badge"><span class="dot"></span><span class="lbl">Effective date:</span> <span class="val">5 October 2026</span></span>
+      <span class="doc-badge"><span class="dot" style="background:#5A607F; box-shadow:0 0 0 3px rgba(90,96,127,0.18);"></span><span class="lbl">Last updated:</span> <span class="val">6 October 2026</span></span>
     </div>
     <p class="lead">
-      These Terms of Use of the homdu app (the <strong>"Terms"</strong>) set out the rules for using the homdu mobile app and the services associated with it. Please read the Terms carefully before you start using the App. Using the App means you accept these Terms.
+      These Terms of Use of the homdu app (the "Terms") set out the rules for using the homdu app and the services associated with it. Please read the Terms carefully before you start using the App. Using the App means you accept these Terms.
     </p>
     <p class="lead" style="margin-top:14px;">
-      The rules for processing personal data are described in a separate document – the <a href="/privacy-policy"><strong>homdu Privacy Policy</strong></a>, which forms an integral supplement to these Terms.
+      The rules for processing personal data are described in a separate document – the <a href="/privacy-policy">homdu app Privacy Policy</a>, which forms an integral supplement to these Terms.
+    </p>
+    <p class="lead doc-version">
+      <strong>Version:</strong> 2.0 — applies to the homdu App version 2.0 and later. <strong>Replaces:</strong> the Terms of Use of 22 June 2026, which applied to versions 1.x of the App — <a href="/terms-of-use-2026-06-22">previous version</a>.
     </p>
   </div>
 </section>
@@ -763,24 +829,25 @@
   <aside class="toc" aria-label="Table of contents">
     <p class="toc__title">Contents</p>
     <ul class="toc__list" id="toc-list">
+      <li><a href="#sec-0"><span class="num">•</span><span>Summary of changes in version 2.0</span></a></li>
       <li><a href="#sec-1"><span class="num">1.</span><span>General provisions</span></a></li>
       <li><a href="#sec-2"><span class="num">2.</span><span>Definitions</span></a></li>
       <li><a href="#sec-3"><span class="num">3.</span><span>Provider details</span></a></li>
       <li><a href="#sec-4"><span class="num">4.</span><span>Scope and nature of the Service</span></a></li>
       <li><a href="#sec-5"><span class="num">5.</span><span>Technical requirements</span></a></li>
-      <li><a href="#sec-6"><span class="num">6.</span><span>User Account and local mode</span></a></li>
-      <li><a href="#sec-7"><span class="num">7.</span><span>Rules for using features</span></a></li>
-      <li><a href="#sec-8"><span class="num">8.</span><span>Rules for adding Content</span></a></li>
-      <li><a href="#sec-9"><span class="num">9.</span><span>Liability for Content</span></a></li>
-      <li><a href="#sec-10"><span class="num">10.</span><span>Partner Content and recommendations</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>User Account and Demo mode</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Rules for using the App's features</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Rules for adding User Content</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>User's liability for User Content</span></a></li>
+      <li><a href="#sec-10"><span class="num">10.</span><span>Partner Content, sponsored materials and financial suggestions</span></a></li>
       <li><a href="#sec-11"><span class="num">11.</span><span>Referral programme</span></a></li>
       <li><a href="#sec-12"><span class="num">12.</span><span>Sharing a Project</span></a></li>
-      <li><a href="#sec-13"><span class="num">13.</span><span>Permitted and prohibited use</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Rules of permitted and prohibited use</span></a></li>
       <li><a href="#sec-14"><span class="num">14.</span><span>Intellectual property rights</span></a></li>
       <li><a href="#sec-15"><span class="num">15.</span><span>Liability and its limits</span></a></li>
-      <li><a href="#sec-16"><span class="num">16.</span><span>Availability, updates, downtime</span></a></li>
-      <li><a href="#sec-17"><span class="num">17.</span><span>Account security</span></a></li>
-      <li><a href="#sec-18"><span class="num">18.</span><span>Account deletion and termination</span></a></li>
+      <li><a href="#sec-16"><span class="num">16.</span><span>Service availability, updates and technical downtime</span></a></li>
+      <li><a href="#sec-17"><span class="num">17.</span><span>Security of the Account and access credentials</span></a></li>
+      <li><a href="#sec-18"><span class="num">18.</span><span>Account deletion and ending use of the App</span></a></li>
       <li><a href="#sec-19"><span class="num">19.</span><span>Complaints, contact and support</span></a></li>
       <li><a href="#sec-20"><span class="num">20.</span><span>Changes to the Terms</span></a></li>
       <li><a href="#sec-21"><span class="num">21.</span><span>App Store provisions (Apple)</span></a></li>
@@ -788,72 +855,96 @@
     </ul>
   </aside>
 
+  <!-- mobile TOC -->
   <details class="toc-mobile">
     <summary>Contents — 22 sections</summary>
     <ul class="toc__list">
+      <li><a href="#sec-0"><span class="num">•</span><span>Summary of changes in version 2.0</span></a></li>
       <li><a href="#sec-1"><span class="num">1.</span><span>General provisions</span></a></li>
       <li><a href="#sec-2"><span class="num">2.</span><span>Definitions</span></a></li>
       <li><a href="#sec-3"><span class="num">3.</span><span>Provider details</span></a></li>
-      <li><a href="#sec-4"><span class="num">4.</span><span>Scope of the Service</span></a></li>
+      <li><a href="#sec-4"><span class="num">4.</span><span>Scope and nature of the Service</span></a></li>
       <li><a href="#sec-5"><span class="num">5.</span><span>Technical requirements</span></a></li>
-      <li><a href="#sec-6"><span class="num">6.</span><span>Account and local mode</span></a></li>
-      <li><a href="#sec-7"><span class="num">7.</span><span>Features</span></a></li>
-      <li><a href="#sec-8"><span class="num">8.</span><span>Adding Content</span></a></li>
-      <li><a href="#sec-9"><span class="num">9.</span><span>Liability for Content</span></a></li>
-      <li><a href="#sec-10"><span class="num">10.</span><span>Partner Content</span></a></li>
+      <li><a href="#sec-6"><span class="num">6.</span><span>User Account and Demo mode</span></a></li>
+      <li><a href="#sec-7"><span class="num">7.</span><span>Rules for using the App's features</span></a></li>
+      <li><a href="#sec-8"><span class="num">8.</span><span>Rules for adding User Content</span></a></li>
+      <li><a href="#sec-9"><span class="num">9.</span><span>User's liability for User Content</span></a></li>
+      <li><a href="#sec-10"><span class="num">10.</span><span>Partner Content, sponsored materials and financial suggestions</span></a></li>
       <li><a href="#sec-11"><span class="num">11.</span><span>Referral programme</span></a></li>
-      <li><a href="#sec-12"><span class="num">12.</span><span>Sharing</span></a></li>
-      <li><a href="#sec-13"><span class="num">13.</span><span>Rules of use</span></a></li>
-      <li><a href="#sec-14"><span class="num">14.</span><span>Intellectual property</span></a></li>
-      <li><a href="#sec-15"><span class="num">15.</span><span>Liability</span></a></li>
-      <li><a href="#sec-16"><span class="num">16.</span><span>Availability and downtime</span></a></li>
-      <li><a href="#sec-17"><span class="num">17.</span><span>Account security</span></a></li>
-      <li><a href="#sec-18"><span class="num">18.</span><span>Termination of use</span></a></li>
-      <li><a href="#sec-19"><span class="num">19.</span><span>Complaints and support</span></a></li>
+      <li><a href="#sec-12"><span class="num">12.</span><span>Sharing a Project</span></a></li>
+      <li><a href="#sec-13"><span class="num">13.</span><span>Rules of permitted and prohibited use</span></a></li>
+      <li><a href="#sec-14"><span class="num">14.</span><span>Intellectual property rights</span></a></li>
+      <li><a href="#sec-15"><span class="num">15.</span><span>Liability and its limits</span></a></li>
+      <li><a href="#sec-16"><span class="num">16.</span><span>Service availability, updates and technical downtime</span></a></li>
+      <li><a href="#sec-17"><span class="num">17.</span><span>Security of the Account and access credentials</span></a></li>
+      <li><a href="#sec-18"><span class="num">18.</span><span>Account deletion and ending use of the App</span></a></li>
+      <li><a href="#sec-19"><span class="num">19.</span><span>Complaints, contact and support</span></a></li>
       <li><a href="#sec-20"><span class="num">20.</span><span>Changes to the Terms</span></a></li>
-      <li><a href="#sec-21"><span class="num">21.</span><span>App Store (Apple)</span></a></li>
-      <li><a href="#sec-22"><span class="num">22.</span><span>Governing law</span></a></li>
+      <li><a href="#sec-21"><span class="num">21.</span><span>App Store provisions (Apple)</span></a></li>
+      <li><a href="#sec-22"><span class="num">22.</span><span>Governing law and final provisions</span></a></li>
     </ul>
   </details>
 
   <main class="doc-content">
 
+    <!-- ── zmiany ── -->
+    <section class="doc-section doc-changes" id="sec-0">
+      <h2>Summary of changes in version 2.0</h2>
+      <p>Compared with the previous version:</p>
+      <ol>
+        <li><strong>Account and Demo mode</strong> — an Account (signing in with "Sign in with Apple") is required to create your own Projects and to synchronise; Demo mode is available without an Account (section <a href="#sec-6">6</a>).</li>
+        <li><strong>Project sharing</strong> — view or edit permissions, the scope of shared data and files, the effects of ending a share (section <a href="#sec-12">12</a>).</li>
+        <li><strong>Account deletion</strong> — the scope of the "Delete account and all data" feature (section <a href="#sec-18">18</a>).</li>
+        <li><strong>Notifications</strong> — reminders created on the device and push notifications (clause <a href="#sec-7-6">7.6</a>).</li>
+        <li><strong>Features in Polish only</strong> — guide content, Partner Content, financial suggestions and the Referral programme (clause <a href="#sec-4-6">4.6</a>).</li>
+        <li><strong>Technical requirements</strong> — system version, devices, iCloud account (section <a href="#sec-5">5</a>).</li>
+        <li><strong>Synchronisation and copies</strong> — what is synchronised and what stays on the device (clauses <a href="#sec-7-2">7.2</a>, <a href="#sec-7-7">7.7</a> and <a href="#sec-9-4">9.4</a>).</li>
+        <li><strong>Finance form and Referral programme</strong> — clause <a href="#sec-10-6">10.6</a> and section <a href="#sec-11">11</a>.</li>
+        <li><strong>Automatic hints and calculations</strong> — supplementary in nature (clause <a href="#sec-7-8">7.8</a>).</li>
+        <li><strong>Out-of-court dispute resolution</strong> — the reference to the ODR platform has been removed (clause <a href="#sec-19-4">19.4</a>).</li>
+        <li><strong>Age, contractors and fees</strong> — the App is not directed at persons under 16 years of age (clause <a href="#sec-6-7">6.7</a>); contractor ratings and notes are visible to Collaborators but are not published (clause <a href="#sec-7-3">7.3</a>); in version 2.0 the App contains no paid features (clause <a href="#sec-4-4">4.4</a>).</li>
+      </ol>
+    </section>
+
     <!-- ── 1 ── -->
     <section class="doc-section" id="sec-1">
       <h2><span class="secnum">01</span>General provisions</h2>
-      <p>1.1. These Terms set out the rules and conditions for using the homdu mobile app, the scope of the services provided electronically, the rights and obligations of the User and the Provider, and the principles of liability.</p>
-      <p>1.2. The Provider supplies services electronically in accordance with these Terms and with Polish law, including the Act of 18 July 2002 on providing services electronically and the Act of 30 May 2014 on consumer rights.</p>
-      <p>1.3. The Terms are made available free of charge in a way that allows them to be obtained, reproduced, recorded and printed. They are available in the App and on the website associated with the App.</p>
-      <p>1.4. By accepting the Terms, the User declares that they have read and understood the Terms and accept them, and that they are entitled to enter into an agreement for the use of the App.</p>
+      <p id="sec-1-1">1.1. These Terms set out the rules and conditions for using the homdu app, the scope of the services provided electronically, the rights and obligations of the User and the Provider, and the principles of liability.</p>
+      <p id="sec-1-2">1.2. The Provider supplies services electronically in accordance with these Terms and with Polish law, including the Act of 18 July 2002 on providing services electronically and the Act of 30 May 2014 on consumer rights.</p>
+      <p id="sec-1-3">1.3. The Terms are made available free of charge in a way that allows them to be obtained, reproduced, recorded and printed. They are available in the App and on the website associated with the App.</p>
+      <p id="sec-1-4">1.4. By accepting the Terms, the User declares that they have read and understood the Terms and accept them, and that they are entitled to enter into an agreement for the use of the App.</p>
     </section>
 
     <!-- ── 2 ── -->
     <section class="doc-section" id="sec-2">
       <h2><span class="secnum">02</span>Definitions</h2>
       <p>The terms used in these Terms have the following meanings:</p>
-
-      <dl class="glossary">
-        <div style="display:contents;"><dt>Provider / homdu</dt><dd>AppSoft Studio Jakub Matwiejczyk, with the details set out in section 3.</dd></div>
-        <div style="display:contents;"><dt>App</dt><dd>the homdu mobile app for iOS devices (and, in the future, for other mobile platforms), together with the associated services provided electronically.</dd></div>
-        <div style="display:contents;"><dt>Service</dt><dd>the features made available to the User within the App, described in section 4.</dd></div>
-        <div style="display:contents;"><dt>User</dt><dd>a natural person using the App; in the case of a consumer – a natural person performing an act not directly related to their business or professional activity.</dd></div>
-        <div style="display:contents;"><dt>Consumer</dt><dd>a User who is a consumer within the meaning of art. 22(1) of the Polish Civil Code.</dd></div>
-        <div style="display:contents;"><dt>Account</dt><dd>a separate set of settings and data linked to the User's identifier, enabling the use of selected App features.</dd></div>
-        <div style="display:contents;"><dt>Project</dt><dd>a building or renovation project run by the User in the App, together with its assigned stages, tasks, costs, documents, photos, albums, links, contacts and notes.</dd></div>
-        <div style="display:contents;"><dt>User Content</dt><dd>any data and materials entered or uploaded by the User into the App, including project descriptions, notes, photos, albums, documents, files, links and contact details.</dd></div>
-        <div style="display:contents;"><dt>homdu Content</dt><dd>content made available by the Provider, including guide and editorial content and elements of the App.</dd></div>
-        <div style="display:contents;"><dt>Partner Content</dt><dd>content, recommendations, materials and sponsored sections originating from the Provider's business partners.</dd></div>
-        <div style="display:contents;"><dt>Referral programme</dt><dd>a feature allowing the User to refer the App to other people, under the rules described in section 11.</dd></div>
-        <div style="display:contents;"><dt>Privacy Policy</dt><dd>the document describing the rules for processing personal data in connection with the use of the App — see <a href="/privacy-policy">privacy-policy</a>.</dd></div>
-        <div style="display:contents;"><dt>App Store</dt><dd>the app store operated by Apple, through which the App is distributed.</dd></div>
-      </dl>
+      <ul>
+        <li><strong>Provider / homdu</strong> – AppSoft Studio Jakub Matwiejczyk, with the details set out in section <a href="#sec-3">3</a>.</li>
+        <li><strong>App</strong> – the homdu app for iPhone and iPad, made available on the App Store, together with the associated services provided electronically.</li>
+        <li><strong>Service</strong> – the features made available to the User within the App, described in section <a href="#sec-4">4</a>.</li>
+        <li><strong>User</strong> – a natural person using the App; in the case of a consumer – a natural person performing an act not directly related to their business or professional activity.</li>
+        <li><strong>Consumer</strong> – a User who is a consumer within the meaning of Article 22¹ of the Polish Civil Code.</li>
+        <li><strong>Account</strong> – the User's account in the App, created by signing in with "Sign in with Apple".</li>
+        <li><strong>Project</strong> – a building or renovation project run by the User in the App, together with its assigned stages, tasks, costs, documents, photos, albums, links, contacts and notes.</li>
+        <li><strong>Project Owner</strong> – the User who created a Project and may share it with other people.</li>
+        <li><strong>Collaborator</strong> – a person who has accepted an invitation to a Shared Project (a share participant).</li>
+        <li><strong>Shared Project</strong> – a Project shared with Collaborators through Apple's CloudKit service.</li>
+        <li><strong>Demo mode</strong> – using the sample Project generated in the App; it is available without an Account, and a signed-in User can switch the sample Project on in the App's Settings.</li>
+        <li><strong>iCloud / CloudKit</strong> – Apple services for storing and synchronising data in the User's Apple account.</li>
+        <li><strong>User Content</strong> – any data and materials entered or uploaded by the User into the App, including project descriptions, notes, photos, albums, documents, files, links and contact details.</li>
+        <li><strong>homdu Content</strong> – content made available by the Provider, including guide and editorial content and elements of the App.</li>
+        <li><strong>Partner Content</strong> – content, materials and sponsored sections originating from the Provider's business partners.</li>
+        <li><strong>Referral programme</strong> – a feature allowing the User to refer the App to other people, under the rules described in section <a href="#sec-11">11</a>.</li>
+        <li><strong>Privacy Policy</strong> – the document describing the rules for processing personal data in connection with the use of the App.</li>
+        <li><strong>App Store</strong> – the app store operated by Apple, through which the App is distributed.</li>
+      </ul>
     </section>
 
     <!-- ── 3 ── -->
     <section class="doc-section" id="sec-3">
       <h2><span class="secnum">03</span>Provider details</h2>
       <p>The Provider and the entity supplying the services within the App is:</p>
-
       <div class="provider-card">
         <div class="provider-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/><path d="M10 10h.01M14 10h.01M10 13h.01M14 13h.01"/></svg>
@@ -868,273 +959,185 @@
           </dl>
         </div>
       </div>
-
       <p>The email address indicated above is used for contact in all matters related to the use of the App, including for submitting complaints.</p>
     </section>
 
     <!-- ── 4 ── -->
     <section class="doc-section" id="sec-4">
       <h2><span class="secnum">04</span>Scope and nature of the Service</h2>
-      <p>4.1. The homdu app is a tool that supports the <strong>organisation, planning and management of building and renovation projects</strong>. The App is supplementary and organisational in nature.</p>
-
-      <p>4.2. Within the App the User may, in particular:</p>
+      <p id="sec-4-1">4.1. The homdu app is a tool that supports the <strong>organisation, planning and management of building and renovation projects</strong>. The App is supplementary and organisational in nature.</p>
+      <p id="sec-4-2">4.2. Within the App the User may, in particular:</p>
       <ul>
-        <li>create and run Projects and add and manage their stages,</li>
-        <li>manage tasks, costs and deadlines,</li>
-        <li>add and store documents, files, links and notes,</li>
-        <li>add photos and create albums and add descriptions to them,</li>
-        <li>collect contact details of contractors and other people,</li>
-        <li>use guide content as well as Partner Content and sponsored sections,</li>
-        <li>import content into the App via the system share extension,</li>
-        <li>use the Referral programme,</li>
-        <li>receive push notifications (after giving consent),</li>
-        <li>use data synchronisation between the User's devices.</li>
+        <li>explore the App in Demo mode, without an Account (section <a href="#sec-6">6</a>),</li>
+        <li>after signing in, create and run Projects and add and manage their stages,</li>
+        <li>manage tasks, costs, the budget and deadlines,</li>
+        <li>add documents, files, links, notes and journal entries,</li>
+        <li>add photos and create albums,</li>
+        <li>collect contact details of contractors and other people and rate contractors,</li>
+        <li>import content from other apps via the system share extension,</li>
+        <li>synchronise data between their own devices through iCloud (clause <a href="#sec-7-7">7.7</a>),</li>
+        <li>share a Project with other people and use Projects shared by other people (section <a href="#sec-12">12</a>),</li>
+        <li>receive reminders created on the device and push notifications; displaying them requires permission in iOS (clause <a href="#sec-7-6">7.6</a>),</li>
+        <li>when the App language is Polish — use guide content, Partner Content and sponsored sections, and the Referral programme (clause <a href="#sec-4-6">4.6</a>).</li>
       </ul>
-
-      <div class="callout callout--warn" role="note">
-        <div class="callout__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <div class="callout__body">
-          <p class="callout__title">4.3 — Nature of the App</p>
-          <p>The App <strong>does not provide construction, design, contracting, advisory, legal, financial or investment services</strong>. The App does not broker contracts with contractors and does not guarantee the outcome of a Project. Guide content and Partner Content are informational in nature and do not constitute individual advice.</p>
-        </div>
-      </div>
-
-      <p>4.4. Using the App in its basic scope is <strong>free of charge</strong>, unless expressly stated otherwise. The Provider may introduce paid features in the future; using them will require the User's separate, explicit acceptance of the terms and price.</p>
-      <p>4.5. Some App features rely on third-party services, including Apple services (e.g. Sign in with Apple, iCloud/CloudKit synchronisation, notifications) and other infrastructure and tooling providers. Use of these features may additionally be subject to the terms of those entities.</p>
+      <p id="sec-4-3">4.3. The App <strong>does not provide construction, design, contracting, advisory, legal, financial or investment services</strong>. The App does not broker contracts with contractors and does not guarantee the outcome of a Project. Guide content and Partner Content are informational in nature and do not constitute individual advice.</p>
+      <p id="sec-4-4">4.4. Using the App is <strong>free of charge</strong>. In version 2.0 the App contains no paid features, in-app purchases or subscriptions. The Provider may introduce paid features in the future; using them will require the User's separate, explicit acceptance of the terms and price.</p>
+      <p id="sec-4-5">4.5. Some App features rely on third-party services, including Apple services (e.g. "Sign in with Apple", iCloud/CloudKit synchronisation, notifications) and other infrastructure and tooling providers. Use of these features may additionally be subject to the terms of those entities.</p>
+      <p id="sec-4-6">4.6. The App is available in Polish and English. The following are available only when the App language is Polish: the guides tab, Partner Content and sponsored sections (including financial suggestions and the adviser contact form), the Referral programme, and the "Content and tips" notification category (shown in the Polish interface as "Treści i poradniki"). After the App language is changed to a language other than Polish, these features are not displayed.</p>
     </section>
 
     <!-- ── 5 ── -->
     <section class="doc-section" id="sec-5">
       <h2><span class="secnum">05</span>Technical requirements</h2>
-      <p>5.1. To use the App you need:</p>
+      <p id="sec-5-1">5.1. To use the App you need:</p>
       <ul>
-        <li>a mobile device running an iOS version supported by the App,</li>
-        <li>access to the internet,</li>
-        <li>for selected features, including data synchronisation and Project sharing – an Apple ID account, an active iCloud service and access to the internet,</li>
-        <li>a current version of the App downloaded from the App Store.</li>
+        <li>an iPhone or iPad running iOS or iPadOS 18.0 or later; the current minimum version is stated on the App's page on the App Store,</li>
+        <li>a current version of the App downloaded from the App Store,</li>
+        <li>access to the internet — to download the App, sign in, synchronise, share Projects, receive push notifications and load remotely fetched content; data saved on the device is also available offline,</li>
+        <li>to create your own Projects — an Account (signing in with "Sign in with Apple"); to synchronise them — additionally an active iCloud service on the User's Apple account,</li>
+        <li>to share a Project — an Account and an active iCloud account; to accept an invitation — an iCloud account on the device,</li>
+        <li>to import content from other apps via the system share extension — system version 18.6 or later.</li>
       </ul>
-      <p>5.2. Some features (e.g. synchronisation, notifications, sign-in, remotely fetched content) require an active internet connection and the availability of third-party services. A lack of connection or the unavailability of these services may limit the availability of some features.</p>
-      <p>5.3. The Provider does not bear the cost of data transmission or the User's telecommunications operator charges related to using the App.</p>
-      <p>5.4. Using services provided electronically carries typical risks, including the risk of malware and unauthorised access to the device. We recommend using up-to-date security software and system updates.</p>
+      <p id="sec-5-2">5.2. Some features (e.g. synchronisation, notifications, sign-in, remotely fetched content) require an active internet connection and the availability of third-party services. A lack of connection or the unavailability of these services may limit the availability of some features.</p>
+      <p id="sec-5-3">5.3. The Provider does not bear the cost of data transmission or the User's telecommunications operator charges related to using the App.</p>
+      <p id="sec-5-4">5.4. Using services provided electronically carries typical risks, including the risk of malware and unauthorised access to the device. We recommend using up-to-date security software and system updates.</p>
     </section>
 
     <!-- ── 6 ── -->
     <section class="doc-section" id="sec-6">
-      <h2><span class="secnum">06</span>User Account and use without an account</h2>
-      <p>6.1. Some App features can be used <strong>without creating an Account</strong>, in local mode, where data is stored on the User's device.</p>
-      <p>6.2. The full range of features (including data synchronisation between devices and Project sharing) may require authentication of the User, in particular using the <strong>Sign in with Apple</strong> service.</p>
-      <p>6.3. The agreement for the use of the App is concluded when the App is downloaded and launched and the Terms are accepted, and – for features requiring an Account – when the Account is created.</p>
-      <p>6.4. The User is obliged to use the App in accordance with the Terms, the law and the principles of social conduct, and to provide true data that does not infringe the rights of third parties.</p>
-      <p>6.5. The agreement for the use of the App is concluded for an indefinite period. The User may end their use of the App at any time in the manner described in section 18.</p>
+      <h2><span class="secnum">06</span>User Account and Demo mode</h2>
+      <p id="sec-6-1">6.1. Creating your own Project and synchronising data require an Account. An Account is created by signing in with "Sign in with Apple"; the App does not provide any other way of registering. Without an Account the User may use Demo mode (clause <a href="#sec-6-6">6.6</a>). A User who already has Projects saved on the device — in particular Projects created in version 1.x of the App or before signing out — may continue to use them without an Account. Projects and changes saved without an Account are stored on the device only and are not synchronised.</p>
+      <p id="sec-6-2">6.2. Synchronising data and sharing a Project require an Account and an active iCloud service on the User's Apple account. When the User signs in, Apple passes a user identifier to the App and, at the first sign-in, also the name and email address if Apple provides them. The rules for processing this data are described in the Privacy Policy.</p>
+      <p id="sec-6-3">6.3. The agreement for the use of the App is concluded when the App is downloaded and launched and the Terms are accepted, and – for features requiring an Account – when the Account is created.</p>
+      <p id="sec-6-4">6.4. The User is obliged to use the App in accordance with the Terms, the law and the principles of social conduct, and to provide true data that does not infringe the rights of third parties.</p>
+      <p id="sec-6-5">6.5. The agreement for the use of the App is concluded for an indefinite period. The User may end their use of the App at any time in the manner described in section <a href="#sec-18">18</a>.</p>
+      <p id="sec-6-6">6.6. <strong>Demo mode.</strong> Without an Account the User may use a sample Project generated in the App; a signed-in User can switch it on in the App's Settings. The sample Project's data, including changes made by the User, is stored on the device only; the App does not send it to iCloud or to any server, and it cannot be shared with other people. This does not apply to the stage key (a simplified form of the stage name, including a stage added or renamed by the User), which the App sends to the Provider when guide content and Partner Content are fetched while the App language is Polish (section 4.8 of the Privacy Policy), or to analytics and marketing events transmitted once consents have been given (sections <a href="#sec-4-3">4.3</a> and 4.4 of the Privacy Policy), which are also generated while the sample Project is being used. The people, entries and amounts shown in the sample Project are fictitious and serve only to present the App; the sample Project may show elements that the App does not provide in a Shared Project, in particular an indication of who authored an entry (clause <a href="#sec-12-10">12.10</a>). The sample Project is deleted when the User creates their own Project, manually removes the sample Project or uses the "Delete account and all data" feature; changing the App language recreates it from scratch, without the changes made. The sample Project's data is not transferred to the Account.</p>
+      <p id="sec-6-7">6.7. The App is not directed at persons under 16 years of age. The Provider does not verify the age of Users.</p>
     </section>
 
     <!-- ── 7 ── -->
     <section class="doc-section" id="sec-7">
       <h2><span class="secnum">07</span>Rules for using the App's features</h2>
-      <p>7.1. <strong>Projects and stages.</strong> The User independently creates Projects, adds stages, tasks, costs and deadlines, and is responsible for their correctness and currency. Financial and scheduling data entered by the User is supplementary in nature and does not constitute a binding quote or schedule.</p>
-      <p>7.2. <strong>Documents, photos, albums, links and notes.</strong> The User may add and store materials related to a Project. The User is responsible for holding the rights to these materials and for their content (sections 8 and 9).</p>
-      <p>7.3. <strong>Contacts and contractors.</strong> The User may collect contact details of contractors and other people. By adding third-party data, the User declares that they are entitled to process it for this purpose.</p>
-      <p>7.4. <strong>Share extension.</strong> The App allows content to be imported via the system share mechanism. The User is responsible for content imported into the App.</p>
-      <p>7.5. <strong>Guide content.</strong> The App may provide informational and guide materials. These are general in nature and do not take into account the User's individual situation.</p>
-      <p>7.6. <strong>Push notifications.</strong> After system consent is given, the App may send push notifications (e.g. about tasks, stages or content). The User may change notification settings at any time in the device or App settings.</p>
-      <p>7.7. <strong>Data synchronisation.</strong> If the User uses iCloud/CloudKit-based synchronisation, data may be synchronised between their devices signed in to the same Apple account. Where a Project is shared (section 12), data may also be synchronised between the accounts of the participants of a Shared Project through the shared CloudKit database. The rules for storing local and synchronised data are described in the <a href="/privacy-policy#sec-7">Privacy Policy</a>.</p>
+      <p id="sec-7-1">7.1. <strong>Projects and stages.</strong> The User independently creates Projects, adds stages, tasks, costs and deadlines, and is responsible for their correctness and currency. Financial and scheduling data entered by the User is supplementary in nature and does not constitute a binding quote or schedule.</p>
+      <p id="sec-7-2">7.2. <strong>Documents, photos, albums, links and notes.</strong> The User may add materials related to a Project. Files from the "Documents" tab and journal entry photos are stored on the device only; the App does not send them to iCloud. Expense attachments, covers and backgrounds may be sent to the User's iCloud (clause <a href="#sec-7-7">7.7</a>); album photos — only in the cases indicated in clause <a href="#sec-7-7">7.7</a>. The User is responsible for holding the rights to these materials and for their content (sections <a href="#sec-8">8</a> and <a href="#sec-9">9</a>).</p>
+      <p id="sec-7-3">7.3. <strong>Contacts and contractors.</strong> The User may collect contact details of contractors and other people, and save ratings and notes about contractors. By adding third-party data, the User declares that they are entitled to process it for that purpose. If the Project is shared, this data — including telephone numbers, email addresses, ratings and notes — becomes visible to Collaborators (clause <a href="#sec-12-3">12.3</a>). In version 2.0 of the App, contractor ratings and the marking of a contractor as recommended are not published or shown to other users of the App — except to Collaborators of a Shared Project (clause <a href="#sec-12-3">12.3</a>); the App does not run a public database of contractors or reviews.</p>
+      <p id="sec-7-4">7.4. <strong>Share extension.</strong> The App allows links, images and files to be imported from other apps via the system share extension; the imported content is added to the stage chosen by the User. The User is responsible for content imported into the App.</p>
+      <p id="sec-7-5">7.5. <strong>Guide content.</strong> When the App language is Polish, the App provides informational and guide materials. These are general in nature, do not take into account the User's individual situation and do not replace the advice of a specialist.</p>
+      <p id="sec-7-6">7.6. <strong>Notifications.</strong> The App uses two kinds of notifications:</p>
+      <ul>
+        <li>reminders created on the device (task due date, budget alert, inactivity in a Project),</li>
+        <li>push notifications sent by the Provider (messages encouraging the User to return to the App, and service messages).</li>
+      </ul>
+      <p>Displaying a notification requires the User's permission in iOS; the permission can be withdrawn at any time in the device settings. The App registers the device for notifications every time it is launched — also without an Account and regardless of that permission; the scope of data and the legal basis are described in section 4.5 of the Privacy Policy. The User may switch off push notification categories other than "System notifications" in the App (Settings → "Notifications" → "Notification settings"); the switches are shown once permission has been granted in iOS and do not apply to reminders created on the device.</p>
+      <p id="sec-7-7">7.7. <strong>Data synchronisation.</strong> After the User signs in, if iCloud is active on the User's Apple account, the App saves Project content in the User's private iCloud database and synchronises it between the devices on which the User is signed in to the App. Projects saved on the device before the first sign-in are sent to that database at that sign-in. Synchronisation does not cover: the sample Project in Demo mode, files from the "Documents" tab, journal entry photos, the content of files added in a stage's files section (only their name and type are synchronised), finance form and financial profile data, or App settings. The App sends album photos to iCloud only on specific events — in particular at the first sign-in and when sharing of a Project is created or stopped; photos added to an album later may remain on the device only. Synchronisation does not take place in real time and depends on the internet connection and the availability of Apple services. Where a Project is shared (section <a href="#sec-12">12</a>), data is also synchronised between the participants of the Shared Project. Details are described in the Privacy Policy.</p>
+      <p id="sec-7-8">7.8. <strong>Hints and calculations.</strong> The App may show hints and calculations created automatically, in particular: data recognised from receipts and invoices (OCR), budget forecasts and indicators, the result of the financing calculator, suggested budgets, stages and tasks, and lists of documents marked as required or recommended. These are supplementary in nature, may be incomplete or incorrect, and do not replace the advice of a specialist or a check of the requirements arising from the law. The User should verify them before relying on them.</p>
     </section>
 
     <!-- ── 8 ── -->
     <section class="doc-section" id="sec-8">
       <h2><span class="secnum">08</span>Rules for adding User Content</h2>
-      <p>8.1. The App allows the User to add User Content, including photos, notes, documents, files, links, contact details and data concerning contractors and Projects.</p>
-      <p>8.2. By adding User Content, the User declares and warrants that:</p>
+      <p id="sec-8-1">8.1. The App allows the User to add User Content, including photos, notes, documents, files, links, contact details and data concerning contractors and Projects.</p>
+      <p id="sec-8-2">8.2. By adding User Content, the User declares and warrants that:</p>
       <ul>
         <li>they hold all rights or consents necessary to enter and use it in the App,</li>
         <li>the content does not infringe the law, the rights of third parties (including copyright, personal rights and the right to privacy) or good morals,</li>
         <li>the content does not contain data entered without an appropriate legal basis, in particular personal data of third parties that the User is not entitled to process.</li>
       </ul>
-
-      <div class="callout callout--warn" role="note">
-        <div class="callout__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
-        </div>
-        <div class="callout__body">
-          <p class="callout__title">8.3 — Prohibited content</p>
-          <p>It is not permitted to add to the App any of the content listed below:</p>
-        </div>
-      </div>
-
-      <ul class="rule-list rule-list--block">
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">unlawful content, including content infringing intellectual property rights or personal rights,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">content infringing the privacy of others without an appropriate legal basis,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">content that is offensive, discriminatory, or incites hatred or violence,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">content containing malware or content that threatens security,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">misleading content or content that otherwise infringes the rights of third parties.</span>
-        </li>
+      <p id="sec-8-3">8.3. It is prohibited to add content that is:</p>
+      <ul>
+        <li>unlawful, including content infringing intellectual property rights or personal rights,</li>
+        <li>infringing the privacy of others without an appropriate legal basis,</li>
+        <li>offensive, discriminatory, or inciting hatred or violence,</li>
+        <li>containing malware or threatening security,</li>
+        <li>misleading or otherwise infringing the rights of third parties.</li>
       </ul>
-
-      <p>8.4. User Content remains the property of the User. The Provider claims no rights to it beyond the scope necessary to provide the Service (e.g. storage, display and synchronisation for the User), in accordance with section 14.</p>
-      <p>8.5. To the extent that User Content is stored solely locally on the device or in the User's private iCloud space, the Provider generally has no access to it and does not moderate it. However, if the Provider obtains credible information about the unlawful nature of content transmitted via the Provider's services, it may take the measures provided for by law.</p>
+      <p id="sec-8-4">8.4. User Content remains the property of the User. The Provider claims no rights to it beyond the scope necessary to provide the Service (e.g. storage, display and synchronisation for the User), in accordance with section <a href="#sec-14">14</a>.</p>
+      <p id="sec-8-5">8.5. To the extent that User Content is stored solely locally on the device or in the User's private iCloud space, the Provider generally has no access to it and does not moderate it. However, if the Provider obtains credible information about the unlawful nature of content transmitted via the Provider's services, it may take the measures provided for by law.</p>
     </section>
 
     <!-- ── 9 ── -->
     <section class="doc-section" id="sec-9">
       <h2><span class="secnum">09</span>User's liability for User Content</h2>
-      <p>9.1. The User bears sole liability for User Content, including for its legality, correctness, completeness and currency, and for the consequences of its use.</p>
-      <p>9.2. The User is responsible for ensuring that the third-party data they add (including contractor and contact data) is entered and used in accordance with the law, including data-protection law.</p>
-      <p>9.3. If a third party or an authorised body raises claims related to User Content, the User undertakes to cooperate with the Provider in clarifying the matter to the extent permitted by law. This provision does not limit the rights of a Consumer arising from mandatory provisions of law.</p>
-      <p>9.4. The User should make their own backups, and export or keep their own copies, of User Content and important documents that are particularly important to them, taking into account the rules for storing and synchronising data described in the <a href="/privacy-policy#sec-7">Privacy Policy</a>. The Provider does not guarantee the recovery of data after it has been deleted by the User or after a Project Owner deletes a Shared Project or revokes access.</p>
+      <p id="sec-9-1">9.1. The User bears sole liability for User Content, including for its legality, correctness, completeness and currency, and for the consequences of its use.</p>
+      <p id="sec-9-2">9.2. The User is responsible for ensuring that the third-party data they add (including contractor and contact data) is entered and used in accordance with the law, including data-protection law.</p>
+      <p id="sec-9-3">9.3. If a third party or an authorised body raises claims related to User Content, the User undertakes to cooperate with the Provider in clarifying the matter to the extent permitted by law. This provision does not limit the rights of a Consumer arising from mandatory provisions of law.</p>
+      <p id="sec-9-4">9.4. The App does not include a feature for backing up or exporting a whole Project. Synchronisation in iCloud (clause <a href="#sec-7-7">7.7</a>) is not a backup: it also carries over changes and deletions. Files from the "Documents" tab, journal entry photos and album photos not sent to iCloud (clause <a href="#sec-7-7">7.7</a>) are stored on the device only; they may be included in the device backup made by iOS, if the User uses one. The User should keep their own copies, outside the App, of the documents and files that are particularly important to them. The Provider has no access to User Content stored on the device and in iCloud and cannot restore it after it has been deleted by the User, after the "Delete account and all data" feature has been used, after a Shared Project has been deleted or after the Project Owner has revoked access.</p>
     </section>
 
     <!-- ── 10 ── -->
     <section class="doc-section" id="sec-10">
-      <h2><span class="secnum">10</span>Partner Content, sponsored materials and recommendations</h2>
-      <p>10.1. The App may present Partner Content, including sponsored materials, partner sections and recommendations (including contractor recommendations and recommendations of a financial nature).</p>
-
-      <div class="callout callout--info" role="note">
-        <div class="callout__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-        </div>
-        <div class="callout__body">
-          <p class="callout__title">10.2 — Nature of Partner Content</p>
-          <p>Partner Content and recommendations are <strong>informational and marketing</strong> in nature and <strong>do not constitute individual legal, financial, tax, technical or investment advice</strong>. They also do not constitute an offer within the meaning of the law, unless expressly stated otherwise.</p>
-        </div>
-      </div>
-
-      <p>10.3. Decisions about using a partner's offers, services or products are made by the User <strong>independently and at their own risk</strong>. Any legal relationship arising from using a partner's offer is between the User and that partner directly.</p>
-      <p>10.4. The App may contain links and references to external websites and services, including partner services. These sites are subject to their own terms and privacy policies. The Provider is not responsible for the content or operation of third-party sites.</p>
-      <p>10.5. Presenting Partner Content does not constitute a recommendation within the meaning of regulations on professional advice, nor a confirmation of the quality of a given partner's services, unless expressly stated otherwise.</p>
+      <h2><span class="secnum">10</span>Partner Content, sponsored materials and financial suggestions</h2>
+      <p id="sec-10-1">10.1. When the App language is Polish, the App may present Partner Content, including sponsored materials, partner sections and suggestions of a financial nature.</p>
+      <p id="sec-10-2">10.2. Partner Content and financial suggestions are <strong>informational and marketing</strong> in nature and <strong>do not constitute individual legal, financial, tax, technical or investment advice</strong>. They also do not constitute an offer within the meaning of the law, unless expressly stated otherwise.</p>
+      <p id="sec-10-3">10.3. Decisions about using a partner's offers, services or products are made by the User <strong>independently and at their own risk</strong>. Any legal relationship arising from using a partner's offer is between the User and that partner directly.</p>
+      <p id="sec-10-4">10.4. The App may contain links and references to external websites and services, including partner services. These sites are subject to their own terms and privacy policies. The Provider is not responsible for the content or operation of third-party sites.</p>
+      <p id="sec-10-5">10.5. Presenting Partner Content does not constitute a recommendation within the meaning of regulations on professional advice, nor a confirmation of the quality of a given partner's services, unless expressly stated otherwise.</p>
+      <p id="sec-10-6">10.6. Financial suggestions and the adviser contact form are available only when the App language is Polish. In version 2.0 of the App, data entered in the form and in the financial profile is saved on the User's device only; the App does not send it to the Provider, to partners or to iCloud. Saving the form does not pass a request to a partner and does not create a contract with a partner. Information about what event related to saving the form may be transmitted once consents have been given is set out in section 4.9 of the Privacy Policy. Partner links open external services; the App does not attach data identifying the User to them.</p>
     </section>
 
     <!-- ── 11 ── -->
     <section class="doc-section" id="sec-11">
       <h2><span class="secnum">11</span>Referral programme</h2>
-      <p>11.1. The App may offer a Referral programme that allows the User to refer the App to other people.</p>
-      <p>11.2. The detailed rules of the Referral programme, including any benefits and the conditions for obtaining them, are set out within the App at the time a given edition of the Referral programme is made available. The Provider may at any time introduce, change, suspend or end the Referral programme, while respecting the acquired rights of Users.</p>
-      <p>11.3. Use of the Referral programme must not breach the Terms or the law; in particular, it is prohibited to use unfair practices, create fictitious referrals or abuse the mechanism to obtain undue benefits.</p>
-      <p>11.4. If abuse is found, the Provider may withhold or revoke benefits obtained in breach of the Referral programme rules.</p>
+      <p id="sec-11-1">11.1. The Referral programme allows the User to recommend the App to other people using a referral code. It is available only when the App language is Polish.</p>
+      <p id="sec-11-2">11.2. In version 2.0 of the App, the Referral programme consists solely of levels and badges shown in the App; it does not provide monetary or material rewards. A Referral programme profile is created automatically, to the extent described in section 4.8 of the Privacy Policy. The Provider may change, suspend or end the Referral programme at any time, while respecting Users' acquired rights. The rules for any other benefits will be set out in the App before they are introduced.</p>
+      <p id="sec-11-3">11.3. Use of the Referral programme must not breach the Terms or the law; in particular, it is prohibited to use unfair practices, create fictitious referrals or abuse the mechanism to obtain undue benefits.</p>
+      <p id="sec-11-4">11.4. If abuse is found, the Provider may withhold or revoke benefits obtained in breach of the Referral programme rules.</p>
     </section>
 
     <!-- ── 12 ── -->
     <section class="doc-section" id="sec-12">
       <h2><span class="secnum">12</span>Sharing a Project</h2>
-      <p>12.1. The App allows a <strong>Project Owner</strong> to share a selected Project with another user through Apple's CloudKit sharing mechanisms.</p>
-      <p>12.2. Sharing is voluntary and is initiated by the Project Owner. Access is granted only after the invited user accepts the invitation through the mechanisms provided by Apple.</p>
-      <p>12.3. The Project Owner is responsible for selecting the Project to be shared and for ensuring that they are entitled to disclose all content and personal data contained in that Project.</p>
-      <p>12.4. A <strong>Collaborator</strong> may view and, where the App permits, edit the Shared Project. The current version of the App may provide the Collaborator with broad read-and-write access and may not support separate permissions for individual modules or individual records.</p>
-      <p>12.5. Changes made by a Collaborator may be synchronised with the Project Owner and other authorised participants. When the same record is edited on more than one device, the App may resolve the conflict automatically. This may result in a later synchronised version replacing an earlier version.</p>
-      <p>12.6. Personal and device-specific data, including financial profiles, financing and insurance enquiries, lead submissions, notification settings and personal iOS Calendar identifiers, is not shared as part of the Project.</p>
-      <p>12.7. Certain binary files, photos or locally stored resources may not be available on every participant's device. The App does not guarantee that every locally stored file will be transferred as part of Project sharing.</p>
-      <p>12.8. The Project Owner may stop sharing, revoke a Collaborator's access or delete the Shared Project. These actions may cause the Collaborator to lose access to some or all Project data.</p>
-      <p>12.9. A Collaborator may leave the Shared Project or remove their local copy. Leaving a Shared Project does not transfer ownership of the Project.</p>
-      <p>12.10. The App does not currently guarantee ownership transfer, a permanent audit history, real-time synchronisation or recovery of data after the Project Owner deletes the Shared Project or revokes access.</p>
-      <p>12.11. Users must not share content that is unlawful, infringes third-party rights or contains personal data that they are not authorised to disclose.</p>
-      <p>12.12. Project sharing relies on Apple services. Its availability may depend on the user's Apple account, iCloud configuration, internet connection, Apple's service availability and the version of iOS installed on the device.</p>
+      <p id="sec-12-1">12.1. The App allows a <strong>Project Owner</strong> to share a selected Project with one or more people through Apple's CloudKit service. A Project can only be shared as a whole — it is not possible to share selected stages or individual entries; the content and files excluded from a share are listed in clauses <a href="#sec-12-6">12.6</a> and <a href="#sec-12-7">12.7</a>. Sharing requires an Account and an active iCloud account. The sample Project in Demo mode cannot be shared.</p>
+      <p id="sec-12-2">12.2. Sharing is voluntary and is initiated by the Project Owner in Apple's system share sheet, where the Project Owner chooses the people to invite and how the invitation is sent. The invitation contains the name of the Project. Only invited people have access, and they obtain it after accepting the invitation. Accepting an invitation requires an iCloud account on the device; ongoing synchronisation of changes in a Shared Project requires being signed in to the App.</p>
+      <p id="sec-12-3">12.3. The Project Owner decides with whom to share the Project and is responsible for that choice and for being entitled to disclose all content and personal data contained in the Project. Collaborators receive the Shared Project's data, including third-party data entered by the Project Owner — in particular contractor contacts with telephone numbers, email addresses, ratings and notes, the address and the plot or property details, expenses, the budget and expense attachments. The Project Owner should share the Project only with people to whom they are allowed to disclose this information.</p>
+      <p id="sec-12-4">12.4. Each <strong>Collaborator's</strong> permission level — view or edit — is set by the Project Owner in Apple's system share sheet and may be changed by the Project Owner at any time. The App applies these settings: a Collaborator with view permission may browse the Shared Project but cannot change it; a Collaborator with edit permission may add, change and delete its content. The permission applies to the whole Shared Project; the App does not support separate permissions for individual modules or individual entries. A change of permissions and a revocation of access take effect after the Collaborator's device synchronises.</p>
+      <p id="sec-12-5">12.5. As a rule, the App sends changes made by a participant with edit permission to the Shared Project and makes them available to the other participants on synchronisation. When the same entry is changed on more than one device, the App as a rule keeps one version of it — the one saved or sent later — as a whole, without merging the changes; the other version is replaced and cannot be restored. For some kinds of entries (for example albums and stage file descriptions) a later change may not be applied on devices that already have the entry. The App does not guarantee that every change or deletion will be sent and reflected on the devices of all participants.</p>
+      <p id="sec-12-6">12.6. The following are not shared as part of a Shared Project: finance form and financial profile data, notification settings, identifiers of events in the private iOS Calendar, files from the "Documents" tab, journal entry photos and the content of files added in a stage's files section (only their name and type are shared — clause <a href="#sec-12-7">12.7</a>). The App does not save in a Shared Project the name or email address provided by Apple at sign-in. The remaining content of the Shared Project, including the personal data it contains (clause <a href="#sec-12-3">12.3</a>), is shared with Collaborators, subject to clauses <a href="#sec-12-5">12.5</a> and <a href="#sec-12-7">12.7</a>. The list of share participants is kept and displayed by Apple in the system share sheet.</p>
+      <p id="sec-12-7">12.7. As part of a Shared Project the App may transfer files: expense attachments, Project and stage covers, stage backgrounds and album photos — up to 50 MB each. Some photos are transferred in their original form, together with the metadata saved by the device, such as the date or location. For files added in a stage's files section, only their name and type are transferred. Photos added to an album after the share was created, and photos added by a Collaborator, may not be transferred to the other participants. The App does not guarantee that every file will be transferred, or that it will be available or displayed on every participant's device.</p>
+      <p id="sec-12-8">12.8. The Project Owner may at any time revoke a Collaborator's access or stop sharing in Apple's system share sheet. The Collaborator then loses access to the Project's current data. Deleting a Shared Project by the Project Owner does not by itself stop the share and does not delete all of its data from the Project Owner's iCloud — the remaining data and files may still be accessible to Collaborators; the Project Owner should therefore stop sharing before deleting a Shared Project. A copy of the data downloaded earlier may remain on the Collaborator's device until it is removed by the App or by the Collaborator; after access is revoked, the App blocks editing of that copy. The Provider cannot remove such a copy remotely. Stopping sharing does not by itself delete the Project's data from the Project Owner's iCloud.</p>
+      <p id="sec-12-9">12.9. A Collaborator may leave a Shared Project at any time by removing it from the Project list in the App (the "Remove local copy" command); the App then leaves the share and removes the saved data of that Project from the Collaborator's device. Some previously downloaded files (in particular stage covers and backgrounds) may remain in the App's storage until the App is removed from the device. Content and files added by a Collaborator become part of the Project Owner's Project and remain in the Project Owner's iCloud also after the Collaborator leaves the share; to delete them, the Collaborator should do so before leaving the share or ask the Project Owner. Deleting an entry in the App does not always delete all related data and files from the Project Owner's iCloud (for example the attachment file of a deleted expense). Leaving a Shared Project does not transfer ownership of the Project. The "Delete account and all data" feature does not stop or leave shares (clause <a href="#sec-18-2">18.2</a>).</p>
+      <p id="sec-12-10">12.10. The App does not provide: transfer of Project ownership, a change history, information about who authored an entry, notifications about changes made by other participants, real-time synchronisation, or recovery of data after a Shared Project has been deleted or the Project Owner has revoked access.</p>
+      <p id="sec-12-11">12.11. Users must not share content that is unlawful, infringes third-party rights or contains personal data that they are not authorised to disclose.</p>
+      <p id="sec-12-12">12.12. Project sharing relies on Apple services. Its availability may depend on the user's Apple account, iCloud configuration, internet connection, the availability of Apple services, and the versions of the system and the App installed on the device.</p>
     </section>
 
     <!-- ── 13 ── -->
     <section class="doc-section" id="sec-13">
       <h2><span class="secnum">13</span>Rules of permitted and prohibited use</h2>
-      <p>13.1. The User is obliged to use the App in accordance with its intended purpose, the Terms and the law.</p>
-      <p>13.2. In particular, it is prohibited to:</p>
-
-      <ul class="rule-list rule-list--block">
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">use the App in a way that infringes the rights of the Provider or third parties,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">take actions that disrupt the operation of the App or its infrastructure, including overloading it, interfering with the code or circumventing security measures,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">gain unauthorised access to the App, other Users' accounts or data,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">use the App for unlawful purposes, including to distribute unlawful content,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">automatically download or copy content (scraping) without the Provider's consent,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">use the App for commercial purposes in a way that goes beyond its intended use, without the Provider's consent.</span>
-        </li>
+      <p id="sec-13-1">13.1. The User is obliged to use the App in accordance with its intended purpose, the Terms and the law.</p>
+      <p id="sec-13-2">13.2. In particular, it is prohibited to:</p>
+      <ul>
+        <li>use the App in a way that infringes the rights of the Provider or third parties,</li>
+        <li>take actions that disrupt the operation of the App or its infrastructure, including overloading it, interfering with the code or circumventing security measures,</li>
+        <li>gain unauthorised access to the App, other Users' accounts or data,</li>
+        <li>use the App for unlawful purposes, including to distribute unlawful content,</li>
+        <li>automatically download or copy content (scraping) without the Provider's consent,</li>
+        <li>use the App for commercial purposes in a way that goes beyond its intended use, without the Provider's consent.</li>
       </ul>
-
-      <p>13.3. In the event of a material or repeated breach of the Terms, the Provider may – while respecting consumer-protection law – call on the User to cease the breaches and, if they continue, limit or end the provision of the Service to that User.</p>
+      <p id="sec-13-3">13.3. In the event of a material or repeated breach of the Terms, the Provider may – while respecting consumer-protection law – call on the User to cease the breaches and, if they continue, limit or end the provision of the Service to that User.</p>
     </section>
 
     <!-- ── 14 ── -->
     <section class="doc-section" id="sec-14">
       <h2><span class="secnum">14</span>Intellectual property rights</h2>
-      <p>14.1. The App, its interface, code, structure, graphic elements, trademarks, the "homdu" name and homdu Content are subject to the intellectual property rights of the Provider or the entities with which the Provider cooperates, and are legally protected.</p>
-      <p>14.2. Upon starting to use the App, the Provider grants the User a non-exclusive, non-transferable, revocable licence to use the App on the User's devices, solely within the scope consistent with its intended purpose and these Terms. The licence does not include the right to grant sublicences.</p>
-      <p>14.3. Beyond the limits permitted by mandatory provisions of law, it is prohibited to:</p>
-
-      <ul class="rule-list rule-list--block">
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">copy, modify, distribute or make publicly available the App or homdu Content,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">resell, rent, lend or otherwise commercially make the App available to third parties,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">decompile, disassemble or otherwise reverse-engineer the source code,</span>
-        </li>
-        <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-          <span class="txt">remove or modify copyright notices or trademarks.</span>
-        </li>
+      <p id="sec-14-1">14.1. The App, its interface, code, structure, graphic elements, trademarks, the "homdu" name and homdu Content are subject to the intellectual property rights of the Provider or the entities with which the Provider cooperates, and are legally protected.</p>
+      <p id="sec-14-2">14.2. Upon starting to use the App, the Provider grants the User a non-exclusive, non-transferable, revocable licence to use the App on the User's devices, solely within the scope consistent with its intended purpose and these Terms. The licence does not include the right to grant sublicences.</p>
+      <p id="sec-14-3">14.3. Beyond the limits permitted by mandatory provisions of law, it is prohibited to:</p>
+      <ul>
+        <li>copy, modify, distribute or make publicly available the App or homdu Content,</li>
+        <li>resell, rent, lend or otherwise commercially make the App available to third parties,</li>
+        <li>decompile, disassemble or otherwise reverse-engineer the source code,</li>
+        <li>remove or modify copyright notices or trademarks.</li>
       </ul>
-
-      <p>14.4. User Content remains the property of the User. The User grants the Provider a non-exclusive, royalty-free licence to use User Content solely within the scope and for the time necessary to provide the Service to the User (in particular storage, display, technical processing and synchronisation). This licence expires when the relevant content is deleted or when use of the App ends, subject to the technical periods resulting from backups and the operation of third-party services.</p>
+      <p id="sec-14-4">14.4. User Content remains the property of the User. The User grants the Provider a non-exclusive, royalty-free licence to use User Content solely within the scope and for the time necessary to provide the Service to the User (in particular storage, display, technical processing and synchronisation). This licence expires when the relevant content is deleted or when use of the App ends, subject to the technical periods resulting from backups and the operation of third-party services.</p>
     </section>
 
     <!-- ── 15 ── -->
     <section class="doc-section" id="sec-15">
       <h2><span class="secnum">15</span>Liability and its limits</h2>
-      <p>15.1. The Provider makes efforts to ensure the App works correctly and as described, and is liable under the rules set out by law, including consumer-protection provisions on the conformity of a digital service with the contract.</p>
-
-      <div class="callout callout--warn" role="note">
-        <div class="callout__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <div class="callout__body">
-          <p class="callout__title">15.2 — No guarantee of outcome</p>
-          <p>The App is a tool that supports the organisation of a Project. The Provider <strong>does not guarantee that a specific Project outcome will be achieved</strong> nor the correctness of decisions made by the User on the basis of data or materials gathered in the App.</p>
-        </div>
-      </div>
-
-      <div class="callout callout--warn" role="note">
-        <div class="callout__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <div class="callout__body">
-          <p class="callout__title">15.3 — Exclusions of liability</p>
-          <p>To the extent permitted by law, the Provider is not liable for:</p>
-        </div>
-      </div>
-
+      <p id="sec-15-1">15.1. The Provider makes efforts to ensure the App works correctly and as described, and is liable under the rules set out by law, including consumer-protection provisions on the conformity of a digital service with the contract.</p>
+      <p id="sec-15-2">15.2. The App is a tool that supports the organisation of a Project. The Provider <strong>does not guarantee that a specific Project outcome will be achieved</strong> nor the correctness of decisions made by the User on the basis of data or materials gathered in the App.</p>
+      <p id="sec-15-3">15.3. To the extent permitted by law, the Provider is not liable for:</p>
       <ul>
         <li>the acts, omissions, service quality or content of contractors, partners and other third parties,</li>
         <li>the content and operation of external websites and services to which links lead,</li>
@@ -1143,114 +1146,89 @@
         <li>interruptions or limitations in the availability of third-party services (in particular Apple, cloud providers, the internet) over which the Provider has no control,</li>
         <li>loss of data resulting from circumstances beyond the Provider's control, including the operation of the User's device or third-party services.</li>
       </ul>
-
-      <p>15.4. Provisions limiting liability do not exclude or limit the Provider's liability to the extent that such exclusion or limitation is impermissible under mandatory provisions of law, in particular towards Consumers. In relation to Users who are not Consumers, the Provider's liability for lost profits is excluded to the extent permitted by law.</p>
+      <p id="sec-15-4">15.4. Provisions limiting liability do not exclude or limit the Provider's liability to the extent that such exclusion or limitation is impermissible under mandatory provisions of law, in particular towards Consumers. In relation to Users who are not Consumers, the Provider's liability for lost profits is excluded to the extent permitted by law.</p>
     </section>
 
     <!-- ── 16 ── -->
     <section class="doc-section" id="sec-16">
       <h2><span class="secnum">16</span>Service availability, updates and technical downtime</h2>
-      <p>16.1. The Provider strives to ensure the App is available as continuously as possible, but does not guarantee its uninterrupted and error-free operation, in particular due to its dependence on third-party services and the internet.</p>
-      <p>16.2. The Provider may update the App, including updates necessary to maintain conformity with the contract, security or compliance with the law. Some updates may be necessary for the App to continue working correctly.</p>
-      <p>16.3. The Provider may introduce technical downtime, in particular for maintenance, development or to ensure security. Where possible, planned downtime will be carried out in a way that limits inconvenience to Users.</p>
-      <p>16.4. The Provider may modify, develop or withdraw individual App features. Material changes limiting the scope of the Service will be communicated to Users in a manner appropriate to their nature, while respecting the rights of Consumers.</p>
+      <p id="sec-16-1">16.1. The Provider strives to ensure the App is available as continuously as possible, but does not guarantee its uninterrupted and error-free operation, in particular due to its dependence on third-party services and the internet.</p>
+      <p id="sec-16-2">16.2. The Provider may update the App, including updates necessary to maintain conformity with the contract, security or compliance with the law. Some updates may be necessary for the App to continue working correctly.</p>
+      <p id="sec-16-3">16.3. The Provider may introduce technical downtime, in particular for maintenance, development or to ensure security. Where possible, planned downtime will be carried out in a way that limits inconvenience to Users.</p>
+      <p id="sec-16-4">16.4. The Provider may modify, develop or withdraw individual App features. Material changes limiting the scope of the Service will be communicated to Users in a manner appropriate to their nature, while respecting the rights of Consumers.</p>
     </section>
 
     <!-- ── 17 ── -->
     <section class="doc-section" id="sec-17">
       <h2><span class="secnum">17</span>Security of the Account and access credentials</h2>
-      <p>17.1. The User is obliged to keep the data enabling access to the App confidential and to secure the device on which they use the App.</p>
-      <p>17.2. To the extent that authentication takes place using Sign in with Apple and an Apple ID account, access security also depends on the security of the User's Apple account. We recommend using device security (e.g. a passcode, biometrics) and two-factor authentication of the Apple account.</p>
-      <p>17.3. The User should promptly inform the Provider of any detected unauthorised access to the Account or breach of data security, using the address indicated in section 3.</p>
-      <p>17.4. The Provider applies adequate technical and organisational measures to protect data, described in detail in the <a href="/privacy-policy#sec-16">Privacy Policy</a>.</p>
+      <p id="sec-17-1">17.1. The User is obliged to keep the data enabling access to the App confidential and to secure the device on which they use the App.</p>
+      <p id="sec-17-2">17.2. Authentication takes place using "Sign in with Apple" and an Apple account, so access security also depends on the security of the User's Apple account. We recommend using device security (e.g. a passcode, biometrics) and two-factor authentication of the Apple account.</p>
+      <p id="sec-17-3">17.3. The User should promptly inform the Provider of any detected unauthorised access to the Account or breach of data security, using the address indicated in section <a href="#sec-3">3</a>.</p>
+      <p id="sec-17-4">17.4. The Provider applies adequate technical and organisational measures to protect data, described in detail in the Privacy Policy.</p>
     </section>
 
     <!-- ── 18 ── -->
     <section class="doc-section" id="sec-18">
       <h2><span class="secnum">18</span>Account deletion and ending use of the App</h2>
-      <p>18.1. The User may end their use of the App at any time, in particular by:</p>
+      <p id="sec-18-1">18.1. The User may at any time, without giving a reason and at no cost, stop using the App, in particular by:</p>
       <ul>
-        <li>deleting the App from the device,</li>
-        <li>deleting data in the App settings,</li>
-        <li>deleting the Account, if one was created.</li>
+        <li>using the "Delete account and all data" feature in the App's Settings (clause <a href="#sec-18-2">18.2</a>); the feature is also available without an Account,</li>
+        <li>removing the App from the device.</li>
       </ul>
-      <p>18.2. Deleting the App or data results in the deletion of local data in accordance with the rules described in the <a href="/privacy-policy#sec-12">Privacy Policy</a>. Data stored in iCloud remains under the User's control and may be deleted by them via the Apple account settings.</p>
-      <p>18.3. The Provider may end the provision of the Service to a User for important reasons, in particular in the event of a material breach of the Terms or the law, after first calling on the User to cease the breaches, unless immediate action is necessary for security or legal reasons. This provision does not infringe the rights of Consumers.</p>
-      <p>18.4. <strong>Right of withdrawal.</strong> Where use of the App is free of charge, a Consumer may stop using it at any time without incurring costs. If paid features are introduced, the Consumer will have the rights arising from the Act on consumer rights, including – subject to the exceptions provided for by the Act – the right to withdraw from the contract within 14 days; detailed information will then be provided before the paid contract is concluded.</p>
+      <p>Signing out ("Sign out of Apple ID") by itself ends synchronisation but does not delete data from the device or from iCloud.</p>
+      <p id="sec-18-2">18.2. <strong>The "Delete account and all data" feature.</strong> The feature is available in the App's Settings. Using it — with the exceptions listed below — deletes from the User's private iCloud database the Project content saved by the App, deletes the App's data saved on the device (including Demo mode data and finance form and financial profile data), signs the User out and deletes the saved consent choice, and requests that the device be marked as inactive in the Provider's notification register (this requires an internet connection). The operation cannot be undone.</p>
+      <p>The feature does not delete all data. In particular, the following remain:</p>
+      <ul>
+        <li>in iCloud — files sent by the App (expense attachments, covers, backgrounds, album photos) and the Project budget; the feature does not stop shares of which the User is the Project Owner or leave shares in which the User is a Collaborator, so the data of Shared Projects may also remain in iCloud,</li>
+        <li>on the device — files from the "Documents" tab, journal entry photos and some technical settings, including the saved Referral programme profile with its identifier, until the App is removed,</li>
+        <li>with the Provider — the device record (marked as inactive) and Referral programme data, until deleted at the User's request; the next time the App is launched the device may be registered again, without a user identifier (clause <a href="#sec-7-6">7.6</a>),</li>
+        <li>with Apple — the link between the App and the Apple account in "Sign in with Apple".</li>
+      </ul>
+      <p>How to complete the deletion is described in sections <a href="#sec-8-5">8.5</a>–8.7 of the Privacy Policy. If the deletion is interrupted, for example because there is no connection, the feature must be run again.</p>
+      <p>Removing the App from the device deletes the App's files and settings saved on the device, but does not delete data in iCloud or data held by the Provider. A device backup made earlier by iOS may still contain the App's data.</p>
+      <p id="sec-18-3">18.3. The Provider may end the provision of the Service to a User for important reasons, in particular in the event of a material breach of the Terms or the law, after first calling on the User to cease the breaches, unless immediate action is necessary for security or legal reasons. This provision does not infringe the rights of Consumers.</p>
+      <p id="sec-18-4">18.4. <strong>Right of withdrawal.</strong> Where use of the App is free of charge, a Consumer may stop using it at any time without incurring costs. If paid features are introduced, the Consumer will have the rights arising from the Act on consumer rights, including – subject to the exceptions provided for by the Act – the right to withdraw from the contract within 14 days; detailed information will then be provided before the paid contract is concluded.</p>
     </section>
 
     <!-- ── 19 ── -->
     <section class="doc-section" id="sec-19">
       <h2><span class="secnum">19</span>Complaints, contact and support</h2>
-      <p>19.1. The User may submit complaints about the operation of the App and the Services provided to the email address: <strong>homdu.app@gmail.com</strong>.</p>
-      <p>19.2. A complaint should contain at least: details enabling contact with the User, a description of the objections and – where possible – information about the device and the App version.</p>
-      <p>19.3. The Provider considers a complaint without undue delay, no later than within 14 days of receiving it, and informs the User of how it was handled at the contact address provided. If the law provides for a different deadline, the deadline resulting from the law applies.</p>
-      <p>19.4. <strong>Out-of-court dispute resolution.</strong> A Consumer may use out-of-court methods of handling complaints and pursuing claims, including the assistance of the relevant consumer-protection institutions. Information about the online dispute resolution (ODR) platform is available at the address maintained by the European Commission. Use of these methods is voluntary.</p>
-
-      <div class="complaint-card">
-        <div class="complaint-card__body">
-          <p class="complaint-card__role">Complaints and support</p>
-          <h3>Write to us — we reply within 14 days</h3>
-          <p>Please direct all matters relating to the operation of the App, as well as complaints, to the Provider's email address.</p>
-          <p class="complaint-card__addr"><strong>homdu.app@gmail.com</strong> · AppSoft Studio Jakub Matwiejczyk</p>
-          <span class="meta" aria-label="ODR platform">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            ODR platform available on the European Commission website
-          </span>
-        </div>
-        <a class="complaint-card__cta" href="mailto:homdu.app@gmail.com?subject=homdu%20%E2%80%94%20complaint%2Fcontact">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Write to us
-        </a>
-      </div>
+      <p id="sec-19-1">19.1. The User may submit complaints about the operation of the App and the Services provided to the email address: <strong><a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a></strong>.</p>
+      <p id="sec-19-2">19.2. A complaint should contain at least: details enabling contact with the User, a description of the objections and – where possible – information about the device and the App version.</p>
+      <p id="sec-19-3">19.3. The Provider considers a complaint without undue delay, no later than within 14 days of receiving it, and informs the User of how it was handled at the contact address provided. If the law provides for a different deadline, the deadline resulting from the law applies.</p>
+      <p id="sec-19-4">19.4. <strong>Out-of-court dispute resolution.</strong> A Consumer may use out-of-court methods of handling complaints and pursuing claims, including the assistance of a district (municipal) consumer ombudsman, consumer organisations and the Voivodeship Inspectorate of the Trade Inspection (Inspekcja Handlowa). Information about these methods is available on the website of the Polish Office of Competition and Consumer Protection (uokik.gov.pl). Use of these methods is voluntary.</p>
     </section>
 
     <!-- ── 20 ── -->
     <section class="doc-section" id="sec-20">
       <h2><span class="secnum">20</span>Changes to the Terms</h2>
-      <p>20.1. The Provider may make changes to the Terms for important reasons, in particular in the event of: a change in the law, a change in the scope or manner of providing the Service, development of the App, security considerations or organisational changes on the Provider's side.</p>
-      <p>20.2. The Provider will inform of a change to the Terms in a manner appropriate to its nature, in particular through a notice in the App or an update of the document together with an indication of the date.</p>
-      <p>20.3. A change to the Terms does not deprive the User of acquired rights. If the User does not accept the changes, they may end their use of the App in the manner described in section 18.</p>
-      <p>20.4. The current version of the Terms is available at all times in the App and on the website associated with the App.</p>
+      <p id="sec-20-1">20.1. The Provider may make changes to the Terms for important reasons, in particular in the event of: a change in the law, a change in the scope or manner of providing the Service, development of the App, security considerations or organisational changes on the Provider's side.</p>
+      <p id="sec-20-2">20.2. The Provider will inform of a change to the Terms in a manner appropriate to its nature, in particular through a notice in the App or an update of the document together with an indication of the date.</p>
+      <p id="sec-20-3">20.3. A change to the Terms does not deprive the User of acquired rights. If the User does not accept the changes, they may end their use of the App in the manner described in section <a href="#sec-18">18</a>.</p>
+      <p id="sec-20-4">20.4. The current version of the Terms is available at all times in the App and on the website associated with the App.</p>
     </section>
 
     <!-- ── 21 ── -->
     <section class="doc-section" id="sec-21">
       <h2><span class="secnum">21</span>App Store provisions (Apple)</h2>
-
-      <div class="appstore-block">
-        <div class="appstore-block__hd">
-          <div class="appstore-block__ico" aria-hidden="true">
-            <!-- Apple glyph (informational) -->
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.83c-.02-2.27 1.86-3.36 1.94-3.41-1.06-1.55-2.71-1.77-3.3-1.79-1.4-.14-2.74.83-3.45.83-.72 0-1.81-.81-2.98-.79-1.53.02-2.95.89-3.74 2.26-1.6 2.77-.41 6.87 1.14 9.12.76 1.1 1.66 2.33 2.84 2.29 1.14-.05 1.57-.74 2.95-.74 1.37 0 1.76.74 2.97.71 1.23-.02 2-1.12 2.74-2.22.87-1.27 1.22-2.5 1.24-2.56-.03-.01-2.38-.91-2.4-3.62zM14.04 5.86c.63-.77 1.06-1.83.95-2.89-.91.04-2.02.61-2.67 1.37-.58.68-1.1 1.78-.96 2.81 1.02.08 2.05-.52 2.68-1.29z"/></svg>
-          </div>
-          <div>
-            <p class="appstore-block__lbl">About the App Store</p>
-            <p class="appstore-block__ttl">Provisions regarding distribution by Apple</p>
-          </div>
-        </div>
-        <div class="appstore-block__body">
-          <p>21.1. The App is distributed via the App Store. These Terms are an agreement between the User and the Provider, and <strong>not between the User and Apple</strong>. The Provider, not Apple, is responsible for the App and its content.</p>
-          <p>21.2. The licence to use the App is limited to a non-transferable right to use the App on Apple-branded devices that the User owns or controls, in accordance with the usage rules set out in the App Store terms.</p>
-          <p>21.3. The Provider alone, and not Apple, is responsible for providing support and maintenance for the App and for handling claims relating to the App, including product-liability claims, non-compliance with regulations and infringement of rights, including intellectual property rights.</p>
-          <p>21.4. The User declares that they are not located in a country subject to an embargo and are not on any list of entities subject to restrictions, to the extent resulting from applicable regulations.</p>
-          <p>21.5. Apple and its subsidiaries are third-party beneficiaries of these Terms and, upon the User's acceptance of the Terms, are entitled to enforce their provisions against the User in respect of the use of the App.</p>
-          <p>21.6. When using the App, the User is also obliged to comply with the applicable terms of third-party services, including the App Store terms.</p>
-        </div>
-      </div>
+      <p id="sec-21-1">21.1. The App is distributed via the App Store. These Terms are an agreement between the User and the Provider, and <strong>not between the User and Apple</strong>. The Provider, not Apple, is responsible for the App and its content.</p>
+      <p id="sec-21-2">21.2. The licence to use the App is limited to a non-transferable right to use the App on Apple-branded devices that the User owns or controls, in accordance with the usage rules set out in the App Store terms.</p>
+      <p id="sec-21-3">21.3. The Provider alone, and not Apple, is responsible for providing support and maintenance for the App and for handling claims relating to the App, including product-liability claims, non-compliance with regulations and infringement of rights, including intellectual property rights.</p>
+      <p id="sec-21-4">21.4. The User declares that they are not located in a country subject to an embargo and are not on any list of entities subject to restrictions, to the extent resulting from applicable regulations.</p>
+      <p id="sec-21-5">21.5. Apple and its subsidiaries are third-party beneficiaries of these Terms and, upon the User's acceptance of the Terms, are entitled to enforce their provisions against the User in respect of the use of the App.</p>
+      <p id="sec-21-6">21.6. When using the App, the User is also obliged to comply with the applicable terms of third-party services, including the App Store terms.</p>
     </section>
 
     <!-- ── 22 ── -->
     <section class="doc-section" id="sec-22">
       <h2><span class="secnum">22</span>Governing law and final provisions</h2>
-      <p>22.1. Matters not regulated by the Terms are governed by Polish law, in particular the Civil Code, the Act on providing services electronically and the Act on consumer rights. The choice of Polish law does not deprive a Consumer of the protection arising from mandatory provisions of the law of the country of their habitual residence.</p>
-      <p>22.2. If any provision of the Terms proves to be invalid or ineffective, the remaining provisions remain in force.</p>
-      <p>22.3. Any disputes will be resolved by the common court having jurisdiction under the law. For Users who are not Consumers, the competent court is the court having local jurisdiction over the Provider's registered office.</p>
-      <p>22.4. The Terms enter into force on the date indicated at the beginning of the document.</p>
-
+      <p id="sec-22-1">22.1. Matters not regulated by the Terms are governed by Polish law, in particular the Civil Code, the Act on providing services electronically and the Act on consumer rights. The choice of Polish law does not deprive a Consumer of the protection arising from mandatory provisions of the law of the country of their habitual residence.</p>
+      <p id="sec-22-2">22.2. If any provision of the Terms proves to be invalid or ineffective, the remaining provisions remain in force.</p>
+      <p id="sec-22-3">22.3. Any disputes will be resolved by the common court having jurisdiction under the law. For Users who are not Consumers, the competent court is the court having local jurisdiction over the Provider's registered office.</p>
+      <p id="sec-22-4">22.4. The Terms enter into force on the date indicated at the beginning of the document.</p>
       <div class="signature">
         <strong>Provider:</strong><br />
-        AppSoft Studio Jakub Matwiejczyk, ul. Aroniowa 19, 05-555 Kotorydz, Poland, Tax ID (NIP): 7133074219, email: <a href="mailto:homdu.app@gmail.com" style="color:var(--doc-accent); border:none;">homdu.app@gmail.com</a>
+        AppSoft Studio Jakub Matwiejczyk, ul. Aroniowa 19, 05-555 Kotorydz, Poland, Tax ID (NIP): 7133074219, email: <a href="mailto:homdu.app@gmail.com">homdu.app@gmail.com</a>
       </div>
     </section>
 
